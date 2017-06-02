@@ -200,7 +200,7 @@
 </div>
 <script src="{{ URL::asset('plugins/zTree_v3-3.5.28/js/jquery.ztree.core.js') }}"></script>
 <script src="{{ URL::asset('plugins/zTree_v3-3.5.28/js/jquery.ztree.excheck.js') }}"></script>
-<script src="{{ URL::asset('js/common/L-blog.js') }}"></script>
+
 
 </body>
 </html>

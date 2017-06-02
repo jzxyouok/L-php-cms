@@ -24,9 +24,9 @@ Route::get('/admin/manage', function () {
 /*
  * 用户组
  * */
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['namespace' => 'Admin'], function () {
 
-  Route::get('/admin/manage/admin_user_group_add' )->name('admin.admin_user_group_add');
+  Route::get('/admin/manage/admin_user_group_add','adminUserAllController@showProfile')->name('admin.admin_user_group_add');
 
   Route::get('/admin/manage/admin_user_group_all', function () {
     return view('admin.admin_user_group_all');

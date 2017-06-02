@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ URL::asset('plugins/zTree_v3-3.5.28/css/zTreeStyle/zTreeStyle.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('plugins/uploadify/uploadify.css') }}">
     <script src="{{ URL::asset('js/common/jquery.js') }}"></script>
-    <script src="{{ URL::asset('js/common/angular.js') }}"></script>
+    <script src="js/common/angular.js"></script>
     <script src="{{ URL::asset('js/common/angular-sanitize.js') }}"></script>
     <script src="{{ URL::asset('plugins/uploadify/jquery.uploadify.js') }}"></script>
     <script src="{{ URL::asset('js/common/bootstrap.js') }}"></script>
