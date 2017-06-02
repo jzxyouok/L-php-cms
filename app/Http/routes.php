@@ -12,20 +12,39 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  return view('welcome');
 });
-Route::get('/hello',function(){
-  return "Hello Laravel[GET]!";
-});
-
-Route::get('/testPost',function(){
-  $csrf_token = csrf_token();
-  $form = <<<FORM
-        <form action="/L-php-cms/public/index.php/hello" method="POST">
-            <input type="hidden" name="_token" value="{$csrf_token}">
-            <input type="submit" value="Test"/>
-        </form>
-FORM;
-  return $form;
+Route::get('/admin/manage', function () {
+  return view('admin.basic_info');
 });
 
+
+
+
+/*
+ * 用户组
+ * */
+Route::group(['middleware' => 'auth'], function () {
+
+  Route::get('/admin/manage/admin_user_group_add' )->name('admin.admin_user_group_add');
+
+  Route::get('/admin/manage/admin_user_group_all', function () {
+    return view('admin.admin_user_group_all');
+  });
+});
+
+
+
+/*
+ * 用户
+ * */
+Route::group(['middleware' => 'auth'], function () {
+
+  Route::get('/admin/manage/admin_user_all', function () {
+    return view('admin.admin_user_all');
+  });
+
+  Route::get('/admin/manage/admin_user_add', function () {
+    return view('admin.admin_user_all');
+  });
+});
