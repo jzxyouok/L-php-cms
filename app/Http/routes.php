@@ -26,7 +26,7 @@ Route::get('/admin/manage', function () {
  * */
 Route::group(['namespace' => 'Admin'], function () {
 
-  Route::get('/admin/manage/admin_user_group_add','adminUserAllController@showProfile')->name('admin.admin_user_group_add');
+  Route::get('/admin/manage/admin_user_group_add','adminUserAllController@showProfile')->name('admin_user_group_add');
 
   Route::get('/admin/manage/admin_user_group_all', function () {
     return view('admin.admin_user_group_all');
