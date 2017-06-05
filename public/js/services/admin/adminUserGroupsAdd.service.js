@@ -3,13 +3,13 @@
  */
 
 
-app.factory('usersGroupAddService', ['$http', function ($http) {
+app.factory('adminUserGroupAddService', ['$http', function ($http) {
   return {
     get: function (id,name,pid,status,remark) {
 
       return $http({
         method:'POST',
-        url:'users_group_add/add',
+        url:'admin_user_group_add/add',
         data:$.param({
           group_id:id,
           name:name,

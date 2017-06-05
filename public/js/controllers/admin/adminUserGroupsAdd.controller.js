@@ -3,7 +3,7 @@
  */
 
 
-app.controller('usersGroupAdd',['$scope','$http','usersGroupAddService',function($scope,$http,usersGroupAddService) {
+app.controller('usersGroupAdd',['$scope','$http','adminUserGroupAddService',function($scope,$http,adminUserGroupAddService) {
   $scope.statusOptions = [
     {name:'启用',id:1},
     {name:'禁用',id:0},
@@ -36,7 +36,7 @@ app.controller('usersGroupAdd',['$scope','$http','usersGroupAddService',function
         break;
 
     }
-    usersGroupAddService.get(group_id,name,pid,status,remark).then(function(res) {
+      adminUserGroupAddService.get(group_id,name,pid,status,remark).then(function(res) {
       if(res.data.code==1){
         $('#myModal').modal({
           keyboard: true

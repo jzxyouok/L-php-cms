@@ -57,7 +57,7 @@
       </div>
       <!-- /.box-body -->
       <div class="box-footer">
-      <?php echo $name ?>
+
         <button type="submit" class="btn btn-primary pull-right" ng-click="addAdminUserGroup()">添加</button>
       </div>
       <!-- /.box-footer -->
