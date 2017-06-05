@@ -17,7 +17,7 @@
 <section class="content"  ng-controller="usersGroupAdd">
 <div class="row">
 <div class="col-md-12">
-  <div class="box box-info">
+  <div class="box box-primary">
     <div class="box-header with-border">
       <h3 class="box-title">添加用户组</h3>
     </div>
@@ -57,7 +57,8 @@
       </div>
       <!-- /.box-body -->
       <div class="box-footer">
-        <button type="submit" class="btn btn-info pull-right" ng-click="addAdminUserGroup()">添加</button>
+      <?php echo $name ?>
+        <button type="submit" class="btn btn-primary pull-right" ng-click="addAdminUserGroup()">添加</button>
       </div>
       <!-- /.box-footer -->
     </form>

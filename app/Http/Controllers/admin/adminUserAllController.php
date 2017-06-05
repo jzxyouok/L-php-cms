@@ -14,6 +14,6 @@ class adminUserAllController extends Controller
 
   public function showProfile(Request $request)
   {
-    return view('admin.admin_user_group_add', ['name' => Settings::$json->name]);
+    return view('admin.admin_user_group_add', ['name' => '3433']);
   }
 }

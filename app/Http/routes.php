@@ -28,9 +28,8 @@ Route::group(['namespace' => 'Admin'], function () {
 
   Route::get('/admin/manage/admin_user_group_add','adminUserAllController@showProfile')->name('admin_user_group_add');
 
-  Route::get('/admin/manage/admin_user_group_all', function () {
-    return view('admin.admin_user_group_all');
-  });
+  Route::get('/admin/manage/admin_user_group_all','adminUserAllController@showProfile')->name('admin_user_group_all');
+
 });
 
 
@@ -40,11 +39,9 @@ Route::group(['namespace' => 'Admin'], function () {
  * */
 Route::group(['middleware' => 'auth'], function () {
 
-  Route::get('/admin/manage/admin_user_all', function () {
-    return view('admin.admin_user_all');
-  });
+  Route::get('/admin/manage/admin_user_all','adminUserAllController@showProfile')->name('admin_user_all');
 
-  Route::get('/admin/manage/admin_user_add', function () {
-    return view('admin.admin_user_all');
-  });
+
+  Route::get('/admin/manage/admin_user_add','adminUserAllController@showProfile')->name('admin_user_add');
+
 });
