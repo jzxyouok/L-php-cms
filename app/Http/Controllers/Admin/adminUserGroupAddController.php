@@ -15,7 +15,10 @@ class adminUserGroupAddController extends Controller
 
   public function view(Request $request)
   {
-    return view('admin.admin_user_group_add', ['name' => '3433']);
+    return view('admin.admin_user_group_add', [
+      'name' => '3433',
+      'cms'=>config('cms.cms'),
+    ]);
   }
 
   public function add(Request $request){

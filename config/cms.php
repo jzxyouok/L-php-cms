@@ -2,119 +2,85 @@
 
 return [
 
-  /*
-  |--------------------------------------------------------------------------
-  | PDO Fetch Style
-  |--------------------------------------------------------------------------
-  |
-  | By default, database results will be returned as instances of the PHP
-  | stdClass object; however, you may desire to retrieve records in an
-  | array format for simplicity. Here you can tweak the fetch style.
-  |
-  */
+//  SESSION_SECRET: 'L-blog-secret',
+//  COOKIE_SECRET: 'L-BLOG',
+//
+//
+//  /*
+//   * 本地缓存设置
+//   * */
+//  REDIS_HOST: '127.0.0.1',
+//  REDIS_PORT: 6379,
+//  REDIS_PSD: '',
+//  REDIS_DB: 0,
+//
+//  /*
+//   * cms配置
+//   * */
+'cms'=>'L-php-cms管理系统',
+  'cms_name'=>'L-php-cms',
 
-  'fetch' => PDO::FETCH_CLASS,
+//
+//  /*
+//   * 博客功能列表
+//   * */
+//  PANEL: ['panel', '仪表盘'],
+//  BASIC_INFO: ['basicInfo', '基本信息'],
+//  PASSWORD_MODIFY: ['password_modify', '修改密码'],
 
-  /*
-  |--------------------------------------------------------------------------
-  | Default Database Connection Name
-  |--------------------------------------------------------------------------
-  |
-  | Here you may specify which of the database connections below you wish
-  | to use as your default connection for all database work. Of course
-  | you may use many connections at once using the Database library.
-  |
-  */
+  'users_manage' => '用户管理',
+  'user_groups_all'=> '所有用户组',
+  'user_groups_add'=> '添加用户组',
+  'users_all'=>'所有用户',
+  'users_add'=> '添加用户',
+  'login_log'=> '登录记录',
 
-  'default' => env('DB_CONNECTION', 'mysql'),
+//  DOCUMENT_MANAGE: ['documentManage', '文档管理'],
+//  CATEGORIES_ALL: ['categories_all', '所有分类'],
+//  ARTICLES_CATEGORY_ADD: ['CategoriesAdd', '添加分类'],
+//  DOCUMENT_WRITE: ['documentWrite', '写文档'],
+//  DOCUMENT_EDIT: ['documentEdit', '编辑文档'],
+//  PUBLISHED: ['published', '已发布'],
+//  WAIT_FOR_VERIFY: ['waitForVerify', '待审核'],
+//  NO_ACCESS: ['noAccess', '未通过'],
+//  DRAFT: ['draft', '草稿箱'],
+//  RECYCLE: ['recycle', '回收站'],
+//
+//  FILES_MANAGE: ['filesManage', '文件管理'],
+//  MEDIA_MANAGE: ['mediaManage', '媒体管理'],
+//  FILES_BACKUP: ['filesBackup', '文件备份'],
+//  FILES_RECOVER: ['filesRecover', '文件恢复'],
+//
+//  DATA_MANAGE: ['dataManage', '数据管理'],
+//  DATABASE_BACKUP: ['databaseBackup', '数据库备份'],
+//  DATABASE_IMPORT: ['databaseImport', '数据库导入'],
+//  DATABASE_COMPRESS: ['databaseCompress', '数据库压缩'],
+//  DATABASE_OPTIMIZE: ['databaseOptimize', '数据库优化'],
+//  CACHE_MANAGE: ['cacheManage', '缓存管理'],
+//  CACHE_CLEAR: ['cacheClear', '缓存清理'],
+//  CACHE_SETTINGS: ['cacheSettings', '缓存设置'],
+//  STATISTICS_MANAGE: ['statisticsManage', '统计管理'],
+//  STATISTICS_COUNT: ['statisticsCount', '数据统计'],
+//
+//  CUSTOMIZATION_CENTER: ['customizationCenter', '定制中心'],
+//  THEME_MANAGE: ['themeManage', '主题管理'],
+//  INSTALL_THEME: ['installTheme', '安装主题'],
+//  LOCAL_THEME: ['localTheme', '本地主题'],
+//  EDIT_TEMPLATE: ['editTemplate', '模版编辑'],
+//  PLUGINS_MANAGE: ['pluginsManage', '插件管理'],
+//  HOOKS_MANAGE: ['hooksManage', '钩子管理'],
+//  AD_MANAGE: ['adManage', '广告管理'],
+//
+//  'system_settings'=> '系统设置',
+//  SYSTEM_LOG: ['systemLog', '系统日志'],
+//  WEBSITE_SETTINGS: ['websiteSettings', '站点设置'],
+//  READ_SETTINGS: ['readSettings', '阅读设置'],
+//  ATTACHMENT_SETTINGS: ['attachmentSettings', '附件设置'],
+//  SOCIAL_LOGIN_SETTINGS: ['socialLoginSettings', '社交登录设置'],
+//  UPDATE_ONLINE: ['updateOnline', '在线更新'],
+//  SYSTEM_INFO: ['systemInfo', '系统信息'],
+//  BUGS_FEEDBACK: ['bugsFeedback', 'BUG反馈'],
 
-  /*
-  |--------------------------------------------------------------------------
-  | Database Connections
-  |--------------------------------------------------------------------------
-  |
-  | Here are each of the database connections setup for your application.
-  | Of course, examples of configuring each database platform that is
-  | supported by Laravel is shown below to make development simple.
-  |
-  |
-  | All database work in Laravel is done through the PHP PDO facilities
-  | so make sure you have the driver for your particular database of
-  | choice installed on your machine before you begin development.
-  |
-  */
 
-  'connections' => [
-
-    'sqlite' => [
-      'driver' => 'sqlite',
-      'database' => env('DB_DATABASE', database_path('database.sqlite')),
-      'prefix' => '',
-    ],
-
-    'mysql' => [
-      'driver' => 'mysql',
-      'host' => env('DB_HOST', 'localhost'),
-      'port' => env('DB_PORT', '3306'),
-      'database' => env('DB_DATABASE', 'forge'),
-      'username' => env('DB_USERNAME', 'root'),
-      'password' => env('DB_PASSWORD', '123456'),
-      'charset' => 'utf8',
-      'collation' => 'utf8_unicode_ci',
-      'prefix' => '',
-      'strict' => false,
-      'engine' => null,
-    ],
-
-    'pgsql' => [
-      'driver' => 'pgsql',
-      'host' => env('DB_HOST', 'localhost'),
-      'port' => env('DB_PORT', '5432'),
-      'database' => env('DB_DATABASE', 'forge'),
-      'username' => env('DB_USERNAME', 'forge'),
-      'password' => env('DB_PASSWORD', ''),
-      'charset' => 'utf8',
-      'prefix' => '',
-      'schema' => 'public',
-    ],
-
-  ],
-
-  /*
-  |--------------------------------------------------------------------------
-  | Migration Repository Table
-  |--------------------------------------------------------------------------
-  |
-  | This table keeps track of all the migrations that have already run for
-  | your application. Using this information, we can determine which of
-  | the migrations on disk haven't actually been run in the database.
-  |
-  */
-
-  'migrations' => 'migrations',
-
-  /*
-  |--------------------------------------------------------------------------
-  | Redis Databases
-  |--------------------------------------------------------------------------
-  |
-  | Redis is an open source, fast, and advanced key-value store that also
-  | provides a richer set of commands than a typical key-value systems
-  | such as APC or Memcached. Laravel makes it easy to dig right in.
-  |
-  */
-
-  'redis' => [
-
-    'cluster' => false,
-
-    'default' => [
-      'host' => env('REDIS_HOST', 'localhost'),
-      'password' => env('REDIS_PASSWORD', null),
-      'port' => env('REDIS_PORT', 6379),
-      'database' => 0,
-    ],
-
-  ],
 
 ];

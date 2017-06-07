@@ -3,7 +3,7 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-<% blogName %>
+{{$cms}}
 <small><% item %></small>
 </h1>
 <ol class="breadcrumb">
