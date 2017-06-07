@@ -4,12 +4,12 @@
   <section class="content-header">
     <h1>
 {{$cms}}
-<small><% item %></small>
+<small>{{$item}}</small>
 </h1>
 <ol class="breadcrumb">
 <li><a href="#"><i class="fa fa-dashboard"></i>主页</a></li>
-<li><a href="#"><% category %></a></li>
-<li class="active"><% item %></li>
+<li><a href="#">{{$category }}</a></li>
+<li class="active">{{$item}}</li>
 </ol>
 </section>
 

@@ -24,7 +24,7 @@
     <!--头部-->
     <header class="main-header">
         <a href="/" class="logo" target="_blank">
-            L-blog博客管理系统
+            L-php-cms管理系统
         </a>
 
         <nav class="navbar navbar-static-top" role="navigation">
