@@ -9,7 +9,7 @@ app.factory('adminUserGroupAddService', ['$http', function ($http) {
 
       return $http({
         method:'POST',
-        url:'admin_user_group_add/add',
+        url:'admin_user_group_add',
         data:$.param({
           group_id:id,
           name:name,

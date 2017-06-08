@@ -51,7 +51,8 @@
                                     <li><!-- start message -->
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="/images/user2-160x160.jpg" class="img-circle"
+                                                <img src="{{ URL::asset('images/user2-160x160.jpg') }}"
+                                                     class="img-circle"
                                                      alt="User Image">
                                             </div>
                                             <h4>
@@ -126,13 +127,13 @@
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="/images/user2-160x160.jpg" class="user-image" alt="User Image">
+                            <img src="{{ URL::asset('images/user2-160x160.jpg') }}" class="user-image" alt="User Image">
                             <span class="hidden-xs"> userInfo.adminUser_username </span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
-                                <img src="/images/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                <img src="{{ URL::asset('images/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
                                 <p>
                                     Kevin - Web Developer
                                     <small>WEB前端工程师，全栈开发尝试者</small>
@@ -174,7 +175,7 @@
             <!-- user panel (Optional) -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="/images/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <img src="{{ URL::asset('images/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
                     <p> userInfo.adminUser_username </p>

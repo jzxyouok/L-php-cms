@@ -5,10 +5,10 @@ var app = angular.module('myApp', ['ngSanitize']);
 app.factory('adminLoginService', ['$http', function ($http) {
   return {
     get: function (username,password) {
-      console.log(2);
+
       return $http({
         method: 'POST',
-        url:  '/admin/login',
+        url:  'admin_login',
         data: $.param({
           adminUser_username: username,
           adminUser_password: password

@@ -1,7 +1,7 @@
 /**
  * Created by v_lljunli on 2017/5/10.
  */
-app.factory('usersAddService',['$http',function ($http) {
+app.factory('adminUserAddService',['$http',function ($http) {
   return {
     get:function (username,nickname,logo,password,repassword,userGroup,status,phone,email,remark) {
       return $http({

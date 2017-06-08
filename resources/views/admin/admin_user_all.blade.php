@@ -3,13 +3,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-<% blogName %>
-<small>所有用户</small>
+          {{$cms}}
+<small>{{$item}}</small>
 </h1>
 <ol class="breadcrumb">
 <li><a href="#"><i class="fa fa-dashboard"></i>主页</a></li>
-<li><a href="#"><% category %></a></li>
-<li class="active">所有用户</li>
+<li><a href="#">{{$category }}</a></li>
+<li class="active">{{$item}}</li>
 </ol>
 </section>
 
@@ -19,7 +19,7 @@
 <div class="col-md-12">
   <div class="box">
     <div class="box-header with-border">
-      <h3 class="box-title">所有用户</h3>
+      <h3 class="box-title">{{$item}}</h3>
     </div>
     <!-- /.box-header -->
     <div class="box-body">

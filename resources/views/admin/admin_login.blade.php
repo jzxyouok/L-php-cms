@@ -5,22 +5,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>用户登录 | L-blog</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="stylesheet" href="/css/bootstrap.css">
-  <link rel="stylesheet" href="/css/font-awesome.css">
-  <link rel="stylesheet" href="/css/ionicons.min.css">
-  <link rel="stylesheet" href="/css/adminLTE.css">
-  <link rel="stylesheet" href="/plugins/iCheck/square/blue.css">
-  <script src="/js/common/angular.js"></script>
-  <script src="/js/common/angular-sanitize.js"></script>
+  <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css') }}">
+  <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.css') }}">
+  <link rel="stylesheet" href="{{ URL::asset('css/ionicons.min.css') }}">
+  <link rel="stylesheet" href="{{ URL::asset('css/adminLTE.css') }}">
+  <link rel="stylesheet" href="{{ URL::asset('plugins/iCheck/square/blue.css') }}">
+  <script src="{{ URL::asset('js/common/angular.js') }}"></script>
+  <script src="{{ URL::asset('js/common/angular-sanitize.js') }}"></script>
   <!--[if lt IE 9]>
-  <script src="/js/common/html5shiv.min.js"></script>
-  <script src="/js/common/respond.min.js"></script>
+  <script src="{{ URL::asset('js/common/html5shiv.min.js') }}"></script>
+  <script src="{{ URL::asset('js/common/respond.min.js') }}"></script>
   <![endif]-->
 </head>
 <body class="hold-transition login-page"  ng-app="myApp" ng-controller="adminLogin" >
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>L-blog</b></a>
+    <a href="#"><b>L-php-cms</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -28,11 +28,11 @@
 
     <form action="admin_login" method="post" onsubmit="return false;">
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="adminUser_username" placeholder="请输入用户名" ng-model="adminUser_username">
+        <input type="text" class="form-control" name="username" placeholder="请输入用户名" ng-model="username">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" name="adminUser_password" placeholder="请输入密码" ng-model="adminUser_password">
+        <input type="password" class="form-control" name="password" placeholder="请输入密码" ng-model="password">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
@@ -51,15 +51,10 @@
       </div>
     </form>
 
-    <div class="social-auth-links text-center">
-      <p>- 其他登录方式 -</p>
-      <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> QQ登录</a>
-      <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> 微信登录</a>
-    </div>
-    <!-- /.social-auth-links -->
 
-    <a href="#">忘记密码</a><br>
-    <a href="register.html" class="text-center">注册新用户</a>
+
+    <a href="#">忘记密码</a>
+
 
   </div>
   <!-- /.login-box-body -->
@@ -67,10 +62,10 @@
 
 
 
-<script src="/js/common/jquery.js"></script>
-<script src="/js/common/bootstrap.js"></script>
-<script src="/plugins/iCheck/icheck.min.js"></script>
-<script src="/js/common/L-blog.js"></script>
+<script src="{{ URL::asset('js/common/jquery.js') }}"></script>
+<script src="{{ URL::asset('js/common/bootstrap.js') }}"></script>
+<script src="{{ URL::asset('plugins/iCheck/icheck.min.js') }}"></script>
+<script src="{{ URL::asset('js/common/L-php-cms.js') }}"></script>
 <script>
   $(function () {
     $('input').iCheck({

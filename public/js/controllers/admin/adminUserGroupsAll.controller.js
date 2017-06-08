@@ -5,7 +5,7 @@
 /*
  * 所有用户组
  * */
-app.controller('usersGroup', ['$scope', '$http', 'usersGroupService','usersGroupAddService', function ($scope, $http, usersGroupService,usersGroupAddService) {
+app.controller('usersGroup', ['$scope', '$http', 'adminUserGroupAllService','adminUserGroupAddService', function ($scope, $http, adminUserGroupAllService,adminUserGroupAddService) {
 
   getUserGroup();
 
@@ -199,8 +199,9 @@ app.controller('usersGroup', ['$scope', '$http', 'usersGroupService','usersGroup
   * */
   function getUserGroup() {
 
-    usersGroupService.get().then(function success(res) {
+      adminUserGroupAllService.get().then(function success(res) {
       $scope.data = res.data;
+
     }, function error(res) {
 
     });
@@ -222,7 +223,7 @@ app.controller('usersGroup', ['$scope', '$http', 'usersGroupService','usersGroup
        zTreeObj[zTreeNodeArray[i].id]=zTreeNodeArray[i].checked;
     }
 
-    usersGroupService.modify($scope.userGroup,zTreeObj).then(function success(res) {
+      adminUserGroupAllService.modify($scope.userGroup,zTreeObj).then(function success(res) {
       if(res.data.code===1){
         $('#users_group_modal').modal('hide');
       }else {
@@ -244,7 +245,7 @@ app.controller('usersGroup', ['$scope', '$http', 'usersGroupService','usersGroup
 
 
     //获取所选择的用户组的权限数据
-    usersGroupService.get().then(function success(res) {
+      adminUserGroupAllService.get().then(function success(res) {
       $scope.data = res.data;
       data=$scope.data;
       for(var j=0;j<data.length;j++){
@@ -300,7 +301,7 @@ app.controller('usersGroup', ['$scope', '$http', 'usersGroupService','usersGroup
   * 禁用用户组
   * */
   $scope.forbidden=function (name) {
-    usersGroupService.forbidden(name).then(function success() {
+      adminUserGroupAllService.forbidden(name).then(function success() {
       getUserGroup();
     },function error() {
 
@@ -311,7 +312,7 @@ app.controller('usersGroup', ['$scope', '$http', 'usersGroupService','usersGroup
   * 启用用户组
   * */
   $scope.startUsing=function (name) {
-    usersGroupService.startUsing(name).then(function success() {
+      adminUserGroupAllService.startUsing(name).then(function success() {
       getUserGroup();
     },function error() {
 
@@ -354,7 +355,7 @@ app.controller('usersGroup', ['$scope', '$http', 'usersGroupService','usersGroup
 
 
     }
-    usersGroupAddService.edit(group_id,name,pid,remark).then(function(res) {
+      adminUserGroupAddService.edit(group_id,name,pid,remark).then(function(res) {
       if(res.data.code===1){
         $('#myModal').modal({
           keyboard: true

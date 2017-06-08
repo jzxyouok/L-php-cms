@@ -1,5 +1,14 @@
 <?php
 /*
+ * 登录退出
+ * */
+Route::group(['namespace' => 'Admin'], function () {
+  Route::get('/admin', 'adminLoginController@gotoLogin')->name('admin');
+  Route::get('/admin/admin_login', 'adminLoginController@view')->name('admin_login');
+  Route::post('/admin/admin_login', 'adminLoginController@login')->name('admin_login_post');
+
+});
+/*
  * 仪表盘
  * */
 Route::group(['namespace' => 'Admin'], function () {
@@ -17,8 +26,11 @@ Route::group(['namespace' => 'Admin'], function () {
 Route::group(['namespace' => 'Admin'], function () {
 
   Route::get('/admin/manage/user_manage/admin_user_group_all', 'adminUserGroupAllController@view')->name('admin_user_group_all');
+  Route::get('/admin/manage/user_manage/admin_user_group_get', 'adminUserGroupAllController@get')->name('admin_user_group_get');
   Route::get('/admin/manage/user_manage/admin_user_group_add', 'adminUserGroupAddController@view')->name('admin_user_group_add');
+  Route::post('/admin/manage/user_manage/admin_user_group_add', 'adminUserGroupAddController@add')->name('admin_user_group_add_post');
   Route::get('/admin/manage/user_manage/admin_user_all', 'adminUserAllController@view')->name('admin_user_all');
+  Route::get('/admin/manage/user_manage/admin_user_get', 'adminUserAllController@get')->name('admin_user_get');
   Route::get('/admin/manage/user_manage/admin_user_add', 'adminUserAddController@view')->name('admin_user_add');
 });
 

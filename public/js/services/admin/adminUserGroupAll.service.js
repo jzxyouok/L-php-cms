@@ -1,7 +1,7 @@
 /**
  * Created by v_lljunli on 2017/5/10.
  */
-app.factory('usersGroupService', ['$http', function ($http) {
+app.factory('adminUserGroupAllService', ['$http', function ($http) {
   return {
 
     /*
@@ -10,7 +10,7 @@ app.factory('usersGroupService', ['$http', function ($http) {
     get: function () {
       return $http({
         method: 'GET',
-        url: 'users_group_get',
+        url: 'admin_user_group_get',
         headers: {'Content-Type': 'application/x-www-form-urlencoded'}
       });
     },
@@ -21,7 +21,7 @@ app.factory('usersGroupService', ['$http', function ($http) {
     modify: function (name,power) {
       return $http({
         method: 'POST',
-        url: 'users_group/modify_power',
+        url: 'modify_power',
         data:$.param({
           name:name,
           power:power
@@ -36,7 +36,7 @@ app.factory('usersGroupService', ['$http', function ($http) {
         data:$.param({
           name:name
         }),
-        url: 'forbidden',
+        url: 'forbidden_status',
         headers: {'Content-Type': 'application/x-www-form-urlencoded'}
       });
     },

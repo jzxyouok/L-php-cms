@@ -5,10 +5,10 @@ var app = angular.module('myApp', ['ngSanitize']);
 app.factory('adminLoginService', ['$http', function ($http) {
   return {
     get: function (username,password) {
-      console.log(2);
+
       return $http({
         method: 'POST',
-        url:  '/admin/login',
+        url:  'admin_login',
         data: $.param({
           adminUser_username: username,
           adminUser_password: password
@@ -22,6 +22,48 @@ app.factory('adminLoginService', ['$http', function ($http) {
   }
 }]);
 /**
+ * Created by v_lljunli on 2017/5/10.
+ */
+app.factory('adminUserAddService',['$http',function ($http) {
+  return {
+    get:function (username,nickname,logo,password,repassword,userGroup,status,phone,email,remark) {
+      return $http({
+        method: 'POST',
+        url: 'add',
+        data: $.param({
+          adminUser_username: username,
+          adminUser_nickname: nickname,
+          adminUser_avatar:logo,
+          adminUser_password: password,
+          adminUser_repassword: repassword,
+          adminUser_userGroup: userGroup,
+          adminUser_status: status,
+          adminUser_phone: phone,
+          adminUser_email: email,
+          adminUser_remark: remark
+        }),
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+      });
+    },
+
+  };
+}]);
+/**
+ * Created by v_lljunli on 2017/5/10.
+ */
+app.factory('adminUserAllService',['$http',function ($http) {
+  return {
+    get:function () {
+      return $http({
+        method: 'GET',
+        url: 'admin_user_get',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+      });
+    },
+
+  };
+}]);
+/**
  * Created by v_lljunli on 2017/5/11.
  */
 
@@ -32,7 +74,7 @@ app.factory('adminUserGroupAddService', ['$http', function ($http) {
 
       return $http({
         method:'POST',
-        url:'admin_user_group_add/add',
+        url:'admin_user_group_add',
         data:$.param({
           group_id:id,
           name:name,
@@ -60,6 +102,65 @@ app.factory('adminUserGroupAddService', ['$http', function ($http) {
     },
 
   }
+}]);
+/**
+ * Created by v_lljunli on 2017/5/10.
+ */
+app.factory('adminUserGroupAllService', ['$http', function ($http) {
+  return {
+
+    /*
+     * 获取用户组数据
+     * */
+    get: function () {
+      return $http({
+        method: 'GET',
+        url: 'admin_user_group_get',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+      });
+    },
+
+    /*
+     *修改用户组名称及修改用户组权限
+     * */
+    modify: function (name,power) {
+      return $http({
+        method: 'POST',
+        url: 'modify_power',
+        data:$.param({
+          name:name,
+          power:power
+        }),
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+      });
+    },
+
+    forbidden:function (name) {
+      return $http({
+        method: 'POST',
+        data:$.param({
+          name:name
+        }),
+        url: 'forbidden_status',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+      });
+    },
+
+    startUsing:function (name) {
+      return $http({
+        method: 'POST',
+        data:$.param({
+          name:name
+        }),
+        url: 'start_using',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+      });
+    },
+
+
+
+
+  };
 }]);
 /**
  * Created by v_lljunli on 2017/5/10.
@@ -522,107 +623,6 @@ app.factory('recycleService',['$http',function ($http) {
 /**
  * Created by v_lljunli on 2017/5/10.
  */
-app.factory('usersService',['$http',function ($http) {
-  return {
-    get:function () {
-      return $http({
-        method: 'GET',
-        url: 'get',
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-      });
-    },
-
-  };
-}]);
-/**
- * Created by v_lljunli on 2017/5/10.
- */
-app.factory('usersAddService',['$http',function ($http) {
-  return {
-    get:function (username,nickname,logo,password,repassword,userGroup,status,phone,email,remark) {
-      return $http({
-        method: 'POST',
-        url: 'add',
-        data: $.param({
-          adminUser_username: username,
-          adminUser_nickname: nickname,
-          adminUser_avatar:logo,
-          adminUser_password: password,
-          adminUser_repassword: repassword,
-          adminUser_userGroup: userGroup,
-          adminUser_status: status,
-          adminUser_phone: phone,
-          adminUser_email: email,
-          adminUser_remark: remark
-        }),
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-      });
-    },
-
-  };
-}]);
-/**
- * Created by v_lljunli on 2017/5/10.
- */
-app.factory('usersGroupService', ['$http', function ($http) {
-  return {
-
-    /*
-     * 获取用户组数据
-     * */
-    get: function () {
-      return $http({
-        method: 'GET',
-        url: 'users_group_get',
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-      });
-    },
-
-    /*
-     *修改用户组名称及修改用户组权限
-     * */
-    modify: function (name,power) {
-      return $http({
-        method: 'POST',
-        url: 'users_group/modify_power',
-        data:$.param({
-          name:name,
-          power:power
-        }),
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-      });
-    },
-
-    forbidden:function (name) {
-      return $http({
-        method: 'POST',
-        data:$.param({
-          name:name
-        }),
-        url: 'forbidden',
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-      });
-    },
-
-    startUsing:function (name) {
-      return $http({
-        method: 'POST',
-        data:$.param({
-          name:name
-        }),
-        url: 'start_using',
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-      });
-    },
-
-
-
-
-  };
-}]);
-/**
- * Created by v_lljunli on 2017/5/10.
- */
 app.factory('waitForVerifyService',['$http',function ($http) {
   return{
 
@@ -728,6 +728,152 @@ app.controller('adminLogin', ['$scope', '$http', 'adminLoginService', function (
 
 }]);
 /**
+ * Created by v_lljunli on 2017/5/10.
+ */
+
+/*
+ * 添加用户
+ * */
+app.controller('usersAdd', ['$scope','$http','adminUserAddService',function ($scope, $http,adminUserAddService) {
+
+  /*
+   * 提交数据
+   * */
+  $scope.addAdminUser = function () {
+
+    var adminUser_userGroup = 1;
+
+    switch ($scope.adminUser_userGroup) {
+      case 1:
+        adminUser_userGroup = '超级管理员';
+        break;
+      case 2:
+        adminUser_userGroup = '网站管理员';
+        break;
+      case 3:
+        adminUser_userGroup = '内容管理员';
+        break;
+      case 4:
+        adminUser_userGroup = '投稿员';
+        break;
+    }
+
+
+    if ($scope.myForm.$valid) {
+        adminUserAddService.get($scope.adminUser_username,$scope.adminUser_nickname,$scope.logo,$scope.adminUser_password,$scope.adminUser_repassword,adminUser_userGroup,$scope.adminUser_status,$scope.adminUser_phone,$scope.adminUser_email,$scope.adminUser_remark).then(function (res) {
+
+      }, function (res) {
+
+      });
+
+
+    } else {
+      return false;
+    }
+
+  };
+
+  $scope.userGroupOptions = [
+    {name: '超级管理员', id: 1},
+    {name: '网站管理员', id: 2},
+    {name: '内容管理员', id: 3},
+    {name: '投稿员', id: 4}
+  ];
+  $scope.adminUser_userGroup = $scope.userGroupOptions[0].id;//设置默认值
+
+
+  $scope.statusOptions = [
+    {name: '启用', id: 1},
+    {name: '禁用', id: 0},
+  ];
+  $scope.adminUser_status = $scope.statusOptions[0].id;//设置默认值
+
+  /*
+   * 监听对用户名的输入，判断用户名是否已经存在
+   * */
+
+  $scope.checkUsername = function (usernmae) {
+    var realUsername = $.trim(usernmae);
+    $scope.isUsernameExist = false;
+    if (realUsername == '') {
+      return false;
+    } else {
+      $http({
+        method: 'POST',
+        url: 'add',
+        data: $.param({
+          adminUser_username: realUsername
+        }),
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+      }).then(function (res) {
+        if (res.data.code == 0) {
+          $scope.isUsernameExist = true;
+        }
+      }, function (res) {
+
+      });
+    }
+  };
+
+  $scope.logo = '/upload/images/defaultlogo.png';
+
+  $('#adminUser_avatar').uploadify({
+
+    'swf': '/plugins/uploadify/uploadify.swf',//指定swf文件
+    'uploader': '/admin/manage/users_manage/upload' + '?adminId=' + 'adminUser_username' + '&type=' + 'images' + '&key=' + 'adminUser_avatar',//后台处理的页面
+    'buttonText': '上传图片',//按钮显示的文字
+    'buttonClass': 'uploadify-btn-default',//按钮显示的文字
+    'width': 100,//显示的高度和宽度，默认 height 30；width 120
+    'height': 30,//显示的高度和宽度，默认 height 30；width 120
+    'fileTypeDesc': 'Image Files',//上传文件的类型  默认为所有文件    'All Files'  ;  '*.*'
+    'fileTypeExts': '*.gif; *.jpg; *.png',//允许上传的文件后缀
+    'fileSizeLimit': '2000KB',//上传文件大小限制
+    'auto': true,//选择文件后自动上传
+    'multi': false,//设置为true将允许多文件上传
+
+    'onUploadSuccess': function (file, data, response) {//上传成功的回调
+      $("#adminUser_avatar_preview").attr("src", data);
+      $scope.logo= data;
+
+    },
+    //
+    // 'onComplete': function(event, queueID, fileObj, response, data) {//当单个文件上传完成后触发
+    //   //event:事件对象(the event object)
+    //   //ID:该文件在文件队列中的唯一表示
+    //   //fileObj:选中文件的对象，他包含的属性列表
+    //   //response:服务器端返回的Response文本，我这里返回的是处理过的文件名称
+    //   //data：文件队列详细信息和文件上传的一般数据
+    //   alert("文件:" + fileObj.name + " 上传成功！");
+    // },
+    //
+    // 'onUploadError' : function(file, errorCode, errorMsg, errorString) {//上传错误
+    //   alert('The file ' + file.name + ' could not be uploaded: ' + errorString);
+    // },
+    //
+    // 'onError': function(event, queueID, fileObj) {//当单个文件上传出错时触发
+    //   alert("文件:" + fileObj.name + " 上传失败！");
+    // }
+
+
+  });
+
+}]);
+/**
+ * Created by v_lljunli on 2017/5/10.
+ */
+
+/*
+ * 所有用户
+ * */
+app.controller('users', ['$scope', '$http','adminUserAllService', function ($scope, $http,adminUserAllService) {
+    adminUserAllService.get().then(function success(res) {
+    $scope.data = res.data;
+    console.log($scope.data);
+  }, function error(res) {
+
+  });
+}]);
+/**
  * Created by v_lljunli on 2017/5/11.
  */
 
@@ -791,7 +937,7 @@ app.controller('usersGroupAdd',['$scope','$http','adminUserGroupAddService',func
 /*
  * 所有用户组
  * */
-app.controller('usersGroup', ['$scope', '$http', 'usersGroupService','usersGroupAddService', function ($scope, $http, usersGroupService,usersGroupAddService) {
+app.controller('usersGroup', ['$scope', '$http', 'adminUserGroupAllService','adminUserGroupAddService', function ($scope, $http, adminUserGroupAllService,adminUserGroupAddService) {
 
   getUserGroup();
 
@@ -985,8 +1131,9 @@ app.controller('usersGroup', ['$scope', '$http', 'usersGroupService','usersGroup
   * */
   function getUserGroup() {
 
-    usersGroupService.get().then(function success(res) {
+      adminUserGroupAllService.get().then(function success(res) {
       $scope.data = res.data;
+
     }, function error(res) {
 
     });
@@ -1008,7 +1155,7 @@ app.controller('usersGroup', ['$scope', '$http', 'usersGroupService','usersGroup
        zTreeObj[zTreeNodeArray[i].id]=zTreeNodeArray[i].checked;
     }
 
-    usersGroupService.modify($scope.userGroup,zTreeObj).then(function success(res) {
+      adminUserGroupAllService.modify($scope.userGroup,zTreeObj).then(function success(res) {
       if(res.data.code===1){
         $('#users_group_modal').modal('hide');
       }else {
@@ -1030,7 +1177,7 @@ app.controller('usersGroup', ['$scope', '$http', 'usersGroupService','usersGroup
 
 
     //获取所选择的用户组的权限数据
-    usersGroupService.get().then(function success(res) {
+      adminUserGroupAllService.get().then(function success(res) {
       $scope.data = res.data;
       data=$scope.data;
       for(var j=0;j<data.length;j++){
@@ -1086,7 +1233,7 @@ app.controller('usersGroup', ['$scope', '$http', 'usersGroupService','usersGroup
   * 禁用用户组
   * */
   $scope.forbidden=function (name) {
-    usersGroupService.forbidden(name).then(function success() {
+      adminUserGroupAllService.forbidden(name).then(function success() {
       getUserGroup();
     },function error() {
 
@@ -1097,7 +1244,7 @@ app.controller('usersGroup', ['$scope', '$http', 'usersGroupService','usersGroup
   * 启用用户组
   * */
   $scope.startUsing=function (name) {
-    usersGroupService.startUsing(name).then(function success() {
+      adminUserGroupAllService.startUsing(name).then(function success() {
       getUserGroup();
     },function error() {
 
@@ -1140,7 +1287,7 @@ app.controller('usersGroup', ['$scope', '$http', 'usersGroupService','usersGroup
 
 
     }
-    usersGroupAddService.edit(group_id,name,pid,remark).then(function(res) {
+      adminUserGroupAddService.edit(group_id,name,pid,remark).then(function(res) {
       if(res.data.code===1){
         $('#myModal').modal({
           keyboard: true
@@ -2041,152 +2188,6 @@ app.controller('recycle', ['$scope', '$http', 'recycleService', function ($scope
 
   };
 
-
-}]);
-/**
- * Created by v_lljunli on 2017/5/10.
- */
-
-/*
- * 所有用户
- * */
-app.controller('users', ['$scope', '$http','usersService', function ($scope, $http,usersService) {
-  usersService.get().then(function success(res) {
-    $scope.data = res.data;
-    console.log($scope.data);
-  }, function error(res) {
-
-  });
-}]);
-/**
- * Created by v_lljunli on 2017/5/10.
- */
-
-/*
- * 添加用户
- * */
-app.controller('usersAdd', ['$scope','$http','usersAddService',function ($scope, $http,usersAddService) {
-
-  /*
-   * 提交数据
-   * */
-  $scope.addAdminUser = function () {
-
-    var adminUser_userGroup = 1;
-
-    switch ($scope.adminUser_userGroup) {
-      case 1:
-        adminUser_userGroup = '超级管理员';
-        break;
-      case 2:
-        adminUser_userGroup = '网站管理员';
-        break;
-      case 3:
-        adminUser_userGroup = '内容管理员';
-        break;
-      case 4:
-        adminUser_userGroup = '投稿员';
-        break;
-    }
-
-
-    if ($scope.myForm.$valid) {
-        usersAddService.get($scope.adminUser_username,$scope.adminUser_nickname,$scope.logo,$scope.adminUser_password,$scope.adminUser_repassword,adminUser_userGroup,$scope.adminUser_status,$scope.adminUser_phone,$scope.adminUser_email,$scope.adminUser_remark).then(function (res) {
-
-      }, function (res) {
-
-      });
-
-
-    } else {
-      return false;
-    }
-
-  };
-
-  $scope.userGroupOptions = [
-    {name: '超级管理员', id: 1},
-    {name: '网站管理员', id: 2},
-    {name: '内容管理员', id: 3},
-    {name: '投稿员', id: 4}
-  ];
-  $scope.adminUser_userGroup = $scope.userGroupOptions[0].id;//设置默认值
-
-
-  $scope.statusOptions = [
-    {name: '启用', id: 1},
-    {name: '禁用', id: 0},
-  ];
-  $scope.adminUser_status = $scope.statusOptions[0].id;//设置默认值
-
-  /*
-   * 监听对用户名的输入，判断用户名是否已经存在
-   * */
-
-  $scope.checkUsername = function (usernmae) {
-    var realUsername = $.trim(usernmae);
-    $scope.isUsernameExist = false;
-    if (realUsername == '') {
-      return false;
-    } else {
-      $http({
-        method: 'POST',
-        url: 'add',
-        data: $.param({
-          adminUser_username: realUsername
-        }),
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-      }).then(function (res) {
-        if (res.data.code == 0) {
-          $scope.isUsernameExist = true;
-        }
-      }, function (res) {
-
-      });
-    }
-  };
-
-  $scope.logo = '/upload/images/defaultlogo.png';
-
-  $('#adminUser_avatar').uploadify({
-
-    'swf': '/plugins/uploadify/uploadify.swf',//指定swf文件
-    'uploader': '/admin/manage/users_manage/upload' + '?adminId=' + 'adminUser_username' + '&type=' + 'images' + '&key=' + 'adminUser_avatar',//后台处理的页面
-    'buttonText': '上传图片',//按钮显示的文字
-    'buttonClass': 'uploadify-btn-default',//按钮显示的文字
-    'width': 100,//显示的高度和宽度，默认 height 30；width 120
-    'height': 30,//显示的高度和宽度，默认 height 30；width 120
-    'fileTypeDesc': 'Image Files',//上传文件的类型  默认为所有文件    'All Files'  ;  '*.*'
-    'fileTypeExts': '*.gif; *.jpg; *.png',//允许上传的文件后缀
-    'fileSizeLimit': '2000KB',//上传文件大小限制
-    'auto': true,//选择文件后自动上传
-    'multi': false,//设置为true将允许多文件上传
-
-    'onUploadSuccess': function (file, data, response) {//上传成功的回调
-      $("#adminUser_avatar_preview").attr("src", data);
-      $scope.logo= data;
-
-    },
-    //
-    // 'onComplete': function(event, queueID, fileObj, response, data) {//当单个文件上传完成后触发
-    //   //event:事件对象(the event object)
-    //   //ID:该文件在文件队列中的唯一表示
-    //   //fileObj:选中文件的对象，他包含的属性列表
-    //   //response:服务器端返回的Response文本，我这里返回的是处理过的文件名称
-    //   //data：文件队列详细信息和文件上传的一般数据
-    //   alert("文件:" + fileObj.name + " 上传成功！");
-    // },
-    //
-    // 'onUploadError' : function(file, errorCode, errorMsg, errorString) {//上传错误
-    //   alert('The file ' + file.name + ' could not be uploaded: ' + errorString);
-    // },
-    //
-    // 'onError': function(event, queueID, fileObj) {//当单个文件上传出错时触发
-    //   alert("文件:" + fileObj.name + " 上传失败！");
-    // }
-
-
-  });
 
 }]);
 /**

@@ -5,7 +5,7 @@
 /*
  * 添加用户
  * */
-app.controller('usersAdd', ['$scope','$http','usersAddService',function ($scope, $http,usersAddService) {
+app.controller('usersAdd', ['$scope','$http','adminUserAddService',function ($scope, $http,adminUserAddService) {
 
   /*
    * 提交数据
@@ -31,7 +31,7 @@ app.controller('usersAdd', ['$scope','$http','usersAddService',function ($scope,
 
 
     if ($scope.myForm.$valid) {
-        usersAddService.get($scope.adminUser_username,$scope.adminUser_nickname,$scope.logo,$scope.adminUser_password,$scope.adminUser_repassword,adminUser_userGroup,$scope.adminUser_status,$scope.adminUser_phone,$scope.adminUser_email,$scope.adminUser_remark).then(function (res) {
+        adminUserAddService.get($scope.adminUser_username,$scope.adminUser_nickname,$scope.logo,$scope.adminUser_password,$scope.adminUser_repassword,adminUser_userGroup,$scope.adminUser_status,$scope.adminUser_phone,$scope.adminUser_email,$scope.adminUser_remark).then(function (res) {
 
       }, function (res) {
 

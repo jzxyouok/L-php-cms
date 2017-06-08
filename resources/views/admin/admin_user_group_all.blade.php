@@ -34,10 +34,10 @@
 
         <tr ng-repeat="x in data">
 
-          <td>{ x.pid }}</td>
-          <td>{ x.name }}</td>
-          <td>{ x.remark }}</td>
-          <td>{ x.status }}</td>
+          <td>@{{ x.pid }}</td>
+          <td>@{{ x.name }}</td>
+          <td>@{{ x.remark }}</td>
+          <td>@{{ x.status }}</td>
           <td>
             <button type="button" class="btn btn-success btn-xs btn-flat ng-hide" ng-click="startUsing(x.name)" ng-show="!x.status ">启用</button>
             <button type="button" class="btn btn-danger btn-xs btn-flat" ng-click="forbidden(x.name)" ng-hide="!x.status ">禁用</button>
