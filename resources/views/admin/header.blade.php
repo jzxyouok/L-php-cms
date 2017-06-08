@@ -199,12 +199,12 @@
                     <a href="#"><i class="fa fa-dashboard"></i><span>仪表盘</span> <i
                                 class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="/admin/manage/panel/admin_index">仪表盘首页</a></li>
+                        <li><a href="admin_index">仪表盘首页</a></li>
 
 
-                        <li><a href="/admin/manage/panel/basic_info"> 基本信息</a></li>
+                        <li><a href="basic_info"> 基本信息</a></li>
 
-                        <li><a href="/admin/manage/panel/password_modify"> 修改密码</a></li>
+                        <li><a href="modify_password"> 修改密码</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
@@ -233,8 +233,8 @@
                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="/admin/manage/document_manage/categories_manage/all"> 所有分类</a></li>
-                                <li><a href="/admin/manage/document_manage/categories_manage/add">添加分类</a></li>
+                                <li><a href="doc_category_all"> 所有分类</a></li>
+                                <li><a href="doc_category_add">添加分类</a></li>
 
 
                             </ul>
@@ -246,20 +246,20 @@
                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="/admin/manage/document_manage/menu_manage/edit">编辑菜单</a></li>
-                                <li><a href="/admin/manage/document_manage/menu_manage/location">菜单位置</a></li>
+                                <li><a href="edit_menu">编辑菜单</a></li>
+                                <li><a href="menu_location">菜单位置</a></li>
 
                             </ul>
                         </li>
-                        <li><a href="/admin/manage/document_manage/tags_manage"> 标签管理</a></li>
-                        <li><a href="/admin/manage/document_manage/comments_manage"> 评论管理</a></li>
-                        <li><a href="/admin/manage/document_manage/messages_manage"> 消息管理</a></li>
-                        <li><a href="/admin/manage/document_manage/write">写文档</a></li>
-                        <li><a href="/admin/manage/document_manage/published">已发布</a></li>
-                        <li><a href="/admin/manage/document_manage/wait_for_verify">待审核</a></li>
-                        <li><a href="/admin/manage/document_manage/no_access">未通过</a></li>
-                        <li><a href="/admin/manage/document_manage/draft">草稿箱</a></li>
-                        <li><a href="/admin/manage/document_manage/recycle">回收站</a></li>
+                        <li><a href="tag_manage"> 标签管理</a></li>
+                        <li><a href="comment_manage"> 评论管理</a></li>
+                        <li><a href="message_manage"> 消息管理</a></li>
+                        <li><a href="write">写文档</a></li>
+                        <li><a href="published">已发布</a></li>
+                        <li><a href="wait_for_verify">待审核</a></li>
+                        <li><a href="no_access">未通过</a></li>
+                        <li><a href="draft">草稿箱</a></li>
+                        <li><a href="recycle">回收站</a></li>
 
 
                     </ul>
@@ -268,9 +268,9 @@
                     <a href="#"><i class="fa fa-file-photo-o"></i><span>文件管理</span> <i
                                 class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="/admin/manage/files_manage/media_manage"> 媒体管理</a></li>
-                        <li><a href="/admin/manage/files_manage/files_backup"> 文件备份</a></li>
-                        <li><a href="/admin/manage/files_manage/files_recover"> 文件恢复</a></li>
+                        <li><a href="media_manage"> 媒体管理</a></li>
+                        <li><a href="file_backup"> 文件备份</a></li>
+                        <li><a href="file_recover"> 文件恢复</a></li>
 
                     </ul>
                 </li>
@@ -285,10 +285,10 @@
                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="/admin/manage/data_manage/database_manage/backup">数据库备份</a></li>
-                                <li><a href="/admin/manage/data_manage/database_manage/import">数据库导入</a></li>
-                                <li><a href="/admin/manage/data_manage/database_manage/compress">数据库压缩</a></li>
-                                <li><a href="/admin/manage/data_manage/database_manage/optimize">数据库优化</a></li>
+                                <li><a href="database_backup">数据库备份</a></li>
+                                <li><a href="database_import">数据库导入</a></li>
+                                <li><a href="database_compress">数据库压缩</a></li>
+                                <li><a href="database_optimize">数据库优化</a></li>
                             </ul>
                         </li>
                         <li>
@@ -298,8 +298,8 @@
                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="/admin/manage/data_manage/cache_manage/clear">缓存清理</a></li>
-                                <li><a href="/admin/manage/data_manage/cache_manage/settings">缓存设置</a></li>
+                                <li><a href="clear_cache">缓存清理</a></li>
+                                <li><a href="setting_cache">缓存设置</a></li>
 
                             </ul>
                         </li>
@@ -310,7 +310,7 @@
                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="/admin/manage/data_manage/statistics_manage/count">数据统计</a></li>
+                                <li><a href="count_statistics">数据统计</a></li>
 
 
                             </ul>
@@ -323,16 +323,16 @@
                                 class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
                         <li>
-                            <a href="/admin/manage/customization_center/theme_manage"> 主题管理</a>
+                            <a href="#"> 主题管理</a>
                             <ul class="treeview-menu">
-                                <li><a href="/admin/manage/customization_center/theme_manage/install">安装主题</a></li>
-                                <li><a href="/admin/manage/customization_center/theme_manage/local">本地主题</a></li>
-                                <li><a href="/admin/manage/customization_center/theme_manage/edit_template">模版编辑</a></li>
+                                <li><a href="install_theme">安装主题</a></li>
+                                <li><a href="local_theme">本地主题</a></li>
+                                <li><a href="edit_template">模版编辑</a></li>
                             </ul>
                         </li>
-                        <li><a href="/admin/manage/customization_center/plugins_manage"> 插件管理</a></li>
-                        <li><a href="/admin/manage/customization_center/hooks_manage"> 钩子管理</a></li>
-                        <li><a href="/admin/manage/customization_center/ad_manage"> 广告管理</a></li>
+                        <li><a href="plugin_manage"> 插件管理</a></li>
+                        <li><a href="hook_manage"> 钩子管理</a></li>
+                        <li><a href="ad_manage"> 广告管理</a></li>
                     </ul>
                 </li>
 
@@ -340,16 +340,16 @@
                     <a href="#"><i class="fa fa-cog"></i><span>系统设置</span> <i
                                 class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="/admin/manage/system_settings/system_log"> 系统日志</a></li>
-                        <li><a href="/admin/manage/system_settings/website_settings"> 站点设置</a></li>
-                        <li><a href="/admin/manage/system_settings/read_settings"> 阅读设置</a></li>
-                        <li><a href="/admin/manage/system_settings/attachment_settings"> 附件设置</a></li>
+                        <li><a href="system_log"> 系统日志</a></li>
+                        <li><a href="website_setting"> 站点设置</a></li>
+                        <li><a href="read_setting"> 阅读设置</a></li>
+                        <li><a href="attachment_setting"> 附件设置</a></li>
 
 
-                        <li><a href="/admin/manage/system_settings/social_login_settings"> 社交登录设置</a></li>
-                        <li><a href="/admin/manage/system_settings/update_online"> 在线更新</a></li>
-                        <li><a href="/admin/manage/system_settings/system_info"> 系统信息</a></li>
-                        <li><a href="/admin/manage/system_settings/bugs_feedback"> BUG反馈</a></li>
+                        <li><a href="social_login_setting"> 社交登录设置</a></li>
+                        <li><a href="update_online"> 在线更新</a></li>
+                        <li><a href="system_info"> 系统信息</a></li>
+                        <li><a href="bug_feedback"> BUG反馈</a></li>
                     </ul>
                 </li>
 

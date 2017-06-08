@@ -28,11 +28,11 @@ return [
 //  BASIC_INFO: ['basicInfo', '基本信息'],
 //  PASSWORD_MODIFY: ['password_modify', '修改密码'],
 
-  'users_manage' => '用户管理',
-  'user_groups_all'=> '所有用户组',
-  'user_groups_add'=> '添加用户组',
-  'users_all'=>'所有用户',
-  'users_add'=> '添加用户',
+  'admin_users_manage' => '用户管理',
+  'admin_user_groups_all'=> '所有用户组',
+  'admin_user_groups_add'=> '添加用户组',
+  'admin_users_all'=>'所有用户',
+  'admin_users_add'=> '添加用户',
   'login_log'=> '登录记录',
 
 //  DOCUMENT_MANAGE: ['documentManage', '文档管理'],

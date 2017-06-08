@@ -20,7 +20,7 @@ class adminUserGroupAddController extends Controller
       'cms'=>config('cms.cms'),
       'cms_name'=>config('cms.cms_name'),
       'category'=>config('cms.users_manage'),
-      'item'=>config('cms.user_groups_add'),
+      'item'=>config('cms.admin_user_groups_add'),
     ]);
   }
 
