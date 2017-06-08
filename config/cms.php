@@ -2,85 +2,90 @@
 
 return [
 
-//  SESSION_SECRET: 'L-blog-secret',
-//  COOKIE_SECRET: 'L-BLOG',
-//
-//
-//  /*
-//   * 本地缓存设置
-//   * */
-//  REDIS_HOST: '127.0.0.1',
-//  REDIS_PORT: 6379,
-//  REDIS_PSD: '',
-//  REDIS_DB: 0,
-//
-//  /*
-//   * cms配置
-//   * */
-'cms'=>'L-php-cms管理系统',
-  'cms_name'=>'L-php-cms',
+  'SESSION_SECRET' => 'L-blog-secret',
+  'COOKIE_SECRET' => 'L-BLOG',
 
-//
-//  /*
-//   * 博客功能列表
-//   * */
-//  PANEL: ['panel', '仪表盘'],
-//  BASIC_INFO: ['basicInfo', '基本信息'],
-//  PASSWORD_MODIFY: ['password_modify', '修改密码'],
 
-  'admin_users_manage' => '用户管理',
-  'admin_user_groups_all'=> '所有用户组',
-  'admin_user_groups_add'=> '添加用户组',
-  'admin_users_all'=>'所有用户',
-  'admin_users_add'=> '添加用户',
-  'login_log'=> '登录记录',
+  /*
+   * 本地缓存设置
+   * */
+  'REDIS_HOST' => '127.0.0.1',
+  'REDIS_PORT' => 6379,
+  'REDIS_PSD' => '',
+  'REDIS_DB' => 0,
 
-//  DOCUMENT_MANAGE: ['documentManage', '文档管理'],
-//  CATEGORIES_ALL: ['categories_all', '所有分类'],
-//  ARTICLES_CATEGORY_ADD: ['CategoriesAdd', '添加分类'],
-//  DOCUMENT_WRITE: ['documentWrite', '写文档'],
-//  DOCUMENT_EDIT: ['documentEdit', '编辑文档'],
-//  PUBLISHED: ['published', '已发布'],
-//  WAIT_FOR_VERIFY: ['waitForVerify', '待审核'],
-//  NO_ACCESS: ['noAccess', '未通过'],
-//  DRAFT: ['draft', '草稿箱'],
-//  RECYCLE: ['recycle', '回收站'],
-//
-//  FILES_MANAGE: ['filesManage', '文件管理'],
-//  MEDIA_MANAGE: ['mediaManage', '媒体管理'],
-//  FILES_BACKUP: ['filesBackup', '文件备份'],
-//  FILES_RECOVER: ['filesRecover', '文件恢复'],
-//
-//  DATA_MANAGE: ['dataManage', '数据管理'],
-//  DATABASE_BACKUP: ['databaseBackup', '数据库备份'],
-//  DATABASE_IMPORT: ['databaseImport', '数据库导入'],
-//  DATABASE_COMPRESS: ['databaseCompress', '数据库压缩'],
-//  DATABASE_OPTIMIZE: ['databaseOptimize', '数据库优化'],
-//  CACHE_MANAGE: ['cacheManage', '缓存管理'],
-//  CACHE_CLEAR: ['cacheClear', '缓存清理'],
-//  CACHE_SETTINGS: ['cacheSettings', '缓存设置'],
-//  STATISTICS_MANAGE: ['statisticsManage', '统计管理'],
-//  STATISTICS_COUNT: ['statisticsCount', '数据统计'],
-//
-//  CUSTOMIZATION_CENTER: ['customizationCenter', '定制中心'],
-//  THEME_MANAGE: ['themeManage', '主题管理'],
-//  INSTALL_THEME: ['installTheme', '安装主题'],
-//  LOCAL_THEME: ['localTheme', '本地主题'],
-//  EDIT_TEMPLATE: ['editTemplate', '模版编辑'],
-//  PLUGINS_MANAGE: ['pluginsManage', '插件管理'],
-//  HOOKS_MANAGE: ['hooksManage', '钩子管理'],
-//  AD_MANAGE: ['adManage', '广告管理'],
-//
-//  'system_settings'=> '系统设置',
-//  SYSTEM_LOG: ['systemLog', '系统日志'],
-//  WEBSITE_SETTINGS: ['websiteSettings', '站点设置'],
-//  READ_SETTINGS: ['readSettings', '阅读设置'],
-//  ATTACHMENT_SETTINGS: ['attachmentSettings', '附件设置'],
-//  SOCIAL_LOGIN_SETTINGS: ['socialLoginSettings', '社交登录设置'],
-//  UPDATE_ONLINE: ['updateOnline', '在线更新'],
-//  SYSTEM_INFO: ['systemInfo', '系统信息'],
-//  BUGS_FEEDBACK: ['bugsFeedback', 'BUG反馈'],
+  /*
+   * cms配置
+   * */
+  'cms' => 'L-php-cms管理系统',
+  'cms_name' => 'L-php-cms',
 
+
+  /*
+   * 博客功能列表
+   * */
+  'panel' => '仪表盘',
+  'basic_info' => '基本信息',
+  'modify_password' => '修改密码',
+
+  'admin_user_manage' => '用户管理',
+  'admin_user_groups_all' => '所有用户组',
+  'admin_user_groups_add' => '添加用户组',
+  'admin_user_all' => '所有用户',
+  'admin_user_add' => '添加用户',
+
+
+  'doc_manage' => '文档管理',
+  'doc_category_all' => '所有分类',
+  'doc_category_add' => '添加分类',
+  'menu_manage' => '菜单管理',
+  'edit_menu' => '编辑菜单',
+  'menu_location' => '菜单位置',
+  'tag_manage' => '标签管理',
+  'comment_manage' => '评论管理',
+  'message_manage' => '消息管理',
+  'write' => '写文档',
+  'published' => '已发布',
+  'wait_for_verify' => '待审核',
+  'no_access' => '未通过',
+  'draft' => '草稿箱',
+  'recycle' => '回收站',
+
+  'file_manage' => '文件管理',
+  'media_manage' => '媒体管理',
+  'file_backup' => '文件备份',
+  'file_recover' => '文件恢复',
+
+  'data_manage' => '数据管理',
+  'database_manage' => '数据库管理',
+  'database_backup' => '数据库备份',
+  'database_import' => '数据库导入',
+  'database_compress' => '数据库压缩',
+  'database_optimize' => '数据库优化',
+  'cache_manage' => '缓存管理',
+  'clear_cache' => '缓存清理',
+  'setting_cache' => '缓存设置',
+  'statistics_manage' => '统计管理',
+  'count_statistics' => '数据统计',
+
+  'customization_center' => '定制中心',
+  'theme_manage' => '主题管理',
+  'install_theme' => '安装主题',
+  'local_theme' => '本地主题',
+  'edit_template' => '模版编辑',
+  'plugin_manage' => '插件管理',
+  'hook_manage' => '钩子管理',
+  'ad_manage' => '广告管理',
+
+  'system_setting' => '系统设置',
+  'system_log' => '系统日志',
+  'website_setting' => '站点设置',
+  'read_setting' => '阅读设置',
+  'attachment_setting' => '附件设置',
+  'social_login_setting' => '社交登录设置',
+  'update_online' => '在线更新',
+  'system_info' => '系统信息',
+  'bug_feedback' => 'BUG反馈',
 
 
 ];
