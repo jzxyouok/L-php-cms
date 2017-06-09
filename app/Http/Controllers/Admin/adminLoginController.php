@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 use App\Http\Model\AdminUser;
 use Gregwar\Captcha\CaptchaBuilder;
+use Gregwar\Captcha\PhraseBuilder;
 
 class adminLoginController extends Controller
 {
@@ -85,5 +86,31 @@ class adminLoginController extends Controller
 //
 //        }
   }
+
+
+  public function updateCode(){
+    // Building a phrase of 3 characters
+//    $phrase = PhraseBuilder::build(3);
+dd(1);
+// Building a phrase of 5 characters, only digits
+    $phrase = PhraseBuilder::build();
+
+// Pass it as first argument of CaptchaBuilder
+    $captcha = new CaptchaBuilder($phrase);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

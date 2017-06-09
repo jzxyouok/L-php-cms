@@ -17,8 +17,15 @@ app.factory('adminLoginService', ['$http', function ($http) {
         headers: {'content-type': 'application/x-www-form-urlencoded'}
       });
     },
-    find:function () {
-
+    updateCode:function () {
+        return $http({
+            method: 'POST',
+            url:  'admin_login_update_code',
+            data: $.param({
+               data:Math.random()
+            }),
+            headers: {'content-type': 'application/x-www-form-urlencoded'}
+        });
     },
   }
 }]);
@@ -717,7 +724,7 @@ app.controller('adminLogin', ['$scope', '$http', 'adminLoginService', function (
     adminLoginService.get($scope.username,$scope.password,$scope.code).then(function success(res) {
       if (res.data.code === 1) {
 
-        window.location.href = 'manage/panel_index';
+        window.location.href = 'manage/basic_info';
       }
       else if(res.data.code === 0){
 
@@ -729,6 +736,14 @@ app.controller('adminLogin', ['$scope', '$http', 'adminLoginService', function (
 
 
 
+  };
+
+  $scope.updateCode=function () {
+      adminLoginService.updateCode().then(function success(res) {
+
+      },function error(res) {
+
+      });
   };
 
 }]);

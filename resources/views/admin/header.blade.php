@@ -200,7 +200,6 @@
                     <a href="#"><i class="fa fa-dashboard"></i><span>仪表盘</span> <i
                                 class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="panel_index">仪表盘首页</a></li>
 
 
                         <li><a href="basic_info"> 基本信息</a></li>

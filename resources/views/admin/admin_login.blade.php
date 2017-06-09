@@ -42,7 +42,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-8">
-                    <img src="<?php echo $builder->inline(); ?>" alt="">
+                    <img src="<?php echo $builder->inline(); ?>" alt="" ng-click="updateCode()">
                 </div>
 
 

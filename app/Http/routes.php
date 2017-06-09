@@ -6,7 +6,7 @@ Route::group(['namespace' => 'Admin'], function () {
   Route::get('/admin', 'adminLoginController@gotoLogin')->name('admin');
   Route::get('/admin/admin_login', 'adminLoginController@view')->name('admin_login');
   Route::post('/admin/admin_login', 'adminLoginController@login')->name('admin_login_post');
-
+  Route::post('/admin/admin_login_update_code', 'adminLoginController@updateCode')->name('admin_login_post_update_code');
 });
 /*
  * 仪表盘

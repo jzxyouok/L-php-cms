@@ -17,8 +17,15 @@ app.factory('adminLoginService', ['$http', function ($http) {
         headers: {'content-type': 'application/x-www-form-urlencoded'}
       });
     },
-    find:function () {
-
+    updateCode:function () {
+        return $http({
+            method: 'POST',
+            url:  'admin_login_update_code',
+            data: $.param({
+               data:Math.random()
+            }),
+            headers: {'content-type': 'application/x-www-form-urlencoded'}
+        });
     },
   }
 }]);
