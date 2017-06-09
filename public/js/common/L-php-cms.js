@@ -717,7 +717,11 @@ app.controller('adminLogin', ['$scope', '$http', 'adminLoginService', function (
     adminLoginService.get($scope.username,$scope.password,$scope.code).then(function success(res) {
       if (res.data.code === 1) {
 
-        window.location.href = '/admin/manage';
+        window.location.href = 'manage/panel_index';
+      }
+      else if(res.data.code === 0){
+
+        $scope.msg=res.data.msg;
       }
     }, function error(res) {
 

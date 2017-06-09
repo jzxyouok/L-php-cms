@@ -12,21 +12,33 @@ use Gregwar\Captcha\CaptchaBuilder;
 class adminLoginController extends Controller
 {
   public $builder;
-  function __construct() {
-    $this->builder = new CaptchaBuilder;
+
+
+  function __construct()
+  {
+
 
   }
-  public function view()
-  {
-    /*
-     * 创建验证码
-     * */
 
+  public function view(Request $request)
+  {
+
+    /*
+         * 创建验证码
+         * */
+    $this->builder = new CaptchaBuilder;
     $this->builder->build();
- 
+
+
+    /*
+        * 保存验证码进session
+        * */
+    $request->session()->put('code', $this->builder->getPhrase());
     return view('admin.admin_login', [
       'builder' => $this->builder
     ]);
+
+
   }
 
   public function gotoLogin()
@@ -37,14 +49,36 @@ class adminLoginController extends Controller
 
   public function login(Request $request)
   {
-    $name = $request->input('username');
+    $username = $request->input('username');
     $password = $request->input('password');
     $code = $request->input('code');
-    $this->builder->testPhrase(1);
-    if ($this->builder->testPhrase($code)) {
-      dd(1);
+
+
+    /*
+     * 从session中获取code
+     * */
+    $code_session = $request->session()->get('code');
+
+
+    if ($code !== $code_session) {
+      return response()->json(['code' => 0, 'msg' => '验证码错误！']);
+    } else {
+      $username_data = DB::table('admin_users')->where('username', $username)->value('username');
+
+      if (!$username_data) {
+        return response()->json(['code' => 0, 'msg' => '用户名或密码错误！']);
+      } else {
+        $password_data = DB::table('admin_users')->where('username', $username)->value('password');
+
+        if ($password !== Crypt::decrypt($password_data)) {
+          return response()->json(['code' => 0, 'msg' => '用户名或密码错误！']);
+        } else {
+          return response()->json(['code' => 1, 'msg' => '登录成功！']);
+        }
+      }
+
     }
-    dd(2);
+
     //DB::table('admin_users')
 //        $user=AdminUser::first();
 //        if($user->username===){
