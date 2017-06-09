@@ -8,7 +8,7 @@
 app.controller('adminLogin', ['$scope', '$http', 'adminLoginService', function ($scope,$http, adminLoginService) {
 
   $scope.login = function () {
-    adminLoginService.get($scope.adminUser_username,$scope.adminUser_password).then(function success(res) {
+    adminLoginService.get($scope.username,$scope.password,$scope.code).then(function success(res) {
       if (res.data.code === 1) {
 
         window.location.href = '/admin/manage';

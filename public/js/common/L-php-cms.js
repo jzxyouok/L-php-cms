@@ -4,20 +4,21 @@
 var app = angular.module('myApp', ['ngSanitize']);
 app.factory('adminLoginService', ['$http', function ($http) {
   return {
-    get: function (username,password) {
+    get: function (username,password,code) {
 
       return $http({
         method: 'POST',
         url:  'admin_login',
         data: $.param({
-          adminUser_username: username,
-          adminUser_password: password
+          username: username,
+          password: password,
+            code:code
         }),
         headers: {'content-type': 'application/x-www-form-urlencoded'}
       });
     },
     find:function () {
-      console.log(3);
+
     },
   }
 }]);
@@ -713,7 +714,7 @@ app.filter('trustHtml', function ($sce) {
 app.controller('adminLogin', ['$scope', '$http', 'adminLoginService', function ($scope,$http, adminLoginService) {
 
   $scope.login = function () {
-    adminLoginService.get($scope.adminUser_username,$scope.adminUser_password).then(function success(res) {
+    adminLoginService.get($scope.username,$scope.password,$scope.code).then(function success(res) {
       if (res.data.code === 1) {
 
         window.location.href = '/admin/manage';
