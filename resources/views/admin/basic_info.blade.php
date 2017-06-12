@@ -1,5 +1,5 @@
 @include('admin.header')
-<%- include('header') %>
+
 <div class="content-wrapper" ng-controller="basicInfo" >
 
     <section class="content-header">
@@ -28,7 +28,7 @@
 
         <div class="box-body">
             <div class="well"><h4>版本信息</h4>
-                当前版本: L-blog&nbsp;v1.0.0 发布时间: 20170505 <a href="">检查更新</a></div>
+                当前版本: L-php-cms&nbsp;v1.0.0 发布时间: 201707012 <a href="">检查更新</a></div>
             <div class="well">
 
                 <h4>QQ讨论</h4>
@@ -54,7 +54,7 @@
                 <h4>开发作者</h4>
                 Kevin/web developer
                 <h4>github</h4>
-                <a href=https://github.com/lovelife10000">https://github.com/lovelife10000</a>
+                <a href=https://github.com/lovelife10000" target="_blank">https://github.com/lovelife10000</a>
 
 
             </div>
@@ -177,7 +177,7 @@
             </div>
             <div class="well">
                 <h4>获取最新源码</h4>
-                Github:<a href="https://github.com/lovelife10000/L-blog">https://github.com/lovelife10000/L-blog</a>
+                Github:<a href="https://github.com/lovelife10000/L-php-cms" target="_blank">https://github.com/lovelife10000/L-php-cms</a>
             </div>
         </div>
         <!-- /.box-body -->
@@ -190,5 +190,5 @@
 </section>
 
 </div>
-<%- include('footer') %>
+
 @include('admin.footer')

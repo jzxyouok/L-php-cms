@@ -2,7 +2,7 @@
  * Created by v_lljunli on 2017/5/10.
  */
 
-app.factory('passwordModifyService', ['$http', function ($http) {
+app.factory('modifyPasswordService', ['$http', function ($http) {
   return {
     get: function (password,repassword) {
 

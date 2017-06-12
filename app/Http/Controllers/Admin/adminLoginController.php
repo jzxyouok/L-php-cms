@@ -92,7 +92,7 @@ class adminLoginController extends Controller
         * */
     $request->session()->put('code', $this->builder->getPhrase());
     $base64=$this->builder->inline();
-    
+
     return response()->json(['code' => 1, 'base64' => $base64]);
 
   }

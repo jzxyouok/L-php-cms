@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/adminLTE.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/dataTables.bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/skins/_all-skins.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('plugins/zTree_v3-3.5.28/css/zTreeStyle/zTreeStyle.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('plugins/uploadify/uploadify.css') }}">
-    <script src="{{ URL::asset('js/common/jquery.js') }}"></script>
-    <script src="{{ URL::asset('js/common/angular.js') }}"></script>
-    <script src="{{ URL::asset('js/common/angular-sanitize.js') }}"></script>
-    <script src="{{ URL::asset('plugins/uploadify/jquery.uploadify.js') }}"></script>
-    <script src="{{ URL::asset('js/common/bootstrap.js') }}"></script>
-    <script src="{{ URL::asset('js/common/app.js') }}"></script>
+    <link rel="stylesheet" href="{{ URL::asset('public/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('public/css/adminLTE.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('public/css/dataTables.bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('public/css/skins/_all-skins.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('public/css/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('public/plugins/zTree_v3-3.5.28/css/zTreeStyle/zTreeStyle.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('public/plugins/uploadify/uploadify.css') }}">
+    <script src="{{ URL::asset('public/js/common/jquery.js') }}"></script>
+    <script src="{{ URL::asset('public/js/common/angular.js') }}"></script>
+    <script src="{{ URL::asset('public/js/common/angular-sanitize.js') }}"></script>
+    <script src="{{ URL::asset('public/plugins/uploadify/jquery.uploadify.js') }}"></script>
+    <script src="{{ URL::asset('public/js/common/bootstrap.js') }}"></script>
+    <script src="{{ URL::asset('public/js/common/app.js') }}"></script>
 </head>
 <body class="skin-blue sidebar-mini hold-transition" ng-app="myApp">
 
@@ -202,23 +202,23 @@
                     <ul class="treeview-menu">
 
 
-                        <li><a href="basic_info"> 基本信息</a></li>
+                        <li><a href="/admin/manage/panel/basic_info"> 基本信息</a></li>
 
-                        <li><a href="modify_password"> 修改密码</a></li>
+                        <li><a href="/admin/manage/panel/modify_password"> 修改密码</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
                     <a href="#"><i class="fa fa-users"></i><span>用户管理</span> <i class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="admin_user_group_all"> 所有用户组</a></li>
+                        <li><a href="/admin/manage/user_manage/admin_user_group_all"> 所有用户组</a></li>
                         <li>
-                            <a href="admin_user_group_add"> 添加用户组
+                            <a href="/admin/manage/user_manage/admin_user_group_add"> 添加用户组
 
                             </a>
 
                         </li>
-                        <li><a href="admin_user_all"> 所有用户</a></li>
-                        <li><a href="admin_user_add"> 添加用户</a></li>
+                        <li><a href="/admin/manage/user_manage/admin_user_all"> 所有用户</a></li>
+                        <li><a href="/admin/manage/user_manage/admin_user_add"> 添加用户</a></li>
 
                     </ul>
                 </li>
@@ -233,8 +233,8 @@
                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="doc_category_all"> 所有分类</a></li>
-                                <li><a href="doc_category_add">添加分类</a></li>
+                                <li><a href="/admin/manage/doc_manage/doc_category_all"> 所有分类</a></li>
+                                <li><a href="/admin/manage/doc_manage/doc_category_add">添加分类</a></li>
 
 
                             </ul>
@@ -246,20 +246,20 @@
                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="edit_menu">编辑菜单</a></li>
-                                <li><a href="menu_location">菜单位置</a></li>
+                                <li><a href="/admin/manage/doc_manage/edit_menu">编辑菜单</a></li>
+                                <li><a href="/admin/manage/doc_manage/menu_location">菜单位置</a></li>
 
                             </ul>
                         </li>
-                        <li><a href="tag_manage"> 标签管理</a></li>
-                        <li><a href="comment_manage"> 评论管理</a></li>
-                        <li><a href="message_manage"> 消息管理</a></li>
-                        <li><a href="write">写文档</a></li>
-                        <li><a href="published">已发布</a></li>
-                        <li><a href="wait_for_verify">待审核</a></li>
-                        <li><a href="no_access">未通过</a></li>
-                        <li><a href="draft">草稿箱</a></li>
-                        <li><a href="recycle">回收站</a></li>
+                        <li><a href="/admin/manage/doc_manage/tag_manage"> 标签管理</a></li>
+                        <li><a href="/admin/manage/doc_manage/comment_manage"> 评论管理</a></li>
+                        <li><a href="/admin/manage/doc_manage/message_manage"> 消息管理</a></li>
+                        <li><a href="/admin/manage/doc_manage/write">写文档</a></li>
+                        <li><a href="/admin/manage/doc_manage/published">已发布</a></li>
+                        <li><a href="/admin/manage/doc_manage/wait_for_verify">待审核</a></li>
+                        <li><a href="/admin/manage/doc_manage/no_access">未通过</a></li>
+                        <li><a href="/admin/manage/doc_manage/draft">草稿箱</a></li>
+                        <li><a href="/admin/manage/doc_manage/recycle">回收站</a></li>
 
 
                     </ul>
@@ -268,9 +268,9 @@
                     <a href="#"><i class="fa fa-file-photo-o"></i><span>文件管理</span> <i
                                 class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="media_manage"> 媒体管理</a></li>
-                        <li><a href="file_backup"> 文件备份</a></li>
-                        <li><a href="file_recover"> 文件恢复</a></li>
+                        <li><a href="/admin/manage/file_manage/media_manage"> 媒体管理</a></li>
+                        <li><a href="/admin/manage/file_manage/file_backup"> 文件备份</a></li>
+                        <li><a href="/admin/manage/file_manage/file_recover"> 文件恢复</a></li>
 
                     </ul>
                 </li>
@@ -285,10 +285,10 @@
                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="database_backup">数据库备份</a></li>
-                                <li><a href="database_import">数据库导入</a></li>
-                                <li><a href="database_compress">数据库压缩</a></li>
-                                <li><a href="database_optimize">数据库优化</a></li>
+                                <li><a href="/admin/manage/data_manage/database_backup">数据库备份</a></li>
+                                <li><a href="/admin/manage/data_manage/database_import">数据库导入</a></li>
+                                <li><a href="/admin/manage/data_manage/database_compress">数据库压缩</a></li>
+                                <li><a href="/admin/manage/data_manage/database_optimize">数据库优化</a></li>
                             </ul>
                         </li>
                         <li>
@@ -298,8 +298,8 @@
                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="clear_cache">缓存清理</a></li>
-                                <li><a href="setting_cache">缓存设置</a></li>
+                                <li><a href="/admin/manage/data_manage/clear_cache">缓存清理</a></li>
+                                <li><a href="/admin/manage/data_manage/setting_cache">缓存设置</a></li>
 
                             </ul>
                         </li>
@@ -310,7 +310,7 @@
                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="count_statistics">数据统计</a></li>
+                                <li><a href="/admin/manage/data_manage/count_statistics">数据统计</a></li>
 
 
                             </ul>
@@ -325,14 +325,14 @@
                         <li>
                             <a href="#"> 主题管理</a>
                             <ul class="treeview-menu">
-                                <li><a href="install_theme">安装主题</a></li>
-                                <li><a href="local_theme">本地主题</a></li>
-                                <li><a href="edit_template">模版编辑</a></li>
+                                <li><a href="/admin/manage/customization_center/install_theme">安装主题</a></li>
+                                <li><a href="/admin/manage/customization_center/local_theme">本地主题</a></li>
+                                <li><a href="/admin/manage/customization_center/edit_template">模版编辑</a></li>
                             </ul>
                         </li>
-                        <li><a href="plugin_manage"> 插件管理</a></li>
-                        <li><a href="hook_manage"> 钩子管理</a></li>
-                        <li><a href="ad_manage"> 广告管理</a></li>
+                        <li><a href="/admin/manage/customization_center/plugin_manage"> 插件管理</a></li>
+                        <li><a href="/admin/manage/customization_center/hook_manage"> 钩子管理</a></li>
+                        <li><a href="/admin/manage/customization_center/ad_manage"> 广告管理</a></li>
                     </ul>
                 </li>
 
@@ -340,16 +340,16 @@
                     <a href="#"><i class="fa fa-cog"></i><span>系统设置</span> <i
                                 class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="system_log"> 系统日志</a></li>
-                        <li><a href="website_setting"> 站点设置</a></li>
-                        <li><a href="read_setting"> 阅读设置</a></li>
-                        <li><a href="attachment_setting"> 附件设置</a></li>
+                        <li><a href="/admin/manage/system_setting/system_log"> 系统日志</a></li>
+                        <li><a href="/admin/manage/system_setting/website_setting"> 站点设置</a></li>
+                        <li><a href="/admin/manage/system_setting/read_setting"> 阅读设置</a></li>
+                        <li><a href="/admin/manage/system_setting/attachment_setting"> 附件设置</a></li>
 
 
-                        <li><a href="social_login_setting"> 社交登录设置</a></li>
-                        <li><a href="update_online"> 在线更新</a></li>
-                        <li><a href="system_info"> 系统信息</a></li>
-                        <li><a href="bug_feedback"> BUG反馈</a></li>
+                        <li><a href="/admin/manage/system_setting/social_login_setting"> 社交登录设置</a></li>
+                        <li><a href="/admin/manage/system_setting/update_online"> 在线更新</a></li>
+                        <li><a href="/admin/manage/system_setting/system_info"> 系统信息</a></li>
+                        <li><a href="/admin/manage/system_setting/bug_feedback"> BUG反馈</a></li>
                     </ul>
                 </li>
 

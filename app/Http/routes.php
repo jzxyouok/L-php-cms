@@ -14,9 +14,8 @@ Route::group(['namespace' => 'Admin'], function () {
  * */
 Route::group(['namespace' => 'Admin'], function () {
 
-  Route::get('/admin/manage/panel/panel_index', 'panelIndexController@view')->name('panel_index');
-  Route::get('/admin/manage/panel/basic_info', 'basicInfoController@add')->name('basic_info');
-  Route::get('/admin/manage/panel/modify_password', 'modifyPasswordController@showProfile')->name('modify_password');
+  Route::get('/admin/manage/panel/basic_info', 'basicInfoController@view')->name('basic_info');
+  Route::get('/admin/manage/panel/modify_password', 'modifyPasswordController@view')->name('modify_password');
 
 });
 
