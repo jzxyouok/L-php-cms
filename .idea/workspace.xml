@@ -2,25 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="735742ba-6989-49b0-a7fe-9f9d75cc8c11" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/panelIndexController.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/controllers/admin/passwordModify.controller.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/services/admin/passwordModify.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/admin/modal/password_modify_modal.ejs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/admin/panel_index.blade.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/adminLoginController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/adminLoginController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/adminUserGroupAddController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/adminUserGroupAddController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/basicInfoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/basicInfoController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/modifyPasswordController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/modifyPasswordController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Install/completeController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Install/environmentTestController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Install/webSettingController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/common/L-php-cms.js" afterPath="$PROJECT_DIR$/public/js/common/L-php-cms.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/common/L-php-cms.min.js" afterPath="$PROJECT_DIR$/public/js/common/L-php-cms.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controllers/admin/adminLogin.controller.js" afterPath="$PROJECT_DIR$/public/js/controllers/admin/adminLogin.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/basic_info.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/basic_info.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/footer.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/footer.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/header.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/header.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/modify_password.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/modify_password.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,7 +23,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="header.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="header.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/header.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
@@ -48,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cms.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/cms.php">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="79" column="17" lean-forward="true" selection-start-line="79" selection-start-column="3" selection-end-line="79" selection-end-column="17" />
+            <state relative-caret-position="474">
+              <caret line="126" column="52" lean-forward="false" selection-start-line="126" selection-start-column="34" selection-end-line="126" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -118,12 +103,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/L-php-cms/app/Models/admin_user.php" />
-        <option value="$PROJECT_DIR$/L-php-cms/app/Http/Controllers/admin/adminUserAllController.php" />
-        <option value="$PROJECT_DIR$/L-php-cms/app/Http/Controllers/Admin/HomeController.php" />
-        <option value="$PROJECT_DIR$/L-php-cms/app/Http/Util/settings.php" />
-        <option value="$PROJECT_DIR$/L-php-cms/app/Http/Util/Settings.php" />
-        <option value="$PROJECT_DIR$/L-php-cms/package.json" />
         <option value="$PROJECT_DIR$/L-php-cms/Gruntfile.js" />
         <option value="$PROJECT_DIR$/L-php-cms/app/Http/Controllers/Admin/adminUserGroupsAddController.php" />
         <option value="$PROJECT_DIR$/L-php-cms/public/js/controllers/admin/adminUserGroupsAdd.controller.js" />
@@ -169,6 +148,12 @@
         <option value="$PROJECT_DIR$/L-php-cms/resources/views/admin/footer.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/header.blade.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Install/installController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Install/protocolController.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Install/environmentTestController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Install/webSettingController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Install/completeController.php" />
       </list>
     </option>
   </component>
@@ -188,6 +173,9 @@
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1176" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -227,11 +215,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -245,15 +229,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
+              <option name="myItemId" value="Http" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -267,7 +247,15 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -281,7 +269,19 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Install" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -304,19 +304,19 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp\www\else" />
-      <recent name="C:\wamp\www\L-php-cms\app\Http\Model" />
-      <recent name="C:\wamp\www\L-php-cms\app\Http\Controllers\Admin" />
-      <recent name="C:\wamp\www\L-php-cms\resources\views\admin\modal" />
-      <recent name="C:\wamp\www\L-php-cms\app\Http" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\app\Http\Controllers\Install" />
       <recent name="C:\wamp\www\L-php-cms" />
       <recent name="C:\wamp\www\L-php-cms\app\Http\Controllers\Admin" />
       <recent name="C:\wamp\www\L-php-cms\resources\views\admin" />
       <recent name="C:\wamp\www\L-php-cms\resources\views" />
-      <recent name="C:\wamp\www\L-php-cms\app\models" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\app\Http\Controllers\Install" />
+      <recent name="C:\wamp\www\else" />
+      <recent name="C:\wamp\www\L-php-cms\app\Http\Model" />
+      <recent name="C:\wamp\www\L-php-cms\app\Http\Controllers\Admin" />
+      <recent name="C:\wamp\www\L-php-cms\resources\views\admin\modal" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.app.js">
@@ -453,12 +453,12 @@
       <workItem from="1496370690302" duration="3242000" />
       <workItem from="1496374024397" duration="13798000" />
       <workItem from="1496626156583" duration="70075000" />
-      <workItem from="1497255750162" duration="529000" />
+      <workItem from="1497255750162" duration="1580000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="939149000" />
+    <option name="totallyTimeSpent" value="940200000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -532,14 +532,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/L-php-cms/config/app.php" />
-    <entry file="file://$PROJECT_DIR$/L-php-cms/app/User.php" />
-    <entry file="file://$PROJECT_DIR$/L-php-cms/app/adminUser.php" />
-    <entry file="file://$PROJECT_DIR$/L-php-cms/database/migrations/2017_06_02_075553_create_admin_users_table.php" />
-    <entry file="file://$PROJECT_DIR$/L-php-cms/app/Http/Controllers/Admin/adminUserAllController.php" />
-    <entry file="file://$PROJECT_DIR$/L-php-cms/composer.json" />
-    <entry file="file://$PROJECT_DIR$/L-php-cms/app/Http/Model/AdminUser.php" />
-    <entry file="file://$PROJECT_DIR$/L-php-cms/vendor/gregwar/captcha/CaptchaBuilder.php" />
     <entry file="file://$PROJECT_DIR$/myPersimmon-master/composer.json" />
     <entry file="file://$PROJECT_DIR$/myPersimmon-master/app/Http/Controllers/App/HomeController.php" />
     <entry file="file://$PROJECT_DIR$/myPersimmon-master/app/Http/Controllers/App/XmlRpcController.php" />
@@ -580,14 +572,6 @@
     <entry file="file://$PROJECT_DIR$/L-php-cms/app/Http/routes.php" />
     <entry file="file://$PROJECT_DIR$/L-php-cms/app/Http/Controllers/Admin/modifyPasswordController.php" />
     <entry file="file://$PROJECT_DIR$/L-php-cms/config/cms.php" />
-    <entry file="file://$PROJECT_DIR$/config/cms.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="79" column="17" lean-forward="true" selection-start-line="79" selection-start-column="3" selection-end-line="79" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -600,6 +584,84 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="351" column="66" lean-forward="false" selection-start-line="351" selection-start-column="66" selection-end-line="351" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/adminUserGroupAddController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="36" />
+          <folding>
+            <element signature="e#46#82#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/adManageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/else/blog/routers/install.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="62" column="21" lean-forward="true" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/cms.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="79" column="17" lean-forward="true" selection-start-line="79" selection-start-column="3" selection-end-line="79" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Install/protocolController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+          <folding>
+            <element signature="e#48#76#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Install/environmentTestController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Install/webSettingController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Install/completeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="126" column="52" lean-forward="false" selection-start-line="126" selection-start-column="34" selection-end-line="126" selection-end-column="52" />
           <folding />
         </state>
       </provider>

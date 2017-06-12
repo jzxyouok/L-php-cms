@@ -114,3 +114,17 @@ Route::group(['middleware' => 'auth','namespace' => 'Admin'], function () {
   Route::get('/admin/manage/system_setting/bug_feedback','bugFeedbackController@showProfile')->name('bug_feedback');
 
 });
+
+
+/*
+ * install
+ * */
+Route::group(['middleware' => 'auth','namespace' => 'Install'], function () {
+
+  Route::get('/install/protocol','protocolController@showProfile')->name('protocol');
+  Route::get('/install/environment_test','environmentTestController@showProfile')->name('environment_test');
+  Route::get('/install/web_setting','webSettingController@showProfile')->name('web_setting');
+  Route::get('/install/complete','completeController@showProfile')->name('complete');
+
+
+});
