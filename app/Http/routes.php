@@ -119,12 +119,12 @@ Route::group(['middleware' => 'auth','namespace' => 'Admin'], function () {
 /*
  * install
  * */
-Route::group(['middleware' => 'auth','namespace' => 'Install'], function () {
+Route::group(['namespace' => 'Install'], function () {
 
-  Route::get('/install/protocol','protocolController@showProfile')->name('protocol');
-  Route::get('/install/environment_test','environmentTestController@showProfile')->name('environment_test');
-  Route::get('/install/web_setting','webSettingController@showProfile')->name('web_setting');
-  Route::get('/install/complete','completeController@showProfile')->name('complete');
+  Route::get('/install/protocol','protocolController@view')->name('protocol');
+  Route::get('/install/environment_test','environmentTestController@view')->name('environment_test');
+  Route::get('/install/web_setting','webSettingController@view')->name('web_setting');
+  Route::get('/install/complete','completeController@view')->name('complete');
 
 
 });

@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
-  <link rel="stylesheet" href="/css/bootstrap.css">
-  <link rel="stylesheet" href="/css/adminLTE.css">
-  <link rel="stylesheet" href="/css/skins/_all-skins.css">
+  <link rel="stylesheet" href="{{ URL::asset('public/css/bootstrap.css') }}">
+  <link rel="stylesheet" href="{{ URL::asset('public/css/adminLTE.css') }}">
+  <link rel="stylesheet" href="{{ URL::asset('public/css/skins/_all-skins.css') }}">
   <!--<link rel="stylesheet" href="/css/font-awesome.css">-->
-  <script src="/js/common/jquery.js"></script>
-  <script src="/js/common/angular.js"></script>
+  <script src="{{ URL::asset('public/js/common/jquery.js') }}"></script>
+  <script src="{{ URL::asset('public/js/common/angular.js') }}"></script>
 
-  <script src="/js/common/bootstrap.js"></script>
-  <script src="/js/common/app.js"></script>
+  <script src="{{ URL::asset('public/js/common/bootstrap.js') }}"></script>
+  <script src="{{ URL::asset('public/js/common/app.js') }}"></script>
 </head>
 <body class="skin-blue-light sidebar-mini hold-transition" ng-app="install">
 
@@ -20,7 +20,7 @@
   <!--头部-->
   <header class="main-header">
     <a href="javascript:void(0);" class="logo">
-      L-blog博客安装
+      L-php-cms系统安装
     </a>
 
     <nav class="navbar navbar-static-top" role="navigation">

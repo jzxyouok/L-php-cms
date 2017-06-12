@@ -35,7 +35,7 @@ install.controller('protocol', ['$scope', function ($scope) {
 install.controller('environmentTest', ['$scope', function ($scope) {
 
   $scope.nextStep = function () {
-    window.location.href = 'website_settings';
+    window.location.href = 'web_setting';
 
   };
 }]);

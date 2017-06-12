@@ -1,4 +1,4 @@
-<%- include('header') %>
+@include('install.header')
 
 <div class="content-wrapper" ng-controller="websiteSettings">
 
@@ -127,4 +127,4 @@
     </section>
 
 </div>
-<%- include('footer') %>
+@include('install.footer')

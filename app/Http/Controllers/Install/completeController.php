@@ -8,5 +8,8 @@ use App\Http\Requests;
 
 class completeController extends Controller
 {
-    //
+  public function view()
+  {
+    return view('install.complete');
+  }
 }

@@ -8,5 +8,8 @@ use App\Http\Requests;
 
 class webSettingController extends Controller
 {
-    //
+  public function view()
+  {
+    return view('install.web_setting');
+  }
 }

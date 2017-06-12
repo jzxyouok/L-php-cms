@@ -8,5 +8,8 @@ use App\Http\Requests;
 
 class protocolController extends Controller
 {
-    //
+  public function view()
+  {
+    return view('install.protocol');
+    }
 }

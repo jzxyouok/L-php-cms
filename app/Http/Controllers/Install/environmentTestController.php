@@ -8,5 +8,8 @@ use App\Http\Requests;
 
 class environmentTestController extends Controller
 {
-    //
+  public function view()
+  {
+    return view('install.environment_test');
+  }
 }
