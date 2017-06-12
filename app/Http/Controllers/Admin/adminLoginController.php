@@ -24,19 +24,10 @@ class adminLoginController extends Controller
   public function view(Request $request)
   {
 
-    /*
-         * 创建验证码
-         * */
-    $this->builder = new CaptchaBuilder;
-    $this->builder->build();
 
 
-    /*
-        * 保存验证码进session
-        * */
-    $request->session()->put('code', $this->builder->getPhrase());
     return view('admin.admin_login', [
-      'builder' => $this->builder
+
     ]);
 
 
@@ -88,15 +79,39 @@ class adminLoginController extends Controller
   }
 
 
-  public function updateCode(){
-    // Building a phrase of 3 characters
-//    $phrase = PhraseBuilder::build(3);
-dd(1);
-// Building a phrase of 5 characters, only digits
-    $phrase = PhraseBuilder::build();
+  public function updateCode(Request $request){
+    /*
+             * 创建验证码
+             * */
+    $this->builder = new CaptchaBuilder;
+    $this->builder->build();
 
-// Pass it as first argument of CaptchaBuilder
-    $captcha = new CaptchaBuilder($phrase);
+
+    /*
+        * 保存验证码进session
+        * */
+    $request->session()->put('code', $this->builder->getPhrase());
+    $base64=$this->builder->inline();
+    
+    return response()->json(['code' => 1, 'base64' => $base64]);
+
+  }
+
+
+  public function getCode(Request $request){
+    /*
+            * 创建验证码
+            * */
+    $this->builder = new CaptchaBuilder;
+    $this->builder->build();
+
+
+    /*
+        * 保存验证码进session
+        * */
+    $request->session()->put('code', $this->builder->getPhrase());
+    $base64=$this->builder->inline();
+    return response()->json(['code' => 1, 'base64' => $base64]);
   }
 
 

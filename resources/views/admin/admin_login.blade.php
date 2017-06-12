@@ -17,7 +17,7 @@
     <script src="{{ URL::asset('js/common/respond.min.js') }}"></script>
     <![endif]-->
 </head>
-<body class="hold-transition login-page" ng-app="myApp" ng-controller="adminLogin">
+<body class="hold-transition login-page" ng-app="myApp" ng-controller="adminLogin" ng-init="getCode()">
 <div class="login-box">
     <div class="login-logo">
         <a href="#"><b>L-php-cms</b></a>
@@ -42,7 +42,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-8">
-                    <img src="<?php echo $builder->inline(); ?>" alt="" ng-click="updateCode()">
+                    <img src="@{{base64}}" alt="" ng-click="updateCode()">
                 </div>
 
 
