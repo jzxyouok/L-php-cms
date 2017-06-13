@@ -128,3 +128,16 @@ Route::group(['namespace' => 'Install'], function () {
 
 
 });
+
+/*
+ * 前台页面
+ * */
+Route::group(['namespace' => 'Index'], function () {
+
+  Route::get('/','indexController@view')->name('index');
+  Route::get('/page/:number','environmentTestController@view')->name('environment_test');
+  Route::get('/content/:title','webSettingController@view')->name('web_setting');
+  Route::get('/user/login','completeController@view')->name('complete');
+  Route::get('/list/:cate','completeController@view')->name('complete');
+
+});

@@ -19,6 +19,7 @@ class adminUserAllController extends Controller
       'cms_name' => config('cms.cms_name'),
       'category' => config('cms.users_manage'),
       'item' => config('cms.admin_user_all'),
+      'userInfo'=>$request->session()->get('userInfo'),
     ]);
   }
 

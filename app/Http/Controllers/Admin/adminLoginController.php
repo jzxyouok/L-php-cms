@@ -65,6 +65,9 @@ class adminLoginController extends Controller
         if ($password !== Crypt::decrypt($password_data)) {
           return response()->json(['code' => 0, 'msg' => '用户名或密码错误！']);
         } else {
+          $request->session()->put('username', $username);
+          $userInfo = DB::table('admin_users')->where('username', $request->session()->get('username'))->first();
+          $request->session()->put('userInfo', $userInfo);
           return response()->json(['code' => 1, 'msg' => '登录成功！']);
         }
       }

@@ -4,13 +4,13 @@
 
     <section class="content-header">
         <h1>
- blogName
-<small> item </small>
+            {{$cms}}
+<small> {{$item}} </small>
 </h1>
 <ol class="breadcrumb">
 <li><a href="#"><i class="fa fa-dashboard"></i>主页</a></li>
-<li><a href="#"> category </a></li>
-<li class="active"> item %></li>
+<li><a href="#">{{$category }}</a></li>
+<li class="active"> {{$item}}</li>
 </ol>
 </section>
 
@@ -90,11 +90,11 @@
                     <h1></h1>
 
 
-                    <p>用户名: <% userInfo.username %> </p>
+                    <p>用户名: {{ $userInfo->username }} </p>
 
-                    <p>邮箱: <% userInfo.email %></p>
+                    <p>邮箱: {{ $userInfo->email }}</p>
 
-                    <p>注册时间: <% userInfo.date %></p>
+                    <p>注册时间: {{ $userInfo->created_at }}</p>
 
 
                 </div>

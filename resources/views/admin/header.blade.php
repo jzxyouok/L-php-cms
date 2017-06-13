@@ -128,7 +128,7 @@
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="{{ URL::asset('images/user2-160x160.jpg') }}" class="user-image" alt="User Image">
-                            <span class="hidden-xs"> userInfo.adminUser_username </span>
+                            <span class="hidden-xs"> {{ $userInfo->username }} </span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
@@ -178,7 +178,7 @@
                     <img src="{{ URL::asset('images/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p> userInfo.adminUser_username </p>
+                    <p> {{ $userInfo->username }} </p>
 
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
