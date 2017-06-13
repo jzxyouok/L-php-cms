@@ -18,7 +18,7 @@ class adminUserGroupAddController extends Controller
     return view('admin.admin_user_group_add', [
       'cms'=>config('cms.cms'),
       'cms_name'=>config('cms.cms_name'),
-      'category'=>config('cms.users_manage'),
+      'category'=>config('cms.admin_user_manage'),
       'item'=>config('cms.admin_user_groups_add'),
       'userInfo'=>$request->session()->get('userInfo'),
     ]);

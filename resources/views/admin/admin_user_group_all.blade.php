@@ -1,7 +1,7 @@
 @include('admin.header')
 <div class="content-wrapper"  ng-controller="usersGroup">
   @include('admin.modal.user_group_power_modal')
-   @include('admin.modal.users_group_edit_modal')
+   @include('admin.modal.user_group_edit_modal')
   <section class="content-header">
     <h1>
       {{$cms}}
@@ -25,8 +25,8 @@
     <div class="box-body table-responsive no-padding">
       <table class="table table-hover  table-bordered table-striped">
         <tr>
-          <th>组ID</th>
-          <th>组名称</th>
+          <th>ID</th>
+          <th>名称</th>
           <th>描述</th>
           <th>状态</th>
           <th>操作</th>
@@ -34,7 +34,7 @@
 
         <tr ng-repeat="x in data">
 
-          <td>@{{ x.pid }}</td>
+          <td>@{{ x.id }}</td>
           <td>@{{ x.name }}</td>
           <td>@{{ x.remark }}</td>
           <td>@{{ x.status }}</td>
@@ -42,7 +42,7 @@
             <button type="button" class="btn btn-success btn-xs btn-flat ng-hide" ng-click="startUsing(x.name)" ng-show="!x.status ">启用</button>
             <button type="button" class="btn btn-danger btn-xs btn-flat" ng-click="forbidden(x.name)" ng-hide="!x.status ">禁用</button>
             <button type="button" class="btn btn-primary btn-xs btn-flat" data-toggle="modal" data-target="#users_group_edit_modal" ng-click="edit(x)">编辑</button>
-            <button type="button" class="btn btn-warning btn-xs btn-flat" data-toggle="modal" data-target="#users_group_power_modal" ng-click="setPower(x.name)">权限分配</button>
+            <button type="button" class="btn btn-warning btn-xs btn-flat" data-toggle="modal" data-target="#user_group_power_modal" ng-click="setPower(x.name)">权限分配</button>
             <button type="button" class="btn btn-info btn-xs btn-flat">投稿分类</button>
           </td>
 

@@ -17,7 +17,7 @@ class adminUserGroupAllController extends Controller
       'name' => '3433',
       'cms' => config('cms.cms'),
       'cms_name' => config('cms.cms_name'),
-      'category' => config('cms.users_manage'),
+      'category' => config('cms.admin_user_manage'),
       'item' => config('cms.admin_user_groups_all'),
       'userInfo'=>$request->session()->get('userInfo'),
     ]);
