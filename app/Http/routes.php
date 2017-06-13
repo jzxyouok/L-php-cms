@@ -38,21 +38,23 @@ Route::group(['namespace' => 'Admin'], function () {
 /*
  * 文档管理
  * */
-Route::group(['middleware' => 'auth','namespace' => 'Admin'], function () {
+Route::group(['namespace' => 'Admin'], function () {
 
-  Route::get('/admin/manage/doc_manage/doc_category_all', 'docCategoryAllController@showProfile')->name('doc_category_all');
-  Route::get('/admin/manage/doc_manage/doc_category_add', 'docCategoryAddController@showProfile')->name('doc_category_add');
-  Route::get('/admin/manage/doc_manage/edit_menu', 'editMenuController@showProfile')->name('edit_menu');
-  Route::get('/admin/manage/doc_manage/menu_location', 'menuLocationController@showProfile')->name('menu_location');
-  Route::get('/admin/manage/doc_manage/tag_manage', 'tagManageController@showProfile')->name('tag_manage');
-  Route::get('/admin/manage/doc_manage/comment_manage', 'commentManageController@showProfile')->name('comment_manage');
-  Route::get('/admin/manage/doc_manage/message_manage', 'messageManageController@showProfile')->name('message_manage');
-  Route::get('/admin/manage/doc_manage/write', 'writeController@showProfile')->name('write');
-  Route::get('/admin/manage/doc_manage/published', 'publishedController@showProfile')->name('published');
-  Route::get('/admin/manage/doc_manage/wait_for_verify', 'waitForVerifyController@showProfile')->name('wait_for_verify');
-  Route::get('/admin/manage/doc_manage/no_access', 'noAccessController@showProfile')->name('no_access');
-  Route::get('/admin/manage/doc_manage/draft', 'draftController@showProfile')->name('draft');
-  Route::get('/admin/manage/doc_manage/recycle', 'recycleController@showProfile')->name('recycle');
+  Route::get('/admin/manage/doc_manage/category_all', 'categoryAllController@view')->name('category_all');
+  Route::get('/admin/manage/doc_manage/category_get', 'categoryAddController@get')->name('category_get');
+  Route::get('/admin/manage/doc_manage/category_add', 'categoryAddController@view')->name('category_add');
+  Route::post('/admin/manage/doc_manage/category_add', 'categoryAddController@addCategory')->name('category_add_post');
+  Route::get('/admin/manage/doc_manage/edit_menu', 'editMenuController@view')->name('edit_menu');
+  Route::get('/admin/manage/doc_manage/menu_location', 'menuLocationController@view')->name('menu_location');
+  Route::get('/admin/manage/doc_manage/tag_manage', 'tagManageController@view')->name('tag_manage');
+  Route::get('/admin/manage/doc_manage/comment_manage', 'commentManageController@view')->name('comment_manage');
+  Route::get('/admin/manage/doc_manage/message_manage', 'messageManageController@view')->name('message_manage');
+  Route::get('/admin/manage/doc_manage/write', 'writeController@view')->name('write');
+  Route::get('/admin/manage/doc_manage/published', 'publishedController@view')->name('published');
+  Route::get('/admin/manage/doc_manage/wait_for_verify', 'waitForVerifyController@view')->name('wait_for_verify');
+  Route::get('/admin/manage/doc_manage/no_access', 'noAccessController@view')->name('no_access');
+  Route::get('/admin/manage/doc_manage/draft', 'draftController@view')->name('draft');
+  Route::get('/admin/manage/doc_manage/recycle', 'recycleController@view')->name('recycle');
 
 
 });

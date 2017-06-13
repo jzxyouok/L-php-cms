@@ -1,8 +1,8 @@
 /**
  * Created by v_lljunli on 2017/5/17.
  */
-app.controller('categoriesAll', ['$scope', '$http','categoriesAllService', function ($scope,$http,categoriesAllService) {
-  categoriesAllService.getCategories().then(function success(res) {
+app.controller('categoryAll', ['$scope', '$http','categoryAllService', function ($scope,$http,categoryAllService) {
+    CategoryAllService.getCategories().then(function success(res) {
     var data=res.data;
     var dataFormat=[];
 

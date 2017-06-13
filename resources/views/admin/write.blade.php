@@ -1,15 +1,15 @@
-<%- include('header') %>
+@include('admin.header')
 <div class="content-wrapper" ng-controller="documentWrite">
 
     <section class="content-header">
         <h1>
-            <%= blogName %>
-            <small><%= item %></small>
+            {{$cms}}
+            <small>{{$item}}</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i>主页</a></li>
-            <li><a href="#"><%= category %></a></li>
-            <li class="active"><%= item %></li>
+            <li><a href="#">{{$category }}</a></li>
+            <li class="active">{{$item}}</li>
         </ol>
     </section>
 
@@ -19,7 +19,7 @@
             <div class="col-md-12">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title"><%= item %></h3>
+                        <h3 class="box-title">{{$item}}</h3>
                     </div>
 
                     <form class="form-horizontal" name="myForm">
@@ -142,7 +142,7 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">缩略图</label>
                                 <div class="col-sm-10">
-                                    <img src="{{postImg}}" alt="" class="img-circle col-sm-4"
+                                    <img src="{postImg}}" alt="" class="img-circle col-sm-4"
                                          id="post_img_preview"/>
                                     <p id="post_img"></p>
                                 </div>
@@ -274,8 +274,8 @@
                         </div>
 
                     </form>
-                    <script src="/plugins/ueditor/ueditor.config.js"></script>
-                    <script src="/plugins/ueditor/ueditor.all.js"></script>
+                    <script src="{{ URL::asset('public/plugins/ueditor/ueditor.config.js') }}"></script>
+                    <script src="{{ URL::asset('public/plugins/ueditor/ueditor.all.js') }}"></script>
                     <script type="text/javascript">
                         var ue = UE.getEditor('container', {
                             initialFrameWidth: '100%'
@@ -290,4 +290,4 @@
 
 
 </div>
-<%- include('footer') %>
+@include('admin.footer')

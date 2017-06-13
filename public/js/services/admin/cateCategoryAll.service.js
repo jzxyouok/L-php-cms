@@ -1,7 +1,7 @@
 /**
  * Created by v_lljunli on 2017/5/17.
  */
-app.factory('categoriesAllService',['$http',function ($http) {
+app.factory('categoryAllService',['$http',function ($http) {
   return{
     get:function (title,from,display,tags,img,parent,keywords,discription,type,view,author,content) {
       $http({
@@ -31,7 +31,7 @@ app.factory('categoriesAllService',['$http',function ($http) {
     getCategories: function () {
       return $http({
         method: 'GET',
-        url: '/admin/manage/document_manage/categories_manage/get',
+        url: '/admin/manage/doc_manage/category_get',
         headers: {'content-type': 'application/x-www-form-urlencoded'}
       });
     },

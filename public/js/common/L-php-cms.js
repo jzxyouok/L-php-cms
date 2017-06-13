@@ -183,37 +183,9 @@ app.factory('adminUserGroupAllService', ['$http', function ($http) {
   };
 }]);
 /**
- * Created by v_lljunli on 2017/5/10.
- */
-app.factory('categoriesAddService', ['$http', function ($http) {
-  return {
-    get: function (cate_name, cate_slug, cate_order, cate_parent, cate_remark) {
-      console.log(cate_name);
-      console.log(cate_slug);
-      console.log(cate_order);
-      console.log(cate_parent);
-      console.log(cate_remark);
-      return $http({
-        method: 'POST',
-        url: 'add',
-        data: $.param({
-          cate_name: cate_name,
-          cate_slug: cate_slug,
-          cate_order: cate_order,
-          cate_parent: cate_parent,
-          cate_remark: cate_remark
-        }),
-        headers: {'content-type': 'application/x-www-form-urlencoded'}
-      });
-    },
-
-
-  };
-}]);
-/**
  * Created by v_lljunli on 2017/5/17.
  */
-app.factory('categoriesAllService',['$http',function ($http) {
+app.factory('categoryAllService',['$http',function ($http) {
   return{
     get:function (title,from,display,tags,img,parent,keywords,discription,type,view,author,content) {
       $http({
@@ -243,11 +215,39 @@ app.factory('categoriesAllService',['$http',function ($http) {
     getCategories: function () {
       return $http({
         method: 'GET',
-        url: '/admin/manage/document_manage/categories_manage/get',
+        url: '/admin/manage/doc_manage/category_get',
         headers: {'content-type': 'application/x-www-form-urlencoded'}
       });
     },
 
+
+
+  };
+}]);
+/**
+ * Created by v_lljunli on 2017/5/10.
+ */
+app.factory('categoryAddService', ['$http', function ($http) {
+  return {
+    addCategory: function (name, slug, order, parent, remark) {
+      console.log(name);
+      console.log(slug);
+      console.log(order);
+      console.log(parent);
+      console.log(remark);
+      return $http({
+        method: 'POST',
+        url: '/admin/manage/doc_manage/category_add',
+        data: $.param({
+          name: name,
+          slug: slug,
+          order: order,
+          parent: parent,
+          remark: remark
+        }),
+        headers: {'content-type': 'application/x-www-form-urlencoded'}
+      });
+    },
 
 
   };
@@ -1363,53 +1363,56 @@ app.controller('usersGroup', ['$scope', '$http', 'adminUserGroupAllService','adm
 /*
  * 添加分类
  * */
-app.controller('categoriesAdd', ['$scope', '$http','categoriesAllService','$sce', function ($scope, $http,categoriesAllService,$sce) {
+app.controller('categoryAdd', ['$scope', '$http','categoryAllService','$sce','categoryAddService', function ($scope, $http,categoryAllService,$sce,categoryAddService) {
 
   /*
    * 格式化所有分类数据
    * */
-  categoriesAllService.getCategories().then(function success(res) {
+    categoryAllService.getCategories().then(function success(res) {
 
     var data=res.data;
     var dataFormat=[];
-
+if(data.length!==0){
+    console.log(res.data);
     for(var j=0;j<data.length;j++){
-      if(data[j].cate_parent===''){
-        dataFormat.push({
-          name:data[j].cate_name,
-          id:data[j].cate_slug,
-          cate_name:data[j].cate_name,
-          cate_slug:data[j].cate_slug,
-        });
-      }
+        if(data[j].cate_parent===''){
+            dataFormat.push({
+                name:data[j].cate_name,
+                id:data[j].cate_slug,
+                cate_name:data[j].cate_name,
+                cate_slug:data[j].cate_slug,
+            });
+        }
 
     }
 
     for(var m=0;m<dataFormat.length;m++){
-      for(var z=0;z<data.length;z++){
-        console.log(1);
-        if(dataFormat[m].id===data[z].cate_parent){
-          dataFormat.splice(m+1,0,{
-            name:''+'└'+data[z].cate_name,
-            id:data[z].cate_slug,
-            cate_name:data[z].cate_name,
-            cate_slug:data[z].cate_slug,
-          });
+        for(var z=0;z<data.length;z++){
+            console.log(1);
+            if(dataFormat[m].id===data[z].cate_parent){
+                dataFormat.splice(m+1,0,{
+                    name:''+'└'+data[z].cate_name,
+                    id:data[z].cate_slug,
+                    cate_name:data[z].cate_name,
+                    cate_slug:data[z].cate_slug,
+                });
+
+            }
 
         }
-
-      }
     }
+}
+
     dataFormat.unshift({
       name:'无',
-      id:'',
+      id:'0'
     });
 
     /*
      * 设置默认值
      * */
     $scope.cateParentOptions = dataFormat;
-    $scope.cate_parent = $scope.cateParentOptions[1].id;
+    $scope.parent = $scope.cateParentOptions[0].id;
   },function error(res) {
 
   });
@@ -1418,9 +1421,10 @@ app.controller('categoriesAdd', ['$scope', '$http','categoriesAllService','$sce'
 
 
 
-  $scope.categoriesAdd = function () {
+  $scope.categoryAdd = function () {
+
     if ($scope.myForm.$valid) {
-        categoriesAddService.get($scope.cate_name,$scope.cate_slug,$scope.cate_order,$scope.cate_parent,$scope.cate_remark).then(function success(res) {
+        categoryAddService.addCategory($scope.name,$scope.slug,$scope.order,$scope.parent,$scope.remark).then(function success(res) {
 
       }, function error(res) {
 
@@ -1432,8 +1436,8 @@ app.controller('categoriesAdd', ['$scope', '$http','categoriesAllService','$sce'
 /**
  * Created by v_lljunli on 2017/5/17.
  */
-app.controller('categoriesAll', ['$scope', '$http','categoriesAllService', function ($scope,$http,categoriesAllService) {
-  categoriesAllService.getCategories().then(function success(res) {
+app.controller('categoryAll', ['$scope', '$http','categoryAllService', function ($scope,$http,categoryAllService) {
+    CategoryAllService.getCategories().then(function success(res) {
     var data=res.data;
     var dataFormat=[];
 

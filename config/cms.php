@@ -36,8 +36,8 @@ return [
 
 
   'doc_manage' => '文档管理',
-  'doc_category_all' => '所有分类',
-  'doc_category_add' => '添加分类',
+  'category_all' => '所有分类',
+  'category_add' => '添加分类',
   'menu_manage' => '菜单管理',
   'edit_menu' => '编辑菜单',
   'menu_location' => '菜单位置',

@@ -1,15 +1,15 @@
-<%- include('header') %>
+@include('admin.header')
 <div class="content-wrapper" ng-controller="categoriesAll" >
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      <%= blogName %>
-      <small><%= item %></small>
+      {{$cms}}
+      <small>{{$item}}</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i>主页</a></li>
-      <li><a href="#"><%= category %></a></li>
-      <li class="active"><%= item %></li>
+      <li><a href="#">{{$category }}</a></li>
+      <li class="active">{{$item}}</li>
     </ol>
   </section>
 
@@ -19,7 +19,7 @@
       <div class="col-md-12">
         <div class="box">
           <div class="box-header with-border">
-            <h3 class="box-title">文章分类</h3>
+            <h3 class="box-title">{{$item}}</h3>
           </div>
           <!-- /.box-header -->
           <div class="box-body">
@@ -35,10 +35,10 @@
               </tr>
               <tr ng-repeat="x in data">
                 <td><input type="checkbox" class="minimal"></td>
-                <td>{{x.name}}</td>
-                <td>{{x.cate_slug}}</td>
-                <td>{{x.cate_parent}}</td>
-                <td>{{x.name}}</td>
+                <td>@{{x.name}}</td>
+                <td>@{{x.cate_slug}}</td>
+                <td>@{{x.cate_parent}}</td>
+                <td>@{{x.name}}</td>
 
                 <td>
                   <button type="button" class="btn btn-primary btn-xs btn-flat">编辑</button>
@@ -64,4 +64,4 @@
   </section>
 
 </div>
-<%- include('footer') %>
+@include('admin.footer')

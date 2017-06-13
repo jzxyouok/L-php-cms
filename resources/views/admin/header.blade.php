@@ -233,8 +233,8 @@
                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="/admin/manage/doc_manage/doc_category_all"> 所有分类</a></li>
-                                <li><a href="/admin/manage/doc_manage/doc_category_add">添加分类</a></li>
+                                <li><a href="/admin/manage/doc_manage/category_all"> 所有分类</a></li>
+                                <li><a href="/admin/manage/doc_manage/category_add">添加分类</a></li>
 
 
                             </ul>
