@@ -1372,15 +1372,15 @@ app.controller('categoryAdd', ['$scope', '$http','categoryAllService','$sce','ca
 
     var data=res.data;
     var dataFormat=[];
+       
 if(data.length!==0){
-    console.log(res.data);
+
     for(var j=0;j<data.length;j++){
-        if(data[j].cate_parent===''){
+        if(data[j].parent==='0'){
             dataFormat.push({
-                name:data[j].cate_name,
-                id:data[j].cate_slug,
-                cate_name:data[j].cate_name,
-                cate_slug:data[j].cate_slug,
+                name:data[j].name,
+                id:data[j].slug,
+                slug:data[j].slug,
             });
         }
 
@@ -1388,13 +1388,13 @@ if(data.length!==0){
 
     for(var m=0;m<dataFormat.length;m++){
         for(var z=0;z<data.length;z++){
-            console.log(1);
-            if(dataFormat[m].id===data[z].cate_parent){
+
+            if(dataFormat[m].id===data[z].parent){
                 dataFormat.splice(m+1,0,{
-                    name:''+'└'+data[z].cate_name,
-                    id:data[z].cate_slug,
-                    cate_name:data[z].cate_name,
-                    cate_slug:data[z].cate_slug,
+                    name:''+'└'+data[z].name,
+                    id:data[z].slug,
+
+                    slug:data[z].slug,
                 });
 
             }
@@ -1407,7 +1407,7 @@ if(data.length!==0){
       name:'无',
       id:'0'
     });
-
+        console.log(dataFormat);
     /*
      * 设置默认值
      * */
