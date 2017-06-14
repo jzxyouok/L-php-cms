@@ -46,8 +46,46 @@ class adminUserGroupAllController extends Controller
     $adminUserGroup->status=1;
     $adminUserGroup->save();
   }
-  
-  
 
+  public function userGroupEdit(Request $request)
+  {
+    $name=$request->input('name');
+    $pid=$request->input('pid');
+    $remark=$request->input('remark');
+
+    $adminUserGroup=AdminUserGroup::where('name', $name)->first();
+    $adminUserGroup->name=$name;
+    $adminUserGroup->pid=$pid;
+    $adminUserGroup->remark=$remark;
+    $adminUserGroup->save();
+  }
+
+  public function modifyPower(Request $request)
+  {
+    $name=$request->input('name');
+    $power=$request->input('power');
+
+
+    $adminUserGroup=AdminUserGroup::where('name', $name)->first();
+    $adminUserGroup->power=json_encode($power) ;
+
+    $adminUserGroup->save();
+  }
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
 }

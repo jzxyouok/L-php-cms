@@ -25,7 +25,7 @@ app.factory('adminUserGroupAddService', ['$http', function ($http) {
     edit:function (id,name,pid,remark) {
       return $http({
         method:'POST',
-        url:'users_group/edit',
+        url:'/admin/manage/user_manage/user_group_edit',
         data:$.param({
           group_id:id,
           name:name,

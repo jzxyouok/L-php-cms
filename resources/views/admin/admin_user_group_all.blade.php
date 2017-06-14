@@ -50,7 +50,7 @@
                                             data-target="#admin_user_group_all_edit_modal" ng-click="edit(x)">编辑
                                     </button>
                                     <button type="button" class="btn btn-warning btn-xs btn-flat" data-toggle="modal"
-                                            data-target="#admin_user_group_all_power_modal" ng-click="setPower(x.name)">
+                                            data-target="#admin_user_group_all_power_modal" ng-click="setPower(x.name,x)">
                                         权限分配
                                     </button>
                                     <button type="button" class="btn btn-info btn-xs btn-flat" data-toggle="modal"

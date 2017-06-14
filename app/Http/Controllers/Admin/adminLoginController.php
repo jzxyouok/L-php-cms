@@ -54,6 +54,7 @@ class adminLoginController extends Controller
 
     if ($code !== $code_session) {
       return response()->json(['code' => 0, 'msg' => '验证码错误！']);
+
     } else {
       $username_data = DB::table('admin_users')->where('username', $username)->value('username');
 

@@ -19,9 +19,10 @@ app.factory('adminUserGroupAllService', ['$http', function ($http) {
      *修改用户组名称及修改用户组权限
      * */
     modify: function (name,power) {
+
       return $http({
         method: 'POST',
-        url: 'modify_power',
+        url: '/admin/manage/user_manage/modify_power',
         data:$.param({
           name:name,
           power:power
