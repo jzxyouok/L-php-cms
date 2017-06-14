@@ -28,13 +28,13 @@
           <label for="name" class="col-sm-2 control-label">组名称</label>
 
           <div class="col-sm-10">
-            <input type="text" name="name" class="form-control" id="name" placeholder="请输入组名称" ng-model="name">
+            <input type="text" name="name" class="form-control" id="name" placeholder="请输入组名称" ng-model="name" required>
           </div>
         </div>
         <div class="form-group">
           <label  class="col-sm-2 control-label">父级组</label>
           <div class="col-sm-10">
-            <select class="form-control" name="pid" ng-model="pid" ng-options="x.id as x.name for x in pidOptions" >
+            <select class="form-control" name="pid" ng-model="pid" ng-options="x.id as x.name for x in pidOptions" required>
               <option value="">-- 请选择 --</option>
             </select>
           </div>
@@ -42,7 +42,7 @@
         <div class="form-group">
           <label  class="col-sm-2 control-label">状态</label>
           <div class="col-sm-10">
-            <select class="form-control" name="status" ng-model="status" ng-options="x.id as x.name for x in statusOptions" >
+            <select class="form-control" name="status" ng-model="status" ng-options="x.id as x.name for x in statusOptions" required>
               <option value="">-- 请选择 --</option>
             </select>
           </div>

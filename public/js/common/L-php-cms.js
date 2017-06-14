@@ -962,11 +962,18 @@ app.controller('adminUserGroupAdd',['$scope','$http','adminUserGroupAddService',
 
     }
       adminUserGroupAddService.get(group_id,name,pid,status,remark).then(function(res) {
-          $scope.msg=res.data.msg;
-          console.log($scope.msg);
+      if(res.data.code===true){
+        $scope.msg=res.data.msg;
           $('#admin_user_group_add_modal').modal({
               keyboard: true
           });
+      }else if(res.data.code===false){
+          $scope.msg=res.data.msg;
+          $('#admin_user_group_add_modal').modal({
+              keyboard: true
+          });
+      }
+
     },function(res) {
 
     });
