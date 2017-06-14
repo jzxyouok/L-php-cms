@@ -4,9 +4,9 @@ namespace App\Http\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class AdminUser extends Model
+class AdminUserGroup extends Model
 {
-    protected $table='admin_users';
+    protected $table='admin_user_groups';
     protected $primarykey='id';
     public $timestamps=true;
 }

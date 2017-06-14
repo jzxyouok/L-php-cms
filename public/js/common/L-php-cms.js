@@ -928,7 +928,7 @@ app.controller('users', ['$scope', '$http','adminUserAllService', function ($sco
  */
 
 
-app.controller('usersGroupAdd',['$scope','$http','adminUserGroupAddService',function($scope,$http,adminUserGroupAddService) {
+app.controller('adminUserGroupAdd',['$scope','$http','adminUserGroupAddService',function($scope,$http,adminUserGroupAddService) {
   $scope.statusOptions = [
     {name:'启用',id:1},
     {name:'禁用',id:0},
@@ -962,11 +962,11 @@ app.controller('usersGroupAdd',['$scope','$http','adminUserGroupAddService',func
 
     }
       adminUserGroupAddService.get(group_id,name,pid,status,remark).then(function(res) {
-      if(res.data.code==1){
-        $('#myModal').modal({
-          keyboard: true
-        });
-      }
+          $scope.msg=res.data.msg;
+          console.log($scope.msg);
+          $('#admin_user_group_add_modal').modal({
+              keyboard: true
+          });
     },function(res) {
 
     });
@@ -1372,7 +1372,7 @@ app.controller('categoryAdd', ['$scope', '$http','categoryAllService','$sce','ca
 
     var data=res.data;
     var dataFormat=[];
-       
+
 if(data.length!==0){
 
     for(var j=0;j<data.length;j++){

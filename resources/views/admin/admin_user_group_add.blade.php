@@ -1,6 +1,6 @@
 @include('admin.header')
-<div class="content-wrapper">
-  <!-- Content Header (Page header) -->
+<div class="content-wrapper" ng-controller="adminUserGroupAdd">
+@include('admin.modal.admin_user_group_add_modal')
   <section class="content-header">
     <h1>
 {{$cms}}
@@ -13,16 +13,15 @@
 </ol>
 </section>
 
-<!-- Main content -->
-<section class="content"  ng-controller="usersGroupAdd">
+
+<section class="content">
 <div class="row">
 <div class="col-md-12">
   <div class="box box-primary">
     <div class="box-header with-border">
       <h3 class="box-title">{{$item}}</h3>
     </div>
-    <!-- /.box-header -->
-    <!-- form start -->
+
     <form class="form-horizontal"  onsubmit="return false;">
       <div class="box-body">
         <div class="form-group">
@@ -55,19 +54,19 @@
           </div>
         </div>
       </div>
-      <!-- /.box-body -->
+
       <div class="box-footer">
 
         <button type="submit" class="btn btn-primary pull-right" ng-click="addAdminUserGroup()">添加</button>
       </div>
-      <!-- /.box-footer -->
+
     </form>
   </div>
 </div>
-<!--/.col (right) -->
+
 </div>
-<!-- /.row -->
+
 </section>
-<!-- /.content -->
+
 </div>
 @include('admin.footer')

@@ -14,7 +14,7 @@ app.controller('categoryAdd', ['$scope', '$http','categoryAllService','$sce','ca
 
     var data=res.data;
     var dataFormat=[];
-       
+
 if(data.length!==0){
 
     for(var j=0;j<data.length;j++){
