@@ -1,5 +1,5 @@
 <!-- 模态框（Modal） -->
-<div class="modal fade" id="user_group_edit_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<div class="modal fade" id="admin_user_group_all_edit_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true"
      ng-click="">
     <div class="modal-dialog">

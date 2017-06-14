@@ -36,7 +36,7 @@ app.factory('adminUserGroupAllService', ['$http', function ($http) {
         data:$.param({
           name:name
         }),
-        url: 'forbidden_status',
+        url: '/admin/manage/user_manage/forbidden_status',
         headers: {'Content-Type': 'application/x-www-form-urlencoded'}
       });
     },
