@@ -184,58 +184,12 @@ app.factory('adminUserGroupAllService', ['$http', function ($http) {
   };
 }]);
 /**
- * Created by v_lljunli on 2017/5/17.
- */
-app.factory('categoryAllService',['$http',function ($http) {
-  return{
-    get:function (title,from,display,tags,img,parent,keywords,discription,type,view,author,content) {
-      $http({
-        method:'POST',
-        url:'admin/manage/articles_add',
-        data:$.param({
-          post_title:title,
-          post_from:from,
-          post_display:display,
-          post_tags:tags,
-          post_img:img,
-          cate_parent:parent,
-          post_keywords:keywords,
-          post_discription:discription,
-          post_type:type,
-          post_view:view,
-          post_author:author,
-          post_content:content
-        }),
-        headers:{'content-type':'applicatin/x-www-form-urlencoded'}
-      });
-    },
-
-    /*
-     * 获取所有分类数据
-     * */
-    getCategories: function () {
-      return $http({
-        method: 'GET',
-        url: '/admin/manage/doc_manage/category_get',
-        headers: {'content-type': 'application/x-www-form-urlencoded'}
-      });
-    },
-
-
-
-  };
-}]);
-/**
  * Created by v_lljunli on 2017/5/10.
  */
 app.factory('categoryAddService', ['$http', function ($http) {
   return {
     addCategory: function (name, slug, order, parent, remark) {
-      console.log(name);
-      console.log(slug);
-      console.log(order);
-      console.log(parent);
-      console.log(remark);
+
       return $http({
         method: 'POST',
         url: '/admin/manage/doc_manage/category_add',
@@ -250,8 +204,77 @@ app.factory('categoryAddService', ['$http', function ($http) {
       });
     },
 
+      editCategoryCommit: function (name, slug, order, parent, remark) {
 
+          return $http({
+              method: 'POST',
+              url: '/admin/manage/doc_manage/category_edit',
+              data: $.param({
+                  name: name,
+                  slug: slug,
+                  order: order,
+                  parent: parent,
+                  remark: remark
+              }),
+              headers: {'content-type': 'application/x-www-form-urlencoded'}
+          });
+      },
   };
+}]);
+/**
+ * Created by v_lljunli on 2017/5/17.
+ */
+app.factory('categoryAllService', ['$http', function ($http) {
+    return {
+        get: function (title, from, display, tags, img, parent, keywords, description, type, view, author, content) {
+            $http({
+                method: 'POST',
+                url: 'admin/manage/articles_add',
+                data: $.param({
+                    title: title,
+                    from: from,
+                    display: display,
+                    tags: tags,
+                    img: img,
+                    parent: parent,
+                    keywords: keywords,
+                    description: description,
+                    type: type,
+                    view: view,
+                    author: author,
+                    content: content
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
+
+        /*
+         * 获取所有分类数据
+         * */
+        getCategories: function () {
+            return $http({
+                method: 'GET',
+                url: '/admin/manage/doc_manage/category_get',
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
+        editCategoryCommit:function (id,name,slug,parent,order,remark) {
+            return $http({
+                method: 'POST',
+                url: '/admin/manage/doc_manage/category_edit_commit',
+                data:$.param({
+                    id:id,
+                    name:name,
+                    slug:slug,
+                    parent:parent,
+                    order:order,
+                    remark:remark
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
+
+    };
 }]);
 /**
  * Created by v_lljunli on 2017/5/10.
@@ -785,7 +808,7 @@ app.controller('adminLogin', ['$scope', '$http', 'adminLoginService', function (
 /*
  * 添加用户
  * */
-app.controller('usersAdd', ['$scope','$http','adminUserAddService',function ($scope, $http,adminUserAddService) {
+app.controller('adminUserAdd', ['$scope','$http','adminUserAddService',function ($scope, $http,adminUserAddService) {
 
   /*
    * 提交数据
@@ -866,9 +889,12 @@ app.controller('usersAdd', ['$scope','$http','adminUserAddService',function ($sc
     }
   };
 
+  /*
+  * 头像上传
+  * */
   $scope.logo = '/upload/images/defaultlogo.png';
 
-  $('#adminUser_avatar').uploadify({
+  $('#admin_user_add_avatar_upload').uploadify({
 
     'swf': '/plugins/uploadify/uploadify.swf',//指定swf文件
     'uploader': '/admin/manage/users_manage/upload' + '?adminId=' + 'adminUser_username' + '&type=' + 'images' + '&key=' + 'adminUser_avatar',//后台处理的页面
@@ -916,13 +942,75 @@ app.controller('usersAdd', ['$scope','$http','adminUserAddService',function ($sc
 /*
  * 所有用户
  * */
-app.controller('users', ['$scope', '$http','adminUserAllService', function ($scope, $http,adminUserAllService) {
+app.controller('adminUserAll', ['$scope', '$http','adminUserAllService', function ($scope, $http,adminUserAllService) {
     adminUserAllService.get().then(function success(res) {
     $scope.data = res.data;
     console.log($scope.data);
   }, function error(res) {
 
   });
+
+
+    /*
+     * 头像上传
+     * */
+    $scope.logo = '/public/upload/images/defaultlogo.png';
+
+    $('#admin_user_all_avatar_upload').uploadify({
+
+        'swf': '/public/plugins/uploadify/uploadify.swf',//指定swf文件
+        'uploader': '/admin/manage/user_manage/upload' + '?adminId=' + 'adminUser_username' + '&type=' + 'images' + '&key=' + 'adminUser_avatar',//后台处理的页面
+        'buttonText': '上传图片',//按钮显示的文字
+        'buttonClass': 'uploadify-btn-default',//按钮显示的文字
+        'width': 100,//显示的高度和宽度，默认 height 30；width 120
+        'height': 30,//显示的高度和宽度，默认 height 30；width 120
+        'fileTypeDesc': 'Image Files',//上传文件的类型  默认为所有文件    'All Files'  ;  '*.*'
+        'fileTypeExts': '*.gif; *.jpg; *.png',//允许上传的文件后缀
+        'fileSizeLimit': '2000KB',//上传文件大小限制
+        'auto': true,//选择文件后自动上传
+        'multi': false,//设置为true将允许多文件上传
+
+        'onUploadSuccess': function (file, data, response) {//上传成功的回调
+            $("#adminUser_avatar_preview").attr("src", data);
+            $scope.logo= data;
+
+        },
+        //
+        // 'onComplete': function(event, queueID, fileObj, response, data) {//当单个文件上传完成后触发
+        //   //event:事件对象(the event object)
+        //   //ID:该文件在文件队列中的唯一表示
+        //   //fileObj:选中文件的对象，他包含的属性列表
+        //   //response:服务器端返回的Response文本，我这里返回的是处理过的文件名称
+        //   //data：文件队列详细信息和文件上传的一般数据
+        //   alert("文件:" + fileObj.name + " 上传成功！");
+        // },
+        //
+        // 'onUploadError' : function(file, errorCode, errorMsg, errorString) {//上传错误
+        //   alert('The file ' + file.name + ' could not be uploaded: ' + errorString);
+        // },
+        //
+        // 'onError': function(event, queueID, fileObj) {//当单个文件上传出错时触发
+        //   alert("文件:" + fileObj.name + " 上传失败！");
+        // }
+
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }]);
 /**
  * Created by v_lljunli on 2017/5/11.
@@ -1218,37 +1306,27 @@ app.controller('usersGroup', ['$scope', '$http', 'adminUserGroupAllService', 'ad
 
 
         //获取所选择的用户组的权限数据
-        adminUserGroupAllService.get().then(function success(res) {
-            $scope.data = res.data;
-            data = $scope.data;
 
-            // for (var j = 0; j < data.length; j++) {
-            //     if (data[j].name == name) {
-            //         power = JSON.parse(data[j].power);
-            //     }
-            // }
-            // var a={"panel":"true","basic_info":"false"};
-
-            power = JSON.parse($scope.group.power);
-
-            zTreeNodeArray = zTree.transformToArray(zTree.getNodes());
+       if($scope.group.power==''){
+           power= {"panel":"true","basic_info":"true","modify_password":"true","user_manage":"true","admin_user_group_all":"true","admin_user_group_add":"true","admin_user_all":"true","admin_user_add":"true","doc_manage":"true","category_manage":"true","doc_category_all":"true","doc_category_add":"true","menu_manage":"true","menu_edit":"true","menu_location":"true","tag_manage":"true","comment_manage":"true","message_manage":"true","write":"true","published":"true","wait_for_verify":"true","no_access":"true","draft":"true","recycle":"true","file_manage":"true","media_manage":"true","file_backup":"true","file_recover":"true","data_manage":"true","database_manage":"true","database_backup":"true","database_import":"true","database_compress":"true","database_optimise":"true","cache_manage":"true","cache_clear":"true","cache_settings":"true","count_manage":"true","data_count":"true","Custom_center":"true","theme_manage":"true","plugin_manage":"true","hook_manage":"true","ad_manage":"true","system_setting":"true","system_log":"true","web_setting":"true","read_setting":"true","attachment_setting":"true","social_login_setting":"true","update_online":"true","system_info":"true","bug_commit":"true"};
+       }else {
+           power = JSON.parse($scope.group.power);
+       }
 
 
-            for (var i = 0, l = zTreeNodeArray.length; i < l; i++) {
-                zTreeNodeArray[i].checked = trueOrFalse(power[zTreeNodeArray[i].id]);
-
-            }
-            // var nodes = zTree.transformTozTreeNodes(zTreeNodeArray);
-            // console.log(nodes);
-  
-            for (var m = 0; m < zTreeNodeArray.length; m++) {
-                zTree.checkNode(zTreeNodeArray[m], zTreeNodeArray[m].checked, true);
-            }
+        zTreeNodeArray = zTree.transformToArray(zTree.getNodes());
 
 
-        }, function error(res) {
+        for (var i = 0, l = zTreeNodeArray.length; i < l; i++) {
+            zTreeNodeArray[i].checked = trueOrFalse(power[zTreeNodeArray[i].id]);
 
-        });
+        }
+        // var nodes = zTree.transformTozTreeNodes(zTreeNodeArray);
+        // console.log(nodes);
+
+        for (var m = 0; m < zTreeNodeArray.length; m++) {
+            zTree.checkNode(zTreeNodeArray[m], zTreeNodeArray[m].checked, true);
+        }
 
 
         function trueOrFalse(data) {
@@ -1339,123 +1417,171 @@ app.controller('usersGroup', ['$scope', '$http', 'adminUserGroupAllService', 'ad
 /**
  * Created by v_lljunli on 2017/5/10.
  */
+app.controller('categoryAdd', ['$scope', '$http', 'categoryAllService', '$sce', 'categoryAddService', function ($scope, $http, categoryAllService, $sce, categoryAddService) {
 
-/*
- * 添加分类
- * */
-app.controller('categoryAdd', ['$scope', '$http','categoryAllService','$sce','categoryAddService', function ($scope, $http,categoryAllService,$sce,categoryAddService) {
-
-  /*
-   * 格式化所有分类数据
-   * */
+    /*
+     * 格式化所有分类数据
+     * */
     categoryAllService.getCategories().then(function success(res) {
 
-    var data=res.data;
-    var dataFormat=[];
+        var data = res.data;
+        var dataFormat = [];
 
-if(data.length!==0){
+        if (data.length !== 0) {
 
-    for(var j=0;j<data.length;j++){
-        if(data[j].parent==='0'){
-            dataFormat.push({
-                name:data[j].name,
-                id:data[j].slug,
-                slug:data[j].slug,
-            });
-        }
-
-    }
-
-    for(var m=0;m<dataFormat.length;m++){
-        for(var z=0;z<data.length;z++){
-
-            if(dataFormat[m].id===data[z].parent){
-                dataFormat.splice(m+1,0,{
-                    name:''+'└'+data[z].name,
-                    id:data[z].slug,
-
-                    slug:data[z].slug,
-                });
+            for (var j = 0; j < data.length; j++) {
+                if (data[j].parent === '0') {
+                    dataFormat.push({
+                        name: data[j].name,
+                        id: data[j].slug,
+                        slug: data[j].slug,
+                         order: data[j].order,
+                    });
+                }
 
             }
 
+            for (var m = 0; m < dataFormat.length; m++) {
+                for (var z = 0; z < data.length; z++) {
+
+                    if (dataFormat[m].id === data[z].parent) {
+                        dataFormat.splice(m + 1, 0, {
+                            name: '' + '└' + data[z].name,
+                            id: data[z].slug,
+                            slug: data[z].slug,
+                             order: data[z].order,
+                        });
+
+                    }
+
+                }
+            }
         }
-    }
-}
 
-    dataFormat.unshift({
-      name:'无',
-      id:'0'
+        dataFormat.unshift({
+            name: '无',
+            id: '0'
+        });
+
+        /*
+         * 设置默认值
+         * */
+        $scope.cateOptions = dataFormat;
+        console.log($scope.cateOptions);
+        $scope.cate = $scope.cateOptions[0].id;
+    }, function error(res) {
+
     });
-        console.log(dataFormat);
-    /*
-     * 设置默认值
-     * */
-    $scope.cateParentOptions = dataFormat;
-    $scope.parent = $scope.cateParentOptions[0].id;
-  },function error(res) {
-
-  });
 
 
+    $scope.categoryAdd = function () {
+
+        if ($scope.myForm.$valid) {
+            categoryAddService.addCategory($scope.name, $scope.slug, $scope.order, $scope.parent, $scope.remark).then(function success(res) {
+                if (res.data.code === 1) {
+                    $scope.msg = res.data.msg;
+                    $('#category_add_modal').modal({
+                        keyboard: true
+                    });
+                } else {
+                    $scope.msg = res.data.msg;
+                    $('#category_add_modal').modal({
+                        keyboard: true
+                    });
+                }
+            }, function error(res) {
+
+            });
+        }
+
+    };
 
 
 
-  $scope.categoryAdd = function () {
-
-    if ($scope.myForm.$valid) {
-        categoryAddService.addCategory($scope.name,$scope.slug,$scope.order,$scope.parent,$scope.remark).then(function success(res) {
-
-      }, function error(res) {
-
-      });
+    $scope.editCategoryCommit=function () {
+        
     }
-
-  };
 }]);
 /**
  * Created by v_lljunli on 2017/5/17.
  */
-app.controller('categoryAll', ['$scope', '$http','categoryAllService', function ($scope,$http,categoryAllService) {
-    CategoryAllService.getCategories().then(function success(res) {
-    var data=res.data;
-    var dataFormat=[];
+app.controller('categoryAll', ['$scope', '$http', 'categoryAllService', function ($scope, $http, categoryAllService) {
+    categoryAllService.getCategories().then(function success(res) {
 
-    for(var j=0;j<data.length;j++){
-      if(data[j].cate_parent===''){
-        dataFormat.push({
-          name:data[j].cate_name,
-          id:data[j].cate_slug,
-          cate_name:data[j].cate_name,
-          cate_slug:data[j].cate_slug,
-          cate_parent:data[j].cate_parent,
-        });
-      }
+        var data = res.data;
+        var dataFormat = [];
 
-    }
-
-    for(var m=0;m<dataFormat.length;m++){
-      for(var z=0;z<data.length;z++){
-        console.log(1);
-        if(dataFormat[m].id===data[z].cate_parent){
-          dataFormat.splice(m+1,0,{
-            name:data[z].cate_name,
-            id:data[z].cate_slug,
-            cate_name:data[z].cate_name,
-            cate_slug:data[z].cate_slug,
-            cate_parent:data[z].cate_parent,
-          });
+        for (var j = 0; j < data.length; j++) {
+            if (data[j].parent === '0') {
+                dataFormat.push({
+                    name: data[j].name,
+                    id: data[j].slug,
+                    slug: data[j].slug,
+                    parent: data[j].parent,
+                    remark: data[j].remark,
+                    order: data[j].order,
+                    original_id:data[j].id,
+                });
+            }
 
         }
 
-      }
+        for (var m = 0; m < dataFormat.length; m++) {
+            for (var z = 0; z < data.length; z++) {
+
+                if (dataFormat[m].id === data[z].parent) {
+                    dataFormat.splice(m + 1, 0, {
+                        name: '' + '└' + data[z].name,
+                        id: data[z].slug,
+                        slug: data[z].slug,
+                        parent: data[z].parent,
+                        remark: data[z].remark,
+                        order: data[z].order,
+                        original_id:data[z].id,
+                    });
+
+                }
+
+            }
+        }
+
+        $scope.data = dataFormat;
+
+        var cate = dataFormat.slice(0);
+        // console.log(cate);
+        cate.unshift({
+            name: '无',
+            id: '0'
+        });
+        $scope.cateOptions = cate;
+        //console.log($scope.cateOptions);
+        $scope.cate = $scope.cateOptions[0].id;
+    }, function error(res) {
+
+    });
+
+
+    $scope.edit = function (x) {
+        $scope.category = x;
+        if ($scope.category.parent == 0) {
+            $scope.cate = $scope.cateOptions[0].id;
+        } else {
+            for (var i = 0; i < $scope.cateOptions.length; i++) {
+                if ($scope.cateOptions[i].slug === $scope.category.parent) {
+                    $scope.cate = $scope.cateOptions[i].id;
+                }
+            }
+        }
+
     }
+    $scope.editCategoryCommit = function (category) {
 
-    $scope.data=dataFormat;
-  },function error(res) {
+        categoryAllService.editCategoryCommit(category.original_id,category.name,category.slug,category.parent,category.order,category.remark).then(function success(res) {
 
-  });
+        },function error(res) {
 
+        });
+    };
 
 }]);
 /**

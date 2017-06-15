@@ -1,45 +1,82 @@
 /**
  * Created by v_lljunli on 2017/5/17.
  */
-app.controller('categoryAll', ['$scope', '$http','categoryAllService', function ($scope,$http,categoryAllService) {
-    CategoryAllService.getCategories().then(function success(res) {
-    var data=res.data;
-    var dataFormat=[];
+app.controller('categoryAll', ['$scope', '$http', 'categoryAllService', function ($scope, $http, categoryAllService) {
+    categoryAllService.getCategories().then(function success(res) {
 
-    for(var j=0;j<data.length;j++){
-      if(data[j].cate_parent===''){
-        dataFormat.push({
-          name:data[j].cate_name,
-          id:data[j].cate_slug,
-          cate_name:data[j].cate_name,
-          cate_slug:data[j].cate_slug,
-          cate_parent:data[j].cate_parent,
-        });
-      }
+        var data = res.data;
+        var dataFormat = [];
 
-    }
-
-    for(var m=0;m<dataFormat.length;m++){
-      for(var z=0;z<data.length;z++){
-        console.log(1);
-        if(dataFormat[m].id===data[z].cate_parent){
-          dataFormat.splice(m+1,0,{
-            name:data[z].cate_name,
-            id:data[z].cate_slug,
-            cate_name:data[z].cate_name,
-            cate_slug:data[z].cate_slug,
-            cate_parent:data[z].cate_parent,
-          });
+        for (var j = 0; j < data.length; j++) {
+            if (data[j].parent === '0') {
+                dataFormat.push({
+                    name: data[j].name,
+                    id: data[j].slug,
+                    slug: data[j].slug,
+                    parent: data[j].parent,
+                    remark: data[j].remark,
+                    order: data[j].order,
+                    original_id:data[j].id,
+                });
+            }
 
         }
 
-      }
+        for (var m = 0; m < dataFormat.length; m++) {
+            for (var z = 0; z < data.length; z++) {
+
+                if (dataFormat[m].id === data[z].parent) {
+                    dataFormat.splice(m + 1, 0, {
+                        name: '' + '└' + data[z].name,
+                        id: data[z].slug,
+                        slug: data[z].slug,
+                        parent: data[z].parent,
+                        remark: data[z].remark,
+                        order: data[z].order,
+                        original_id:data[z].id,
+                    });
+
+                }
+
+            }
+        }
+
+        $scope.data = dataFormat;
+
+        var cate = dataFormat.slice(0);
+        // console.log(cate);
+        cate.unshift({
+            name: '无',
+            id: '0'
+        });
+        $scope.cateOptions = cate;
+        //console.log($scope.cateOptions);
+        $scope.cate = $scope.cateOptions[0].id;
+    }, function error(res) {
+
+    });
+
+
+    $scope.edit = function (x) {
+        $scope.category = x;
+        if ($scope.category.parent == 0) {
+            $scope.cate = $scope.cateOptions[0].id;
+        } else {
+            for (var i = 0; i < $scope.cateOptions.length; i++) {
+                if ($scope.cateOptions[i].slug === $scope.category.parent) {
+                    $scope.cate = $scope.cateOptions[i].id;
+                }
+            }
+        }
+
     }
+    $scope.editCategoryCommit = function (category) {
 
-    $scope.data=dataFormat;
-  },function error(res) {
+        categoryAllService.editCategoryCommit(category.original_id,category.name,category.slug,category.parent,category.order,category.remark).then(function success(res) {
 
-  });
+        },function error(res) {
 
+        });
+    };
 
 }]);

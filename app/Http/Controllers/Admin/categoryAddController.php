@@ -18,15 +18,10 @@ class categoryAddController extends Controller
       'cms_name' => config('cms.cms_name'),
       'category' => config('cms.doc_manage'),
       'item' => config('cms.category_add'),
-      'userInfo'=>$request->session()->get('userInfo'),
+      'userInfo' => $request->session()->get('userInfo'),
     ]);
   }
 
-  public function get(Request $request)
-  {
-    $categories=DB::table('categories')->get();
-    return response()->json($categories);
-  }
 
   public function addCategory(Request $request)
   {
@@ -36,17 +31,31 @@ class categoryAddController extends Controller
     $parent = $request->input('parent');
     $remark = $request->input('remark');
 
-    $category = new Category;
-    $category->name = $name;
-    $category->slug = $slug;
-    $category->order = $order;
-    $category->parent = $parent;
-    $category->remark = $remark;
-    $category->save();
+
+    if ($name != '') {
+      if (Category::where('name', $name)->first()) {
+        return response()->json(['code' => 0, 'msg' => '分类已经存在！']);
+      }
+
+      if (Category::where('slug', $slug)->first()) {
+        return response()->json(['code' => 0, 'msg' => '别名已经存在！']);
+      }
+      $category = new Category;
+      $category->name = $name;
+      $category->slug = $slug;
+      $category->order = $order;
+      $category->parent = $parent;
+      $category->remark = $remark;
+      $res = $category->save();
+      if ($res) {
+        return response()->json(['code' => 1, 'msg' => '添加成功！']);
+      } else {
+        return response()->json(['code' => 0, 'msg' => '添加失败！']);
+      }
+    }
+
+
   }
-  
-  
-  
-  
-  
+
+
 }

@@ -11,10 +11,10 @@
                     <article id="post-654915"
                              class="single-article post-654915 post type-post status-publish format-standard hentry category-active">
                         <header class="entry-header">
-                            <h2 class="post-title"><%=doc.document_title%></h2>
+                            <h2 class="post-title">%=doc.document_title%></h2>
                             <div class="post-meta">
                                 <time>2017/05/16</time>
-                                <span class="post-views"><span class="iconfont icon-view"></span>阅读 <%=doc.document_view%></span><span
+                                <span class="post-views"><span class="iconfont icon-view"></span>阅读 %=doc.document_view%></span><span
                                         class="post-comment-count"><span class="iconfont icon-pinglun"></span> 评论 25</span><span
                                         class="post-mark"><span class="iconfont icon-heart"></span>收藏 50</span></div>
                         </header>
@@ -22,8 +22,8 @@
                                                                                                 href="http://y0.cn/aM4DS">查看详情</a>
                         </div>
                         <div class="entry-content">
-                            <blockquote><%=doc.document_abstract%></blockquote>
-                            <%=doc.document_content%>
+                            <blockquote>%=doc.document_abstract%></blockquote>
+                            %=doc.document_content%>
 
                         </div>
                     </article>

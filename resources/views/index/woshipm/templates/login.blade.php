@@ -5,9 +5,9 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <link rel="Shortcut Icon" href="/assets/images/favicon.ico" type="image/x-icon">
-    <link href="/<%= theme %>/assets/css/web2.0.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="/<%= theme %>/assets/js/jquery-1.12.4.js"></script>
-    <script type="text/javascript" src="/<%= theme %>/assets/js/angular.js"></script>
+    <link href="{{ URL::asset('resources/views/index/woshipm/assets/css/web2.0.css') }}" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="{{ URL::asset('resources/views/index/woshipm/assets/js/jquery-1.12.4.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('resources/views/index/woshipm/assets/js/angular.js') }}"></script>
 
 
     <meta name="chromesniffer" id="chromesniffer_meta"
@@ -50,10 +50,10 @@
                     <li class="text_r">
                         <span class="lo_left">&nbsp;</span>
                         <span class="float_l jiu_font">没有账号？
-								<a href="javascript:goOutFrame2NewPage('//passport.woshipm.com/reg/index.html?FS=PM&amp;REDIRECT=http://www.woshipm.com/pmd/666850.html')">立即注册</a>
+								<a href="#" onclick="window.parent.location.href='/user/register'">立即注册</a>
 							</span>
-                        <a href="javascript:goOutFrame2NewPage('//passport.woshipm.com/user/resetpwd.html')"
-                           class="jiu_font">忘记密码?</a>
+                        <a href="#"
+                           class="jiu_font" onclick="window.parent.location.href='/user/find_password'">忘记密码?</a>
                     </li>
                     <li>
                         <span class="lo_left">&nbsp;</span><span class="dsf_line">第三方登录</span>
@@ -74,7 +74,7 @@
 </div>
 
 
-<script src="/<%= theme %>/assets/js/default.controller.js"></script>
+<script src="{{ URL::asset('resources/views/index/woshipm/assets/js/default.controller.js') }}"></script>
 
 
 </body>

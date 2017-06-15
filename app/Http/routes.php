@@ -36,6 +36,9 @@ Route::group(['namespace' => 'Admin'], function () {
   Route::get('/admin/manage/user_manage/admin_user_all', 'adminUserAllController@view')->name('admin_user_all');
   Route::get('/admin/manage/user_manage/admin_user_get', 'adminUserAllController@get')->name('admin_user_get');
   Route::get('/admin/manage/user_manage/admin_user_add', 'adminUserAddController@view')->name('admin_user_add');
+
+  Route::get('/admin/manage/user_manage/user_all', 'userAllController@view')->name('user_get');
+  Route::get('/admin/manage/user_manage/user_add', 'userAddController@view')->name('user_add');
 });
 
 
@@ -45,9 +48,12 @@ Route::group(['namespace' => 'Admin'], function () {
 Route::group(['namespace' => 'Admin'], function () {
 
   Route::get('/admin/manage/doc_manage/category_all', 'categoryAllController@view')->name('category_all');
-  Route::get('/admin/manage/doc_manage/category_get', 'categoryAddController@get')->name('category_get');
+  Route::get('/admin/manage/doc_manage/category_get', 'categoryAllController@get')->name('category_get');
+  Route::post('/admin/manage/doc_manage/category_edit_commit', 'categoryAllController@editCommit')->name('category_edit_commit');
+
   Route::get('/admin/manage/doc_manage/category_add', 'categoryAddController@view')->name('category_add');
   Route::post('/admin/manage/doc_manage/category_add', 'categoryAddController@addCategory')->name('category_add_post');
+
   Route::get('/admin/manage/doc_manage/edit_menu', 'editMenuController@view')->name('edit_menu');
   Route::get('/admin/manage/doc_manage/menu_location', 'menuLocationController@view')->name('menu_location');
   Route::get('/admin/manage/doc_manage/tag_manage', 'tagManageController@view')->name('tag_manage');
@@ -143,7 +149,9 @@ Route::group(['namespace' => 'Index'], function () {
   Route::get('/','indexController@view')->name('index');
   Route::get('/page/:number','environmentTestController@view')->name('environment_test');
   Route::get('/content/:title','webSettingController@view')->name('web_setting');
-  Route::get('/user/login','completeController@view')->name('complete');
+  Route::get('/user/login','loginController@view')->name('login');
+  Route::get('/user/register','registerController@view')->name('register');
+  Route::get('/user/find_password','findPasswordController@view')->name('find_password');
   Route::get('/list/:cate','completeController@view')->name('complete');
 
 });

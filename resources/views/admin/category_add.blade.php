@@ -1,6 +1,6 @@
 @include('admin.header')
 <div class="content-wrapper" ng-controller="categoryAdd">
-
+    @include('admin.modal.category_add_modal')
     <section class="content-header">
         <h1>
             {{$cms}}
@@ -62,7 +62,7 @@
                                 <label for="" class="col-sm-2 control-label">排序</label>
 
                                 <div class="col-sm-10">
-                                    <input type="password" name="order" ng-model="order" class="form-control"
+                                    <input type="text" name="order" ng-model="order" class="form-control"
                                            id="" placeholder="请输入排序数字" ng-pattern="/^\d{1,4}$/" required>
                                     <span class="help-block ng-hide"
                                           ng-show="myForm.order.$invalid && !myForm.order.$pristine"><span
@@ -76,8 +76,8 @@
                                  ng-class="{'has-warning':myForm.parent.$invalid && !myForm.parent.$pristine,'has-success':myForm.parent.$valid && !myForm.parent.$pristine,'has-error':isUsernameExist}">
                                 <label class="col-sm-2 control-label">父级</label>
                                 <div class="col-sm-10">
-                                    <select class="form-control" name="parent" ng-model="parent"
-                                            ng-options="x.id as x.name for x in cateParentOptions" required>
+                                    <select class="form-control" name="cate" ng-model="cate"
+                                            ng-options="x.id as x.name for x in cateOptions" required>
                                         <option value="">-- 请选择 --</option>
                                     </select>
                                     <span class="help-block ng-hide"
@@ -106,7 +106,7 @@
 
                         <div class="box-footer">
 
-                            <button type="submit" class="btn btn-primary pull-right" ng-click="categoryAdd()">添加分类
+                            <button type="submit" class="btn btn-primary pull-right" ng-click="categoryAdd()">添加
                             </button>
                         </div>
 

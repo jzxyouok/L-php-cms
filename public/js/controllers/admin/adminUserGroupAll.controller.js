@@ -228,37 +228,27 @@ app.controller('usersGroup', ['$scope', '$http', 'adminUserGroupAllService', 'ad
 
 
         //获取所选择的用户组的权限数据
-        adminUserGroupAllService.get().then(function success(res) {
-            $scope.data = res.data;
-            data = $scope.data;
 
-            // for (var j = 0; j < data.length; j++) {
-            //     if (data[j].name == name) {
-            //         power = JSON.parse(data[j].power);
-            //     }
-            // }
-            // var a={"panel":"true","basic_info":"false"};
-
-            power = JSON.parse($scope.group.power);
-
-            zTreeNodeArray = zTree.transformToArray(zTree.getNodes());
+       if($scope.group.power==''){
+           power= {"panel":"true","basic_info":"true","modify_password":"true","user_manage":"true","admin_user_group_all":"true","admin_user_group_add":"true","admin_user_all":"true","admin_user_add":"true","doc_manage":"true","category_manage":"true","doc_category_all":"true","doc_category_add":"true","menu_manage":"true","menu_edit":"true","menu_location":"true","tag_manage":"true","comment_manage":"true","message_manage":"true","write":"true","published":"true","wait_for_verify":"true","no_access":"true","draft":"true","recycle":"true","file_manage":"true","media_manage":"true","file_backup":"true","file_recover":"true","data_manage":"true","database_manage":"true","database_backup":"true","database_import":"true","database_compress":"true","database_optimise":"true","cache_manage":"true","cache_clear":"true","cache_settings":"true","count_manage":"true","data_count":"true","Custom_center":"true","theme_manage":"true","plugin_manage":"true","hook_manage":"true","ad_manage":"true","system_setting":"true","system_log":"true","web_setting":"true","read_setting":"true","attachment_setting":"true","social_login_setting":"true","update_online":"true","system_info":"true","bug_commit":"true"};
+       }else {
+           power = JSON.parse($scope.group.power);
+       }
 
 
-            for (var i = 0, l = zTreeNodeArray.length; i < l; i++) {
-                zTreeNodeArray[i].checked = trueOrFalse(power[zTreeNodeArray[i].id]);
-
-            }
-            // var nodes = zTree.transformTozTreeNodes(zTreeNodeArray);
-            // console.log(nodes);
-  
-            for (var m = 0; m < zTreeNodeArray.length; m++) {
-                zTree.checkNode(zTreeNodeArray[m], zTreeNodeArray[m].checked, true);
-            }
+        zTreeNodeArray = zTree.transformToArray(zTree.getNodes());
 
 
-        }, function error(res) {
+        for (var i = 0, l = zTreeNodeArray.length; i < l; i++) {
+            zTreeNodeArray[i].checked = trueOrFalse(power[zTreeNodeArray[i].id]);
 
-        });
+        }
+        // var nodes = zTree.transformTozTreeNodes(zTreeNodeArray);
+        // console.log(nodes);
+
+        for (var m = 0; m < zTreeNodeArray.length; m++) {
+            zTree.checkNode(zTreeNodeArray[m], zTreeNodeArray[m].checked, true);
+        }
 
 
         function trueOrFalse(data) {

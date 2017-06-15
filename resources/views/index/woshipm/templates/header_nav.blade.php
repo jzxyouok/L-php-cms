@@ -1,6 +1,6 @@
 <header id="header-nav" class="site-header u-clearfix" ng-controller="headerCtrl">
   <div class="contianer">
-    <a href="http://www.woshipm.com/"><img class="logo" src="/<%= theme %>/assets/images/logo.png"></a>
+    <a href="http://www.woshipm.com/"><img class="logo" src="resources/views/index/woshipm/assets/images/logo.png"></a>
     <div class="header-block">
       <nav class="header-nav">
         <ul id="menu-%e9%a1%b6%e9%83%a8%e5%af%bc%e8%88%aa"
@@ -15,7 +15,7 @@
               <%categories.forEach(function (cate) {%>
               <li id="menu-item-155928"
                   class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-155928"><a
-                        href="/list/<%=cate.cate_slug%>"><%=cate.cate_name%></a></li>
+                        href="/list/%=cate.cate_slug%>">%=cate.cate_name%></a></li>
               <% })%>
 
           
@@ -60,8 +60,8 @@
     <div class="header-block u-floatRight">
       <a class="header-action-item tougao" data-action="popLogin" href="http://www.woshipm.com/#">投稿</a>
       <a href="javascript:;" class="show-search"><span class="iconfont icon-search"></span></a>
-      <a class="header-action-item" data-action="popLogin"
-         href="http://passport.woshipm.com/reg/index.html?FS=PM&amp;REDIRECT=http://www.woshipm.com/?nocache">注册/登录</a>
+      <a class="header-action-item" ng-click="loginOut()"
+         href="#">注册/登录</a>
 
     </div>
   </div>

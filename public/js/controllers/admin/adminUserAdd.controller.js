@@ -5,7 +5,7 @@
 /*
  * 添加用户
  * */
-app.controller('usersAdd', ['$scope','$http','adminUserAddService',function ($scope, $http,adminUserAddService) {
+app.controller('adminUserAdd', ['$scope','$http','adminUserAddService',function ($scope, $http,adminUserAddService) {
 
   /*
    * 提交数据
@@ -86,9 +86,12 @@ app.controller('usersAdd', ['$scope','$http','adminUserAddService',function ($sc
     }
   };
 
+  /*
+  * 头像上传
+  * */
   $scope.logo = '/upload/images/defaultlogo.png';
 
-  $('#adminUser_avatar').uploadify({
+  $('#admin_user_add_avatar_upload').uploadify({
 
     'swf': '/plugins/uploadify/uploadify.swf',//指定swf文件
     'uploader': '/admin/manage/users_manage/upload' + '?adminId=' + 'adminUser_username' + '&type=' + 'images' + '&key=' + 'adminUser_avatar',//后台处理的页面
