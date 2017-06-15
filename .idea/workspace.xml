@@ -2,58 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="735742ba-6989-49b0-a7fe-9f9d75cc8c11" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/userAddController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/userAllController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Index/findPasswordController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Index/loginController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Index/registerController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/modal/category_add_modal.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/modal/category_all_edit_modal.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/modal/category_all_remove_modal.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/user_add.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/user_all.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/templates/find_password.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/templates/register.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/services/admin/cateCategoryAll.service.js" afterPath="$PROJECT_DIR$/public/js/services/admin/categoryAll.service.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/assets/images/GOPPYNgWKMCvnnkDoOBW.jpg" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/assets/images/cy.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/assets/images/HxQKUhJ53eeA8xpcAL6n.jpg" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/assets/images/yp.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/assets/images/MDjjkR9CTLtcvnjlUo6m.jpg" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/assets/images/jy.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/assets/images/UmRy7jUASlpCM6CUnk90.jpg" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/assets/images/qd.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/assets/images/cjnmysRxbG4ka785nuMp.jpg" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/assets/images/tx.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/assets/images/kv52c2tIMdimGarqjA1w.jpg" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/assets/images/xu.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/assets/images/l9kE7UXotONkc5p0U0p5.jpg" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/assets/images/zs.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/assets/images/tSKd9Aa6L32c8njrlyqa.jpg" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/assets/images/yy.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/templates/blue-foot.blade.php" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/templates/blue_foot.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/templates/header-nav.blade.php" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/templates/header_nav.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/templates/left-column.blade.php" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/templates/left_column.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/templates/right-column.blade.php" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/templates/right_column.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/templates/search-overlay.blade.php" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/templates/search_overlay.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/templates/site-footer.blade.php" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/templates/site_footer.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/assets/images/footer-logo.png" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/assets/images/footer-logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/assets/images/logo.png" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/assets/images/logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/categoryAddController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/categoryAddController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/categoryAllController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/categoryAllController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/common/L-php-cms.js" afterPath="$PROJECT_DIR$/public/js/common/L-php-cms.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/common/L-php-cms.min.js" afterPath="$PROJECT_DIR$/public/js/common/L-php-cms.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controllers/admin/adminUserAdd.controller.js" afterPath="$PROJECT_DIR$/public/js/controllers/admin/adminUserAdd.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controllers/admin/adminUserAll.controller.js" afterPath="$PROJECT_DIR$/public/js/controllers/admin/adminUserAll.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controllers/admin/adminUserGroupAll.controller.js" afterPath="$PROJECT_DIR$/public/js/controllers/admin/adminUserGroupAll.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controllers/admin/categoryAdd.controller.js" afterPath="$PROJECT_DIR$/public/js/controllers/admin/categoryAdd.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controllers/admin/categoryAll.controller.js" afterPath="$PROJECT_DIR$/public/js/controllers/admin/categoryAll.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/services/admin/categoriyAdd.service.js" afterPath="$PROJECT_DIR$/public/js/services/admin/categoriyAdd.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/admin_user_add.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/admin_user_add.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/admin_user_all.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/admin_user_all.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/admin_user_group_all.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/admin_user_group_all.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/category_add.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/category_add.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/category_all.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/category_all.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/header.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/header.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/modal/admin_user_all_avatar_modal.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/modal/admin_user_all_avatar_modal.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/assets/js/default.controller.js" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/assets/js/default.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/templates/content.blade.php" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/templates/content.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/templates/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/templates/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/templates/login.blade.php" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/templates/login.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/modal/category_all_edit_modal.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/modal/category_all_edit_modal.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -71,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="categoryAllController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="categoryAllController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/categoryAllController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
+            <state relative-caret-position="180">
               <caret line="54" column="34" lean-forward="true" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
               <folding>
                 <element signature="e#46#74#0#PHP" expanded="true" />
@@ -106,11 +58,9 @@
       <file leaf-file-name="categoryAll.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/controllers/admin/categoryAll.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-              <folding>
-                <element signature="e#1751#2145#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="399">
+              <caret line="78" column="5" lean-forward="false" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -118,18 +68,18 @@
       <file leaf-file-name="categoryAll.service.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/services/admin/categoryAll.service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="777">
+            <state relative-caret-position="525">
               <caret line="37" column="40" lean-forward="false" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="category_all_edit_modal.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="category_all_edit_modal.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/modal/category_all_edit_modal.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="35" column="56" lean-forward="true" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
+            <state relative-caret-position="210">
+              <caret line="9" column="114" lean-forward="false" selection-start-line="9" selection-start-column="114" selection-end-line="9" selection-end-column="114" />
               <folding />
             </state>
           </provider>
@@ -241,11 +191,11 @@
         <option value="$PROJECT_DIR$/resources/views/admin/category_add.blade.php" />
         <option value="$PROJECT_DIR$/public/js/controllers/admin/categoryAdd.controller.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/categoryAddController.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/modal/category_all_edit_modal.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/public/js/services/admin/categoryAll.service.js" />
-        <option value="$PROJECT_DIR$/public/js/controllers/admin/categoryAll.controller.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/categoryAllController.php" />
+        <option value="$PROJECT_DIR$/public/js/controllers/admin/categoryAll.controller.js" />
+        <option value="$PROJECT_DIR$/resources/views/admin/modal/category_all_edit_modal.blade.php" />
       </list>
     </option>
   </component>
@@ -1244,12 +1194,12 @@
       <workItem from="1496374024397" duration="13798000" />
       <workItem from="1496626156583" duration="70075000" />
       <workItem from="1497255750162" duration="3890000" />
-      <workItem from="1497316551342" duration="55362000" />
+      <workItem from="1497316551342" duration="56794000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="997872000" />
+    <option name="totallyTimeSpent" value="999304000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1809,34 +1759,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/categoryAddController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="34" column="2" lean-forward="false" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/category_all.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="42" column="46" lean-forward="false" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/modal/category_all_edit_modal.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="35" column="56" lean-forward="true" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/services/admin/categoryAll.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
-          <caret line="37" column="40" lean-forward="false" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -1849,23 +1775,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controllers/admin/categoryAll.controller.js">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/categoryAddController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding>
-            <element signature="e#1751#2145#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="138">
+          <caret line="34" column="2" lean-forward="false" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/categoryAllController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
+        <state relative-caret-position="180">
           <caret line="54" column="34" lean-forward="true" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
           <folding>
             <element signature="e#46#74#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/services/admin/categoryAll.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="37" column="40" lean-forward="false" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/admin/categoryAll.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="78" column="5" lean-forward="false" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/modal/category_all_edit_modal.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="9" column="114" lean-forward="false" selection-start-line="9" selection-start-column="114" selection-end-line="9" selection-end-column="114" />
+          <folding />
         </state>
       </provider>
     </entry>

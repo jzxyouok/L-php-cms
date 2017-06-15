@@ -16,7 +16,7 @@ app.controller('categoryAll', ['$scope', '$http', 'categoryAllService', function
                     parent: data[j].parent,
                     remark: data[j].remark,
                     order: data[j].order,
-                    original_id:data[j].id,
+                    original_id: data[j].id,
                 });
             }
 
@@ -33,7 +33,7 @@ app.controller('categoryAll', ['$scope', '$http', 'categoryAllService', function
                         parent: data[z].parent,
                         remark: data[z].remark,
                         order: data[z].order,
-                        original_id:data[z].id,
+                        original_id: data[z].id,
                     });
 
                 }
@@ -72,9 +72,13 @@ app.controller('categoryAll', ['$scope', '$http', 'categoryAllService', function
     }
     $scope.editCategoryCommit = function (category) {
 
-        categoryAllService.editCategoryCommit(category.original_id,category.name,category.slug,category.parent,category.order,category.remark).then(function success(res) {
-
-        },function error(res) {
+        categoryAllService.editCategoryCommit(category.original_id, category.name, category.slug, category.parent, category.order, category.remark).then(function success(res) {
+if(res.data.code===1){
+    $('#category_all_edit_modal').modal('hide');
+}else{
+    $scope.category_edit_msg=res.data.msg;
+}
+        }, function error(res) {
 
         });
     };
