@@ -1,32 +1,19 @@
 <div class="left-column">
     <div class="banner">
         <div class="tabBox u-clearfix">
-            <div class="bd">
-                <div class="tempWrap" style="overflow:hidden; position:relative; width:670px">
-                    <ul style="width: 2010px; left: 0px; position: relative; overflow: hidden; padding: 0px; margin: 0px;">
-                        <% documentRecommend.forEach(function (doc) { %>
-                        <li style="float: left; width: 670px;">
-                            <div class="imgs">
-                                <a href="http://www.woshipm.com/pmd/664735.html" target="_blank"
-                                   title="<%= doc.document_title %>">
-                                    <img width="670" height="320" src="<%= doc.document_img %>">
-                                </a>
-                            </div>
-                            <div class="text">
-                                <h3><a href="http://www.woshipm.com/pmd/664735.html" target="_blank"
-                                       title="<%= doc.document_title %>"><%= doc.document_title %></a>
-                                </h3>
-                            </div>
 
-                        </li>
-                        <% }) %>
-
-                    </ul>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><a href=""><img src="resources/views/index/woshipm/assets/images/banner1.jpg" alt=""><h3>不简单的周会与周报，这是你不知道的事</h3></a></div>
+                    <div class="swiper-slide"><a href=""><img src="resources/views/index/woshipm/assets/images/banner2.jpg" alt=""><h3>用户研究的知识框架：论用研的自我修养</h3></a></div>
+                  
                 </div>
-                <div class="prev"><span class="iconfont icon-zuoqiehuan"></span></div>
-                <div class="next"><span class="iconfont icon-youqiehuan"></span></div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
-
             <div class="supernice">
                 <ul>
                     <li class="on"></li>
@@ -37,15 +24,29 @@
             </div>
             <div class="hd smallScroll">
                 <ul class="">
-                    <% documentRecommendAndHot.forEach(function (doc) { %>
+
                     <li>
                         <a href="http://www.woshipm.com/pmd/662334.html" target="_blank"
-                           title="<%= doc.document_title %>"><img
-                                    src="<%= doc.document_img %>"></a>
+                           title="%= doc.document_title %>"><img
+                                    src="resources/views/index/woshipm/assets/images/little1.gif"></a>
                         <h3><a href="http://www.woshipm.com/pmd/662334.html" target="_blank"
-                               title="<%= doc.document_title %>"><%= doc.document_title %></a>
+                               title="%= doc.document_title %>">%= doc.document_title %></a>
                         </h3></li>
-                    <% }) %>
+
+                    <li>
+                        <a href="http://www.woshipm.com/pmd/662334.html" target="_blank"
+                           title="%= doc.document_title %>"><img
+                                    src="resources/views/index/woshipm/assets/images/little2.gif"></a>
+                        <h3><a href="http://www.woshipm.com/pmd/662334.html" target="_blank"
+                               title="%= doc.document_title %>">%= doc.document_title %></a>
+                        </h3></li>
+                    <li>
+                        <a href="http://www.woshipm.com/pmd/662334.html" target="_blank"
+                           title="%= doc.document_title %>"><img
+                                    src="resources/views/index/woshipm/assets/images/little3.gif"></a>
+                        <h3><a href="http://www.woshipm.com/pmd/662334.html" target="_blank"
+                               title="%= doc.document_title %>">%= doc.document_title %></a>
+                        </h3></li>
 
                 </ul>
             </div>
@@ -60,15 +61,15 @@
             <% documentByLimitCurrentPage.forEach(function (doc) { %>
             <article class="u-clearfix stream-list-item sticky" data-id="663947">
                 <div class="stream-list-image">
-                    <a href="/content/<%= doc.document_title %>" target="_blank" title="<%= doc.document_title %>"><img
-                                src="<%= doc.document_img %>" width="202" height="145"></a>
+                    <a href="/content/%= doc.document_title %>" target="_blank" title="%= doc.document_title %>"><img
+                                src="%= doc.document_img %>" width="202" height="145"></a>
                     <div class="stream-list-category"><a href="http://www.woshipm.com/category/chuangye"
-                                                         rel="category tag"><%= doc.document_category %></a>
+                                                         rel="category tag">%= doc.document_category %></a>
                     </div>
                 </div>
                 <div class="stream-list-content">
-                    <h2 class="stream-list-title"><a target="_blank" href="/content/<%= doc.document_title %>"
-                                                     title="<%= doc.document_title %>"><%= doc.document_title %></a><span
+                    <h2 class="stream-list-title"><a target="_blank" href="/content/%= doc.document_title %>"
+                                                     title="%= doc.document_title %>">%= doc.document_title %></a><span
                                 class="iconfont icon-hot"></span></h2>
                     <div class="stream-list-meta">
                 <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/31217"><img
@@ -76,15 +77,15 @@
                                 class="avatar"></a></span><span class="author" data-id="31217"><a target="_blank"
                                                                                                   href="http://www.woshipm.com/u/31217">辩手李慕阳</a></span>
                         <span class="dot"></span>
-                        <time datetime="2017-05-16T09:34:00+08:00"><%= doc.document_publish_date %></time>
+                        <time datetime="2017-05-16T09:34:00+08:00">%= doc.document_publish_date %></time>
                     </div>
                     <div class="stream-list-snipper">
-                        <%= doc.document_abstract %>
+                        %= doc.document_abstract %>
                     </div>
                     <footer class="stream-list-footer">
-                        <span class="post-views"><span class="iconfont icon-view"></span>阅读 <%= doc.document_view %></span>
-                        <span class="post-marks"><span class="iconfont icon-heart"></span>收藏 <%= doc.document_view %></span>
-                        <span class="post-likes"><span class="iconfont icon-zan"></span>被赞<%= doc.document_view %></span>
+                        <span class="post-views"><span class="iconfont icon-view"></span>阅读 %= doc.document_view %></span>
+                        <span class="post-marks"><span class="iconfont icon-heart"></span>收藏 %= doc.document_view %></span>
+                        <span class="post-likes"><span class="iconfont icon-zan"></span>被赞%= doc.document_view %></span>
                     </footer>
                 </div>
             </article>

@@ -41,6 +41,7 @@ return [
   'menu_manage' => '菜单管理',
   'edit_menu' => '编辑菜单',
   'menu_location' => '菜单位置',
+  'banner_manage' => '轮播管理',
   'tag_manage' => '标签管理',
   'comment_manage' => '评论管理',
   'message_manage' => '消息管理',

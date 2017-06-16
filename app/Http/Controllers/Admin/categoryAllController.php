@@ -66,5 +66,20 @@ class categoryAllController extends Controller
     }
   }
 
+  public function removeCommit(Request $request)
+  {
+    $id = $request->input('id');
+
+    if(Category::where('id', $id)->first()){
+      $res = Category::where('id', $id)->first()->delete();
+      if($res){
+        return response()->json(['code'=>1,'msg'=>'删除成功！']);
+      }else{
+        return response()->json(['code'=>0,'msg'=>'删除失败！']);
+      }
+    }
+
+  }
+
 
 }

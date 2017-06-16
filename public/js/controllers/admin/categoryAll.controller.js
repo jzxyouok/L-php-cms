@@ -69,18 +69,39 @@ app.controller('categoryAll', ['$scope', '$http', 'categoryAllService', function
             }
         }
 
-    }
+    };
     $scope.editCategoryCommit = function (category) {
 
         categoryAllService.editCategoryCommit(category.original_id, category.name, category.slug, category.parent, category.order, category.remark).then(function success(res) {
-if(res.data.code===1){
-    $('#category_all_edit_modal').modal('hide');
-}else{
-    $scope.category_edit_msg=res.data.msg;
-}
+            if (res.data.code === 1) {
+                $('#category_all_edit_modal').modal('hide');
+            } else {
+                $scope.category_edit_msg = res.data.msg;
+            }
         }, function error(res) {
 
         });
     };
+
+    $scope.remove = function (x) {
+        $scope.category_for_remove = x;
+    };
+
+    $scope.removeCommit = function () {
+        categoryAllService.removeCommit($scope.category_for_remove.original_id).then(function success(res) {
+            if (res.data.code === 1) {
+                for (var i = 0; i < $scope.data.length; i++) {
+                    if ($scope.data[i].original_id === $scope.category_for_remove.original_id) {
+                        var index = i;
+                        break;
+                    }
+                }
+                $scope.data.splice(index, 1);
+                $('#category_all_remove_modal').modal('hide');
+            }
+        }, function error(res) {
+
+        });
+    }
 
 }]);

@@ -44,7 +44,8 @@ app.controller('categoryAdd', ['$scope', '$http', 'categoryAllService', '$sce', 
 
         dataFormat.unshift({
             name: '无',
-            id: '0'
+            id: '0',
+            parent:0,
         });
 
         /*
@@ -52,7 +53,7 @@ app.controller('categoryAdd', ['$scope', '$http', 'categoryAllService', '$sce', 
          * */
         $scope.cateOptions = dataFormat;
         console.log($scope.cateOptions);
-        $scope.cate = $scope.cateOptions[0].id;
+        $scope.parent = $scope.cateOptions[0].id;
     }, function error(res) {
 
     });

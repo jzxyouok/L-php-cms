@@ -76,7 +76,7 @@
                                  ng-class="{'has-warning':myForm.parent.$invalid && !myForm.parent.$pristine,'has-success':myForm.parent.$valid && !myForm.parent.$pristine,'has-error':isUsernameExist}">
                                 <label class="col-sm-2 control-label">父级</label>
                                 <div class="col-sm-10">
-                                    <select class="form-control" name="cate" ng-model="cate"
+                                    <select class="form-control" name="parent" ng-model="parent"
                                             ng-options="x.id as x.name for x in cateOptions" required>
                                         <option value="">-- 请选择 --</option>
                                     </select>

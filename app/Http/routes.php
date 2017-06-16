@@ -50,12 +50,17 @@ Route::group(['namespace' => 'Admin'], function () {
   Route::get('/admin/manage/doc_manage/category_all', 'categoryAllController@view')->name('category_all');
   Route::get('/admin/manage/doc_manage/category_get', 'categoryAllController@get')->name('category_get');
   Route::post('/admin/manage/doc_manage/category_edit_commit', 'categoryAllController@editCommit')->name('category_edit_commit');
+  Route::post('/admin/manage/doc_manage/category_remove_commit', 'categoryAllController@removeCommit')->name('category_remove_commit');
 
   Route::get('/admin/manage/doc_manage/category_add', 'categoryAddController@view')->name('category_add');
   Route::post('/admin/manage/doc_manage/category_add', 'categoryAddController@addCategory')->name('category_add_post');
 
   Route::get('/admin/manage/doc_manage/edit_menu', 'editMenuController@view')->name('edit_menu');
   Route::get('/admin/manage/doc_manage/menu_location', 'menuLocationController@view')->name('menu_location');
+
+  Route::get('/admin/manage/doc_manage/banner_manage', 'bannerManageController@view')->name('banner_manage');
+  Route::get('/admin/manage/doc_manage/banner_manage_edit', 'bannerManageEditController@view')->name('banner_manage_edit');
+
   Route::get('/admin/manage/doc_manage/tag_manage', 'tagManageController@view')->name('tag_manage');
   Route::get('/admin/manage/doc_manage/comment_manage', 'commentManageController@view')->name('comment_manage');
   Route::get('/admin/manage/doc_manage/message_manage', 'messageManageController@view')->name('message_manage');

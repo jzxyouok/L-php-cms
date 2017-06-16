@@ -50,6 +50,17 @@ app.factory('categoryAllService', ['$http', function ($http) {
                 headers: {'content-type': 'application/x-www-form-urlencoded'}
             });
         },
+        removeCommit:function (id) {
+            return $http({
+                method: 'POST',
+                url: '/admin/manage/doc_manage/category_remove_commit',
+                data:$.param({
+                    id:id
+
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
 
     };
 }]);
