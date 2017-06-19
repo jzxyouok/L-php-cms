@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ URL::asset('public/css/dataTables.bootstrap.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('public/css/skins/_all-skins.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('public/css/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('public/css/viralnova.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('public/plugins/zTree_v3-3.5.28/css/zTreeStyle/zTreeStyle.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('public/plugins/uploadify/uploadify.css') }}">
     <script src="{{ URL::asset('public/js/common/jquery.js') }}"></script>

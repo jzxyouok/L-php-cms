@@ -12,11 +12,11 @@ class bannerManageEditController extends Controller
 
   public function view(Request $request)
   {
-    return view('admin.banner_manage', [
+    return view('admin.banner_manage_edit', [
       'cms'=>config('cms.cms'),
       'cms_name'=>config('cms.cms_name'),
       'category'=>config('cms.doc_manage'),
-      'item'=>config('cms.banner_manage'),
+      'item'=>config('cms.banner_manage_edit'),
       'userInfo'=>$request->session()->get('userInfo'),
     ]);
   }

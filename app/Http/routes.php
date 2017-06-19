@@ -59,6 +59,8 @@ Route::group(['namespace' => 'Admin'], function () {
   Route::get('/admin/manage/doc_manage/menu_location', 'menuLocationController@view')->name('menu_location');
 
   Route::get('/admin/manage/doc_manage/banner_manage', 'bannerManageController@view')->name('banner_manage');
+  Route::get('/admin/manage/doc_manage/banner_manage_get', 'bannerManageController@bannerGet')->name('banner_manage_get');
+  Route::post('/admin/manage/doc_manage/banner_manage_add', 'bannerManageController@bannerItemAddCommit')->name('banner_manage_add');
   Route::get('/admin/manage/doc_manage/banner_manage_edit', 'bannerManageEditController@view')->name('banner_manage_edit');
 
   Route::get('/admin/manage/doc_manage/tag_manage', 'tagManageController@view')->name('tag_manage');

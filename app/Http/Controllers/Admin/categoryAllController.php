@@ -25,6 +25,7 @@ class categoryAllController extends Controller
   public function get(Request $request)
   {
     $categories = DB::table('categories')->get();
+
     return response()->json($categories);
   }
 

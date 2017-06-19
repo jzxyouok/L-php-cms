@@ -1,5 +1,5 @@
 @include('admin.header')
-<div class="content-wrapper" ng-controller="bannderManage">
+<div class="content-wrapper" ng-controller="bannerManage" ng-init="bannerGet()">
     @include('admin.modal.banner_item_add_modal')
 
     <section class="content-header">
@@ -32,19 +32,17 @@
                                 <th style="width: 10px"><input type="checkbox" class="minimal"></th>
                                 <th>轮播名称</th>
                                 <th>轮播位置</th>
-                                <th>父级分类</th>
-                                <th>排序</th>
-                                <th>文章数量</th>
+                                <th>描述</th>
+
 
                                 <th>操作</th>
                             </tr>
-                            <tr ng-repeat="x in data">
+                            <tr ng-repeat="x in bannerData">
                                 <td><input type="checkbox" class="minimal"></td>
                                 <td>@{{x.name}}</td>
-                                <td>@{{x.slug}}</td>
-                                <td>@{{x.parent}}</td>
-                                <td>@{{x.order}}</td>
-                                <td>@{{x.name}}</td>
+                                <td>@{{x.location}}</td>
+                                <td>@{{x.remark}}</td>
+
 
                                 <td>
                                     <button type="button" class="btn btn-primary btn-xs btn-flat" data-toggle="modal"
