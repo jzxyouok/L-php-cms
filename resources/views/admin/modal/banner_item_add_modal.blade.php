@@ -20,7 +20,7 @@
                                        ng-model="user.name">
                             </div>
                         </div>
-            
+
 
                         <div class="form-group">
                             <label class="col-sm-2 control-label">描述</label>
@@ -38,7 +38,7 @@
             <div class="modal-footer">
 
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary" ng-click="editCommit(user)">提交</button>
+                <button type="button" class="btn btn-primary" ng-click="bannerItemAdd(user)">提交</button>
             </div>
         </div>
 

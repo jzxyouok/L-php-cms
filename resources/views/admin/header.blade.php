@@ -250,6 +250,22 @@
                                 class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
                         <li>
+                            <a href="#"> 我的文档
+                                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="/admin/manage/doc_manage/write">写文档</a></li>
+                                <li><a href="/admin/manage/doc_manage/published">已发布</a></li>
+                                <li><a href="/admin/manage/doc_manage/wait_for_verify">待审核</a></li>
+                                <li><a href="/admin/manage/doc_manage/no_access">未通过</a></li>
+                                <li><a href="/admin/manage/doc_manage/draft">草稿箱</a></li>
+                                <li><a href="/admin/manage/doc_manage/recycle">回收站</a></li>
+
+                            </ul>
+                        </li>
+                        <li>
                             <a href="#"> 分类管理
                                 <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
@@ -274,16 +290,13 @@
 
                             </ul>
                         </li>
+
                         <li><a href="/admin/manage/doc_manage/banner_manage"> 轮播管理</a></li>
                         <li><a href="/admin/manage/doc_manage/tag_manage"> 标签管理</a></li>
                         <li><a href="/admin/manage/doc_manage/comment_manage"> 评论管理</a></li>
                         <li><a href="/admin/manage/doc_manage/message_manage"> 消息管理</a></li>
-                        <li><a href="/admin/manage/doc_manage/write">写文档</a></li>
-                        <li><a href="/admin/manage/doc_manage/published">已发布</a></li>
-                        <li><a href="/admin/manage/doc_manage/wait_for_verify">待审核</a></li>
-                        <li><a href="/admin/manage/doc_manage/no_access">未通过</a></li>
-                        <li><a href="/admin/manage/doc_manage/draft">草稿箱</a></li>
-                        <li><a href="/admin/manage/doc_manage/recycle">回收站</a></li>
+
+
 
 
                     </ul>

@@ -1,6 +1,6 @@
 @include('admin.header')
 <div class="content-wrapper" ng-controller="bannderManage">
-    @include('admin.modal.banner_add_modal')
+    @include('admin.modal.banner_item_add_modal')
 
     <section class="content-header">
         <h1>
