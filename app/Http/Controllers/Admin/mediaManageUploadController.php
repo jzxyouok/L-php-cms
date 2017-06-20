@@ -25,8 +25,9 @@ class mediaManageUploadController extends Controller
   public function mediaManageUpload(Request $request)
   {
 
-dd(Input::file('Filedata'));
-
+//$file=Input::file('Filedata');
+    $file = $request->file('Filedata');
+dd($file->getRealPath());
     //判断请求中是否包含name=file的上传文件
     //return response()->json(['code'=>$request->hasFile('file')]);
 //    dd($request->hasFile('file'));
