@@ -31,6 +31,7 @@ class adminUserGroupAllController extends Controller
 
   public function forbiddenStatus(Request $request)
   {
+
     $name=$request->input('name');
 
     $adminUserGroup=AdminUserGroup::where('name', $name)->first();

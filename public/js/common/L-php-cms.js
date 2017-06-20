@@ -610,6 +610,48 @@ app.factory('headerCtrlService', ['$http', function ($http) {
  * Created by v_lljunli on 2017/5/10.
  */
 
+app.factory('mediaManageAllService', ['$http', function ($http) {
+  return {
+    get: function (password,repassword) {
+
+      return $http({
+        method: 'POST',
+        url:  '/admin/manage/panel/password_modify',
+        data: $.param({
+          adminUser_password: password,
+          adminUser_repassword: repassword
+        }),
+        headers: {'content-type': 'application/x-www-form-urlencoded'}
+      });
+    },
+
+  }
+}]);
+/**
+ * Created by v_lljunli on 2017/5/10.
+ */
+
+app.factory('mediaManageService', ['$http', function ($http) {
+  return {
+    get: function (password,repassword) {
+
+      return $http({
+        method: 'POST',
+        url:  '/admin/manage/panel/password_modify',
+        data: $.param({
+          adminUser_password: password,
+          adminUser_repassword: repassword
+        }),
+        headers: {'content-type': 'application/x-www-form-urlencoded'}
+      });
+    },
+
+  }
+}]);
+/**
+ * Created by v_lljunli on 2017/5/10.
+ */
+
 app.factory('modifyPasswordService', ['$http', function ($http) {
   return {
     get: function (password,repassword) {
@@ -2287,6 +2329,56 @@ app.controller('headerCtrl',['$scope','$http','headerCtrlService',function ($sco
 
     });
   };
+}]);
+/**
+ * Created by v_lljunli on 2017/5/10.
+ */
+app.controller('mediaManage', ['$scope', '$http', 'mediaManageAllService', function ($scope, $http, mediaManageAllService) {
+
+
+
+
+
+
+
+  $scope.passwordModify = function () {
+    passwordModifyService.get($scope.adminUser_password,$scope.adminUser_repassword).then(function success(res) {
+      if(res.data.code===1){
+        $('#password_modify_modal').modal({
+          keyboard: true
+        });
+      }
+    }, function error(res) {
+
+    });
+
+
+  };
+
+}]);
+/**
+ * Created by v_lljunli on 2017/5/10.
+ */
+app.controller('mediaManageUpload', ['$scope', '$http', 'mediaManageService', function ($scope, $http, mediaManageService) {
+
+
+
+
+
+    $scope.passwordModify = function () {
+        passwordModifyService.get($scope.adminUser_password, $scope.adminUser_repassword).then(function success(res) {
+            if (res.data.code === 1) {
+                $('#password_modify_modal').modal({
+                    keyboard: true
+                });
+            }
+        }, function error(res) {
+
+        });
+
+
+    };
+
 }]);
 /**
  * Created by v_lljunli on 2017/5/10.

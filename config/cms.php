@@ -54,7 +54,8 @@ return [
   'recycle' => '回收站',
 
   'file_manage' => '文件管理',
-  'media_manage' => '媒体管理',
+  'media_manage_all' => '所有媒体',
+  'media_manage_upload' => '添加媒体',
   'file_backup' => '文件备份',
   'file_recover' => '文件恢复',
 

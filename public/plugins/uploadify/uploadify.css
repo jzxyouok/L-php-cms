@@ -7,7 +7,7 @@ Released under the MIT License <http://www.opensource.org/licenses/mit-license.p
 .uploadify {
 	position: relative;
 	margin-bottom: 1em;
-	float: right;
+	/*float: right;*/
 }
 .uploadify-button {
 	background-color: #505050;
@@ -28,26 +28,29 @@ Released under the MIT License <http://www.opensource.org/licenses/mit-license.p
 	-webkit-border-radius: 30px;
 	-moz-border-radius: 30px;
 	border-radius: 2px;
-	border: 2px solid #808080;
+	/*border: 2px solid #808080;*/
 	color: #FFF;
 	font: bold 12px Arial, Helvetica, sans-serif;
 	text-align: center;
 	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
 	width: 100%;
 }
+.uploadify-btn-primary{
+	background: #3c8dbc;
+}
 .uploadify:hover .uploadify-button {
-	background-color: #606060;
-	background-image: linear-gradient(top, #606060 0%, #808080 100%);
-	background-image: -o-linear-gradient(top, #606060 0%, #808080 100%);
-	background-image: -moz-linear-gradient(top, #606060 0%, #808080 100%);
-	background-image: -webkit-linear-gradient(top, #606060 0%, #808080 100%);
-	background-image: -ms-linear-gradient(top, #606060 0%, #808080 100%);
+	background-color: #5fadda;
+	background-image: linear-gradient(top, #5fadda 0%, #3c8dbc 100%);
+	background-image: -o-linear-gradient(top, #5fadda 0%, #3c8dbc 100%);
+	background-image: -moz-linear-gradient(top, #5fadda 0%, #3c8dbc 100%);
+	background-image: -webkit-linear-gradient(top, #5fadda 0%, #3c8dbc 100%);
+	background-image: -ms-linear-gradient(top, #5fadda 0%, #3c8dbc 100%);
 	background-image: -webkit-gradient(
 		linear,
 		left bottom,
 		left top,
-		color-stop(0, #606060),
-		color-stop(1, #808080)
+		color-stop(0, #5fadda),
+		color-stop(1, #3c8dbc)
 	);
 	background-position: center bottom;
 }

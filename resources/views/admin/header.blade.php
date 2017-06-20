@@ -306,7 +306,19 @@
                     <a href="#"><i class="fa fa-file-photo-o"></i><span>文件管理</span> <i
                                 class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="/admin/manage/file_manage/media_manage"> 媒体管理</a></li>
+                        <li>
+                            <a href="#"> 媒体管理
+                                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="/admin/manage/file_manage/media_manage_upload">添加媒体</a></li>
+                                <li><a href="/admin/manage/file_manage/media_manage_all">所有媒体</a></li>
+
+                            </ul>
+                        </li>
+
                         <li><a href="/admin/manage/file_manage/file_backup"> 文件备份</a></li>
                         <li><a href="/admin/manage/file_manage/file_recover"> 文件恢复</a></li>
 

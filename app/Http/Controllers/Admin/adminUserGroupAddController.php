@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Model\AdminUserGroup;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Http\Utils\Functions;
+
 
 class adminUserGroupAddController extends Controller
 {

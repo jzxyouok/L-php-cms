@@ -79,9 +79,12 @@ Route::group(['namespace' => 'Admin'], function () {
 /*
  * 文件管理
  * */
-Route::group(['middleware' => 'auth','namespace' => 'Admin'], function () {
+Route::group(['namespace' => 'Admin'], function () {
 
-  Route::get('/admin/manage/file_manage/media_manage', 'mediaManageController@showProfile')->name('media_manage');
+  Route::get('/admin/manage/file_manage/media_manage_all', 'mediaManageAllController@view')->name('media_manage_all');
+  Route::get('/admin/manage/file_manage/media_manage_upload', 'mediaManageUploadController@view')->name('media_manage_upload');
+  Route::post('/admin/manage/file_manage/media_manage_upload', 'mediaManageUploadController@mediaManageUpload')->name('media_manage_upload_post');
+
   Route::get('/admin/manage/file_manage/file_backup', 'file_backupController@showProfile')->name('file_backup');
   Route::get('/admin/manage/file_manage/file_recover', 'file_recoverController@showProfile')->name('file_recover');
 });

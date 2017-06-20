@@ -198,6 +198,7 @@
 </aside>
 <div class="control-sidebar-bg"></div>
 </div>
+
 <script src="{{ URL::asset('public/plugins/zTree_v3-3.5.28/js/jquery.ztree.core.js') }}"></script>
 <script src="{{ URL::asset('public/plugins/zTree_v3-3.5.28/js/jquery.ztree.excheck.js') }}"></script>
 <script src="{{ URL::asset('public/js/common/L-php-cms.js') }}"></script>

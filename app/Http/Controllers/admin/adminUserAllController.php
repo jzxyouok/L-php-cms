@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Util\Settings;
 use Illuminate\Support\Facades\DB;
 
 class adminUserAllController extends Controller

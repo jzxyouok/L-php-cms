@@ -17,3 +17,13 @@
 .nav-tabs-custom {
   margin-bottom: 0px;
 }
+.media_manage_upload_img{
+  width: 60px;
+  height: 60px;
+
+}
+.media_manage_upload_img img {
+   display: block;
+   width: 100%;
+   height: 100%;
+ }
