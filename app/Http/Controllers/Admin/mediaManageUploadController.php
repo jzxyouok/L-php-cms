@@ -25,9 +25,41 @@ class mediaManageUploadController extends Controller
   public function mediaManageUpload(Request $request)
   {
 
-//$file=Input::file('Filedata');
+    //$file=Input::file('Filedata');
     $file = $request->file('Filedata');
-dd($file->getRealPath());
+    $realPath = $file->getRealPath();
+    $extension = $file->getClientOriginalExtension();
+    $fileName = date('YmdHis') . mt_rand(100, 999) . '.' . $extension;
+
+    switch ($extension) {
+      case 'jpg':
+        $path = $file->move(base_path() . '/public/upload/image/' . date('Ymd'), $fileName);
+        break;
+      case 'png':
+        $path = $file->move(base_path() . '/public/upload/image/' . date('Ymd'), $fileName);
+        break;
+      case 'gif':
+        $path = $file->move(base_path() . '/public/upload/image/' . date('Ymd'), $fileName);
+        break;
+      case 'jpeg'  :
+        $path = $file->move(base_path() . '/public/upload/image/' . date('Ymd'), $fileName);
+        break;
+      case 'pdf':
+        $path = $file->move(base_path() . '/public/upload/pdf/' . date('Ymd'), $fileName);
+        break;
+      case 'mp4':
+        $path = $file->move(base_path() . '/public/upload/video/' . date('Ymd'), $fileName);
+        break;
+      case 'zip':
+        $path = $file->move(base_path() . '/public/upload/zip/' . date('Ymd'), $fileName);
+        break;
+      case 'rar':
+        $path = $file->move(base_path() . '/public/upload/zip/' . date('Ymd'), $fileName);
+        break;
+      default:
+        $path = $file->move(base_path() . '/public/upload/other/' . date('Ymd'), $fileName);
+    }
+
     //判断请求中是否包含name=file的上传文件
     //return response()->json(['code'=>$request->hasFile('file')]);
 //    dd($request->hasFile('file'));
