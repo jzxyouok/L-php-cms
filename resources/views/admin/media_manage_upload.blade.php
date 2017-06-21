@@ -1,6 +1,8 @@
 @include('admin.header')
-
+@include('admin.modal.media_manage_upload_tip_modal')
 <div class="content-wrapper" ng-controller="mediaManageUpload">
+
+
 
     <section class="content-header">
         <h1>
@@ -28,24 +30,28 @@
                     <div class="box-body">
 
                         <p id="media_manage_upload"></p>
-                        <p class="help-block">支持多文件上传。</p>
+                        <p class="help-block">暂时关闭多文件上传。</p>
                         <p class="help-block">最大上传文件大小：64 MB。</p>
-                        <table class="table table-bordered">
+                        <table class="table table-bordered" id="media_manage_upload_preview">
                             <tbody>
 
-                            <tr>
-                                <td>  <div class="media_manage_upload_img">
-                                        <img src="/public/upload/image/meida-default.jpg" title="" alt="Product Image">
+                            {{--<tr>--}}
+                                {{--<td>--}}
+                                    {{--<div class="media_manage_upload_img">--}}
+                                        {{--<img src="/public/upload/image/meida-default.jpg" title="" alt="Product Image">--}}
 
-                                    </div></td>
-                                <td>文件名</td>
-                                <td>
-                                   10MB
-                                </td>
-                                <td>  <button type="button" class="btn btn-primary btn-xs btn-flat" data-toggle="modal"
-                                              data-target="#admin_user_group_all_edit_modal" ng-click="edit(x)">编辑
-                                    </button></td>
-                            </tr>
+                                    {{--</div>--}}
+                                {{--</td>--}}
+                                {{--<td>文件名</td>--}}
+                                {{--<td>--}}
+                                    {{--10MB--}}
+                                {{--</td>--}}
+                                {{--<td>--}}
+                                    {{--<button type="button" class="btn btn-primary btn-xs btn-flat" data-toggle="modal"--}}
+                                            {{--data-target="#admin_user_group_all_edit_modal" ng-click="edit(x)">编辑--}}
+                                    {{--</button>--}}
+                                {{--</td>--}}
+                            {{--</tr>--}}
 
 
                             </tbody>
@@ -79,12 +85,20 @@
         'fileTypeExts': '*.gif; *.jpg; *.png;*.zip;*.rar;*.pdf;',//允许上传的文件后缀
         'fileSizeLimit': '64MB',//上传文件大小限制
         'auto': true,//选择文件后自动上传
-        'multi': true,//设置为true将允许多文件上传
+        'multi': false,//设置为true将允许多文件上传
 
         'onUploadSuccess': function (file, data, response) {//上传成功的回调
-            console.log(file);
-            console.log(data);
-            console.log(response);
+
+            if (JSON.parse(data).code) {
+                $('#media_manage_upload_preview tbody').append('<tr><td><div class="media_manage_upload_img"><img src="/public/upload/'+JSON.parse(data).url+'"'+' title="" alt="Product Image"></div></td><td>'+JSON.parse(data).fileName+'</td><td>'+JSON.parse(data).size+'KB</td><td><button type="button" class="btn btn-primary btn-xs btn-flat" data-toggle="modal"                                            data-target="#admin_user_group_all_edit_modal" ng-click="edit(x)">编辑</button></td></tr>');
+            } else {
+                $('#media_manage_upload_tip_modal .modal-body').text(JSON.parse(data).msg);
+                $('#media_manage_upload_tip_modal').modal({
+                    keyboard: true
+                });
+            }
+
+
         },
         //
         // 'onComplete': function(event, queueID, fileObj, response, data) {//当单个文件上传完成后触发

@@ -25,40 +25,76 @@ class mediaManageUploadController extends Controller
   public function mediaManageUpload(Request $request)
   {
 
+
     //$file=Input::file('Filedata');
     $file = $request->file('Filedata');
-    $realPath = $file->getRealPath();
-    $extension = $file->getClientOriginalExtension();
-    $fileName = date('YmdHis') . mt_rand(100, 999) . '.' . $extension;
+    if ($file->isValid()) {
+      $realPath = $file->getRealPath();
+      $extension = $file->getClientOriginalExtension();
+      $fileName = date('YmdHis') . mt_rand(100, 999) . '.' . $extension;
+      $extensionReal = $file->guessExtension();
+      $size = $file->getClientSize();
 
-    switch ($extension) {
-      case 'jpg':
-        $path = $file->move(base_path() . '/public/upload/image/' . date('Ymd'), $fileName);
-        break;
-      case 'png':
-        $path = $file->move(base_path() . '/public/upload/image/' . date('Ymd'), $fileName);
-        break;
-      case 'gif':
-        $path = $file->move(base_path() . '/public/upload/image/' . date('Ymd'), $fileName);
-        break;
-      case 'jpeg'  :
-        $path = $file->move(base_path() . '/public/upload/image/' . date('Ymd'), $fileName);
-        break;
-      case 'pdf':
-        $path = $file->move(base_path() . '/public/upload/pdf/' . date('Ymd'), $fileName);
-        break;
-      case 'mp4':
-        $path = $file->move(base_path() . '/public/upload/video/' . date('Ymd'), $fileName);
-        break;
-      case 'zip':
-        $path = $file->move(base_path() . '/public/upload/zip/' . date('Ymd'), $fileName);
-        break;
-      case 'rar':
-        $path = $file->move(base_path() . '/public/upload/zip/' . date('Ymd'), $fileName);
-        break;
-      default:
-        $path = $file->move(base_path() . '/public/upload/other/' . date('Ymd'), $fileName);
+      if ($extension !== 'jpg' || $extensionReal !== 'jpeg') {
+        if ($extension !== $extensionReal) {
+
+          return response()->json(['code' => 0, 'msg' => '文件类型错误!!!']);
+        }
+      }
+
+      switch ($extension) {
+        case 'jpg':
+          $dir = 'image';
+
+          break;
+        case 'png':
+          $dir = 'image';
+          break;
+        case 'gif':
+          $dir = 'image';
+          break;
+        case 'jpeg'  :
+          $dir = 'image';
+          break;
+        case 'pdf':
+          $dir = 'pdf';
+          break;
+        case 'mp4':
+          $dir = 'mp4';
+          break;
+        case 'zip':
+          $dir = 'zip';
+          break;
+        case 'rar':
+          $dir = 'rar';
+          break;
+        default:
+          $dir = 'other';
+          break;
+      }
+      $path = $file->move(base_path() . '/public/upload/' . $dir . '/' . date('Ymd'), $fileName);
+
+      switch ($dir) {
+        case 'zip':
+          return response()->json(['code' => 1, 'msg' => '上传成功', 'url' => $dir . '/' . 'zip-default.jpg', 'fileName' => $fileName, 'size' => round($size / 1024, 2)]);
+          break;
+        case 'rar':
+          return response()->json(['code' => 1, 'msg' => '上传成功', 'url' => $dir . '/' . 'rar-default.jpg', 'fileName' => $fileName, 'size' => round($size / 1024, 2)]);
+          break;
+        case 'pdf':
+          return response()->json(['code' => 1, 'msg' => '上传成功', 'url' => $dir . '/' . 'pdf-default.jpg', 'fileName' => $fileName, 'size' => round($size / 1024, 2)]);
+          break;
+        case 'mp4':
+          return response()->json(['code' => 1, 'msg' => '上传成功', 'url' => $dir . '/' . 'mp4-default.jpg', 'fileName' => $fileName, 'size' => round($size / 1024, 2)]);
+          break;
+        default:
+          return response()->json(['code' => 1, 'msg' => '上传成功', 'url' => $dir . '/' . date('Ymd') . '/' . $fileName, 'fileName' => $fileName, 'size' => round($size / 1024, 2)]);
+          break;
+      }
+
+
     }
+
 
     //判断请求中是否包含name=file的上传文件
     //return response()->json(['code'=>$request->hasFile('file')]);

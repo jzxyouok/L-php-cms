@@ -279,7 +279,7 @@ Released under the MIT License <http://www.opensource.org/licenses/mit-license.p
 						uploadSize         : 0, // The size in bytes of the upload queue
 						queueBytesUploaded : 0, // The size in bytes that have been uploaded for the current upload queue
 						uploadQueue        : [], // The files currently to be uploaded
-						errorMsg           : 'Some files were not added to the queue:'
+						errorMsg           : '这样的文件不被允许上传:'
 					};
 
 					// Save references to all the objects
@@ -569,7 +569,7 @@ Released under the MIT License <http://www.opensource.org/licenses/mit-license.p
 			var settings = this.settings;
 
 			// Reset some queue info
-			this.queueData.errorMsg       = 'Some files were not added to the queue:';
+			this.queueData.errorMsg       = '这样的文件不被允许上传:';
 			this.queueData.filesReplaced  = 0;
 			this.queueData.filesCancelled = 0;
 
@@ -702,13 +702,13 @@ Released under the MIT License <http://www.opensource.org/licenses/mit-license.p
 						}
 						break;
 					case SWFUpload.QUEUE_ERROR.FILE_EXCEEDS_SIZE_LIMIT:
-						this.queueData.errorMsg += '\nThe file "' + file.name + '" exceeds the size limit (' + settings.fileSizeLimit + ').';
+						this.queueData.errorMsg += '\n文件 "' + file.name + '" 超出文件大小限制 (' + settings.fileSizeLimit + ').';
 						break;
 					case SWFUpload.QUEUE_ERROR.ZERO_BYTE_FILE:
-						this.queueData.errorMsg += '\nThe file "' + file.name + '" is empty.';
+						this.queueData.errorMsg += '\n文件 "' + file.name + '" 是空的.';
 						break;
 					case SWFUpload.QUEUE_ERROR.FILE_EXCEEDS_SIZE_LIMIT:
-						this.queueData.errorMsg += '\nThe file "' + file.name + '" is not an accepted file type (' + settings.fileTypeDesc + ').';
+						this.queueData.errorMsg += '\n文件 "' + file.name + '" 是不允许的文件类型 (' + settings.fileTypeDesc + ').';
 						break;
 				}
 			}
