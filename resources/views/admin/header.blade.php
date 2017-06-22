@@ -17,6 +17,7 @@
     <script src="{{ URL::asset('public/plugins/uploadify/jquery.uploadify.js') }}"></script>
     <script src="{{ URL::asset('public/js/common/bootstrap.js') }}"></script>
     <script src="{{ URL::asset('public/js/common/app.js') }}"></script>
+
 </head>
 <body class="skin-blue sidebar-mini hold-transition" ng-app="myApp">
 

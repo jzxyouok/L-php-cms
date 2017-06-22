@@ -3,19 +3,27 @@
  */
 
 app.factory('mediaManageAllService', ['$http', function ($http) {
-  return {
-    get: function (password,repassword) {
+    return {
+        getAllMedia: function () {
 
-      return $http({
-        method: 'POST',
-        url:  '/admin/manage/panel/password_modify',
-        data: $.param({
-          adminUser_password: password,
-          adminUser_repassword: repassword
-        }),
-        headers: {'content-type': 'application/x-www-form-urlencoded'}
-      });
-    },
+            return $http({
+                method: 'GET',
+                url: '/admin/manage/file_manage/media_manage_get',
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
 
-  }
+        filterData: function (type,time) {
+            return $http({
+                method: 'POST',
+                url: '/admin/manage/file_manage/media_manage_get_filter',
+                data:$.param({
+                    type_real:type,
+                    upload_time:time
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
+
+    }
 }]);

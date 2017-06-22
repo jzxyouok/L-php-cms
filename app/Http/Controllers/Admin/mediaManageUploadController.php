@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Model\Upload;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
@@ -29,8 +30,12 @@ class mediaManageUploadController extends Controller
     //$file=Input::file('Filedata');
     $file = $request->file('Filedata');
     if ($file->isValid()) {
+
+
       $realPath = $file->getRealPath();
       $extension = $file->getClientOriginalExtension();
+      $fileNameOriginal = $file->getClientOriginalName();
+
       $fileName = date('YmdHis') . mt_rand(100, 999) . '.' . $extension;
       $extensionReal = $file->guessExtension();
       $size = $file->getClientSize();
@@ -74,6 +79,29 @@ class mediaManageUploadController extends Controller
       }
       $path = $file->move(base_path() . '/public/upload/' . $dir . '/' . date('Ymd'), $fileName);
 
+      if ($path) {
+        $uploadTime = date('Y-m-d H:i:s', $path->getMTime());
+        $fileNameNow = $path->getFilename();
+        $fileType = $path->guessExtension();
+        $fileSize = $path->getSize();
+        $uploadPath = $path->getPath();
+
+        $upload = new Upload;
+
+        $upload->admin_user = $request->session()->get('userInfo')->username;
+        $upload->filename_original = $fileNameOriginal;
+        $upload->filename_now = $fileNameNow;
+        $upload->url = $uploadPath;
+        $upload->type_real = $fileType;
+        $upload->size = $fileSize;
+        $upload->upload_time = $uploadTime;
+        $res = $upload->save();
+      }
+
+
+//if(){
+//
+//}
       switch ($dir) {
         case 'zip':
           return response()->json(['code' => 1, 'msg' => '上传成功', 'url' => $dir . '/' . 'zip-default.jpg', 'fileName' => $fileName, 'size' => round($size / 1024, 2)]);

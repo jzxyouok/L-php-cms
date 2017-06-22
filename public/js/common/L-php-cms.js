@@ -2,6 +2,10 @@
  * Created by v_lljunli on 2017/5/10.
  */
 var app = angular.module('myApp', ['ngSanitize']);
+// , function($interpolateProvider) {
+//     $interpolateProvider.startSymbol('<%');
+//     $interpolateProvider.endSymbol('%>');
+// }
 app.factory('adminLoginService', ['$http', function ($http) {
   return {
     get: function (username,password,code) {
@@ -611,21 +615,29 @@ app.factory('headerCtrlService', ['$http', function ($http) {
  */
 
 app.factory('mediaManageAllService', ['$http', function ($http) {
-  return {
-    get: function (password,repassword) {
+    return {
+        getAllMedia: function () {
 
-      return $http({
-        method: 'POST',
-        url:  '/admin/manage/panel/password_modify',
-        data: $.param({
-          adminUser_password: password,
-          adminUser_repassword: repassword
-        }),
-        headers: {'content-type': 'application/x-www-form-urlencoded'}
-      });
-    },
+            return $http({
+                method: 'GET',
+                url: '/admin/manage/file_manage/media_manage_get',
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
 
-  }
+        filterData: function (type,time) {
+            return $http({
+                method: 'POST',
+                url: '/admin/manage/file_manage/media_manage_get_filter',
+                data:$.param({
+                    type_real:type,
+                    upload_time:time
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
+
+    }
 }]);
 /**
  * Created by v_lljunli on 2017/5/10.
@@ -888,9 +900,28 @@ app.directive('pwCheck', [function () {
  * Created by v_lljunli on 2017/5/17.
  */
 app.filter('trustHtml', function ($sce) {
-  return function (input) {
-    return $sce.trustAsHtml(input);
-  }
+    return function (input) {
+        return $sce.trustAsHtml(input);
+    }
+});
+
+app.filter('sizeFormat', function () { //可以注入依赖
+    return function (text) {
+        return Math.round(text / 1024) + ' KB';
+    }
+});
+app.filter('urlCut', function () { //可以注入依赖
+    return function (text) {
+
+        return (text.match(/\/public\/upload\/(image|zip|rar|pdf)\/\d{8}/))[0];
+    }
+});
+app.filter('urlCutNoNumber', function () { //可以注入依赖
+    return function (text) {
+
+        return (text.match(/\/public\/upload\/(zip|rar|pdf)/))[0];
+
+    }
 });
 //$sce是angularJS自带的安全处理模块，$sce.trustAsHtml(input)方法便是将数据内容以html的形式进行解析并返 回  。
 /**
@@ -2335,25 +2366,58 @@ app.controller('headerCtrl',['$scope','$http','headerCtrlService',function ($sco
  */
 app.controller('mediaManage', ['$scope', '$http', 'mediaManageAllService', function ($scope, $http, mediaManageAllService) {
 
+    $scope.getAllMedia = function () {
+        mediaManageAllService.getAllMedia().then(function success(res) {
 
+            $scope.data = res.data;
+            var unique = [];
+            var uniqueYearMonth = [];
+            for (var i = 0; i < $scope.data.length; i++) {
+                var yearMonth = $scope.data[i].upload_time.slice(0, 7);
+                if (unique.indexOf(yearMonth) === -1) {
+                    unique.push(yearMonth);
+                }
+            }
+            for (var j = 0; j < unique.length; j++) {
+                var year = unique[j].slice(0, 4);
+                var month = unique[j].slice(5, 7);
+                uniqueYearMonth.push({name: year + '年' + month + '月', id: year + '-' + month});
+            }
+            $scope.uniqueYearMonth = uniqueYearMonth;
+            $scope.mediaType = [
+                {
+                    id: 'image', name: '图片文件'
+                },
+                {
+                    id: 'zip', name: 'ZIP压缩文件'
+                },
+                {
+                    id: 'rar', name: 'RAR压缩文件'
+                },
+                {
+                    id: 'pdf', name: 'PDF文件'
+                },
+                {
+                    id: 'video', name: '视频文件'
+                },
+            ];
 
+        }, function error(res) {
 
-
-
-
-  $scope.passwordModify = function () {
-    passwordModifyService.get($scope.adminUser_password,$scope.adminUser_repassword).then(function success(res) {
-      if(res.data.code===1){
-        $('#password_modify_modal').modal({
-          keyboard: true
         });
-      }
-    }, function error(res) {
-
-    });
 
 
-  };
+    };
+
+    $scope.filterData=function () {
+        mediaManageAllService.filterData($scope.media_type,$scope.unique_year_month).then(function success(res) {
+            $scope.data = res.data;
+            console.log($scope.data);
+        },function error(res) {
+
+        });
+
+    };
 
 }]);
 /**

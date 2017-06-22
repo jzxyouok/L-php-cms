@@ -2,6 +2,10 @@
  * Created by v_lljunli on 2017/5/10.
  */
 var app = angular.module('myApp', ['ngSanitize']);
+// , function($interpolateProvider) {
+//     $interpolateProvider.startSymbol('<%');
+//     $interpolateProvider.endSymbol('%>');
+// }
 app.factory('adminLoginService', ['$http', function ($http) {
   return {
     get: function (username,password,code) {

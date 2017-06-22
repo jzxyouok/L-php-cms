@@ -3,7 +3,6 @@
 <div class="content-wrapper" ng-controller="mediaManageUpload">
 
 
-
     <section class="content-header">
         <h1>
             {{$cms}}
