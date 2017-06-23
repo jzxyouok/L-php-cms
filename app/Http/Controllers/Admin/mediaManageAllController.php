@@ -72,7 +72,7 @@ class mediaManageAllController extends Controller
         ->whereIn('type_real',  $type_real)
         ->get(['admin_user', 'filename_now', 'url', 'size', 'upload_time', 'type_real']);
     }else{
-   
+
       $upload = Upload::where('admin_user', $request->session()->get('userInfo')->username)
         ->whereBetween('upload_time', [$upload_time . '-01 00:00:00', $upload_time . '-31 24:00:00'])
         ->whereIn('type_real',  $type_real)
