@@ -1625,50 +1625,81 @@ $scope.bannerData=res.data;
 /**
  * Created by v_lljunli on 2017/5/10.
  */
-app.controller('bannerManageEdit', ['$scope', '$http', 'bannerManageService', '$sce', function ($scope, $http, bannerManageService, $sce) {
-    $scope.postImg = '/upload/images/defaultlogo.png';
+app.controller('bannerManageEdit', ['$scope', '$http', 'bannerManageService', '$sce', 'mediaManageAllService', function ($scope, $http, bannerManageService, $sce, mediaManageAllService) {
+    $scope.getAllMedia = function () {
+        mediaManageAllService.getAllMedia().then(function success(res) {
 
-    $('#slider_img_upload').uploadify({
+            $scope.data = res.data;
 
-        'swf': '/public/plugins/uploadify/uploadify.swf',//指定swf文件
-        'uploader': '/admin/manage/document_manage/upload' + '?postTitle=' + 'post_title' + '&type=' + 'images' + '&key=' + 'post_img',//后台处理的页面
-        'buttonText': '上传图片',//按钮显示的文字
-        'buttonClass': 'uploadify-btn-default',//按钮显示的文字
-        'width': 100,//显示的高度和宽度，默认 height 30；width 120
-        'height': 30,//显示的高度和宽度，默认 height 30；width 120
-        'fileTypeDesc': 'Image Files',//上传文件的类型  默认为所有文件    'All Files'  ;  '*.*'
-        'fileTypeExts': '*.gif; *.jpg; *.png',//允许上传的文件后缀
-        'fileSizeLimit': '2000KB',//上传文件大小限制
-        'auto': true,//选择文件后自动上传
-        'multi': false,//设置为true将允许多文件上传
+            var unique = [];
+            var uniqueYearMonth = [];
+            for (var i = 0; i < $scope.data.length; i++) {
+                var yearMonth = $scope.data[i].upload_time.slice(0, 7);
+                if (unique.indexOf(yearMonth) === -1) {
+                    unique.push(yearMonth);
+                }
+            }
+            for (var j = 0; j < unique.length; j++) {
+                var year = unique[j].slice(0, 4);
+                var month = unique[j].slice(5, 7);
+                uniqueYearMonth.push({name: year + '年' + month + '月', id: year + '-' + month});
+            }
+            uniqueYearMonth.unshift({
+                name: '全部时间',
+                id: 'allTime'
+            });
+            $scope.uniqueYearMonthOptions = uniqueYearMonth;
+            $scope.unique_year_month = $scope.uniqueYearMonthOptions[0].id;//设置默认值
+            $scope.mediaTypeOptions = [
+                {
+                    id: 'allFile', name: '所有文件'
+                },
+                {
+                    id: 'image', name: '图片文件'
+                },
+                {
+                    id: 'zip', name: 'ZIP压缩文件'
+                },
+                {
+                    id: 'rar', name: 'RAR压缩文件'
+                },
+                {
+                    id: 'pdf', name: 'PDF文件'
+                },
+                {
+                    id: 'video', name: '视频文件'
+                },
+            ];
+            $scope.media_type = $scope.mediaTypeOptions[0].id;//设置默认值
 
-        'onUploadSuccess': function (file, data, response) {//上传成功的回调
-            $("#post_img_preview").attr("src", data);
-            $scope.postImg = data;
+        }, function error(res) {
 
-        },
-        //
-        // 'onComplete': function(event, queueID, fileObj, response, data) {//当单个文件上传完成后触发
-        //   //event:事件对象(the event object)
-        //   //ID:该文件在文件队列中的唯一表示
-        //   //fileObj:选中文件的对象，他包含的属性列表
-        //   //response:服务器端返回的Response文本，我这里返回的是处理过的文件名称
-        //   //data：文件队列详细信息和文件上传的一般数据
-        //   alert("文件:" + fileObj.name + " 上传成功！");
-        // },
-        //
-        // 'onUploadError' : function(file, errorCode, errorMsg, errorString) {//上传错误
-        //   alert('The file ' + file.name + ' could not be uploaded: ' + errorString);
-        // },
-        //
-        // 'onError': function(event, queueID, fileObj) {//当单个文件上传出错时触发
-        //   alert("文件:" + fileObj.name + " 上传失败！");
-        // }
+        });
 
 
-    });
+    };
+    $scope.filterData = function () {
+        console.log($scope.media_type);
+        mediaManageAllService.filterData($scope.media_type, $scope.unique_year_month).then(function success(res) {
+            $scope.data = res.data;
+            console.log($scope.data);
+        }, function error(res) {
+
+        });
+
+    };
+    $scope.listStyle = 1;
+    $scope.changeListStyle = function (num) {
+        num ? $scope.listStyle = 1 : $scope.listStyle = 0;
+    };
+
+
     $scope.editBanner = function () {
         window.location.href = '/admin/manage/doc_manage/banner_manage_edit';
+    };
+
+    $scope.selectBanner=function (file) {
+        
     };
 
 }]);
@@ -2364,7 +2395,7 @@ app.controller('headerCtrl',['$scope','$http','headerCtrlService',function ($sco
 /**
  * Created by v_lljunli on 2017/5/10.
  */
-app.controller('mediaManage', ['$scope', '$http', 'mediaManageAllService', function ($scope, $http, mediaManageAllService) {
+app.controller('mediaManageAll', ['$scope', '$http', 'mediaManageAllService', function ($scope, $http, mediaManageAllService) {
 
     $scope.getAllMedia = function () {
         mediaManageAllService.getAllMedia().then(function success(res) {
@@ -2433,13 +2464,15 @@ app.controller('mediaManage', ['$scope', '$http', 'mediaManageAllService', funct
     $scope.changeListStyle = function (num) {
         num ? $scope.listStyle = 1 : $scope.listStyle = 0;
     };
+    $scope.gotoMediaManageUpload=function () {
+        window.location.href='/admin/manage/file_manage/media_manage_upload';
+    };
 
 }]);
 /**
  * Created by v_lljunli on 2017/5/10.
  */
-app.controller('mediaManageUpload', ['$scope', '$http', 'mediaManageService', function ($scope, $http, mediaManageService) {
-
+app.controller('mediaManageUpload', ['$scope', '$http', 'mediaManageAllService', function ($scope, $http, mediaManageAllService) {
 
 
 

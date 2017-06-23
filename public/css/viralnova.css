@@ -46,4 +46,30 @@
 .small-box img {
     width: 100%;
     display: block;
+    height: 150px;
+
 }
+.media_list_active{
+    color: #cbdae2;
+}
+.bg-white {
+    background-color: #fff;
+}
+#media_manage_all .small-box > .small-box-footer ,#banner_manage_edit .small-box > .small-box-footer {
+
+    background: rgb(60, 141, 188);
+
+}
+#media_manage_all .small-box > .small-box-footer:hover,#banner_manage_edit .small-box > .small-box-footer:hover {
+
+    background: rgb(103, 175, 216);
+}
+
+@media (min-width: 992px) {
+    .modal-lgger {
+        width: 1200px;
+    }
+}
+
+
+

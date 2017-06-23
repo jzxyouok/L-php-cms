@@ -8,6 +8,10 @@ Released under the MIT License <http://www.opensource.org/licenses/mit-license.p
 	position: relative;
 	margin-bottom: 1em;
 	/*float: right;*/
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 220px;
 }
 .uploadify-button {
 	background-color: #505050;

@@ -1,7 +1,7 @@
 /**
  * Created by v_lljunli on 2017/5/10.
  */
-app.controller('mediaManage', ['$scope', '$http', 'mediaManageAllService', function ($scope, $http, mediaManageAllService) {
+app.controller('mediaManageAll', ['$scope', '$http', 'mediaManageAllService', function ($scope, $http, mediaManageAllService) {
 
     $scope.getAllMedia = function () {
         mediaManageAllService.getAllMedia().then(function success(res) {
@@ -69,6 +69,9 @@ app.controller('mediaManage', ['$scope', '$http', 'mediaManageAllService', funct
     $scope.listStyle = 1;
     $scope.changeListStyle = function (num) {
         num ? $scope.listStyle = 1 : $scope.listStyle = 0;
+    };
+    $scope.gotoMediaManageUpload=function () {
+        window.location.href='/admin/manage/file_manage/media_manage_upload';
     };
 
 }]);

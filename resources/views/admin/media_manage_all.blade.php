@@ -1,5 +1,5 @@
 @include('admin.header')
-<div class="content-wrapper" ng-controller="mediaManage" ng-init="getAllMedia()">
+<div class="content-wrapper" id="media_manage_all" ng-controller="mediaManageAll" ng-init="getAllMedia()">
 
 
     <section class="content-header">
@@ -19,33 +19,32 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel">
-                    <a href="" style="    display: inline-block;margin-left: 10px;" ng-click="changeListStyle(1)"><i class="fa fa-list"></i></a>
-                    <a href="" style="    display: inline-block;margin:0 10px;" ng-click="changeListStyle(0)"><i class="fa fa-th"></i></a>
-                    <a href="" role="button" class="btn btn-primary btn-sm" data-toggle="modal"
-                       data-target="#banner_add_modal"><span class="fa fa-plus-square" aria-hidden="true">&nbsp;</span>添加媒体</a>
+                    <a href="" style="    display: inline-block;margin-left: 10px;" ng-click="changeListStyle(1)" ng-class="{'media_list_active':!listStyle}"><i class="fa fa-list"></i></a>
+                    <a href="" style="    display: inline-block;margin:0 10px;" ng-click="changeListStyle(0)" ng-class="{'media_list_active':listStyle}"><i class="fa fa-th"></i></a>
+                    <a href="" role="button" class="btn btn-primary btn-sm" ng-click="gotoMediaManageUpload()"><span class="fa fa-plus-square" aria-hidden="true">&nbsp;</span>添加媒体</a>
 
 
-                    <select class="form-control input-sm "
-                            style="width: 200px;display: inline-block;margin-left: 10px;" name="media_type"
+                    <select class="form-control input-sm"
+                            style="width: 16%;display: inline-block;margin-left: 10px;" name="media_type"
                             ng-model="media_type" ng-options="x.id as x.name for x in mediaTypeOptions">
 
 
                     </select>
-                    <select class="form-control input-sm "
-                            style="width: 200px;display: inline-block;margin-left: 10px;" name="unique_year_month"
+                    <select class="form-control input-sm"
+                            style="width: 16%;display: inline-block;margin-left: 10px;" name="unique_year_month"
                             ng-model="unique_year_month" ng-options="x.id as x.name for x in uniqueYearMonthOptions">
 
                     </select>
-                    <a href="" role="button" class="btn btn-primary btn-sm" ng-click="filterData()">筛选</a>
+                    <button href="" role="button" class="btn btn-primary btn-sm" ng-click="filterData()">筛选</button>
                     <div class="pull-right">
 
                         <form action="/admin/manage/contentList" name="searchForm" class="ng-pristine ng-valid">
-                            <div class="input-group">
+                            <div class="input-group" >
                                 <input type="text" name="searchKey" id="searchInput"
-                                       class="form-control input-sm pull-right" style="width: 200px;"
+                                       class="form-control input-sm pull-right"
                                        placeholder="请输入需要查询的关键字" value="">
                                 <div class="input-group-btn" style="width: auto;">
-                                    <button class="btn btn-sm btn-default" type="submit"><i class="fa fa-search"></i>
+                                    <button class="btn btn-sm btn-primary" type="submit"><i class="fa fa-search"></i>&nbsp;搜索
                                     </button>
                                 </div>
                             </div>
@@ -120,31 +119,22 @@
                             </tr>
 
                         </table>
-                        <div class="row"  ng-if="!listStyle">
+                        <div class=""  ng-if="!listStyle" ng-repeat="x in data">
                             <div class="col-lg-2 col-xs-6">
-                                <div class="small-box bg-primary">
-                                    <img ng-src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1498195877043&di=d1ac4ff60fae51538e48701a6482342a&imgtype=0&src=http%3A%2F%2Fr2.ykimg.com%2F0541040854E2CA9D6A0A4962A92C5929"
+                                <div class="small-box bg-white">
+                                    <img ng-src="@{{ x.url | urlCut}}/@{{x.filename_now}}"
                                          title=""
-                                         alt="Product Image">
-
+                                         alt="Product Image" ng-if="x.type_real==='jpeg' || x.type_real==='jpg' || x.type_real==='png' || x.type_real==='gif'">
+                                    <img ng-src="@{{ x.url | urlCutNoNumber}}/@{{ x.type_real }}-default.jpg"
+                                         title=""
+                                         alt="Product Image" ng-if="x.type_real==='zip' || x.type_real==='rar' || x.type_real==='pdf'">
 
                                     <a href="javascript:void(0)" class="small-box-footer">
-                                        More info
+                                        @{{x.filename_now}}
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-lg-2 col-xs-6">
-                                <div class="small-box bg-primary">
-                                    <img ng-src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1498195877043&di=d1ac4ff60fae51538e48701a6482342a&imgtype=0&src=http%3A%2F%2Fr2.ykimg.com%2F0541040854E2CA9D6A0A4962A92C5929"
-                                         title=""
-                                         alt="Product Image">
 
-
-                                    <a href="javascript:void(0)" class="small-box-footer">
-                                        More info
-                                    </a>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="box-footer">

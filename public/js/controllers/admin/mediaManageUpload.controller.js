@@ -1,8 +1,7 @@
 /**
  * Created by v_lljunli on 2017/5/10.
  */
-app.controller('mediaManageUpload', ['$scope', '$http', 'mediaManageService', function ($scope, $http, mediaManageService) {
-
+app.controller('mediaManageUpload', ['$scope', '$http', 'mediaManageAllService', function ($scope, $http, mediaManageAllService) {
 
 
 

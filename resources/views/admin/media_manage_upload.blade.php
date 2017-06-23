@@ -1,7 +1,7 @@
 @include('admin.header')
-@include('admin.modal.media_manage_upload_tip_modal')
-<div class="content-wrapper" ng-controller="mediaManageUpload">
 
+<div class="content-wrapper" ng-controller="mediaManageUpload">
+    @include('admin.modal.media_manage_upload_tip_modal')
 
     <section class="content-header">
         <h1>
