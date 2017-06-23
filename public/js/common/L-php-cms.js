@@ -2370,6 +2370,7 @@ app.controller('mediaManage', ['$scope', '$http', 'mediaManageAllService', funct
         mediaManageAllService.getAllMedia().then(function success(res) {
 
             $scope.data = res.data;
+
             var unique = [];
             var uniqueYearMonth = [];
             for (var i = 0; i < $scope.data.length; i++) {
@@ -2383,8 +2384,16 @@ app.controller('mediaManage', ['$scope', '$http', 'mediaManageAllService', funct
                 var month = unique[j].slice(5, 7);
                 uniqueYearMonth.push({name: year + '年' + month + '月', id: year + '-' + month});
             }
-            $scope.uniqueYearMonth = uniqueYearMonth;
-            $scope.mediaType = [
+            uniqueYearMonth.unshift({
+                name:'全部时间',
+                id:'allTime'
+            });
+            $scope.uniqueYearMonthOptions = uniqueYearMonth;
+            $scope.unique_year_month=$scope.uniqueYearMonthOptions[0].id;//设置默认值
+            $scope.mediaTypeOptions = [
+                {
+                    id: 'allFile', name: '所有文件'
+                },
                 {
                     id: 'image', name: '图片文件'
                 },
@@ -2401,6 +2410,7 @@ app.controller('mediaManage', ['$scope', '$http', 'mediaManageAllService', funct
                     id: 'video', name: '视频文件'
                 },
             ];
+            $scope.media_type=$scope.mediaTypeOptions[0].id;//设置默认值
 
         }, function error(res) {
 
@@ -2410,6 +2420,7 @@ app.controller('mediaManage', ['$scope', '$http', 'mediaManageAllService', funct
     };
 
     $scope.filterData=function () {
+        console.log($scope.media_type);
         mediaManageAllService.filterData($scope.media_type,$scope.unique_year_month).then(function success(res) {
             $scope.data = res.data;
             console.log($scope.data);

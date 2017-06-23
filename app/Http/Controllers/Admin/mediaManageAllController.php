@@ -44,9 +44,42 @@ class mediaManageAllController extends Controller
 
   public function filterData(Request $request)
   {
-    $type_real=$request->input('type_real');
-    $upload_time=$request->input('upload_time');
-    $upload = Upload::where(['admin_user'=>$request->session()->get('userInfo')->username,'type_real'=>'jpeg','upload_time'=>$upload_time])->get(['admin_user', 'filename_now', 'url', 'size', 'upload_time', 'type_real']);
+    $type_real = $request->input('type_real');
+    switch ($type_real) {
+      case 'allFile':
+        $type_real = ['jpeg', 'png', 'gif','rar','zip','pdf'];
+        break;
+      case 'image':
+        $type_real = ['jpeg', 'png', 'gif'];
+        break;
+      case 'rar':
+        $type_real = ['rar'];
+        break;
+      case 'zip':
+        $type_real = ['zip'];
+        break;
+      case 'pdf':
+        $type_real = ['pdf'];
+        break;
+    }
+
+
+    $upload_time = $request->input('upload_time');
+
+    if($upload_time==='allTime'){
+
+      $upload = Upload::where('admin_user', $request->session()->get('userInfo')->username)
+        ->whereIn('type_real',  $type_real)
+        ->get(['admin_user', 'filename_now', 'url', 'size', 'upload_time', 'type_real']);
+    }else{
+   
+      $upload = Upload::where('admin_user', $request->session()->get('userInfo')->username)
+        ->whereBetween('upload_time', [$upload_time . '-01 00:00:00', $upload_time . '-31 24:00:00'])
+        ->whereIn('type_real',  $type_real)
+        ->get(['admin_user', 'filename_now', 'url', 'size', 'upload_time', 'type_real']);
+    }
+
+
     return response()->json($upload->toArray());
   }
 

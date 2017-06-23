@@ -27,14 +27,14 @@
 
                     <select class="form-control input-sm "
                             style="width: 200px;display: inline-block;margin-left: 10px;" name="media_type"
-                            ng-model="media_type" ng-options="x.id as x.name for x in mediaType">
-                        <option value="">-- 所有文件 --</option>
+                            ng-model="media_type" ng-options="x.id as x.name for x in mediaTypeOptions">
+
 
                     </select>
                     <select class="form-control input-sm "
                             style="width: 200px;display: inline-block;margin-left: 10px;" name="unique_year_month"
-                            ng-model="unique_year_month" ng-options="x.id as x.name for x in uniqueYearMonth">
-                        <option value="">-- 全部时间 --</option>
+                            ng-model="unique_year_month" ng-options="x.id as x.name for x in uniqueYearMonthOptions">
+
                     </select>
                     <a href="" role="button" class="btn btn-default btn-sm"  ng-click="filterData()">筛选</a>
                     <div class="pull-right">
