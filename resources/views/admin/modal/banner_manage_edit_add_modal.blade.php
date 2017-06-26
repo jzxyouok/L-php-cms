@@ -69,10 +69,10 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="box-body table-responsive no-padding">
+                        <div class="box-body no-padding">
                             <table class="table table-bordered  table-striped" ng-if="listStyle">
                                 <tr>
-                                    <th style="width: 10px"><input type="checkbox" class="minimal"></th>
+                                    <th style="width: 10px"><input type="checkbox" class="minimal" ng-model="all"></th>
                                     <th>文件</th>
                                     <th>作者</th>
                                     <th>上传至</th>
@@ -84,7 +84,7 @@
                                 </tr>
                                 <tr ng-repeat="x in data">
 
-                                    <td><input type="checkbox" class="minimal"></td>
+                                    <td><input type="checkbox" class="minimal" ng-checked="all"  ng-click="selectOnePicture(x)"></td>
                                     <td style="width: 200px">
 
 
@@ -190,7 +190,7 @@
 
                 </div>
 
-                <button type="button" class="btn btn-primary" ng-click="bannerItemAddCommit()">添加到轮播</button>
+                <button type="button" class="btn btn-primary" ng-click="addToBanner()">添加到轮播</button>
             </div>
         </div>
 

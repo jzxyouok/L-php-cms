@@ -38,50 +38,34 @@
                                 <thead>
                                 <tr>
                                     <th>图片</th>
-                                    <th>标题</th>
-                                    <th>URL</th>
-                                    <th>title属性</th>
-                                    <th>alt属性</th>
+                                    <th>幻灯片标题</th>
+                                    <th>幻灯片URL</th>
+                                    <th>图片title属性</th>
+                                    <th>图片alt属性</th>
 
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
+                                <tr ng-repeat="x in bannerData">
                                     <td>
                                         <div class="slider-img">
-                                            <img src="/public/upload/images/slider-default.jpg" title=""
+                                            <img ng-src="@{{ x.url | urlCut}}/@{{x.filename_now}}" title=""
                                                  alt="Product Image">
                                             <a href=""><i class="fa fa-trash fa-fw fa-lg"></i></a>
                                         </div>
                                     </td>
-                                    <td><input type="text" class="form-control input-sm" id="" placeholder="请输入标题"></td>
-                                    <td><input type="text" class="form-control input-sm" id="" placeholder="请输入URL">
+                                    <td><input type="text" class="form-control input-sm" ng-model="$parent.sliders[$index]" id="" placeholder="请输入标题"></td>
+                                    <td><input type="text" class="form-control input-sm" ng-model="sliderUrl"  id="" placeholder="请输入URL">
                                     </td>
                                     <td>
-                                        <input type="text" class="form-control input-sm" id="" placeholder="请输入title属性">
+                                        <input type="text" class="form-control input-sm" ng-model="imgTitle"  id="" placeholder="请输入title属性">
                                     </td>
                                     <td>
-                                        <input type="text" class="form-control input-sm" id="" placeholder="请输入alt属性">
+                                        <input type="text" class="form-control input-sm" ng-model="imgAlt"  id="" placeholder="请输入alt属性">
                                     </td>
 
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <div class="slider-img">
-                                            <img src="/public/upload/images/slider-default.jpg" alt="Product Image">
-                                        </div>
-                                    </td>
-                                    <td><input type="text" class="form-control input-sm" id="" placeholder="请输入标题"></td>
-                                    <td><input type="text" class="form-control input-sm" id="" placeholder="请输入URL">
-                                    </td>
-                                    <td>
-                                        <input type="text" class="form-control input-sm" id="" placeholder="请输入title属性">
-                                    </td>
-                                    <td>
-                                        <input type="text" class="form-control input-sm" id="" placeholder="请输入alt属性">
-                                    </td>
 
-                                </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -89,7 +73,7 @@
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer clearfix">
-                        <button type="submit" class="btn btn-primary pull-right" ng-click="categoryAdd()">保存
+                        <button type="submit" class="btn btn-primary pull-right" ng-click="saveSlider()">保存
                         </button>
                     </div>
                     <!-- /.box-footer -->

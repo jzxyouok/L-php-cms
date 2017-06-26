@@ -5,20 +5,20 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Model\Upload;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class bannerManageEditController extends Controller
 {
 
 
-
   public function view(Request $request)
   {
     return view('admin.banner_manage_edit', [
-      'cms'=>config('cms.cms'),
-      'cms_name'=>config('cms.cms_name'),
-      'category'=>config('cms.doc_manage'),
-      'item'=>config('cms.banner_manage_edit'),
-      'userInfo'=>$request->session()->get('userInfo'),
+      'cms' => config('cms.cms'),
+      'cms_name' => config('cms.cms_name'),
+      'category' => config('cms.doc_manage'),
+      'item' => config('cms.banner_manage_edit'),
+      'userInfo' => $request->session()->get('userInfo'),
     ]);
   }
 
@@ -129,6 +129,14 @@ class bannerManageEditController extends Controller
 //    }
   }
 
+  public function saveSlider()
+  {
+    $res=DB::table('banner_sliders')->insert(array(
+      array('title' => 'taylor@example.com', 'url' => '8', 'img_title' =>  '8', 'img_alt' =>  '8'),
+      array('title' => 'taylor@example.com', 'url' => '8', 'img_title' =>  '8', 'img_alt' =>  '8'),
+    ));
 
+    dd($res);
+  }
 
 }

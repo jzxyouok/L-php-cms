@@ -219,64 +219,19 @@ app.factory('bannerManageService', ['$http', function ($http) {
  */
 app.factory('bannerManageEditService', ['$http', function ($http) {
     return {
-        get: function (title, from, display, tags, img, parent, keywords, description, type, view, author, content) {
+        saveSlider: function () {
             $http({
                 method: 'POST',
-                url: 'admin/manage/articles_add',
+                url: '/admin/manage/doc_manage/banner_edit_save_slider',
                 data: $.param({
-                    title: title,
-                    from: from,
-                    display: display,
-                    tags: tags,
-                    img: img,
-                    parent: parent,
-                    keywords: keywords,
-                    description: description,
-                    type: type,
-                    view: view,
-                    author: author,
-                    content: content
-                }),
-                headers: {'content-type': 'application/x-www-form-urlencoded'}
-            });
-        },
-
-        /*
-         * 获取所有分类数据
-         * */
-        getCategories: function () {
-            return $http({
-                method: 'GET',
-                url: '/admin/manage/doc_manage/category_get',
-                headers: {'content-type': 'application/x-www-form-urlencoded'}
-            });
-        },
-        editCategoryCommit:function (id,name,slug,parent,order,remark) {
-            return $http({
-                method: 'POST',
-                url: '/admin/manage/doc_manage/category_edit_commit',
-                data:$.param({
-                    id:id,
-                    name:name,
-                    slug:slug,
-                    parent:parent,
-                    order:order,
-                    remark:remark
-                }),
-                headers: {'content-type': 'application/x-www-form-urlencoded'}
-            });
-        },
-        removeCommit:function (id) {
-            return $http({
-                method: 'POST',
-                url: '/admin/manage/doc_manage/category_remove_commit',
-                data:$.param({
-                    id:id
 
                 }),
                 headers: {'content-type': 'application/x-www-form-urlencoded'}
             });
         },
+
+
+
 
     };
 }]);
@@ -1640,7 +1595,7 @@ $scope.bannerData=res.data;
 /**
  * Created by v_lljunli on 2017/5/10.
  */
-app.controller('bannerManageEdit', ['$scope', '$http', 'bannerManageService', '$sce', 'mediaManageAllService', function ($scope, $http, bannerManageService, $sce, mediaManageAllService) {
+app.controller('bannerManageEdit', ['$scope', '$http', 'bannerManageEditService', '$sce', 'mediaManageAllService',  function ($scope, $http, bannerManageEditService, $sce, mediaManageAllService) {
     $scope.getAllMedia = function () {
         $scope.everyPageLimitOptions = [
             {
@@ -1659,8 +1614,8 @@ app.controller('bannerManageEdit', ['$scope', '$http', 'bannerManageService', '$
         $scope.every_page_limit = $scope.everyPageLimitOptions[0].id;//设置默认值
 
         mediaManageAllService.getAllMedia().then(function success(res) {
-            $scope.count=res.data.count;
-            $scope.allPage=res.data.allPage;
+            $scope.count = res.data.count;
+            $scope.allPage = res.data.allPage;
             $scope.currentPage = 1;
             $scope.data = res.data.allMediaByLimit;
             $scope.dataUpload = res.data.upload;
@@ -1687,24 +1642,11 @@ app.controller('bannerManageEdit', ['$scope', '$http', 'bannerManageService', '$
 
             $scope.unique_year_month = $scope.uniqueYearMonthOptions[0].id;//设置默认值
             $scope.mediaTypeOptions = [
-                {
-                    id: 'allFile', name: '所有文件'
-                },
+
                 {
                     id: 'image', name: '图片文件'
                 },
-                {
-                    id: 'zip', name: 'ZIP压缩文件'
-                },
-                {
-                    id: 'rar', name: 'RAR压缩文件'
-                },
-                {
-                    id: 'pdf', name: 'PDF文件'
-                },
-                {
-                    id: 'video', name: '视频文件'
-                },
+
             ];
             $scope.media_type = $scope.mediaTypeOptions[0].id;//设置默认值
 
@@ -1718,8 +1660,8 @@ app.controller('bannerManageEdit', ['$scope', '$http', 'bannerManageService', '$
 
         mediaManageAllService.filterData($scope.media_type, $scope.unique_year_month, $scope.every_page_limit).then(function success(res) {
             $scope.data = res.data.upload;
-            $scope.count=res.data.count;
-            $scope.allPage=res.data.allPage;
+            $scope.count = res.data.count;
+            $scope.allPage = res.data.allPage;
             $scope.currentPage = 1;
         }, function error(res) {
 
@@ -1736,17 +1678,51 @@ app.controller('bannerManageEdit', ['$scope', '$http', 'bannerManageService', '$
         window.location.href = '/admin/manage/doc_manage/banner_manage_edit';
     };
 
-    $scope.selectBanner=function (file) {
-        
+    $scope.selectBanner = function (file) {
+
     };
-    $scope.goToPage = function ( page) {
-        mediaManageAllService.goToPage($scope.media_type, $scope.unique_year_month, $scope.every_page_limit,page).then(function success(res) {
+    $scope.goToPage = function (page) {
+        mediaManageAllService.goToPage($scope.media_type, $scope.unique_year_month, $scope.every_page_limit, page).then(function success(res) {
             $scope.data = res.data;
             $scope.currentPage = page;
-        },function error(res) {
+        }, function error(res) {
 
         });
     };
+
+    $scope.addToBanner = function () {
+        $scope.bannerData = $scope.selected;
+$('#banner_manage_edit_add_modal').modal('hide');
+
+    };
+
+    $scope.selected = [];
+    $scope.selectOnePicture = function (x) {
+
+        if ($scope.selected.indexOf(x) == -1) {
+            $scope.selected.push(x);
+            return;
+        }
+
+        if ($scope.selected.indexOf(x) != -1) {
+            var index = $scope.selected.indexOf(x);
+            $scope.selected.splice(index, 1);
+
+        }
+
+    };
+
+
+    $scope.sliders=[];
+    $scope.saveSlider=function () {
+        bannerManageEditService.saveSlider().then(function success(res) {
+
+        },function error(res) {
+
+        });
+console.log($scope.sliders);
+    };
+
 }]);
 /**
  * Created by v_lljunli on 2017/5/10.
