@@ -36,18 +36,21 @@ class mediaManageAllController extends Controller
     //$upload = Upload::find('admin_user', ['name']);
 
     $upload = Upload::where('admin_user', $request->session()->get('userInfo')->username)->get(['admin_user', 'filename_now', 'url', 'size', 'upload_time', 'type_real']);
+    $allMediaByLimit = Upload::where('admin_user', $request->session()->get('userInfo')->username)->offset(0)->limit(5)->get(['admin_user', 'filename_now', 'url', 'size', 'upload_time', 'type_real']);
+    $uploadCount=Upload::where('admin_user', $request->session()->get('userInfo')->username)->count();
 
-    return response()->json($upload->toArray());
+    return response()->json(['upload' => $upload->toArray(), 'allMediaByLimit' => $allMediaByLimit->toArray(),'count'=>$uploadCount,'allPage'=>ceil($uploadCount/5)]);
 
 
   }
+
 
   public function filterData(Request $request)
   {
     $type_real = $request->input('type_real');
     switch ($type_real) {
       case 'allFile':
-        $type_real = ['jpeg', 'png', 'gif','rar','zip','pdf'];
+        $type_real = ['jpeg', 'png', 'gif', 'rar', 'zip', 'pdf'];
         break;
       case 'image':
         $type_real = ['jpeg', 'png', 'gif'];
@@ -65,23 +68,84 @@ class mediaManageAllController extends Controller
 
 
     $upload_time = $request->input('upload_time');
+    $limit = $request->input('limit');
 
-    if($upload_time==='allTime'){
+
+    if ($upload_time === 'allTime') {
 
       $upload = Upload::where('admin_user', $request->session()->get('userInfo')->username)
-        ->whereIn('type_real',  $type_real)
+        ->whereIn('type_real', $type_real)
+        ->offset(0)->limit($limit)
         ->get(['admin_user', 'filename_now', 'url', 'size', 'upload_time', 'type_real']);
-    }else{
+      $uploadCount = Upload::where('admin_user', $request->session()->get('userInfo')->username)
+        ->whereIn('type_real', $type_real)
+        ->offset(0)->limit($limit)
+        ->count();
+    } else {
 
       $upload = Upload::where('admin_user', $request->session()->get('userInfo')->username)
         ->whereBetween('upload_time', [$upload_time . '-01 00:00:00', $upload_time . '-31 24:00:00'])
-        ->whereIn('type_real',  $type_real)
+        ->whereIn('type_real', $type_real)
+        ->offset(0)->limit($limit)
+        ->get(['admin_user', 'filename_now', 'url', 'size', 'upload_time', 'type_real']);
+      $uploadCount = Upload::where('admin_user', $request->session()->get('userInfo')->username)
+        ->whereBetween('upload_time', [$upload_time . '-01 00:00:00', $upload_time . '-31 24:00:00'])
+        ->whereIn('type_real', $type_real)
+        ->offset(0)->limit($limit)
+        ->count();
+    }
+
+
+    return response()->json(['upload'=>$upload->toArray(),'count'=>$uploadCount,'allPage'=>ceil($uploadCount/5)]);
+  }
+
+
+  public function filterDataGoToPage(Request $request)
+  {
+    $type_real = $request->input('type_real');
+    switch ($type_real) {
+      case 'allFile':
+        $type_real = ['jpeg', 'png', 'gif', 'rar', 'zip', 'pdf'];
+        break;
+      case 'image':
+        $type_real = ['jpeg', 'png', 'gif'];
+        break;
+      case 'rar':
+        $type_real = ['rar'];
+        break;
+      case 'zip':
+        $type_real = ['zip'];
+        break;
+      case 'pdf':
+        $type_real = ['pdf'];
+        break;
+    }
+
+    $upload_time = $request->input('upload_time');
+    $limit = $request->input('limit');
+
+    $currentPage = intval($request->input('page'));
+
+    $offset = ($currentPage - 1) * $limit;
+
+    if ($upload_time === 'allTime') {
+
+      $upload = Upload::where('admin_user', $request->session()->get('userInfo')->username)
+        ->whereIn('type_real', $type_real)
+        ->offset($offset)->limit($limit)
+        ->get(['admin_user', 'filename_now', 'url', 'size', 'upload_time', 'type_real']);
+    } else {
+
+      $upload = Upload::where('admin_user', $request->session()->get('userInfo')->username)
+        ->whereBetween('upload_time', [$upload_time . '-01 00:00:00', $upload_time . '-31 24:00:00'])
+        ->whereIn('type_real', $type_real)
+        ->offset($offset)->limit($limit)
         ->get(['admin_user', 'filename_now', 'url', 'size', 'upload_time', 'type_real']);
     }
 
 
     return response()->json($upload->toArray());
-  }
 
+  }
 
 }

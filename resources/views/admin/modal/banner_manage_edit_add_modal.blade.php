@@ -76,7 +76,7 @@
                                     <th>上传日期</th>
 
 
-                                    <th>操作</th>
+
                                 </tr>
                                 <tr ng-repeat="x in data">
 
@@ -103,15 +103,7 @@
                                     <td>@{{x.upload_time}}</td>
 
 
-                                    <td>
-                                        <button type="button" class="btn btn-primary btn-xs btn-flat"
-                                                data-toggle="modal"
-                                                data-target="#category_all_edit_modal" ng-click="edit(x)">编辑
-                                        </button>
-                                        <button type="button" class="btn btn-danger btn-xs btn-flat" data-toggle="modal"
-                                                data-target="#category_all_remove_modal" ng-click="remove(x)">删除
-                                        </button>
-                                    </td>
+
                                 </tr>
 
                             </table>
@@ -138,6 +130,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="modal-footer">
                 <div class="select_banner_preview">
 

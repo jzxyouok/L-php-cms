@@ -4,14 +4,33 @@
 app.controller('mediaManageAll', ['$scope', '$http', 'mediaManageAllService', function ($scope, $http, mediaManageAllService) {
 
     $scope.getAllMedia = function () {
-        mediaManageAllService.getAllMedia().then(function success(res) {
+        $scope.everyPageLimitOptions = [
+            {
+                id: '5', name: '每页显示5条数据'
+            },
+            {
+                id: '10', name: '每页显示10条数据'
+            },
+            {
+                id: '20', name: '每页显示20条数据'
+            },
+            {
+                id: '50', name: '每页显示50条数据'
+            }
+        ];
+        $scope.every_page_limit = $scope.everyPageLimitOptions[0].id;//设置默认值
 
-            $scope.data = res.data;
+        mediaManageAllService.getAllMedia().then(function success(res) {
+            $scope.count=res.data.count;
+            $scope.allPage=res.data.allPage;
+            $scope.currentPage = 1;
+            $scope.data = res.data.allMediaByLimit;
+            $scope.dataUpload = res.data.upload;
 
             var unique = [];
             var uniqueYearMonth = [];
-            for (var i = 0; i < $scope.data.length; i++) {
-                var yearMonth = $scope.data[i].upload_time.slice(0, 7);
+            for (var i = 0; i < $scope.dataUpload.length; i++) {
+                var yearMonth = $scope.dataUpload[i].upload_time.slice(0, 7);
                 if (unique.indexOf(yearMonth) === -1) {
                     unique.push(yearMonth);
                 }
@@ -25,7 +44,9 @@ app.controller('mediaManageAll', ['$scope', '$http', 'mediaManageAllService', fu
                 name: '全部时间',
                 id: 'allTime'
             });
+
             $scope.uniqueYearMonthOptions = uniqueYearMonth;
+
             $scope.unique_year_month = $scope.uniqueYearMonthOptions[0].id;//设置默认值
             $scope.mediaTypeOptions = [
                 {
@@ -57,10 +78,12 @@ app.controller('mediaManageAll', ['$scope', '$http', 'mediaManageAllService', fu
     };
 
     $scope.filterData = function () {
-        console.log($scope.media_type);
-        mediaManageAllService.filterData($scope.media_type, $scope.unique_year_month).then(function success(res) {
-            $scope.data = res.data;
-            console.log($scope.data);
+
+        mediaManageAllService.filterData($scope.media_type, $scope.unique_year_month, $scope.every_page_limit).then(function success(res) {
+            $scope.data = res.data.upload;
+            $scope.count=res.data.count;
+            $scope.allPage=res.data.allPage;
+            $scope.currentPage = 1;
         }, function error(res) {
 
         });
@@ -70,8 +93,21 @@ app.controller('mediaManageAll', ['$scope', '$http', 'mediaManageAllService', fu
     $scope.changeListStyle = function (num) {
         num ? $scope.listStyle = 1 : $scope.listStyle = 0;
     };
-    $scope.gotoMediaManageUpload=function () {
-        window.location.href='/admin/manage/file_manage/media_manage_upload';
+    $scope.gotoMediaManageUpload = function () {
+        window.location.href = '/admin/manage/file_manage/media_manage_upload';
     };
+
+    /*
+     * 单击跳转页面
+     * */
+    $scope.goToPage = function ( page) {
+        mediaManageAllService.goToPage($scope.media_type, $scope.unique_year_month, $scope.every_page_limit,page).then(function success(res) {
+            $scope.data = res.data;
+            $scope.currentPage = page;
+        },function error(res) {
+
+        });
+    };
+
 
 }]);
