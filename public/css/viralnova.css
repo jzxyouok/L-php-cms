@@ -71,5 +71,7 @@
     }
 }
 
-
+#sales-chart {
+    overflow: scroll;
+}
 

@@ -35,8 +35,14 @@ class mediaManageAllController extends Controller
     //$upload = Upload::all(['admin_user']);
     //$upload = Upload::find('admin_user', ['name']);
 
-    $upload = Upload::where('admin_user', $request->session()->get('userInfo')->username)->get(['admin_user', 'filename_now', 'url', 'size', 'upload_time', 'type_real']);
-    $allMediaByLimit = Upload::where('admin_user', $request->session()->get('userInfo')->username)->offset(0)->limit(5)->get(['admin_user', 'filename_now', 'url', 'size', 'upload_time', 'type_real']);
+    $upload = Upload::where('admin_user', $request->session()->get('userInfo')->username)
+      ->orderBy('created_at', 'desc')
+      ->get(['admin_user', 'filename_now', 'url', 'size', 'upload_time', 'type_real']);
+    $allMediaByLimit = Upload::where('admin_user', $request->session()->get('userInfo')->username)
+      ->orderBy('created_at', 'desc')
+      ->offset(0)
+      ->limit(5)
+      ->get(['admin_user', 'filename_now', 'url', 'size', 'upload_time', 'type_real']);
     $uploadCount=Upload::where('admin_user', $request->session()->get('userInfo')->username)->count();
 
     return response()->json(['upload' => $upload->toArray(), 'allMediaByLimit' => $allMediaByLimit->toArray(),'count'=>$uploadCount,'allPage'=>ceil($uploadCount/5)]);
@@ -75,6 +81,7 @@ class mediaManageAllController extends Controller
 
       $upload = Upload::where('admin_user', $request->session()->get('userInfo')->username)
         ->whereIn('type_real', $type_real)
+        ->orderBy('created_at', 'desc')
         ->offset(0)->limit($limit)
         ->get(['admin_user', 'filename_now', 'url', 'size', 'upload_time', 'type_real']);
       $uploadCount = Upload::where('admin_user', $request->session()->get('userInfo')->username)
@@ -86,6 +93,7 @@ class mediaManageAllController extends Controller
       $upload = Upload::where('admin_user', $request->session()->get('userInfo')->username)
         ->whereBetween('upload_time', [$upload_time . '-01 00:00:00', $upload_time . '-31 24:00:00'])
         ->whereIn('type_real', $type_real)
+        ->orderBy('created_at', 'desc')
         ->offset(0)->limit($limit)
         ->get(['admin_user', 'filename_now', 'url', 'size', 'upload_time', 'type_real']);
       $uploadCount = Upload::where('admin_user', $request->session()->get('userInfo')->username)
@@ -132,6 +140,7 @@ class mediaManageAllController extends Controller
 
       $upload = Upload::where('admin_user', $request->session()->get('userInfo')->username)
         ->whereIn('type_real', $type_real)
+        ->orderBy('created_at', 'desc')
         ->offset($offset)->limit($limit)
         ->get(['admin_user', 'filename_now', 'url', 'size', 'upload_time', 'type_real']);
     } else {
@@ -139,6 +148,7 @@ class mediaManageAllController extends Controller
       $upload = Upload::where('admin_user', $request->session()->get('userInfo')->username)
         ->whereBetween('upload_time', [$upload_time . '-01 00:00:00', $upload_time . '-31 24:00:00'])
         ->whereIn('type_real', $type_real)
+        ->orderBy('created_at', 'desc')
         ->offset($offset)->limit($limit)
         ->get(['admin_user', 'filename_now', 'url', 'size', 'upload_time', 'type_real']);
     }

@@ -29,8 +29,8 @@
                     <div class="box-body">
 
                         <p id="media_manage_upload"></p>
-                        <p class="help-block">暂时关闭多文件上传。</p>
-                        <p class="help-block">最大上传文件大小：64 MB。</p>
+                        <p class="text-center">暂时关闭多文件上传。</p>
+                        <p class="text-center">最大上传文件大小：64 MB。</p>
                         <table class="table table-bordered" id="media_manage_upload_preview">
                             <tbody>
 

@@ -76,7 +76,6 @@ app.controller('mediaManageAll', ['$scope', '$http', 'mediaManageAllService', fu
 
 
     };
-
     $scope.filterData = function () {
 
         mediaManageAllService.filterData($scope.media_type, $scope.unique_year_month, $scope.every_page_limit).then(function success(res) {
@@ -96,10 +95,6 @@ app.controller('mediaManageAll', ['$scope', '$http', 'mediaManageAllService', fu
     $scope.gotoMediaManageUpload = function () {
         window.location.href = '/admin/manage/file_manage/media_manage_upload';
     };
-
-    /*
-     * 单击跳转页面
-     * */
     $scope.goToPage = function ( page) {
         mediaManageAllService.goToPage($scope.media_type, $scope.unique_year_month, $scope.every_page_limit,page).then(function success(res) {
             $scope.data = res.data;

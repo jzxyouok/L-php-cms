@@ -47,6 +47,10 @@
                                     ng-options="x.id as x.name for x in uniqueYearMonthOptions">
 
                             </select>
+                            <select class="form-control input-sm ng-pristine ng-untouched ng-valid"
+                                    style="width: 16%;display: inline-block;margin-left: 10px;" name="every_page_limit"
+                                    ng-model="every_page_limit" ng-options="x.id as x.name for x in everyPageLimitOptions">
+                            </select>
                             <button href="" role="button" class="btn btn-primary btn-sm" ng-click="filterData()">筛选
                             </button>
                             <div class="pull-right">
@@ -127,8 +131,58 @@
 
                             </div>
                         </div>
+                        <div class="" style="margin-top: 20px">
+                            <div class="col-sm-5">
+                                <div class="dataTables_info" id="example1_info" role="status" aria-live="polite">
+                                    共@{{count}}条文档
+                                </div>
+                            </div>
+                            <div class="col-sm-7">
+                                <div class="dataTables_paginate paging_simple_numbers" id="">
+                                    <ul class="pagination">
+                                        <li class="paginate_button previous" id=""
+                                            ng-click="goToPage(currentPage-1)"
+                                            ng-class="{'disabled':currentPage<=1}">
+                                            <a href="#" aria-controls="example1" tabindex="0">&laquo;</a>
+                                        </li>
+                                        <li class="paginate_button" ng-click="goToPage(1)"
+                                            ng-hide="currentPage==1 || currentPage==2">
+                                            <a href="#" tabindex="0">1</a>
+                                        </li>
+                                        <li class="paginate_button" ng-show="currentPage>3">
+                                            <a href="#" tabindex="0">...</a>
+                                        </li>
+                                        <li class="paginate_button" ng-click="goToPage(currentPage-1)"
+                                            ng-show="currentPage>1 ">
+                                            <a href="#" tabindex="0" ng-bind="currentPage-1"></a>
+                                        </li>
+                                        <li class="paginate_button active" ng-click="goToPage(currentPage)">
+                                            <a href="#" tabindex="0" ng-bind="currentPage"></a>
+                                        </li>
+                                        <li class="paginate_button" ng-click="goToPage(currentPage+1)"
+                                            ng-show="currentPage<allPage-1">
+                                            <a href="#" tabindex="0" ng-bind="currentPage+1"></a>
+                                        </li>
+                                        <li class="paginate_button" ng-show="currentPage<allPage-2">
+                                            <a href="#" tabindex="0">...</a>
+                                        </li>
+                                        <li class="paginate_button" ng-click="goToPage(allPage)"
+                                            ng-show="currentPage<allPage">
+                                            <a href="#" tabindex="0" ng-bind="allPage"></a>
+                                        </li>
+                                        <li class="paginate_button next" id="" ng-click="goToPage(currentPage+1)"
+                                            ng-class="{'disabled':currentPage>=allPage}">
+                                            <a href="#" tabindex="0">&raquo;</a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
+
             </div>
 
             <div class="modal-footer">
