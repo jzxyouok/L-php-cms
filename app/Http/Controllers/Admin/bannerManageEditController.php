@@ -11,14 +11,16 @@ class bannerManageEditController extends Controller
 {
 
 
-  public function view(Request $request)
+  public function view(Request $request, $id, $name)
   {
+
     return view('admin.banner_manage_edit', [
       'cms' => config('cms.cms'),
       'cms_name' => config('cms.cms_name'),
       'category' => config('cms.doc_manage'),
-      'item' => config('cms.banner_manage_edit'),
+      'item' => config('cms.banner_manage_edit') . '(' . $name . ')',
       'userInfo' => $request->session()->get('userInfo'),
+      'bannerId' => $id,
     ]);
   }
 
@@ -129,11 +131,31 @@ class bannerManageEditController extends Controller
 //    }
   }
 
-  public function saveSlider()
+  public function saveSlider(Request $request)
   {
-    $res=DB::table('banner_sliders')->insert(array(
-      array('title' => 'taylor@example.com', 'url' => '8', 'img_title' =>  '8', 'img_alt' =>  '8'),
-      array('title' => 'taylor@example.com', 'url' => '8', 'img_title' =>  '8', 'img_alt' =>  '8'),
+    $bannerId = $request->input('bannerId');
+    $bannerTitle = $request->input('bannerTitle');//['1','2']
+    $bannerUrl = $request->input('bannerUrl');//['1','2']
+    $imgTitle = $request->input('imgTitle');//['1','2']
+    $imgAlt = $request->input('imgAlt');//['1','2']
+
+    $length = count($bannerTitle);
+    $data = array();
+    for ($i = 0; $i < $length; $i++) {
+
+      array_push($data, array(
+          'banner_id' => $bannerId,
+          'title' => $bannerTitle[$i],
+          'url' => $bannerUrl[$i],
+          'img_title' => $imgTitle[$i],
+          'img_alt' => $imgAlt[$i]
+        )
+      );
+    }
+   
+    $res = DB::table('banner_sliders')->insert(array(
+      array('title' => '1', 'url' => '1', 'img_title' => '1', 'img_alt' => '1'),
+      array('title' => '2', 'url' => '2', 'img_title' => '2', 'img_alt' => '2'),
     ));
 
     dd($res);

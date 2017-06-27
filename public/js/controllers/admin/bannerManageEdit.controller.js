@@ -1,7 +1,7 @@
 /**
  * Created by v_lljunli on 2017/5/10.
  */
-app.controller('bannerManageEdit', ['$scope', '$http', 'bannerManageEditService', '$sce', 'mediaManageAllService',  function ($scope, $http, bannerManageEditService, $sce, mediaManageAllService) {
+app.controller('bannerManageEdit', ['$scope', '$http', 'bannerManageEditService', '$sce', 'mediaManageAllService', function ($scope, $http, bannerManageEditService, $sce, mediaManageAllService) {
     $scope.getAllMedia = function () {
         $scope.everyPageLimitOptions = [
             {
@@ -98,7 +98,7 @@ app.controller('bannerManageEdit', ['$scope', '$http', 'bannerManageEditService'
 
     $scope.addToBanner = function () {
         $scope.bannerData = $scope.selected;
-$('#banner_manage_edit_add_modal').modal('hide');
+        $('#banner_manage_edit_add_modal').modal('hide');
 
     };
 
@@ -119,14 +119,22 @@ $('#banner_manage_edit_add_modal').modal('hide');
     };
 
 
-    $scope.sliders=[];
-    $scope.saveSlider=function () {
-        bannerManageEditService.saveSlider().then(function success(res) {
+    $scope.sliders = [];
+    $scope.saveSlider = function () {
 
-        },function error(res) {
+        var bannerId = $('#banner_id').attr('value');
+        bannerTitle=$scope.bannerTitle ||['',''];
+        bannerUrl=$scope.bannerUrl ||['',''];
+        imgTitle=$scope.imgTitle ||['',''];
+        imgAlt=$scope.imgAlt ||['',''];
+console.log(bannerTitle);
+        console.log(bannerUrl);
+        bannerManageEditService.saveSlider(bannerId,bannerTitle,bannerUrl,imgTitle,imgAlt).then(function success(res) {
+
+        }, function error(res) {
 
         });
-console.log($scope.sliders);
+
     };
 
 }]);

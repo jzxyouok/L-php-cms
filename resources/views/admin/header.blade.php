@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ URL::asset('public/plugins/uploadify/uploadify.css') }}">
     <script src="{{ URL::asset('public/js/common/jquery.js') }}"></script>
     <script src="{{ URL::asset('public/js/common/angular.js') }}"></script>
+    <script src="{{ URL::asset('public/js/common/angular-ui-router.js') }}"></script>
     <script src="{{ URL::asset('public/js/common/angular-sanitize.js') }}"></script>
     <script src="{{ URL::asset('public/plugins/uploadify/jquery.uploadify.js') }}"></script>
     <script src="{{ URL::asset('public/js/common/bootstrap.js') }}"></script>

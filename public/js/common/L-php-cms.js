@@ -6,44 +6,46 @@ var app = angular.module('myApp', ['ngSanitize']);
 //     $interpolateProvider.startSymbol('<%');
 //     $interpolateProvider.endSymbol('%>');
 // }
+
+
 app.factory('adminLoginService', ['$http', function ($http) {
-  return {
-    get: function (username,password,code) {
+    return {
+        get: function (username, password, code) {
 
-      return $http({
-        method: 'POST',
-        url:  'admin_login',
-        data: $.param({
-          username: username,
-          password: password,
-            code:code
-        }),
-        headers: {'content-type': 'application/x-www-form-urlencoded'}
-      });
-    },
-    updateCode:function () {
-        return $http({
-            method: 'POST',
-            url:  'admin_login_update_code',
-            data: $.param({
-               data:Math.random()
-            }),
-            headers: {'content-type': 'application/x-www-form-urlencoded'}
-        });
-    },
+            return $http({
+                method: 'POST',
+                url: 'admin_login',
+                data: $.param({
+                    username: username,
+                    password: password,
+                    code: code
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
+        updateCode: function () {
+            return $http({
+                method: 'POST',
+                url: 'admin_login_update_code',
+                data: $.param({
+                    data: Math.random()
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
 
 
-      getCode:function () {
-          return $http({
-              method: 'POST',
-              url:  'admin_login_get_code',
-              data: $.param({
-                  data:Math.random()
-              }),
-              headers: {'content-type': 'application/x-www-form-urlencoded'}
-          });
-      },
-  }
+        getCode: function () {
+            return $http({
+                method: 'POST',
+                url: 'admin_login_get_code',
+                data: $.param({
+                    data: Math.random()
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
+    }
 }]);
 /**
  * Created by v_lljunli on 2017/5/10.
@@ -219,12 +221,16 @@ app.factory('bannerManageService', ['$http', function ($http) {
  */
 app.factory('bannerManageEditService', ['$http', function ($http) {
     return {
-        saveSlider: function () {
-            $http({
+        saveSlider: function (bannerId,bannerTitle,bannerUrl,imgTitle,imgAlt) {
+           return $http({
                 method: 'POST',
                 url: '/admin/manage/doc_manage/banner_edit_save_slider',
                 data: $.param({
-
+                    bannerId:bannerId,
+                    bannerTitle:bannerTitle,
+                    bannerUrl:bannerUrl,
+                    imgTitle:imgTitle,
+                    imgAlt:imgAlt
                 }),
                 headers: {'content-type': 'application/x-www-form-urlencoded'}
             });
@@ -1565,8 +1571,11 @@ app.controller('usersGroup', ['$scope', '$http', 'adminUserGroupAllService', 'ad
  * Created by v_lljunli on 2017/5/10.
  */
 app.controller('bannerManage', ['$scope', '$http', 'bannerManageService', function ($scope, $http, bannerManageService) {
-    $scope.editBanner = function () {
-        window.location.href = '/admin/manage/doc_manage/banner_manage_edit';
+    $scope.editBanner = function (x) {
+
+       // $state.go('producer', {id: x.id});
+        window.location.href = '/admin/manage/doc_manage/banner_manage_edit/'+x.id+'/'+x.name;
+
     };
 
     $scope.bannerItemAddCommit = function () {
@@ -1584,10 +1593,10 @@ app.controller('bannerManage', ['$scope', '$http', 'bannerManageService', functi
     };
     $scope.bannerGet = function () {
         bannerManageService.bannerGet().then(function success(res) {
-$scope.bannerData=res.data;
+            $scope.bannerData = res.data;
 
 
-        },function error(res) {
+        }, function error(res) {
 
         });
     };
@@ -1595,7 +1604,7 @@ $scope.bannerData=res.data;
 /**
  * Created by v_lljunli on 2017/5/10.
  */
-app.controller('bannerManageEdit', ['$scope', '$http', 'bannerManageEditService', '$sce', 'mediaManageAllService',  function ($scope, $http, bannerManageEditService, $sce, mediaManageAllService) {
+app.controller('bannerManageEdit', ['$scope', '$http', 'bannerManageEditService', '$sce', 'mediaManageAllService', function ($scope, $http, bannerManageEditService, $sce, mediaManageAllService) {
     $scope.getAllMedia = function () {
         $scope.everyPageLimitOptions = [
             {
@@ -1692,7 +1701,7 @@ app.controller('bannerManageEdit', ['$scope', '$http', 'bannerManageEditService'
 
     $scope.addToBanner = function () {
         $scope.bannerData = $scope.selected;
-$('#banner_manage_edit_add_modal').modal('hide');
+        $('#banner_manage_edit_add_modal').modal('hide');
 
     };
 
@@ -1713,14 +1722,22 @@ $('#banner_manage_edit_add_modal').modal('hide');
     };
 
 
-    $scope.sliders=[];
-    $scope.saveSlider=function () {
-        bannerManageEditService.saveSlider().then(function success(res) {
+    $scope.sliders = [];
+    $scope.saveSlider = function () {
 
-        },function error(res) {
+        var bannerId = $('#banner_id').attr('value');
+        bannerTitle=$scope.bannerTitle ||['',''];
+        bannerUrl=$scope.bannerUrl ||['',''];
+        imgTitle=$scope.imgTitle ||['',''];
+        imgAlt=$scope.imgAlt ||['',''];
+console.log(bannerTitle);
+        console.log(bannerUrl);
+        bannerManageEditService.saveSlider(bannerId,bannerTitle,bannerUrl,imgTitle,imgAlt).then(function success(res) {
+
+        }, function error(res) {
 
         });
-console.log($scope.sliders);
+
     };
 
 }]);

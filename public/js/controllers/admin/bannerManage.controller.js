@@ -2,8 +2,11 @@
  * Created by v_lljunli on 2017/5/10.
  */
 app.controller('bannerManage', ['$scope', '$http', 'bannerManageService', function ($scope, $http, bannerManageService) {
-    $scope.editBanner = function () {
-        window.location.href = '/admin/manage/doc_manage/banner_manage_edit';
+    $scope.editBanner = function (x) {
+
+       // $state.go('producer', {id: x.id});
+        window.location.href = '/admin/manage/doc_manage/banner_manage_edit/'+x.id+'/'+x.name;
+
     };
 
     $scope.bannerItemAddCommit = function () {
@@ -21,10 +24,10 @@ app.controller('bannerManage', ['$scope', '$http', 'bannerManageService', functi
     };
     $scope.bannerGet = function () {
         bannerManageService.bannerGet().then(function success(res) {
-$scope.bannerData=res.data;
+            $scope.bannerData = res.data;
 
 
-        },function error(res) {
+        }, function error(res) {
 
         });
     };
