@@ -3,21 +3,27 @@
  */
 app.factory('bannerManageEditService', ['$http', function ($http) {
     return {
-        saveSlider: function (bannerId,bannerTitle,bannerUrl,imgTitle,imgAlt) {
+        saveSlider: function (bannerId,sliderData) {
            return $http({
                 method: 'POST',
                 url: '/admin/manage/doc_manage/banner_edit_save_slider',
                 data: $.param({
                     bannerId:bannerId,
-                    bannerTitle:bannerTitle,
-                    bannerUrl:bannerUrl,
-                    imgTitle:imgTitle,
-                    imgAlt:imgAlt
+                    sliderData:sliderData,
                 }),
                 headers: {'content-type': 'application/x-www-form-urlencoded'}
             });
         },
-
+        sliderGet: function (bannerId) {
+        return $http({
+            method: 'POST',
+            url: '/admin/manage/doc_manage/banner_edit_slider_get',
+            data: $.param({
+                bannerId:bannerId,
+            }),
+            headers: {'content-type': 'application/x-www-form-urlencoded'}
+        });
+    },
 
 
 

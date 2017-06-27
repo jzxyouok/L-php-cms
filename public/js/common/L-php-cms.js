@@ -221,21 +221,27 @@ app.factory('bannerManageService', ['$http', function ($http) {
  */
 app.factory('bannerManageEditService', ['$http', function ($http) {
     return {
-        saveSlider: function (bannerId,bannerTitle,bannerUrl,imgTitle,imgAlt) {
+        saveSlider: function (bannerId,sliderData) {
            return $http({
                 method: 'POST',
                 url: '/admin/manage/doc_manage/banner_edit_save_slider',
                 data: $.param({
                     bannerId:bannerId,
-                    bannerTitle:bannerTitle,
-                    bannerUrl:bannerUrl,
-                    imgTitle:imgTitle,
-                    imgAlt:imgAlt
+                    sliderData:sliderData,
                 }),
                 headers: {'content-type': 'application/x-www-form-urlencoded'}
             });
         },
-
+        sliderGet: function (bannerId) {
+        return $http({
+            method: 'POST',
+            url: '/admin/manage/doc_manage/banner_edit_slider_get',
+            data: $.param({
+                bannerId:bannerId,
+            }),
+            headers: {'content-type': 'application/x-www-form-urlencoded'}
+        });
+    },
 
 
 
@@ -1701,6 +1707,24 @@ app.controller('bannerManageEdit', ['$scope', '$http', 'bannerManageEditService'
 
     $scope.addToBanner = function () {
         $scope.bannerData = $scope.selected;
+        for (var i = 0; i < $scope.selected.length; i++) {
+            var src=($scope.selected[i].url.match(/\/public\/upload\/(image|zip|rar|pdf)\/\d{8}/))[0]+'/'+$scope.selected[i].filename_now;
+            $scope.sliderData.push({
+                img_src: src,
+                img_alt: "",
+                img_title: "",
+                title: "",
+                url: ""
+            });
+        }
+
+
+
+        // for (var i = 0; i < $scope.bannerData.length; i++) {
+        //     var url = ($scope.bannerData[i].url.match(/\/public\/upload\/(image|zip|rar|pdf)\/\d{8}/))[0];
+        //     $('#banner_manage_edit .box-body tbody').append('<tr class="insert_slider"><td><div class="slider-img"><img src="' + url + '/' + $scope.bannerData[i].filename_now + '" title="" alt="Product Image"><a href=""><i class="fa fa-trash fa-fw fa-lg"></i></a></div></td><td><input type="text" name="slider_title" class="form-control input-sm" value="" id="" placeholder="请输入标题"></td><td><input type="text" name="slider_url" class="form-control input-sm" value=""  id="" placeholder="请输入URL"></td><td><input type="text" name="img_title" class="form-control input-sm" value=""  id="" placeholder="请输入title属性"></td><td><input type="text" name="img_alt" class="form-control input-sm"   value="" id="" placeholder="请输入alt属性"></td></tr>');
+        // }
+
         $('#banner_manage_edit_add_modal').modal('hide');
 
     };
@@ -1726,18 +1750,31 @@ app.controller('bannerManageEdit', ['$scope', '$http', 'bannerManageEditService'
     $scope.saveSlider = function () {
 
         var bannerId = $('#banner_id').attr('value');
-        bannerTitle=$scope.bannerTitle ||['',''];
-        bannerUrl=$scope.bannerUrl ||['',''];
-        imgTitle=$scope.imgTitle ||['',''];
-        imgAlt=$scope.imgAlt ||['',''];
-console.log(bannerTitle);
-        console.log(bannerUrl);
-        bannerManageEditService.saveSlider(bannerId,bannerTitle,bannerUrl,imgTitle,imgAlt).then(function success(res) {
+        // var insertSliderLength=0;
+        // if ($scope.bannerData.length >= 1) {
+        //     insertSliderLength=$scope.bannerData.length;
+        //     $('.insert_slider').each(function () {
+        //         // var sliderTitle=$(this).find('input[name="slider_title"]').val();
+        //         // console.log(sliderTitle);
+        //         console.log(111);
+        //     });
+        // }
+        bannerManageEditService.saveSlider(bannerId, $scope.sliderData).then(function success(res) {
 
         }, function error(res) {
 
         });
 
+    };
+
+    $scope.sliderGet = function () {
+        var bannerId = $('#banner_id').attr('value');
+
+        bannerManageEditService.sliderGet(bannerId).then(function success(res) {
+            $scope.sliderData = res.data;
+        }, function error(res) {
+
+        });
     };
 
 }]);

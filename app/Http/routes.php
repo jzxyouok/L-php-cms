@@ -64,6 +64,7 @@ Route::group(['namespace' => 'Admin'], function () {
   Route::get('/admin/manage/doc_manage/banner_manage_edit/{id}/{name}', 'bannerManageEditController@view')->name('banner_manage_edit');
   Route::post('/admin/manage/doc_manage/banner_manage_edit_upload', 'bannerManageEditController@bannerManageEditUpload')->name('banner_manage_edit_upload');
   Route::post('/admin/manage/doc_manage/banner_edit_save_slider', 'bannerManageEditController@saveSlider')->name('banner_edit_save_slider');
+    Route::post('/admin/manage/doc_manage/banner_edit_slider_get', 'bannerManageEditController@sliderGet')->name('banner_edit_slider_get');
 
   Route::get('/admin/manage/doc_manage/tag_manage', 'tagManageController@view')->name('tag_manage');
   Route::get('/admin/manage/doc_manage/comment_manage', 'commentManageController@view')->name('comment_manage');

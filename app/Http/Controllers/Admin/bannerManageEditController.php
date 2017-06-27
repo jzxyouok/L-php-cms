@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Model\BannerSlider;
 use App\Http\Model\Upload;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -134,31 +135,43 @@ class bannerManageEditController extends Controller
   public function saveSlider(Request $request)
   {
     $bannerId = $request->input('bannerId');
-    $bannerTitle = $request->input('bannerTitle');//['1','2']
-    $bannerUrl = $request->input('bannerUrl');//['1','2']
-    $imgTitle = $request->input('imgTitle');//['1','2']
-    $imgAlt = $request->input('imgAlt');//['1','2']
+    $sliderData = $request->input('sliderData');
 
-    $length = count($bannerTitle);
-    $data = array();
-    for ($i = 0; $i < $length; $i++) {
+dd($sliderData);
+//    $length = count($bannerTitle);
+//    $data = array();
+//    for ($i = 0; $i < $length; $i++) {
+//
+//      array_push($data, array(
+//          'banner_id' => $bannerId,
+//          'title' => $bannerTitle[$i],
+//          'url' => $bannerUrl[$i],
+//          'img_title' => $imgTitle[$i],
+//          'img_alt' => $imgAlt[$i]
+//        )
+//      );
+//    }
 
-      array_push($data, array(
-          'banner_id' => $bannerId,
-          'title' => $bannerTitle[$i],
-          'url' => $bannerUrl[$i],
-          'img_title' => $imgTitle[$i],
-          'img_alt' => $imgAlt[$i]
-        )
-      );
-    }
-   
-    $res = DB::table('banner_sliders')->insert(array(
-      array('title' => '1', 'url' => '1', 'img_title' => '1', 'img_alt' => '1'),
-      array('title' => '2', 'url' => '2', 'img_title' => '2', 'img_alt' => '2'),
-    ));
+    $res = DB::table('banner_sliders')->insert($sliderData);
 
     dd($res);
   }
+
+  public function sliderGet(Request $request)
+  {
+    $bannerId = $request->input('bannerId');
+    $sliders=BannerSlider::where('banner_id',$bannerId)->get(['title','url','img_title','img_alt']);
+    return response()->json($sliders->toArray());
+
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
 }

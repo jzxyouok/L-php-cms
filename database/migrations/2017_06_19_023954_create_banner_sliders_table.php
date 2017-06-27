@@ -15,6 +15,7 @@ class CreateBannerSlidersTable extends Migration
       Schema::create('banner_sliders', function (Blueprint $table) {
         $table->increments('id');
         $table->integer('banner_id');
+        $table->string('img_src');
         $table->string('title');
         $table->string('url');
         $table->string('img_title');

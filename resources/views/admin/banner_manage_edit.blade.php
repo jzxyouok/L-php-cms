@@ -1,5 +1,5 @@
 @include('admin.header')
-<div class="content-wrapper" id="banner_manage_edit" ng-controller="bannerManageEdit" ng-init="bannerGet()">
+<div class="content-wrapper" id="banner_manage_edit" ng-controller="bannerManageEdit" ng-init="sliderGet()">
     @include('admin.modal.banner_manage_edit_add_modal')
 
     <section class="content-header">
@@ -47,23 +47,44 @@
                                 </thead>
                                 <tbody>
                                 <input type="hidden" id="banner_id" name="banner_id" value="{{$bannerId}}">
-                                <tr ng-repeat="x in bannerData">
+                                {{--<tr ng-repeat="x in bannerData">--}}
+
+                                    {{--<td>--}}
+                                        {{--<div class="slider-img">--}}
+                                            {{--<img ng-src="@{{ x.url | urlCut}}/@{{x.filename_now}}" title=""--}}
+                                                 {{--alt="Product Image">--}}
+                                            {{--<a href=""><i class="fa fa-trash fa-fw fa-lg"></i></a>--}}
+                                        {{--</div>--}}
+                                    {{--</td>--}}
+                                    {{--<td><input type="text" class="form-control input-sm" ng-model="$parent.bannerTitle[$index]" id="" placeholder="请输入标题"></td>--}}
+                                    {{--<td><input type="text" class="form-control input-sm" ng-model="$parent.bannerUrl[$index]"  id="" placeholder="请输入URL">--}}
+                                    {{--</td>--}}
+                                    {{--<td>--}}
+                                        {{--<input type="text" class="form-control input-sm" ng-model="$parent.imgTitle[$index]"  id="" placeholder="请输入title属性">--}}
+                                    {{--</td>--}}
+                                    {{--<td>--}}
+                                        {{--<input type="text" class="form-control input-sm" ng-model="$parent.imgAlt[$index]"  id="" placeholder="请输入alt属性">--}}
+                                    {{--</td>--}}
+
+                                {{--</tr>--}}
+
+                                <tr ng-repeat="x in sliderData">
 
                                     <td>
                                         <div class="slider-img">
-                                            <img ng-src="@{{ x.url | urlCut}}/@{{x.filename_now}}" title=""
+                                            <img ng-src="x.img_src" title=""
                                                  alt="Product Image">
                                             <a href=""><i class="fa fa-trash fa-fw fa-lg"></i></a>
                                         </div>
                                     </td>
-                                    <td><input type="text" class="form-control input-sm" ng-model="$parent.bannerTitle[$index]" id="" placeholder="请输入标题"></td>
-                                    <td><input type="text" class="form-control input-sm" ng-model="$parent.bannerUrl[$index]"  id="" placeholder="请输入URL">
+                                    <td><input type="text" class="form-control input-sm" ng-model="x.title" id="" placeholder="请输入标题"></td>
+                                    <td><input type="text" class="form-control input-sm" ng-model="x.url"  id="" placeholder="请输入URL">
                                     </td>
                                     <td>
-                                        <input type="text" class="form-control input-sm" ng-model="$parent.imgTitle[$index]"  id="" placeholder="请输入title属性">
+                                        <input type="text" class="form-control input-sm" ng-model="x.img_title"  id="" placeholder="请输入title属性">
                                     </td>
                                     <td>
-                                        <input type="text" class="form-control input-sm" ng-model="$parent.imgAlt[$index]"  id="" placeholder="请输入alt属性">
+                                        <input type="text" class="form-control input-sm" ng-model="x.img_alt"  id="" placeholder="请输入alt属性">
                                     </td>
 
                                 </tr>
