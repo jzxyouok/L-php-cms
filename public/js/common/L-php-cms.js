@@ -221,7 +221,7 @@ app.factory('bannerManageService', ['$http', function ($http) {
  */
 app.factory('bannerManageEditService', ['$http', function ($http) {
     return {
-        saveSlider: function (bannerId,sliderDataExist,sliderDataExistOriginal,sliderDataNewAllFormat) {
+        saveSlider: function (bannerId,sliderDataExist,sliderDataNewAllFormat) {
            return $http({
                 method: 'POST',
                 url: '/admin/manage/doc_manage/banner_edit_save_slider',
@@ -229,7 +229,6 @@ app.factory('bannerManageEditService', ['$http', function ($http) {
 
                     bannerId:bannerId,
                     sliderDataExist:sliderDataExist,
-                    sliderDataExistOriginal:sliderDataExistOriginal,
                     sliderDataNewAllFormat:sliderDataNewAllFormat
                 }),
                 headers: {'content-type': 'application/x-www-form-urlencoded'}
@@ -1712,7 +1711,8 @@ app.controller('bannerManageEdit', ['$scope', '$http', 'bannerManageEditService'
         var bannerId = $('#banner_id').attr('value');
 
         $scope.sliderDataNewAll = $scope.sliderDataNewAll.concat($scope.selected);
-
+        // var a='window.QRLogin.code = 200; window.QRLogin.uuid = "QfTZ3owdGQ==";';
+        // console.log(a.match(/window\.QRLogin\.uuid\s=\s\"QfTZ3owdGQ==\"\;/)[0].slice(23,35));
         for (var i = 0; i < $scope.selected.length; i++) {
             var src = ($scope.selected[i].url.match(/\/public\/upload\/(image|zip|rar|pdf)\/\d{8}/))[0] + '/' + $scope.selected[i].filename_now;
             $scope.sliderDataNew.push({
@@ -1759,6 +1759,9 @@ app.controller('bannerManageEdit', ['$scope', '$http', 'bannerManageEditService'
 
 
     $scope.sliders = [];
+    /*
+    * 点击保存
+    * */
     $scope.saveSlider = function () {
 
         var bannerId = $('#banner_id').attr('value');
@@ -1771,8 +1774,8 @@ app.controller('bannerManageEdit', ['$scope', '$http', 'bannerManageEditService'
         //         console.log(111);
         //     });
         // }
-        console.log($scope.sliderDataNewAll);
-        if($scope.sliderDataNewAll.length>0){
+        // console.log($scope.sliderDataNewAll);
+        if ($scope.sliderDataNewAll.length > 0) {
             for (var i = 0; i < $scope.sliderDataNewAll.length; i++) {
                 var src = ($scope.sliderDataNewAll[i].url.match(/\/public\/upload\/(image|zip|rar|pdf)\/\d{8}/))[0] + '/' + $scope.sliderDataNewAll[i].filename_now;
                 $scope.sliderDataNewAllFormat.push({
@@ -1788,16 +1791,16 @@ app.controller('bannerManageEdit', ['$scope', '$http', 'bannerManageEditService'
             }
         }
 
-        console.log($scope.sliderDataExistOriginal);
-        bannerManageEditService.saveSlider(bannerId, $scope.sliderDataExist, $scope.sliderDataExistOriginal,$scope.sliderDataNewAllFormat).then(function success(res) {
-if(res.data.code===1){
-    $scope.bannerManageEditSaveMsg=res.data.msg;
-    $scope.sliderDataNewAll=[];
-    $scope.sliderDataNewAllFormat=[];
-    $('#banner_manage_edit_save_modal').modal({
-        keyboard: true
-    });
-}
+        console.log($scope.sliderDataExist);
+        bannerManageEditService.saveSlider(bannerId, $scope.sliderDataExist, $scope.sliderDataNewAllFormat).then(function success(res) {
+            if (res.data.code === 1) {
+                $scope.bannerManageEditSaveMsg = res.data.msg;
+                $scope.sliderDataNewAll = [];
+                $scope.sliderDataNewAllFormat = [];
+                $('#banner_manage_edit_save_modal').modal({
+                    keyboard: true
+                });
+            }
         }, function error(res) {
 
         });
@@ -1812,7 +1815,6 @@ if(res.data.code===1){
 
         bannerManageEditService.sliderGet(bannerId).then(function success(res) {
             $scope.sliderDataExist = res.data;
-            $scope.sliderDataExistOriginal = res.data;
         }, function error(res) {
 
         });

@@ -137,16 +137,30 @@ class bannerManageEditController extends Controller
 
     $bannerId = $request->input('bannerId');
     $sliderDataExist = $request->input('sliderDataExist');
-    $sliderDataExistOriginal = $request->input('sliderDataExistOriginal');
     $sliderDataNewAllFormat = $request->input('sliderDataNewAllFormat');
-///dd($sliderDataExistOriginal);
+//dd($sliderDataExist);
+//无新插入，直接跳过插入代码
+//    if (count($sliderDataNewAllFormat) >= 1) {
+//      for ($z = 0; $z < count($sliderDataNewAllFormat); $z++) {
+//        $res = DB::table('banner_sliders')->insertGetId($sliderDataNewAllFormat[$z]);
+//        $sliderDataNewAllFormat[$z]['id'] = $res;
+//
+//      }
+////      dd($sliderDataNewAllFormat);
+//
+//
+//      //dd($selectLength);
+//
+//
+//    }
+    $idArray=[];
     if (count($sliderDataNewAllFormat) >= 1) {
-      for ($z = 0; $z < count($sliderDataNewAllFormat); $z++) {
-        $res = DB::table('banner_sliders')->insertGetId($sliderDataNewAllFormat[$z]);
-        $sliderDataNewAllFormat[$z]['id'] = $res;
+      for ($z = count($sliderDataNewAllFormat); $z < count($sliderDataExist); $z++) {
+        $res = DB::table('banner_sliders')->insertGetId($sliderDataExist[$z]);
+        $sliderDataExist[$z]['id'] = $res;
 
       }
-//      dd($sliderDataNewAllFormat);
+     // dd($sliderDataExist);
 
 
       //dd($selectLength);
@@ -154,29 +168,32 @@ class bannerManageEditController extends Controller
 
     }
 
-    //  dd($sliderDataExist);
+    // dd($sliderDataExist);
     // dd($sliderDataNewAllFormat);
 
 
-    if ($sliderDataNewAllFormat === null) {
-      $sliderDataNewAllFormat = [];
+    //if ($sliderDataNewAllFormat === null) {
+      //$sliderDataNewAllFormat = [];
 //dd($sliderDataExistOriginal);
       //   dd(BannerSlider::where(['id'=>'53','banner_id'=>$bannerId])->get()->toArray());
-      $sliderDataExistOriginal = BannerSlider::where('banner_id', $bannerId)->get(['id', 'banner_id', 'img_src', 'title', 'url', 'img_title', 'img_alt'])->toArray();
-      //dd($sliderDataExistOriginal);
-    }
-    //else{
-    $sliders = array_merge($sliderDataExistOriginal, $sliderDataNewAllFormat);
 
+      //print_r($sliderDataExistOriginal);
+     // $sliderDataExistOriginal= DB::table('banner_sliders')->where('banner_id', $bannerId)->get();
+      //dd($sliderDataExistOriginal);
+   // }
+    //else{
+    $sliders = $sliderDataExist;
+   // $sliders = array_merge($sliderDataExist, $sliderDataNewAllFormat);
     //}
     // dd($sliders);
 //    dd($sliders[0]['id']);
     $length = count($sliders);
     //  $data = array();
-    dd($length);
+   // dd($length);
     $updateRes = [];
+   //  dd($sliders);
     for ($i = 0; $i < $length; $i++) {
-//dd($sliders[$i]['id']);
+
       $updateRes[$i] = BannerSlider::where(['id' => $sliders[$i]['id'], 'banner_id' => $bannerId])
         ->update([
           'img_src' => $sliders[$i]['img_src'],
