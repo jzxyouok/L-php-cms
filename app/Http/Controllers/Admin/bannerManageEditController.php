@@ -134,14 +134,59 @@ class bannerManageEditController extends Controller
 
   public function saveSlider(Request $request)
   {
-    $bannerId = $request->input('bannerId');
-    $sliderData = $request->input('sliderData');
 
-dd($sliderData);
-//    $length = count($bannerTitle);
-//    $data = array();
-//    for ($i = 0; $i < $length; $i++) {
-//
+    $bannerId = $request->input('bannerId');
+    $sliderDataExist = $request->input('sliderDataExist');
+    $sliderDataExistOriginal = $request->input('sliderDataExistOriginal');
+    $sliderDataNewAllFormat = $request->input('sliderDataNewAllFormat');
+///dd($sliderDataExistOriginal);
+    if (count($sliderDataNewAllFormat) >= 1) {
+      for ($z = 0; $z < count($sliderDataNewAllFormat); $z++) {
+        $res = DB::table('banner_sliders')->insertGetId($sliderDataNewAllFormat[$z]);
+        $sliderDataNewAllFormat[$z]['id'] = $res;
+
+      }
+//      dd($sliderDataNewAllFormat);
+
+
+      //dd($selectLength);
+
+
+    }
+
+    //  dd($sliderDataExist);
+    // dd($sliderDataNewAllFormat);
+
+
+    if ($sliderDataNewAllFormat === null) {
+      $sliderDataNewAllFormat = [];
+//dd($sliderDataExistOriginal);
+      //   dd(BannerSlider::where(['id'=>'53','banner_id'=>$bannerId])->get()->toArray());
+      $sliderDataExistOriginal = BannerSlider::where('banner_id', $bannerId)->get(['id', 'banner_id', 'img_src', 'title', 'url', 'img_title', 'img_alt'])->toArray();
+      //dd($sliderDataExistOriginal);
+    }
+    //else{
+    $sliders = array_merge($sliderDataExistOriginal, $sliderDataNewAllFormat);
+
+    //}
+    // dd($sliders);
+//    dd($sliders[0]['id']);
+    $length = count($sliders);
+    //  $data = array();
+    dd($length);
+    $updateRes = [];
+    for ($i = 0; $i < $length; $i++) {
+//dd($sliders[$i]['id']);
+      $updateRes[$i] = BannerSlider::where(['id' => $sliders[$i]['id'], 'banner_id' => $bannerId])
+        ->update([
+          'img_src' => $sliders[$i]['img_src'],
+          'title' => $sliders[$i]['title'],
+          'url' => $sliders[$i]['url'],
+          'img_title' => $sliders[$i]['img_title'],
+          'img_alt' => $sliders[$i]['img_alt']
+        ]);
+
+
 //      array_push($data, array(
 //          'banner_id' => $bannerId,
 //          'title' => $bannerTitle[$i],
@@ -150,28 +195,34 @@ dd($sliderData);
 //          'img_alt' => $imgAlt[$i]
 //        )
 //      );
-//    }
+    }
 
-    $res = DB::table('banner_sliders')->insert($sliderData);
+    $updateResIf = true;
+    for ($j = 0; $j < count($updateRes); $j++) {
 
-    dd($res);
+      if (!$updateRes[$j]) {
+        $updateResIf = false;
+        break;
+      }
+
+    }
+
+    if ($updateResIf === true) {
+      return response()->json(['code' => 1, 'msg' => '保存成功']);
+    } else {
+      return response()->json(['code' => 0, 'msg' => '保存失败']);
+    }
+
+
   }
 
   public function sliderGet(Request $request)
   {
     $bannerId = $request->input('bannerId');
-    $sliders=BannerSlider::where('banner_id',$bannerId)->get(['title','url','img_title','img_alt']);
+    $sliders = BannerSlider::where('banner_id', $bannerId)->get(['id', 'banner_id', 'img_src', 'title', 'url', 'img_title', 'img_alt']);
     return response()->json($sliders->toArray());
 
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
 
 }

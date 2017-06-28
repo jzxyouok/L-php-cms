@@ -3,13 +3,16 @@
  */
 app.factory('bannerManageEditService', ['$http', function ($http) {
     return {
-        saveSlider: function (bannerId,sliderData) {
+        saveSlider: function (bannerId,sliderDataExist,sliderDataExistOriginal,sliderDataNewAllFormat) {
            return $http({
                 method: 'POST',
                 url: '/admin/manage/doc_manage/banner_edit_save_slider',
                 data: $.param({
+
                     bannerId:bannerId,
-                    sliderData:sliderData,
+                    sliderDataExist:sliderDataExist,
+                    sliderDataExistOriginal:sliderDataExistOriginal,
+                    sliderDataNewAllFormat:sliderDataNewAllFormat
                 }),
                 headers: {'content-type': 'application/x-www-form-urlencoded'}
             });

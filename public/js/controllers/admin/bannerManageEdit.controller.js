@@ -97,18 +97,27 @@ app.controller('bannerManageEdit', ['$scope', '$http', 'bannerManageEditService'
     };
 
     $scope.addToBanner = function () {
-        $scope.bannerData = $scope.selected;
+        var bannerId = $('#banner_id').attr('value');
+
+        $scope.sliderDataNewAll = $scope.sliderDataNewAll.concat($scope.selected);
+
         for (var i = 0; i < $scope.selected.length; i++) {
-            var src=($scope.selected[i].url.match(/\/public\/upload\/(image|zip|rar|pdf)\/\d{8}/))[0]+'/'+$scope.selected[i].filename_now;
-            $scope.sliderData.push({
+            var src = ($scope.selected[i].url.match(/\/public\/upload\/(image|zip|rar|pdf)\/\d{8}/))[0] + '/' + $scope.selected[i].filename_now;
+            $scope.sliderDataNew.push({
+                banner_id: bannerId,
                 img_src: src,
-                img_alt: "",
-                img_title: "",
                 title: "",
-                url: ""
+                url: "",
+                img_title: "",
+                img_alt: "",
+
+
             });
         }
+        $scope.selected = [];
 
+        $scope.sliderDataExist = $scope.sliderDataExist.concat($scope.sliderDataNew);
+        $scope.sliderDataNew = [];
 
 
         // for (var i = 0; i < $scope.bannerData.length; i++) {
@@ -150,8 +159,33 @@ app.controller('bannerManageEdit', ['$scope', '$http', 'bannerManageEditService'
         //         console.log(111);
         //     });
         // }
-        bannerManageEditService.saveSlider(bannerId, $scope.sliderData).then(function success(res) {
+        console.log($scope.sliderDataNewAll);
+        if($scope.sliderDataNewAll.length>0){
+            for (var i = 0; i < $scope.sliderDataNewAll.length; i++) {
+                var src = ($scope.sliderDataNewAll[i].url.match(/\/public\/upload\/(image|zip|rar|pdf)\/\d{8}/))[0] + '/' + $scope.sliderDataNewAll[i].filename_now;
+                $scope.sliderDataNewAllFormat.push({
+                    banner_id: bannerId,
+                    img_src: src,
+                    title: "",
+                    url: "",
+                    img_title: "",
+                    img_alt: "",
 
+
+                });
+            }
+        }
+
+        console.log($scope.sliderDataExistOriginal);
+        bannerManageEditService.saveSlider(bannerId, $scope.sliderDataExist, $scope.sliderDataExistOriginal,$scope.sliderDataNewAllFormat).then(function success(res) {
+if(res.data.code===1){
+    $scope.bannerManageEditSaveMsg=res.data.msg;
+    $scope.sliderDataNewAll=[];
+    $scope.sliderDataNewAllFormat=[];
+    $('#banner_manage_edit_save_modal').modal({
+        keyboard: true
+    });
+}
         }, function error(res) {
 
         });
@@ -160,9 +194,13 @@ app.controller('bannerManageEdit', ['$scope', '$http', 'bannerManageEditService'
 
     $scope.sliderGet = function () {
         var bannerId = $('#banner_id').attr('value');
+        $scope.sliderDataNew = [];
+        $scope.sliderDataNewAll = [];
+        $scope.sliderDataNewAllFormat = [];
 
         bannerManageEditService.sliderGet(bannerId).then(function success(res) {
-            $scope.sliderData = res.data;
+            $scope.sliderDataExist = res.data;
+            $scope.sliderDataExistOriginal = res.data;
         }, function error(res) {
 
         });

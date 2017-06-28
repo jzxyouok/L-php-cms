@@ -1,7 +1,7 @@
 @include('admin.header')
 <div class="content-wrapper" id="banner_manage_edit" ng-controller="bannerManageEdit" ng-init="sliderGet()">
     @include('admin.modal.banner_manage_edit_add_modal')
-
+    @include('admin.modal.banner_manage_edit_save_modal')
     <section class="content-header">
         <h1>
             {{$cms}}
@@ -68,11 +68,11 @@
 
                                 {{--</tr>--}}
 
-                                <tr ng-repeat="x in sliderData">
+                                <tr ng-repeat="x in sliderDataExist track by $index">
 
                                     <td>
                                         <div class="slider-img">
-                                            <img ng-src="x.img_src" title=""
+                                            <img ng-src="@{{x.img_src}}" title=""
                                                  alt="Product Image">
                                             <a href=""><i class="fa fa-trash fa-fw fa-lg"></i></a>
                                         </div>
