@@ -146,21 +146,23 @@ class bannerManageEditController extends Controller
 //        $sliderDataNewAllFormat[$z]['id'] = $res;
 //
 //      }
-////      dd($sliderDataNewAllFormat);
+    //   dd($sliderDataNewAllFormat);
 //
 //
 //      //dd($selectLength);
 //
 //
 //    }
-    $idArray=[];
+    $idArray = [];
+
     if (count($sliderDataNewAllFormat) >= 1) {
-      for ($z = count($sliderDataNewAllFormat); $z < count($sliderDataExist); $z++) {
+      for ($z = count($sliderDataExist)-count($sliderDataNewAllFormat); $z < count($sliderDataExist); $z++) {
+        // dd(1);
         $res = DB::table('banner_sliders')->insertGetId($sliderDataExist[$z]);
         $sliderDataExist[$z]['id'] = $res;
 
       }
-     // dd($sliderDataExist);
+      //dd($sliderDataExist);
 
 
       //dd($selectLength);
@@ -173,25 +175,31 @@ class bannerManageEditController extends Controller
 
 
     //if ($sliderDataNewAllFormat === null) {
-      //$sliderDataNewAllFormat = [];
+    //$sliderDataNewAllFormat = [];
 //dd($sliderDataExistOriginal);
-      //   dd(BannerSlider::where(['id'=>'53','banner_id'=>$bannerId])->get()->toArray());
+    //   dd(BannerSlider::where(['id'=>'53','banner_id'=>$bannerId])->get()->toArray());
 
-      //print_r($sliderDataExistOriginal);
-     // $sliderDataExistOriginal= DB::table('banner_sliders')->where('banner_id', $bannerId)->get();
-      //dd($sliderDataExistOriginal);
-   // }
+    //print_r($sliderDataExistOriginal);
+    $sliderDataExistOriginal =BannerSlider::where('banner_id', $bannerId)->orderBy('id', 'asc')->get(['id', 'banner_id', 'img_src', 'title', 'url', 'img_title', 'img_alt'])->toArray();
+   // dd($sliderDataExistOriginal);
+   // dd($sliderDataExist);
+    for ($m = 0; $m < count($sliderDataExistOriginal); $m++) {
+      $sliderDataExist[$m]['id'] = $sliderDataExistOriginal[$m]['id'];
+    }
+    //dd($sliderDataExist);
+   // dd($sliderDataExistOriginal);
+    // }
     //else{
     $sliders = $sliderDataExist;
-   // $sliders = array_merge($sliderDataExist, $sliderDataNewAllFormat);
+    // $sliders = array_merge($sliderDataExist, $sliderDataNewAllFormat);
     //}
     // dd($sliders);
 //    dd($sliders[0]['id']);
     $length = count($sliders);
     //  $data = array();
-   // dd($length);
+    // dd($length);
     $updateRes = [];
-   //  dd($sliders);
+    //  dd($sliders);
     for ($i = 0; $i < $length; $i++) {
 
       $updateRes[$i] = BannerSlider::where(['id' => $sliders[$i]['id'], 'banner_id' => $bannerId])
