@@ -1,15 +1,15 @@
-<%- include('header') %>
+@include('admin.header')
 <div class="content-wrapper" ng-controller="noAccess">
   <%- include('modal/remove_one_document_modal') %>
   <section class="content-header">
     <h1>
-      <%= blogName %>
-      <small><%= item %></small>
+      {{$cms}}
+      <small>{{$item}}</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i>主页</a></li>
-      <li><a href="#"><%= category %></a></li>
-      <li class="active"><%= item %></li>
+      <li><a href="#">{{$category }}</a></li>
+      <li class="active">{{$item}}</li>
     </ol>
   </section>
 
@@ -19,7 +19,7 @@
       <div class="col-md-12">
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title"><%= item %></h3>
+            <h3 class="box-title">{{$item}}</h3>
 
           </div>
 
@@ -93,7 +93,7 @@
             <div class="row">
               <div class="col-sm-5">
                 <div class="dataTables_info" id="example1_info" role="status" aria-live="polite">
-                  共{{ documentCountNum }}条文档
+                  共条文档
                 </div>
               </div>
               <div class="col-sm-7">
@@ -146,4 +146,4 @@
 
 </div>
 
-<%- include('footer') %>
+@include('admin.footer')

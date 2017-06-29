@@ -19,4 +19,38 @@ class writeController extends Controller
       'userInfo'=>$request->session()->get('userInfo'),
     ]);
   }
+
+  public function write(Request $request)
+  {
+    $type=$request->input('type');
+    $title=$request->input('title');
+    $previewImg=$request->input('previewImg');
+    $tag=$request->input('tag');
+    $category=$request->input('category');
+    $abstract=$request->input('abstract');
+    $keyword=$request->input('keyword');
+    $view=$request->input('view');
+    $author=$request->input('author');
+    $from=$request->input('from');
+    $content=$request->input('content');
+
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 }

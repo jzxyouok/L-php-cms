@@ -3,7 +3,7 @@
     <div class="pull-right hidden-xs">
         <b>Version</b> 1.0.0
     </div>
-    <strong>Copyright &copy; 2017-2017 <a href="https://github.com/lovelife10000/L-blog">L-blog</a>.</strong> All rights
+    <strong>Copyright &copy; 2017-2017 <a href="https://github.com/lovelife10000/L-php-cms">L-php-cms</a>.</strong> All rights
     reserved.
 </footer>
 

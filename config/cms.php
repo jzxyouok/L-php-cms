@@ -36,6 +36,12 @@ return [
 
 
   'doc_manage' => '文档管理',
+  'write' => '写文档',
+  'published' => '已发布',
+  'wait_for_verify' => '待审核',
+  'no_access' => '未通过',
+  'draft' => '草稿箱',
+  'recycle' => '回收站',
   'category_all' => '所有分类',
   'category_add' => '添加分类',
   'menu_manage' => '菜单管理',
@@ -46,12 +52,7 @@ return [
   'tag_manage' => '标签管理',
   'comment_manage' => '评论管理',
   'message_manage' => '消息管理',
-  'write' => '写文档',
-  'published' => '已发布',
-  'wait_for_verify' => '待审核',
-  'no_access' => '未通过',
-  'draft' => '草稿箱',
-  'recycle' => '回收站',
+
 
   'file_manage' => '文件管理',
   'media_manage_all' => '所有媒体',

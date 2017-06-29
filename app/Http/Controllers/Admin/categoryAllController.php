@@ -22,8 +22,9 @@ class categoryAllController extends Controller
     ]);
   }
 
-  public function get(Request $request)
+  public function categoryGet(Request $request)
   {
+
     $categories = DB::table('categories')->get();
 
     return response()->json($categories);
