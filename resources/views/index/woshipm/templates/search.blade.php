@@ -13,19 +13,19 @@
             <h3 class="search-overlay-title">热门专题</h3>
             <div class="search-feature-item">
                 <a class="tool-img" href="http://www.woshipm.com/topic/xm" target="_blank">
-                    <img rel="nofollow" src="http://image.woshipm.com/wp-files/2017/05/4NhQFjuoq2NXQOryduLb.jpg!/both/180x120">
+                    <img rel="nofollow" src="#">
                     <h3>产品项目总结</h3>
                 </a>
             </div>
             <div class="search-feature-item">
                 <a class="tool-img" href="http://www.woshipm.com/topic/app" target="_blank">
-                    <img rel="nofollow" src="http://image.woshipm.com/wp-files/2017/04/0rOGLNOzMKPy6uOIZNdw.jpg!/both/180x120">
+                    <img rel="nofollow" src="#">
                     <h3>APP运营推广实操指南</h3>
                 </a>
             </div>
             <div class="search-feature-item">
                 <a class="tool-img" href="http://www.woshipm.com/topic/cpfx" target="_blank">
-                    <img rel="nofollow" src="http://image.woshipm.com/wp-files/2017/03/4pqLtfWvgOZ0Zsxn8j2y.jpg!/both/180x120">
+                    <img rel="nofollow" src="#">
                     <h3>产品分析报告撰写指南</h3>
                 </a>
             </div>

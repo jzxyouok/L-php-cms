@@ -28,19 +28,19 @@
       <h3 class="search-overlay-title">热门专题</h3>
       <div class="search-feature-item">
         <a class="tool-img" href="http://www.woshipm.com/topic/xm" target="_blank">
-          <img rel="nofollow" src="./人人都是产品经理 _ 产品经理、产品爱好者学习交流平台_files/180x120">
+          <img rel="nofollow" src="#">
           <h3>产品项目总结</h3>
         </a>
       </div>
       <div class="search-feature-item">
         <a class="tool-img" href="http://www.woshipm.com/topic/app" target="_blank">
-          <img rel="nofollow" src="./人人都是产品经理 _ 产品经理、产品爱好者学习交流平台_files/180x120(1)">
+          <img rel="nofollow" src="#">
           <h3>APP运营推广实操指南</h3>
         </a>
       </div>
       <div class="search-feature-item">
         <a class="tool-img" href="http://www.woshipm.com/topic/cpfx" target="_blank">
-          <img rel="nofollow" src="./人人都是产品经理 _ 产品经理、产品爱好者学习交流平台_files/180x120(2)">
+          <img rel="nofollow" src="#">
           <h3>产品分析报告撰写指南</h3>
         </a>
       </div>

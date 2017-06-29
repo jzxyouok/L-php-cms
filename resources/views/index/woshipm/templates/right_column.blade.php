@@ -6,7 +6,7 @@
 
                     <dl class="code-dl">
                         <dd>
-                            <img src="./人人都是产品经理 _ 产品经理、产品爱好者学习交流平台_files/pm-erweima.jpg">
+                            <img src="#">
                         </dd>
                         <dt>关注微信公众号</dt>
                     </dl>
@@ -27,15 +27,15 @@
             </div>
         </aside>
         <div class="widget-ad"><a href="http://y0.cn/N1aeF" target="_blank"><img
-                        src="./人人都是产品经理 _ 产品经理、产品爱好者学习交流平台_files/UjN5YYIPZL8ArxWvL2zA.jpg" alt=""></a></div>
+                        src="#" alt=""></a></div>
         <div class="widget-ad"><a href="http://y0.cn/JHsWg" target="_blank"> <img
-                        src="./人人都是产品经理 _ 产品经理、产品爱好者学习交流平台_files/XJcLiRWQOVThokFkr3T5.jpg" alt=""> </a></div>
+                        src="#" alt=""> </a></div>
         <div class="widget-ad"><a href="http://y0.cn/5GMYS" target="_blank"> <img
-                        src="./人人都是产品经理 _ 产品经理、产品爱好者学习交流平台_files/RgMpPxpP7PkuBAhRHNDK.jpg" alt=""> </a></div>
+                        src="#" alt=""> </a></div>
         <aside id="writers-2" class="widget widget_writers"><h3 class="widget-title">推荐作者</h3>
             <ul class="widget-author-list">
                 <li class="widget-author-list-item u-clearfix"><a href="http://www.woshipm.com/u/57956" target="_blank"><img
-                                src="./人人都是产品经理 _ 产品经理、产品爱好者学习交流平台_files/50x50" alt="" height="50" width="50"
+                                src="#" alt="" height="50" width="50"
                                 class="avatar"></a>
                     <div class="widget-author-list-content"><h4><a href="http://www.woshipm.com/u/57956"
                                                                    target="_blank">韩叙<span
@@ -44,7 +44,7 @@
                 </li>
                 <li class="widget-author-list-item u-clearfix"><a href="http://www.woshipm.com/u/101224"
                                                                   target="_blank"><img
-                                src="./人人都是产品经理 _ 产品经理、产品爱好者学习交流平台_files/50x50(1)" alt="" height="50" width="50"
+                                src="#" alt="" height="50" width="50"
                                 class="avatar"></a>
                     <div class="widget-author-list-content"><h4><a href="http://www.woshipm.com/u/101224"
                                                                    target="_blank">网易UEDC<span
@@ -52,7 +52,7 @@
                         <p>网易用户体验设计中心</p></div>
                 </li>
                 <li class="widget-author-list-item u-clearfix"><a href="http://www.woshipm.com/u/39266" target="_blank"><img
-                                src="./人人都是产品经理 _ 产品经理、产品爱好者学习交流平台_files/50x50(2)" alt="" height="50" width="50"
+                                src="#" alt="" height="50" width="50"
                                 class="avatar"></a>
                     <div class="widget-author-list-content"><h4><a href="http://www.woshipm.com/u/39266"
                                                                    target="_blank">雷华萍<span
@@ -60,7 +60,7 @@
                         <p>家庭医生在线运营总监</p></div>
                 </li>
                 <li class="widget-author-list-item u-clearfix"><a href="http://www.woshipm.com/u/41549" target="_blank"><img
-                                src="./人人都是产品经理 _ 产品经理、产品爱好者学习交流平台_files/50x50(3)" alt="" height="50" width="50"
+                                src="#" alt="" height="50" width="50"
                                 class="avatar"></a>
                     <div class="widget-author-list-content"><h4><a href="http://www.woshipm.com/u/41549"
                                                                    target="_blank">韩利<span
@@ -69,7 +69,7 @@
                 </li>
                 <li class="widget-author-list-item u-clearfix"><a href="http://www.woshipm.com/u/110477"
                                                                   target="_blank"><img
-                                src="./人人都是产品经理 _ 产品经理、产品爱好者学习交流平台_files/50x50(4)" alt="" height="50" width="50"
+                                src="#" alt="" height="50" width="50"
                                 class="avatar"></a>
                     <div class="widget-author-list-content"><h4><a href="http://www.woshipm.com/u/110477"
                                                                    target="_blank">花大虫<span
@@ -85,7 +85,7 @@
                 <%   documentHot.forEach(function (doc) { %>
                 <li class="hot-question-item"><span class="num">1</span><a href="http://www.woshipm.com/pmd/663549.html"
                                                                            target="_blank"
-                                                                           class="link"><%=doc.document_title%></a>
+                                                                           class="link">%=doc.document_title%></a>
                 </li>
                 <% }) %>
 
@@ -104,7 +104,7 @@
                         <div class="rec-book-item" data-id="1">
                             <div class="rec-book-image"><a href="http://y0.cn/yaBmh" target="_blank"
                                                            rel="external nofollow"><img
-                                            src="./人人都是产品经理 _ 产品经理、产品爱好者学习交流平台_files/Fkb0uE0X89KoiVbLDu9N.jpg"></a>
+                                            src="#"></a>
                             </div>
                             <h4 class="rec-book-title"><a href="http://y0.cn/yaBmh" target="_blank"
                                                           rel="external nofollow">运营前线1</a></h4>
@@ -113,7 +113,7 @@
                         <div class="rec-book-item" data-id="2">
                             <div class="rec-book-image"><a href="http://y0.cn/CHBwp" target="_blank"
                                                            rel="external nofollow"><img
-                                            src="./人人都是产品经理 _ 产品经理、产品爱好者学习交流平台_files/EP4Xb7PcEJogB9V6jpou.jpg"></a>
+                                            src="#"></a>
                             </div>
                             <h4 class="rec-book-title"><a href="http://y0.cn/CHBwp" target="_blank"
                                                           rel="external nofollow">进化式运营</a></h4>
@@ -124,7 +124,7 @@
                         <div class="rec-book-item" data-id="3">
                             <div class="rec-book-image"><a href="http://y0.cn/KLRT8" target="_blank"
                                                            rel="external nofollow"><img
-                                            src="./人人都是产品经理 _ 产品经理、产品爱好者学习交流平台_files/Dzu9PSsTZKChx5yJnGq3.jpg"></a>
+                                            src="#"></a>
                             </div>
                             <h4 class="rec-book-title"><a href="http://y0.cn/KLRT8" target="_blank"
                                                           rel="external nofollow">互联网运营实战手册</a>
@@ -134,7 +134,7 @@
                         <div class="rec-book-item" data-id="4">
                             <div class="rec-book-image"><a href="http://y0.cn/xvxD5" target="_blank"
                                                            rel="external nofollow"><img
-                                            src="./人人都是产品经理 _ 产品经理、产品爱好者学习交流平台_files/Xctrmo0YvO48JE7GISMg.jpg"></a>
+                                            src="#"></a>
                             </div>
                             <h4 class="rec-book-title"><a href="http://y0.cn/xvxD5" target="_blank"
                                                           rel="external nofollow">全栈市场人</a></h4>
@@ -145,7 +145,7 @@
                         <div class="rec-book-item" data-id="5">
                             <div class="rec-book-image"><a href="http://y0.cn/WEBEW" target="_blank"
                                                            rel="external nofollow"><img
-                                            src="./人人都是产品经理 _ 产品经理、产品爱好者学习交流平台_files/GVhGwB0YtH4x1Rtj1pKE.jpg"></a>
+                                            src="#"></a>
                             </div>
                             <h4 class="rec-book-title"><a href="http://y0.cn/WEBEW" target="_blank"
                                                           rel="external nofollow">产品经理必懂的技术那点事儿</a>
@@ -155,7 +155,7 @@
                         <div class="rec-book-item" data-id="6">
                             <div class="rec-book-image"><a href="http://y0.cn/2JLRT" target="_blank"
                                                            rel="external nofollow"><img
-                                            src="./人人都是产品经理 _ 产品经理、产品爱好者学习交流平台_files/yuanxing0623.png"></a></div>
+                                            src="#"></a></div>
                             <h4 class="rec-book-title"><a href="http://y0.cn/2JLRT" target="_blank"
                                                           rel="external nofollow">绝密原型档案</a></h4>
                             <p class="rec-book-des">人人都是产品经理社区出品，看看专业产品经理原型是啥样的</p>
@@ -165,7 +165,7 @@
                         <div class="rec-book-item" data-id="7">
                             <div class="rec-book-image"><a href="http://y0.cn/nmC2C" target="_blank"
                                                            rel="external nofollow"><img
-                                            src="./人人都是产品经理 _ 产品经理、产品爱好者学习交流平台_files/lE9F6ag8b6Q4taIbCbge.gif"></a>
+                                            src="#"></a>
                             </div>
                             <h4 class="rec-book-title"><a href="http://y0.cn/nmC2C" target="_blank"
                                                           rel="external nofollow">精益数据分析</a></h4>
@@ -174,7 +174,7 @@
                         <div class="rec-book-item" data-id="8">
                             <div class="rec-book-image"><a href="http://y0.cn/HBxnP" target="_blank"
                                                            rel="external nofollow"><img
-                                            src="./人人都是产品经理 _ 产品经理、产品爱好者学习交流平台_files/ROkBMXhPYhbIleVgb03M.jpg"></a>
+                                            src="#"></a>
                             </div>
                             <h4 class="rec-book-title"><a href="http://y0.cn/HBxnP" target="_blank"
                                                           rel="external nofollow">爆款是怎样炼成的：产品经理晋级宝典</a>

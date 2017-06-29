@@ -19,6 +19,9 @@
         //autoplay: 5000,//可选选项，自动滑动
         paginationClickable: true,
 
+
+        longSwipesRatio: 0.3,
+        touchRatio:1,
         loop: true,
         observer:true,//修改swiper自己或子元素时，自动初始化swiper
         observeParents:true,//修改swiper的父元素时，自动初始化swiper

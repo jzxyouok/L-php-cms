@@ -44,13 +44,13 @@
         <div class="blockGroup homeGroup">
             <article class="u-clearfix stream-list-item" data-id="668893">
                 <div class="stream-list-image">
-                    <a href="http://www.woshipm.com/pmd/668893.html" target="_blank" title="八年老司机总结了产品工作的5大神坑"><img src="http://image.woshipm.com/wp-files/2017/05/rZtlNjbH1n9v74KpMg9H.png!/both/202x145" width="202" height="145"></a>
+                    <a href="http://www.woshipm.com/pmd/668893.html" target="_blank" title="八年老司机总结了产品工作的5大神坑"><img src="#" width="202" height="145"></a>
                     <div class="stream-list-category"><a href="http://www.woshipm.com/category/pmd" rel="category tag">产品经理</a></div>
                 </div>
                 <div class="stream-list-content">
                     <h2 class="stream-list-title"><a target="_blank" href="http://www.woshipm.com/pmd/668893.html" title="八年老司机总结了产品工作的5大神坑">八年老司机总结了产品工作的5大神坑</a></h2>
                     <div class="stream-list-meta">
-                        <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/162626"><img src="http://image.woshipm.com/wp-files/2016/11/4aMknwlgZ9v4TOyOSeiu.jpg!/both/32x32" alt="" height="32" width="32" class="avatar"></a></span><span class="author" data-id="162626"><a target="_blank" href="http://www.woshipm.com/u/162626">PM7761</a></span>
+                        <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/162626"><img src="#" alt="" height="32" width="32" class="avatar"></a></span><span class="author" data-id="162626"><a target="_blank" href="http://www.woshipm.com/u/162626">PM7761</a></span>
                         <span class="dot"></span>
                         <time datetime="2017-05-22T16:24:26+08:00">2017/05/22</time>
                     </div>
@@ -66,13 +66,13 @@
                 </div>
             </article><article class="u-clearfix stream-list-item" data-id="668149">
                 <div class="stream-list-image">
-                    <a href="http://www.woshipm.com/pmd/668149.html" target="_blank" title="场景入口知识浅析：从马斯洛层次理论出发的用户场景分类"><img src="http://image.woshipm.com/wp-files/2017/05/oI0kXb9UakrzaQunHDS0.jpg!/both/202x145" width="202" height="145"></a>
+                    <a href="http://www.woshipm.com/pmd/668149.html" target="_blank" title="场景入口知识浅析：从马斯洛层次理论出发的用户场景分类"><img src="#" width="202" height="145"></a>
                     <div class="stream-list-category"><a href="http://www.woshipm.com/category/pmd" rel="category tag">产品经理</a></div>
                 </div>
                 <div class="stream-list-content">
                     <h2 class="stream-list-title"><a target="_blank" href="http://www.woshipm.com/pmd/668149.html" title="场景入口知识浅析：从马斯洛层次理论出发的用户场景分类">场景入口知识浅析：从马斯洛层次理论出发的用户场景分类</a></h2>
                     <div class="stream-list-meta">
-                        <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/209878"><img src="http://image.woshipm.com/wp-files/2017/05/FpDjnQZq9dbNjREYrFCo.jpg!/both/32x32" alt="" height="32" width="32" class="avatar"></a></span><span class="author" data-id="209878"><a target="_blank" href="http://www.woshipm.com/u/209878">陈正豪</a></span>
+                        <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/209878"><img src="#" alt="" height="32" width="32" class="avatar"></a></span><span class="author" data-id="209878"><a target="_blank" href="http://www.woshipm.com/u/209878">陈正豪</a></span>
                         <span class="dot"></span>
                         <time datetime="2017-05-22T10:59:32+08:00">2017/05/22</time>
                     </div>
@@ -86,13 +86,13 @@
                 </div>
             </article><article class="u-clearfix stream-list-item" data-id="668695">
                 <div class="stream-list-image">
-                    <a href="http://www.woshipm.com/pmd/668695.html" target="_blank" title="做产品，自己的狗粮自己得先吃"><img src="http://image.woshipm.com/wp-files/2017/05/jyJVtIPS2Bzi5JOf0lAD.png!/both/202x145" width="202" height="145"></a>
+                    <a href="http://www.woshipm.com/pmd/668695.html" target="_blank" title="做产品，自己的狗粮自己得先吃"><img src="#" width="202" height="145"></a>
                     <div class="stream-list-category"><a href="http://www.woshipm.com/category/pmd" rel="category tag">产品经理</a></div>
                 </div>
                 <div class="stream-list-content">
                     <h2 class="stream-list-title"><a target="_blank" href="http://www.woshipm.com/pmd/668695.html" title="做产品，自己的狗粮自己得先吃">做产品，自己的狗粮自己得先吃</a></h2>
                     <div class="stream-list-meta">
-                        <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/116449"><img src="http://image.woshipm.com/wp-files/2017/03/md66zaRwY9lG6JEep7v6.jpg!/both/32x32" alt="" height="32" width="32" class="avatar"></a></span><span class="author" data-id="116449"><a target="_blank" href="http://www.woshipm.com/u/116449">李哲</a></span>
+                        <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/116449"><img src="#" alt="" height="32" width="32" class="avatar"></a></span><span class="author" data-id="116449"><a target="_blank" href="http://www.woshipm.com/u/116449">李哲</a></span>
                         <span class="dot"></span>
                         <time datetime="2017-05-22T10:13:13+08:00">2017/05/22</time>
                     </div>
@@ -106,13 +106,13 @@
                 </div>
             </article><article class="u-clearfix stream-list-item" data-id="668487">
                 <div class="stream-list-image">
-                    <a href="http://www.woshipm.com/pmd/668487.html" target="_blank" title="产品经理不是一个职业，而是一种思维"><img src="http://image.woshipm.com/wp-files/2017/05/zI630B425fONdqivXF5M.png!/both/202x145" width="202" height="145"></a>
+                    <a href="http://www.woshipm.com/pmd/668487.html" target="_blank" title="产品经理不是一个职业，而是一种思维"><img src="#" width="202" height="145"></a>
                     <div class="stream-list-category"><a href="http://www.woshipm.com/category/pmd" rel="category tag">产品经理</a></div>
                 </div>
                 <div class="stream-list-content">
                     <h2 class="stream-list-title"><a target="_blank" href="http://www.woshipm.com/pmd/668487.html" title="产品经理不是一个职业，而是一种思维">产品经理不是一个职业，而是一种思维</a></h2>
                     <div class="stream-list-meta">
-                        <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/60251"><img src="http://image.woshipm.com/wp-files/2016/08/526058925087533877.jpg!/both/32x32" alt="" height="32" width="32" class="avatar"></a></span><span class="author" data-id="60251"><a target="_blank" href="http://www.woshipm.com/u/60251">南宫七洛</a></span>
+                        <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/60251"><img src="#" alt="" height="32" width="32" class="avatar"></a></span><span class="author" data-id="60251"><a target="_blank" href="http://www.woshipm.com/u/60251">南宫七洛</a></span>
                         <span class="dot"></span>
                         <time datetime="2017-05-22T09:31:52+08:00">2017/05/22</time>
                     </div>
@@ -126,13 +126,13 @@
                 </div>
             </article><article class="u-clearfix stream-list-item" data-id="668318">
                 <div class="stream-list-image">
-                    <a href="http://www.woshipm.com/pmd/668318.html" target="_blank" title="从五种信息体出发，认识和设计移动产品"><img src="http://image.woshipm.com/wp-files/2017/05/yIsOcv1czitlff5utmCw.jpg!/both/202x145" width="202" height="145"></a>
+                    <a href="http://www.woshipm.com/pmd/668318.html" target="_blank" title="从五种信息体出发，认识和设计移动产品"><img src="#" width="202" height="145"></a>
                     <div class="stream-list-category"><a href="http://www.woshipm.com/category/pmd" rel="category tag">产品经理</a></div>
                 </div>
                 <div class="stream-list-content">
                     <h2 class="stream-list-title"><a target="_blank" href="http://www.woshipm.com/pmd/668318.html" title="从五种信息体出发，认识和设计移动产品">从五种信息体出发，认识和设计移动产品</a></h2>
                     <div class="stream-list-meta">
-                        <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/260285"><img src="https://static.woshipm.com/woshipm_def_head.jpg?imageView2/1/w/32/h/32/q/100" alt="" height="32" width="32" class="avatar"></a></span><span class="author" data-id="260285"><a target="_blank" href="http://www.woshipm.com/u/260285">lioulier</a></span>
+                        <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/260285"><img src="#" alt="" height="32" width="32" class="avatar"></a></span><span class="author" data-id="260285"><a target="_blank" href="http://www.woshipm.com/u/260285">lioulier</a></span>
                         <span class="dot"></span>
                         <time datetime="2017-05-21T16:41:58+08:00">2017/05/21</time>
                     </div>
@@ -148,13 +148,13 @@
                 </div>
             </article><article class="u-clearfix stream-list-item" data-id="668272">
                 <div class="stream-list-image">
-                    <a href="http://www.woshipm.com/pmd/668272.html" target="_blank" title="关于俞军的三个问题，我所给出的回答"><img src="http://image.woshipm.com/wp-files/2017/05/OFX56vvfDSQ7xlzXsPHr.jpg!/both/202x145" width="202" height="145"></a>
+                    <a href="http://www.woshipm.com/pmd/668272.html" target="_blank" title="关于俞军的三个问题，我所给出的回答"><img src="#" width="202" height="145"></a>
                     <div class="stream-list-category"><a href="http://www.woshipm.com/category/pmd" rel="category tag">产品经理</a></div>
                 </div>
                 <div class="stream-list-content">
                     <h2 class="stream-list-title"><a target="_blank" href="http://www.woshipm.com/pmd/668272.html" title="关于俞军的三个问题，我所给出的回答">关于俞军的三个问题，我所给出的回答</a></h2>
                     <div class="stream-list-meta">
-                        <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/75395"><img src="http://image.woshipm.com/wp-files/2016/03/QQ截图20160316125516.png!/both/32x32" alt="" height="32" width="32" class="avatar"></a></span><span class="author" data-id="75395"><a target="_blank" href="http://www.woshipm.com/u/75395">肥寒</a></span>
+                        <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/75395"><img src="#" alt="" height="32" width="32" class="avatar"></a></span><span class="author" data-id="75395"><a target="_blank" href="http://www.woshipm.com/u/75395">肥寒</a></span>
                         <span class="dot"></span>
                         <time datetime="2017-05-21T16:01:31+08:00">2017/05/21</time>
                     </div>
@@ -174,13 +174,13 @@
                 </div>
             </article><article class="u-clearfix stream-list-item" data-id="667112">
                 <div class="stream-list-image">
-                    <a href="http://www.woshipm.com/pmd/667112.html" target="_blank" title="做好向上管理，产品经理应该知道的五点"><img src="http://image.woshipm.com/wp-files/2017/05/S5ArXg9KmswohLWmeclT.jpg!/both/202x145" width="202" height="145"></a>
+                    <a href="http://www.woshipm.com/pmd/667112.html" target="_blank" title="做好向上管理，产品经理应该知道的五点"><img src="#" width="202" height="145"></a>
                     <div class="stream-list-category"><a href="http://www.woshipm.com/category/pmd" rel="category tag">产品经理</a></div>
                 </div>
                 <div class="stream-list-content">
                     <h2 class="stream-list-title"><a target="_blank" href="http://www.woshipm.com/pmd/667112.html" title="做好向上管理，产品经理应该知道的五点">做好向上管理，产品经理应该知道的五点</a></h2>
                     <div class="stream-list-meta">
-                        <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/95365"><img src="http://image.woshipm.com/wp-files/2016/06/zlyzfx.jpg!/both/32x32" alt="" height="32" width="32" class="avatar"></a></span><span class="author" data-id="95365"><a target="_blank" href="http://www.woshipm.com/u/95365">赵立阳</a></span>
+                        <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/95365"><img src="#" alt="" height="32" width="32" class="avatar"></a></span><span class="author" data-id="95365"><a target="_blank" href="http://www.woshipm.com/u/95365">赵立阳</a></span>
                         <span class="dot"></span>
                         <time datetime="2017-05-20T09:00:02+08:00">2017/05/20</time>
                     </div>
@@ -196,13 +196,13 @@
                 </div>
             </article><article class="u-clearfix stream-list-item" data-id="667516">
                 <div class="stream-list-image">
-                    <a href="http://www.woshipm.com/pmd/667516.html" target="_blank" title="产品经理如何push别人？"><img src="http://image.woshipm.com/wp-files/2017/05/PHm7sGsgowHkR10al8Ny.png!/both/202x145" width="202" height="145"></a>
+                    <a href="http://www.woshipm.com/pmd/667516.html" target="_blank" title="产品经理如何push别人？"><img src="#" width="202" height="145"></a>
                     <div class="stream-list-category"><a href="http://www.woshipm.com/category/pmd" rel="category tag">产品经理</a></div>
                 </div>
                 <div class="stream-list-content">
                     <h2 class="stream-list-title"><a target="_blank" href="http://www.woshipm.com/pmd/667516.html" title="产品经理如何push别人？">产品经理如何push别人？</a></h2>
                     <div class="stream-list-meta">
-                        <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/60251"><img src="http://image.woshipm.com/wp-files/2016/08/526058925087533877.jpg!/both/32x32" alt="" height="32" width="32" class="avatar"></a></span><span class="author" data-id="60251"><a target="_blank" href="http://www.woshipm.com/u/60251">南宫七洛</a></span>
+                        <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/60251"><img src="#" alt="" height="32" width="32" class="avatar"></a></span><span class="author" data-id="60251"><a target="_blank" href="http://www.woshipm.com/u/60251">南宫七洛</a></span>
                         <span class="dot"></span>
                         <time datetime="2017-05-20T08:30:08+08:00">2017/05/20</time>
                     </div>
@@ -216,13 +216,13 @@
                 </div>
             </article><article class="u-clearfix stream-list-item" data-id="666664">
                 <div class="stream-list-image">
-                    <a href="http://www.woshipm.com/pmd/666664.html" target="_blank" title="从产品角度，浅谈“智慧农庄”解决方案"><img src="http://image.woshipm.com/wp-files/2017/05/WiI1GBVMETVp5STOHrAn.jpg!/both/202x145" width="202" height="145"></a>
+                    <a href="http://www.woshipm.com/pmd/666664.html" target="_blank" title="从产品角度，浅谈“智慧农庄”解决方案"><img src="#" width="202" height="145"></a>
                     <div class="stream-list-category"><a href="http://www.woshipm.com/category/pmd" rel="category tag">产品经理</a></div>
                 </div>
                 <div class="stream-list-content">
                     <h2 class="stream-list-title"><a target="_blank" href="http://www.woshipm.com/pmd/666664.html" title="从产品角度，浅谈“智慧农庄”解决方案">从产品角度，浅谈“智慧农庄”解决方案</a></h2>
                     <div class="stream-list-meta">
-                        <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/103061"><img src="http://image.woshipm.com/wp-files/2017/05/RIrnNqo5o4YtES8bu7Mx.jpg!/both/32x32" alt="" height="32" width="32" class="avatar"></a></span><span class="author" data-id="103061"><a target="_blank" href="http://www.woshipm.com/u/103061">Vito</a></span>
+                        <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/103061"><img src="#" alt="" height="32" width="32" class="avatar"></a></span><span class="author" data-id="103061"><a target="_blank" href="http://www.woshipm.com/u/103061">Vito</a></span>
                         <span class="dot"></span>
                         <time datetime="2017-05-19T16:49:31+08:00">2017/05/19</time>
                     </div>
@@ -238,13 +238,13 @@
                 </div>
             </article><article class="u-clearfix stream-list-item" data-id="666850">
                 <div class="stream-list-image">
-                    <a href="http://www.woshipm.com/pmd/666850.html" target="_blank" title="产品人对末来科技的构想与思考"><img src="http://image.woshipm.com/wp-files/2017/05/FjBSWYO7oa2xtvcHo6gn.jpg!/both/202x145" width="202" height="145"></a>
+                    <a href="http://www.woshipm.com/pmd/666850.html" target="_blank" title="产品人对末来科技的构想与思考"><img src="#" width="202" height="145"></a>
                     <div class="stream-list-category"><a href="http://www.woshipm.com/category/pmd" rel="category tag">产品经理</a></div>
                 </div>
                 <div class="stream-list-content">
                     <h2 class="stream-list-title"><a target="_blank" href="http://www.woshipm.com/pmd/666850.html" title="产品人对末来科技的构想与思考">产品人对末来科技的构想与思考</a></h2>
                     <div class="stream-list-meta">
-                        <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/75775"><img src="http://image.woshipm.com/wp-files/2016/07/IMG_0341.png!/both/32x32" alt="" height="32" width="32" class="avatar"></a></span><span class="author" data-id="75775"><a target="_blank" href="http://www.woshipm.com/u/75775">产品人老吴</a></span>
+                        <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/75775"><img src="#" alt="" height="32" width="32" class="avatar"></a></span><span class="author" data-id="75775"><a target="_blank" href="http://www.woshipm.com/u/75775">产品人老吴</a></span>
                         <span class="dot"></span>
                         <time datetime="2017-05-19T15:38:17+08:00">2017/05/19</time>
                     </div>
@@ -260,13 +260,13 @@
                 </div>
             </article><article class="u-clearfix stream-list-item" data-id="667070">
                 <div class="stream-list-image">
-                    <a href="http://www.woshipm.com/pmd/667070.html" target="_blank" title="需求性质：什么是伴生性需求"><img src="http://image.woshipm.com/wp-files/2017/05/1fPS154kk9Q5DdqTYeRp.jpg!/both/202x145" width="202" height="145"></a>
+                    <a href="http://www.woshipm.com/pmd/667070.html" target="_blank" title="需求性质：什么是伴生性需求"><img src="#" width="202" height="145"></a>
                     <div class="stream-list-category"><a href="http://www.woshipm.com/category/pmd" rel="category tag">产品经理</a></div>
                 </div>
                 <div class="stream-list-content">
                     <h2 class="stream-list-title"><a target="_blank" href="http://www.woshipm.com/pmd/667070.html" title="需求性质：什么是伴生性需求">需求性质：什么是伴生性需求</a></h2>
                     <div class="stream-list-meta">
-                        <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/107640"><img src="http://avatar.woshipm.com/images/app/APP_U_201609_20160919013238_7986.jpeg!/both/32x32" alt="" height="32" width="32" class="avatar"></a></span><span class="author" data-id="107640"><a target="_blank" href="http://www.woshipm.com/u/107640">枯叶</a></span>
+                        <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/107640"><img src="#" alt="" height="32" width="32" class="avatar"></a></span><span class="author" data-id="107640"><a target="_blank" href="http://www.woshipm.com/u/107640">枯叶</a></span>
                         <span class="dot"></span>
                         <time datetime="2017-05-19T14:45:38+08:00">2017/05/19</time>
                     </div>
@@ -283,13 +283,13 @@
                 </div>
             </article><article class="u-clearfix stream-list-item" data-id="666524">
                 <div class="stream-list-image">
-                    <a href="http://www.woshipm.com/pmd/666524.html" target="_blank" title="产品经理对于需求分析和数据分析的思考"><img src="http://image.woshipm.com/wp-files/2017/05/RbElEC3Ll2Kf28IkwHb0.jpg!/both/202x145" width="202" height="145"></a>
+                    <a href="http://www.woshipm.com/pmd/666524.html" target="_blank" title="产品经理对于需求分析和数据分析的思考"><img src="#" width="202" height="145"></a>
                     <div class="stream-list-category"><a href="http://www.woshipm.com/category/pmd" rel="category tag">产品经理</a></div>
                 </div>
                 <div class="stream-list-content">
                     <h2 class="stream-list-title"><a target="_blank" href="http://www.woshipm.com/pmd/666524.html" title="产品经理对于需求分析和数据分析的思考">产品经理对于需求分析和数据分析的思考</a></h2>
                     <div class="stream-list-meta">
-                        <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/259217"><img src="http://image.woshipm.com/wp-files/2017/05/otqmnoSJ64SU6N76NA33.jpeg!/both/32x32" alt="" height="32" width="32" class="avatar"></a></span><span class="author" data-id="259217"><a target="_blank" href="http://www.woshipm.com/u/259217">罗德涛</a></span>
+                        <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/259217"><img src="#" alt="" height="32" width="32" class="avatar"></a></span><span class="author" data-id="259217"><a target="_blank" href="http://www.woshipm.com/u/259217">罗德涛</a></span>
                         <span class="dot"></span>
                         <time datetime="2017-05-19T14:24:03+08:00">2017/05/19</time>
                     </div>
@@ -322,7 +322,7 @@
 
                         <dl class="code-dl">
                             <dd>
-                                <img src="http://image.woshipm.com/wp-files/2016/09/pm-erweima.jpg">
+                                <img src="#">
                             </dd>
                             <dt>关注微信公众号</dt>
                         </dl>
@@ -336,14 +336,14 @@
                     <div class="app-info"><a class="ios" href="https://itunes.apple.com/cn/app/ren-ren-dou-shi-chan-pin-jing/id998090859" target="_blank"><span class="iconfont icon-ios"></span>iOS版下载</a> <a href="http://sj.qq.com/myapp/detail.htm?apkName=com.woshipm.news" target="_blank" class="android"><span class="iconfont icon-android"></span>Android版下载</a></div>
                 </div>
             </aside><div class="widget-ad"><a href="http://www.qidianla.com/course/yunying.html?channel=a2" target="_blank">
-                    <img src="http://image.woshipm.com/wp-files/2017/02/uFvoT70ipUeszC1lkgJ0.png" alt="">
+                    <img src="#" alt="">
                 </a></div><div class="widget-ad"><a href="https://www.qidianla.com/course/zongjian.html?channel=a1" target="_blank">
-                    <img src="http://image.woshipm.com/wp-files/2015/12/zongjian1222.jpg" alt="">
-                </a></div><aside id="hot_posts-2" class="widget widget_hot_posts"><h3 class="widget-title">热门文章</h3><ul class="hot-post-list">        <li class="hot-post-item"><div class="hot-post-image"><a href="http://www.woshipm.com/pmd/663549.html" target="_blank"><img src="http://image.woshipm.com/wp-files/2017/05/p45MqqXUxKykpJWC9RCk.jpg!widget65" width="95" height="65"></a></div><h3 class="hot-post-title"><a target="_blank" href="http://www.woshipm.com/pmd/663549.html">如何正确的画出功能流程图？</a></h3><div class="hot-post-meta"><a target="_blank" href="http://www.woshipm.com/u/91183">浪子PRD</a></div></li>
-                    <li class="hot-post-item"><div class="hot-post-image"><a href="http://www.woshipm.com/pmd/663858.html" target="_blank"><img src="http://image.woshipm.com/wp-files/2017/05/RrdhLrDZRBY6CTExoMty.jpg!widget65" width="95" height="65"></a></div><h3 class="hot-post-title"><a target="_blank" href="http://www.woshipm.com/pmd/663858.html">各个阶段产品经理，该如何实现自我提升？</a></h3><div class="hot-post-meta"><a target="_blank" href="http://www.woshipm.com/u/186676">江来来</a></div></li>
-                    <li class="hot-post-item"><div class="hot-post-image"><a href="http://www.woshipm.com/pmd/664735.html" target="_blank"><img src="http://image.woshipm.com/wp-files/2017/05/jwRIOsaqeZntr1hL4mQK.png!widget65" width="95" height="65"></a></div><h3 class="hot-post-title"><a target="_blank" href="http://www.woshipm.com/pmd/664735.html">产品人孙博：五年，从高级产品经理到产品专家</a></h3><div class="hot-post-meta"><a target="_blank" href="http://www.woshipm.com/u/258388">产品人</a></div></li>
-                    <li class="hot-post-item"><div class="hot-post-image"><a href="http://www.woshipm.com/pmd/664491.html" target="_blank"><img src="http://image.woshipm.com/wp-files/2017/05/ShSYhuHpOrnvm4v3uSLq.png!widget65" width="95" height="65"></a></div><h3 class="hot-post-title"><a target="_blank" href="http://www.woshipm.com/pmd/664491.html">产品经理告诉你做交互设计的套路：3W1H法</a></h3><div class="hot-post-meta"><a target="_blank" href="http://www.woshipm.com/u/100612">Mandy权</a></div></li>
-                    <li class="hot-post-item"><div class="hot-post-image"><a href="http://www.woshipm.com/pmd/666471.html" target="_blank"><img src="http://image.woshipm.com/wp-files/2017/05/NMEc0bnNsUqHvNmNUxru.png!widget65" width="95" height="65"></a></div><h3 class="hot-post-title"><a target="_blank" href="http://www.woshipm.com/pmd/666471.html">产品经理必备：客户端架构基础知识</a></h3><div class="hot-post-meta"><a target="_blank" href="http://www.woshipm.com/u/256635">潘一鸣</a></div></li>
+                    <img src="#" alt="">
+                </a></div><aside id="hot_posts-2" class="widget widget_hot_posts"><h3 class="widget-title">热门文章</h3><ul class="hot-post-list">        <li class="hot-post-item"><div class="hot-post-image"><a href="http://www.woshipm.com/pmd/663549.html" target="_blank"><img src="#" width="95" height="65"></a></div><h3 class="hot-post-title"><a target="_blank" href="http://www.woshipm.com/pmd/663549.html">如何正确的画出功能流程图？</a></h3><div class="hot-post-meta"><a target="_blank" href="http://www.woshipm.com/u/91183">浪子PRD</a></div></li>
+                    <li class="hot-post-item"><div class="hot-post-image"><a href="http://www.woshipm.com/pmd/663858.html" target="_blank"><img src="#" width="95" height="65"></a></div><h3 class="hot-post-title"><a target="_blank" href="http://www.woshipm.com/pmd/663858.html">各个阶段产品经理，该如何实现自我提升？</a></h3><div class="hot-post-meta"><a target="_blank" href="http://www.woshipm.com/u/186676">江来来</a></div></li>
+                    <li class="hot-post-item"><div class="hot-post-image"><a href="http://www.woshipm.com/pmd/664735.html" target="_blank"><img src="#" width="95" height="65"></a></div><h3 class="hot-post-title"><a target="_blank" href="http://www.woshipm.com/pmd/664735.html">产品人孙博：五年，从高级产品经理到产品专家</a></h3><div class="hot-post-meta"><a target="_blank" href="http://www.woshipm.com/u/258388">产品人</a></div></li>
+                    <li class="hot-post-item"><div class="hot-post-image"><a href="http://www.woshipm.com/pmd/664491.html" target="_blank"><img src="#" width="95" height="65"></a></div><h3 class="hot-post-title"><a target="_blank" href="http://www.woshipm.com/pmd/664491.html">产品经理告诉你做交互设计的套路：3W1H法</a></h3><div class="hot-post-meta"><a target="_blank" href="http://www.woshipm.com/u/100612">Mandy权</a></div></li>
+                    <li class="hot-post-item"><div class="hot-post-image"><a href="http://www.woshipm.com/pmd/666471.html" target="_blank"><img src="#" width="95" height="65"></a></div><h3 class="hot-post-title"><a target="_blank" href="http://www.woshipm.com/pmd/666471.html">产品经理必备：客户端架构基础知识</a></h3><div class="hot-post-meta"><a target="_blank" href="http://www.woshipm.com/u/256635">潘一鸣</a></div></li>
                 </ul></aside>            </div>
     </div>    </div>
 <%- include('site-footer') %>

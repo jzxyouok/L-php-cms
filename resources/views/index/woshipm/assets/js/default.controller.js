@@ -1,31 +1,5 @@
-
-
 app.controller('headerCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
-    $scope.show = false;
-    $scope.hold = false;
-    $scope.showMenu = function () {
-        $scope.show = true;
-    };
-    $scope.hideMenu = function () {
-        $timeout(function () {
-            $scope.show = false;
-        }, 50);
-    };
 
-    $scope.show2 = false;
-    $scope.hold2 = false;
-    $scope.showMenu2 = function () {
-        $scope.show2 = true;
-    };
-    $scope.hideMenu2 = function () {
-        $timeout(function () {
-            $scope.show2 = false;
-        }, 50);
-    };
-
-    /*
-     * 弹出登录框
-     * */
     $scope.loginOut = function () {
         console.log(1);
 
@@ -50,11 +24,11 @@ app.controller('contentCtrl', ['$scope', '$timeout', function ($scope, $timeout)
 app.controller('bannerCtrl', ['$scope', 'bannerService', function ($scope, bannerService) {
     $scope.getBanner = function () {
         bannerService.getBanner().then(function success(res) {
-if(res.data.code===1){
-    $scope.mainBannerData=res.data.data;
-    console.log($scope.mainBannerData);
-}
-        },function error(res) {
+            if (res.data.code === 1) {
+                $scope.mainBannerData = res.data.data;
+
+            }
+        }, function error(res) {
 
         });
     };

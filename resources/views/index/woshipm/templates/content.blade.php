@@ -47,12 +47,12 @@
                                                                    href="http://service.weibo.com/share/share.php?appkey=2775287854&amp;title=%E5%8D%B3%E5%B0%86%E5%BC%80%E8%AF%BE%EF%BD%9C%E5%BF%AB%E9%80%9F%E6%8E%8C%E6%8F%A1%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E6%A0%B8%E5%BF%83%E6%8A%80%E8%83%BD%EF%BC%8CBAT%E5%AF%BC%E5%B8%88%E5%B8%A6%E4%BD%A090%E5%A4%A9%E5%BD%A2%E6%88%90%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB&amp;url=http://www.woshipm.com/active/654915.html&amp;pic=http://image.woshipm.com/wp-files/2017/05/WQpKOng5umMYNuq0h8gP.jpg"><span
                                         class="iconfont icon-weibo"></span>分享到微博</a><span class="share-wechat"><span
                                         class="iconfont icon-wechat"></span>分享到微信<div class="share-qrcode-image"><img
-                                            src="./即将开课｜快速掌握产品经理核心技能，BAT导师带你90天形成产品经理知识体系 _ 人人都是产品经理_files/api.php"><p>扫码分享到微信</p></div></span>
+                                            src="#"><p>扫码分享到微信</p></div></span>
                         </div>
                     </div>
                     <div class="post-ads">
                         <a href="http://y0.cn/Lm82R" target="_blank"><img
-                                    src="./即将开课｜快速掌握产品经理核心技能，BAT导师带你90天形成产品经理知识体系 _ 人人都是产品经理_files/lD065hrHjUUQwLZHUh6z.jpg"></a></div>
+                                    src="#"></a></div>
                 </div>
                 <div id="comments-654915" class="comments-area">
                     <h2 class="comments-title">
@@ -63,7 +63,7 @@
                               data-post="654915" class="comment-form u-clearfix">
                             <div class="comment-avatar">
                                 <a class="comment-avatar" href="javascript:;"><img class="avatar" width="40" height="40" alt=""
-                                                                                   src="./即将开课｜快速掌握产品经理核心技能，BAT导师带你90天形成产品经理知识体系 _ 人人都是产品经理_files/default.jpg"></a>
+                                                                                   src="#"></a>
                             </div>
                             <div class="comm-con">
                                 <div class="comment-empty" data-action="popLogin">写下你的想法</div>
@@ -79,7 +79,7 @@
                                 <div id="comment-208065" class="comment-block">
                                     <div class="comment-avatar pm-relative">
                                         <a href="http://www.woshipm.com/u/165091" target="_blank"><img
-                                                    src="./即将开课｜快速掌握产品经理核心技能，BAT导师带你90天形成产品经理知识体系 _ 人人都是产品经理_files/APP_U_201611_20161116230357_670.jpeg"
+                                                    src="#"
                                                     alt="" height="40" width="40" class="avatar"></a>
                                     </div>
                                     <div class="comment-info">
@@ -106,7 +106,7 @@
                                 <div id="comment-208038" class="comment-block">
                                     <div class="comment-avatar pm-relative">
                                         <a href="http://www.woshipm.com/u/238006" target="_blank"><img
-                                                    src="./即将开课｜快速掌握产品经理核心技能，BAT导师带你90天形成产品经理知识体系 _ 人人都是产品经理_files/woshipm_def_head.jpg" alt=""
+                                                    src="#" alt=""
                                                     height="40" width="40" class="avatar"></a>
                                     </div>
                                     <div class="comment-info">
@@ -143,7 +143,7 @@
                                             </div>
                                             <div class="comment-content" itemprop="description">
                                                 <p>一个班大约130人，赶快加班主任QQ 2759441299 找组织 <img
-                                                            src="./即将开课｜快速掌握产品经理核心技能，BAT导师带你90天形成产品经理知识体系 _ 人人都是产品经理_files/icon_redface.gif"
+                                                            src="#"
                                                             alt=":oops:" class="wp-smiley" style="height: 1em; max-height: 1em;"></p>
                                             </div>
                                         </div>
@@ -174,7 +174,7 @@
                                 <div id="comment-208036" class="comment-block">
                                     <div class="comment-avatar pm-relative">
                                         <a href="http://www.woshipm.com/u/196100" target="_blank"><img
-                                                    src="./即将开课｜快速掌握产品经理核心技能，BAT导师带你90天形成产品经理知识体系 _ 人人都是产品经理_files/def_head.jpg" alt="" height="40"
+                                                    src="#" alt="" height="40"
                                                     width="40" class="avatar"></a>
                                     </div>
                                     <div class="comment-info">
@@ -211,7 +211,7 @@
                                             </div>
                                             <div class="comment-content" itemprop="description">
                                                 <p>不是一个课程噢，这个是线上的90天产品实战班 <img
-                                                            src="./即将开课｜快速掌握产品经理核心技能，BAT导师带你90天形成产品经理知识体系 _ 人人都是产品经理_files/icon_idea.gif" alt=":idea:"
+                                                            src="#" alt=":idea:"
                                                             class="wp-smiley" style="height: 1em; max-height: 1em;"></p>
                                             </div>
                                         </div>
@@ -261,7 +261,7 @@
                                 <div id="comment-208030" class="comment-block">
                                     <div class="comment-avatar pm-relative">
                                         <a href="http://www.woshipm.com/u/96050" target="_blank"><img
-                                                    src="./即将开课｜快速掌握产品经理核心技能，BAT导师带你90天形成产品经理知识体系 _ 人人都是产品经理_files/40x40" alt="" height="40"
+                                                    src="#" alt="" height="40"
                                                     width="40" class="avatar"></a>
                                     </div>
                                     <div class="comment-info">
@@ -298,7 +298,7 @@
                                                 </div>
                                             </div>
                                             <div class="comment-content" itemprop="description">
-                                                <p>可以分期呢 <img src="./即将开课｜快速掌握产品经理核心技能，BAT导师带你90天形成产品经理知识体系 _ 人人都是产品经理_files/icon_mrgreen.gif"
+                                                <p>可以分期呢 <img src="#"
                                                               alt=":mrgreen:" class="wp-smiley" style="height: 1em; max-height: 1em;">
                                                     ，找班主任Eva要分期地址，班主任QQ 2759441299</p>
                                             </div>
@@ -311,7 +311,7 @@
                                 <div id="comment-208020" class="comment-block">
                                     <div class="comment-avatar pm-relative">
                                         <a href="http://www.woshipm.com/u/41825" target="_blank"><img
-                                                    src="./即将开课｜快速掌握产品经理核心技能，BAT导师带你90天形成产品经理知识体系 _ 人人都是产品经理_files/40x40(1)" alt="" height="40"
+                                                    src="#" alt="" height="40"
                                                     width="40" class="avatar"></a>
                                     </div>
                                     <div class="comment-info">
@@ -338,7 +338,7 @@
                                 <div id="comment-208018" class="comment-block">
                                     <div class="comment-avatar pm-relative">
                                         <a href="http://www.woshipm.com/u/41827" target="_blank"><img
-                                                    src="./即将开课｜快速掌握产品经理核心技能，BAT导师带你90天形成产品经理知识体系 _ 人人都是产品经理_files/40x40(2)" alt="" height="40"
+                                                    src="#" alt="" height="40"
                                                     width="40" class="avatar"></a>
                                     </div>
                                     <div class="comment-info">
@@ -353,7 +353,7 @@
                                     </div>
                                     <div class="comment-content" itemprop="description">
                                         <p>6月2日开课，时间有点晚了，有更早一点的吗？老板想我早点学完好干活 <img
-                                                    src="./即将开课｜快速掌握产品经理核心技能，BAT导师带你90天形成产品经理知识体系 _ 人人都是产品经理_files/icon_cry.gif" alt=":cry:"
+                                                    src="#" alt=":cry:"
                                                     class="wp-smiley" style="height: 1em; max-height: 1em;"></p>
                                     </div>
 
@@ -367,7 +367,7 @@
                                 <div id="comment-208017" class="comment-block">
                                     <div class="comment-avatar pm-relative">
                                         <a href="http://www.woshipm.com/u/41832" target="_blank"><img
-                                                    src="./即将开课｜快速掌握产品经理核心技能，BAT导师带你90天形成产品经理知识体系 _ 人人都是产品经理_files/40x40(3)" alt="" height="40"
+                                                    src="#" alt="" height="40"
                                                     width="40" class="avatar"></a>
                                     </div>
                                     <div class="comment-info">
@@ -434,7 +434,7 @@
                                 <div id="comment-208014" class="comment-block">
                                     <div class="comment-avatar pm-relative">
                                         <a href="http://www.woshipm.com/u/165800" target="_blank"><img
-                                                    src="./即将开课｜快速掌握产品经理核心技能，BAT导师带你90天形成产品经理知识体系 _ 人人都是产品经理_files/40x40(4)" alt="" height="40"
+                                                    src="#" alt="" height="40"
                                                     width="40" class="avatar"></a>
                                     </div>
                                     <div class="comment-info">
@@ -471,7 +471,7 @@
                                                 </div>
                                             </div>
                                             <div class="comment-content" itemprop="description">
-                                                <p><img src="./即将开课｜快速掌握产品经理核心技能，BAT导师带你90天形成产品经理知识体系 _ 人人都是产品经理_files/icon_surprised.gif"
+                                                <p><img src="#"
                                                         alt=":o" class="wp-smiley" style="height: 1em; max-height: 1em;">
                                                     同感，越来越发现自己弱爆了，公司产品都是老板说了算，我就是一个画原型的，心塞塞</p>
                                             </div>
@@ -493,7 +493,7 @@
                                             </div>
                                             <div class="comment-content" itemprop="description">
                                                 <p>老师就在班级群里，我也是报名后才知道的。我个人感觉老师解答问题上还是蛮尽心的，有次课后我提了5个问题，老师每个问题都回答了好几百字 <img
-                                                            src="./即将开课｜快速掌握产品经理核心技能，BAT导师带你90天形成产品经理知识体系 _ 人人都是产品经理_files/icon_redface.gif"
+                                                            src="#"
                                                             alt=":oops:" class="wp-smiley" style="height: 1em; max-height: 1em;"> 希望对你有所帮助</p>
                                             </div>
                                         </div>
@@ -543,7 +543,7 @@
                                 <div id="comment-208012" class="comment-block">
                                     <div class="comment-avatar pm-relative">
                                         <a href="http://www.woshipm.com/u/41836" target="_blank"><img
-                                                    src="./即将开课｜快速掌握产品经理核心技能，BAT导师带你90天形成产品经理知识体系 _ 人人都是产品经理_files/40x40(5)" alt="" height="40"
+                                                    src="#" alt="" height="40"
                                                     width="40" class="avatar"></a>
                                     </div>
                                     <div class="comment-info">
@@ -610,7 +610,7 @@
                                 <div id="comment-208011" class="comment-block">
                                     <div class="comment-avatar pm-relative">
                                         <a href="http://www.woshipm.com/u/41838" target="_blank"><img
-                                                    src="./即将开课｜快速掌握产品经理核心技能，BAT导师带你90天形成产品经理知识体系 _ 人人都是产品经理_files/40x40(6)" alt="" height="40"
+                                                    src="#" alt="" height="40"
                                                     width="40" class="avatar"></a>
                                     </div>
                                     <div class="comment-info">
@@ -711,7 +711,7 @@
                         <div class="author-board">
                             <div class="author-board-left">
                                 <a href="http://www.woshipm.com/u/946" target="_blank" id="article-avatar-654915"><img alt=""
-                                                                                                                       src="./即将开课｜快速掌握产品经理核心技能，BAT导师带你90天形成产品经理知识体系 _ 人人都是产品经理_files/3d2b199b08c81262d8d4b866f33ae18a"
+                                                                                                                       src="#"
                                                                                                                        srcset="http://cn.gravatar.com/avatar/3d2b199b08c81262d8d4b866f33ae18a?s=112&amp;d=mm&amp;r=g 2x"
                                                                                                                        class="avatar avatar-56 photo"
                                                                                                                        height="56"
@@ -720,7 +720,7 @@
                                         data-id="946"><span class="text">订阅专栏</span></button>
                             </div>
                             <div class="author-board-right"><h3 class="auhtor-title"><a target="_blank"
-                                                                                        href="http://www.woshipm.com/u/946"> <%=doc.document_author%><span
+                                                                                        href="http://www.woshipm.com/u/946"> %=doc.document_author%><span
                                                 class="is-staff">作者</span></a></h3>
                                 <p class="author-descripiton">专业杂工一枚，混迹于IT、产品周边，继续苦逼的做着残品的梦</p>
                                 <div class="author-meta"><span>565 篇<i>作品</i></span><span>407 万<i>阅读总量</i></span></div>
@@ -728,11 +728,11 @@
                         </div>
                     </div>
                     <div class="widget-ad fixed-sidebar-id"><a href="http://y0.cn/N1aeF" target="_blank"><img
-                                    src="./即将开课｜快速掌握产品经理核心技能，BAT导师带你90天形成产品经理知识体系 _ 人人都是产品经理_files/GdWc3CQVUmZ6aekoVpiF.jpg" alt=""></a><a
+                                    src="#" alt=""></a><a
                                 href="http://y0.cn/Whr3A" target="_blank"> <img
-                                    src="./即将开课｜快速掌握产品经理核心技能，BAT导师带你90天形成产品经理知识体系 _ 人人都是产品经理_files/9JXcn2dD0YE9me4YkZS5.gif" alt=""> </a><a
+                                    src="#" alt=""> </a><a
                                 href="http://y0.cn/5GMYS" target="_blank"> <img
-                                    src="./即将开课｜快速掌握产品经理核心技能，BAT导师带你90天形成产品经理知识体系 _ 人人都是产品经理_files/zongjian1222.jpg" alt=""> </a></div>
+                                    src="#" alt=""> </a></div>
                     <aside id="hot_questions-2" class="widget widget_hot_questions"><h3 class="widget-title">热门问题</h3>
                         <ul class="hot-question-list">
                             <li class="hot-question-item" data-id="38038"><span class="num">1</span><a target="_blank"

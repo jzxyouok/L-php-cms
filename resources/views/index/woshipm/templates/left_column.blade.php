@@ -1,5 +1,7 @@
 <div class="left-column">
+
     <div class="banner" ng-controller="bannerCtrl" ng-init="getBanner()">
+
         <div class="tabBox u-clearfix">
 
             <div class="swiper-container">
@@ -8,9 +10,9 @@
 
                   
                 </div>
-                <!-- Add Pagination -->
+
                 <div class="swiper-pagination"></div>
-                <!-- Add Arrows -->
+
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
@@ -55,7 +57,7 @@
             <article class="u-clearfix stream-list-item sticky" data-id="663947">
                 <div class="stream-list-image">
                     <a href="/content/%= doc.document_title %>" target="_blank" title="%= doc.document_title %>"><img
-                                src="%= doc.document_img %>" width="202" height="145"></a>
+                                src="#" width="202" height="145"></a>
                     <div class="stream-list-category"><a href="http://www.woshipm.com/category/chuangye"
                                                          rel="category tag">%= doc.document_category %></a>
                     </div>
@@ -66,7 +68,7 @@
                                 class="iconfont icon-hot"></span></h2>
                     <div class="stream-list-meta">
                 <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/31217"><img
-                                src="./人人都是产品经理 _ 产品经理、产品爱好者学习交流平台_files/32x32" alt="" height="32" width="32"
+                                src="#" alt="" height="32" width="32"
                                 class="avatar"></a></span><span class="author" data-id="31217"><a target="_blank"
                                                                                                   href="http://www.woshipm.com/u/31217">辩手李慕阳</a></span>
                         <span class="dot"></span>
@@ -120,7 +122,7 @@
             <article class="stream-list-item">
                 <div class="stream-list-image">
                     <a href="http://www.woshipm.com/active/666236.html" target="_blank"><img
-                                src="./人人都是产品经理 _ 产品经理、产品爱好者学习交流平台_files/xlS1vOoar35x4IOP54at.png!homeEvent" width="202"
+                                src="#" width="202"
                                 height="145"></a>
                 </div>
                 <div class="stream-list-content">
@@ -137,7 +139,7 @@
             </article>
             <article class="stream-list-item">
                 <div class="stream-list-image"><a href="http://www.woshipm.com/active/666236.html" target="_blank"><img
-                                src="./人人都是产品经理 _ 产品经理、产品爱好者学习交流平台_files/202x145(10)" width="202" height="145"></a>
+                                src="#" width="202" height="145"></a>
                 </div>
                 <div class="stream-list-content"><h2 class="stream-list-title"><a target="_blank"
                                                                                   href="http://www.woshipm.com/active/666236.html">2017UBDC：从DI到应用，激活数据价值</a>
