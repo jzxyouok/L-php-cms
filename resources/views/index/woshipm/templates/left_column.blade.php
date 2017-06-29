@@ -1,11 +1,11 @@
 <div class="left-column">
-    <div class="banner">
+    <div class="banner" ng-controller="bannerCtrl" ng-init="getBanner()">
         <div class="tabBox u-clearfix">
 
             <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><a href=""><img src="resources/views/index/woshipm/assets/images/banner1.jpg" alt=""><h3>不简单的周会与周报，这是你不知道的事</h3></a></div>
-                    <div class="swiper-slide"><a href=""><img src="resources/views/index/woshipm/assets/images/banner2.jpg" alt=""><h3>用户研究的知识框架：论用研的自我修养</h3></a></div>
+                <div class="swiper-wrapper" >
+                    <div class="swiper-slide" ng-repeat="x in  mainBannerData"><a href=""><img ng-src="@{{x.img_src}}" alt=""><h3>@{{x.title}}</h3></a></div>
+
                   
                 </div>
                 <!-- Add Pagination -->
@@ -14,14 +14,7 @@
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
-            <div class="supernice">
-                <ul>
-                    <li class="on"></li>
-                    <li class=""></li>
-                    <li class=""></li>
-                </ul>
 
-            </div>
             <div class="hd smallScroll">
                 <ul class="">
 

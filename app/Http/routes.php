@@ -163,6 +163,8 @@ Route::group(['namespace' => 'Install'], function () {
 Route::group(['namespace' => 'Index'], function () {
 
   Route::get('/','indexController@view')->name('index');
+  Route::get('/index/banner_get','indexController@indexBannerGet')->name('index_banner_get');
+
   Route::get('/page/:number','environmentTestController@view')->name('environment_test');
   Route::get('/content/:title','webSettingController@view')->name('web_setting');
   Route::get('/user/login','loginController@view')->name('login');
