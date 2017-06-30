@@ -2333,7 +2333,7 @@ app.controller('docWrite', ['$scope', '$http', 'docWriteService', 'categoryAllSe
                 $scope.content = Content;
 
             });
-
+            $scope.previewImg=$('#doc_preview_img_preview').attr('src');
 
             docWriteService.get(
                 $scope.type.name,
@@ -2361,7 +2361,7 @@ app.controller('docWrite', ['$scope', '$http', 'docWriteService', 'categoryAllSe
     };
 
 
-    $scope.docPreviewImg = '/public/upload/image/doc-default.jpg';
+
 
 
 }]);

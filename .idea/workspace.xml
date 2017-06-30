@@ -2,28 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="735742ba-6989-49b0-a7fe-9f9d75cc8c11" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/upload/image/doc-default.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Model/Doc.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/controllers/admin/documentWrite.controller.js" afterPath="$PROJECT_DIR$/public/js/controllers/admin/docWrite.controller.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/services/admin/documentWrite.service.js" afterPath="$PROJECT_DIR$/public/js/services/admin/docWrite.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/categoryAllController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/categoryAllController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/draftController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/draftController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/noAccessController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/noAccessController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/publishedController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/publishedController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/recycleController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/recycleController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/waitForVerifyController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/waitForVerifyController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/writeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/writeController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/cms.php" afterPath="$PROJECT_DIR$/config/cms.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2017_06_29_081117_create_docs_table.php" afterPath="$PROJECT_DIR$/database/migrations/2017_06_29_081117_create_docs_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/common/L-php-cms.js" afterPath="$PROJECT_DIR$/public/js/common/L-php-cms.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/common/L-php-cms.min.js" afterPath="$PROJECT_DIR$/public/js/common/L-php-cms.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/draft.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/draft.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/footer.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/footer.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/no_access.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/no_access.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/published.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/published.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/recycle.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/recycle.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/wait_for_verify.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/wait_for_verify.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controllers/admin/docWrite.controller.js" afterPath="$PROJECT_DIR$/public/js/controllers/admin/docWrite.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/write.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/write.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,30 +37,40 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="50" column="70" lean-forward="false" selection-start-line="50" selection-start-column="70" selection-end-line="50" selection-end-column="70" />
+            <state relative-caret-position="291">
+              <caret line="51" column="40" lean-forward="false" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="writeController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="writeController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/writeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="24" column="34" lean-forward="false" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+            <state relative-caret-position="516">
+              <caret line="113" column="13" lean-forward="false" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="13" />
               <folding>
-                <element signature="e#46#74#0#PHP" expanded="true" />
+                <element signature="e#46#69#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="write.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2017_06_29_081117_create_docs_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2017_06_29_081117_create_docs_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="write.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/write.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="245" column="40" lean-forward="false" selection-start-line="245" selection-start-column="40" selection-end-line="245" selection-end-column="40" />
+            <state relative-caret-position="252">
+              <caret line="250" column="59" lean-forward="true" selection-start-line="250" selection-start-column="35" selection-end-line="250" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -85,8 +79,8 @@
       <file leaf-file-name="docWrite.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/controllers/admin/docWrite.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="76" column="34" lean-forward="true" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="34" />
+            <state relative-caret-position="273">
+              <caret line="71" column="72" lean-forward="true" selection-start-line="71" selection-start-column="72" selection-end-line="71" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -97,6 +91,22 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
               <caret line="5" column="44" lean-forward="false" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+              <folding>
+                <marker date="1498729831896" expanded="true" signature="77:909" ph="[...]" />
+                <marker date="1498729831896" expanded="true" signature="104:908" ph="{...}" />
+                <marker date="1498729831896" expanded="true" signature="117:905" ph="{...}" />
+                <marker date="1498729831896" expanded="true" signature="230:897" ph="{...}" />
+                <marker date="1498729831896" expanded="true" signature="257:885" ph="{&quot;method&quot;: 'POST'...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mediaManageUploadController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/mediaManageUploadController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="82" column="60" lean-forward="false" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -204,15 +214,15 @@
         <option value="$PROJECT_DIR$/resources/views/admin/published.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/draft.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/recycle.blade.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2017_06_29_081117_create_docs_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Model/Doc.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/footer.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/categoryAllController.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/public/js/services/admin/docWrite.service.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/writeController.php" />
-        <option value="$PROJECT_DIR$/public/js/controllers/admin/docWrite.controller.js" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/write.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/controllers/admin/docWrite.controller.js" />
+        <option value="$PROJECT_DIR$/database/migrations/2017_06_29_081117_create_docs_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/writeController.php" />
       </list>
     </option>
   </component>
@@ -423,20 +433,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="migrations" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -739,12 +735,12 @@
       <workItem from="1497316551342" duration="70794000" />
       <workItem from="1497835570631" duration="97171000" />
       <workItem from="1498201691069" duration="8160000" />
-      <workItem from="1498439301407" duration="105981000" />
+      <workItem from="1498439301407" duration="109817000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1224616000" />
+    <option name="totallyTimeSpent" value="1228452000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -942,14 +938,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/mediaManageUploadController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/index/woshipm/assets/js/default.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -1070,14 +1058,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2017_06_29_081117_create_docs_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1244,45 +1224,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="50" column="70" lean-forward="false" selection-start-line="50" selection-start-column="70" selection-end-line="50" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/services/admin/docWrite.service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="5" column="44" lean-forward="false" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/writeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="24" column="34" lean-forward="false" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
           <folding>
-            <element signature="e#46#74#0#PHP" expanded="true" />
+            <marker date="1498729831896" expanded="true" signature="77:909" ph="[...]" />
+            <marker date="1498729831896" expanded="true" signature="104:908" ph="{...}" />
+            <marker date="1498729831896" expanded="true" signature="117:905" ph="{...}" />
+            <marker date="1498729831896" expanded="true" signature="230:897" ph="{...}" />
+            <marker date="1498729831896" expanded="true" signature="257:885" ph="{&quot;method&quot;: 'POST'...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controllers/admin/docWrite.controller.js">
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="76" column="34" lean-forward="true" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="34" />
+        <state relative-caret-position="291">
+          <caret line="51" column="40" lean-forward="false" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/write.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="245" column="40" lean-forward="false" selection-start-line="245" selection-start-column="40" selection-end-line="245" selection-end-column="40" />
+        <state relative-caret-position="252">
+          <caret line="250" column="59" lean-forward="true" selection-start-line="250" selection-start-column="35" selection-end-line="250" selection-end-column="59" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/admin/docWrite.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="71" column="72" lean-forward="true" selection-start-line="71" selection-start-column="72" selection-end-line="71" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2017_06_29_081117_create_docs_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/mediaManageUploadController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="82" column="60" lean-forward="false" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/writeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="113" column="13" lean-forward="false" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="13" />
+          <folding>
+            <element signature="e#46#69#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

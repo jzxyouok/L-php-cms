@@ -14,6 +14,7 @@ class CreateDocsTable extends Migration
     {
       Schema::create('docs', function (Blueprint $table) {
         $table->increments('id');
+        $table->string('title');
         $table->string('published_date');
         $table->string('category');
         $table->string('from');
@@ -21,7 +22,7 @@ class CreateDocsTable extends Migration
         $table->string('url');
         $table->string('recommend');
         $table->string('hot');
-        $table->string('display');
+        $table->string('status');
         $table->string('view');
         $table->string('collection');
         $table->string('like');

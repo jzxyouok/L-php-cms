@@ -63,7 +63,7 @@
                                 <label class="col-sm-2 control-label">缩略图</label>
                                 <div class="col-sm-10">
                                     <div class="row">
-                                    <img ng-src="@{{docPreviewImg}}" alt="" class=" col-sm-4"
+                                    <img src="/public/upload/image/doc-default.jpg" alt="" class=" col-sm-4"
                                          id="doc_preview_img_preview"/>
                                     <p id="doc_preview_img"></p>
                                     </div>
@@ -231,7 +231,7 @@
                         $('#doc_preview_img').uploadify({
 
                             'swf': '/public/plugins/uploadify/uploadify.swf',//指定swf文件
-                            'uploader': '/admin/manage/document_manage/upload' + '?postTitle=' + 'post_title' + '&type=' + 'images' + '&key=' + 'post_img',//后台处理的页面
+                            'uploader': '/admin/manage/doc_manage/preview_img_upload',//后台处理的页面
                             'method': 'post',
                             'formData': {
                                 '_token': "{{csrf_token()}}"
@@ -247,7 +247,8 @@
                             'multi': false,//设置为true将允许多文件上传
 
                             'onUploadSuccess': function (file, data, response) {//上传成功的回调
-                                $("#post_img_preview").attr("src", data);
+                                console.log(data);
+                                $("#doc_preview_img_preview").attr("src", JSON.parse(data).url);
 
 
                             },
