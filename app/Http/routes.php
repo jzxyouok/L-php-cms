@@ -50,7 +50,11 @@ Route::group(['namespace' => 'Admin'], function () {
   Route::get('/admin/manage/doc_manage/write', 'writeController@view')->name('write');
   Route::post('/admin/manage/doc_manage/write', 'writeController@write')->name('write_post');
   Route::post('/admin/manage/doc_manage/preview_img_upload', 'writeController@previewImgUpload')->name('preview_img_upload');
+
   Route::get('/admin/manage/doc_manage/published', 'publishedController@view')->name('published');
+  Route::post('/admin/manage/doc_manage/get_published_doc', 'publishedController@getPublishedDoc')->name('get_published_doc');
+  Route::post('/admin/manage/doc_manage/recommend_doc', 'publishedController@recommendDoc')->name('recommend_doc');
+
   Route::get('/admin/manage/doc_manage/wait_for_verify', 'waitForVerifyController@view')->name('wait_for_verify');
   Route::get('/admin/manage/doc_manage/no_access', 'noAccessController@view')->name('no_access');
   Route::get('/admin/manage/doc_manage/draft', 'draftController@view')->name('draft');

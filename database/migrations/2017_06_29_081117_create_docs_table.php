@@ -15,6 +15,7 @@ class CreateDocsTable extends Migration
       Schema::create('docs', function (Blueprint $table) {
         $table->increments('id');
         $table->string('title');
+        $table->integer('publisher_id');
         $table->string('published_date');
         $table->string('category');
         $table->string('from');

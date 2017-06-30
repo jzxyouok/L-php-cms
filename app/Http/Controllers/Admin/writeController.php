@@ -112,6 +112,7 @@ class writeController extends Controller
     $doc->content = $content;
     $doc->published_date = date('Y-m-d H:i:s', time());
     $doc->url = date('Y-m-d H:i:s', time());
+    $doc->publisher_id =$request->session()->get('userInfo')->id;
     $res = $doc->save();
 
     if($res){
