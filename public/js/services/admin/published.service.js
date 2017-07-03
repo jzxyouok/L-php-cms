@@ -45,12 +45,12 @@ app.factory('publishedService', ['$http', function ($http) {
         /*
          * 删除单篇文档
          * */
-        removeOneDocument: function (doc) {
+        removeOneDoc: function (doc) {
             return $http({
                 method: 'POST',
-                url: '/admin/manage/document_manage/remove_one_document',
+                url: '/admin/manage/doc_manage/remove_one_document',
                 data: $.param({
-                    data: doc,
+                    doc: doc,
                 }),
                 headers: {'content-type': 'application/x-www-form-urlencoded'}
             });
@@ -62,9 +62,9 @@ app.factory('publishedService', ['$http', function ($http) {
         putIntoRecycle: function (doc) {
             return $http({
                 method: 'POST',
-                url: '/admin/manage/document_manage/put_into_recycle',
+                url: '/admin/manage/doc_manage/put_into_recycle',
                 data: $.param({
-                    data: doc,
+                    doc: doc,
                 }),
                 headers: {'content-type': 'application/x-www-form-urlencoded'}
             });

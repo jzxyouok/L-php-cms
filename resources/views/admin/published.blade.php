@@ -1,6 +1,6 @@
 @include('admin.header')
 <div class="content-wrapper" ng-controller="published" ng-init="getPublishedByLimitAndCurrentPage(5, 1)">
-  {{--@include('modal/remove_one_document_modal')--}}
+  @include('admin.modal.remove_one_doc_modal')
   <section class="content-header">
     <h1>
       {{$cms}}

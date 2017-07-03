@@ -57,9 +57,9 @@ app.controller('published', ['$scope', '$http', 'publishedService', function ($s
     /*
      * 删除单篇文档
      * */
-    $scope.removeOneDocument = function (doc) {
-        $scope.oneDocument = doc;
-        $('#remove_one_document_modal').modal({
+    $scope.removeOneDoc = function (doc) {
+        $scope.oneDoc = doc;
+        $('#remove_one_doc_modal').modal({
             keyboard: true
         });
 
@@ -67,25 +67,25 @@ app.controller('published', ['$scope', '$http', 'publishedService', function ($s
     /*
      * 删除单篇文档提交
      * */
-    $scope.removeOneDocumentCommit = function (doc) {
+    $scope.removeOneDocCommit = function (doc) {
 
 
-        $scope.document_display = {
+        $scope.status = {
             name: '1',
         };
-        if ($scope.document_display.name == 1) {
+        if ($scope.status.name == 1) {
             publishedService.putIntoRecycle(doc).then(function success(res) {
                 if (res.data.code === 1) {
-                    $('#remove_one_document_modal').modal('hide');
-                    $scope.getPage();
+                    $('#remove_one_doc_modal').modal('hide');
+                    $scope.getPublishedByLimitAndCurrentPage($scope.limit,$scope.currentPage);
                 }
             }, function error(res) {
 
             });
         } else {
-            publishedService.removeOneDocument(doc).then(function success(res) {
+            publishedService.removeOneDoc(doc).then(function success(res) {
                 if (res.data.code === 1) {
-                    $('#remove_one_document_modal').modal('hide');
+                    $('#remove_one_doc_modal').modal('hide');
                     $scope.getPage();
                 }
             }, function error(res) {

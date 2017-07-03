@@ -75,5 +75,16 @@ class publishedController extends Controller
 
   }
 
+  public function putIntoRecycle(Request $request)
+  {
+    $doc = $request->input('doc');
+
+    //dd($doc);
+    $res=Doc::where('id',$doc['id'])->update(['status'=>'recycle']);
+    if($res){
+      return response()->json(['code'=>1,'msg'=>'放入回收站成功']);
+    }
+  }
+
 
 }
