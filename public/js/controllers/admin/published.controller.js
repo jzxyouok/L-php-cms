@@ -97,8 +97,8 @@ app.controller('published', ['$scope', '$http', 'publishedService', function ($s
     /*
      * 编辑文档
      * */
-    $scope.edit = function (doc) {
-        window.location.href = '/admin/manage/document_manage/edit/' + doc._id;
+    $scope.editDoc = function (doc) {
+        window.location.href = '/admin/manage/doc_manage/edit_doc/'+doc.id;
 
     };
 

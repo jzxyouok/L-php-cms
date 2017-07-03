@@ -38,6 +38,7 @@ return [
   'doc_manage' => '文档管理',
   'write' => '写文档',
   'published' => '已发布',
+  'edit_doc' => '文档编辑',
   'wait_for_verify' => '待审核',
   'no_access' => '未通过',
   'draft' => '草稿箱',

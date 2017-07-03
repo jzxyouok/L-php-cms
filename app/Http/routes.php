@@ -53,6 +53,9 @@ Route::group(['namespace' => 'Admin'], function () {
 
   Route::get('/admin/manage/doc_manage/published', 'publishedController@view')->name('published');
   Route::post('/admin/manage/doc_manage/get_published_doc', 'publishedController@getPublishedDoc')->name('get_published_doc');
+  Route::get('/admin/manage/doc_manage/edit_doc/{id}', 'editDocController@view')->name('edit_doc');
+  Route::post('/admin/manage/doc_manage/get_doc_by_id', 'editDocController@getDocById')->name('get_doc_by_id');
+  Route::post('/admin/manage/doc_manage/update_doc', 'editDocController@updateDoc')->name('update_doc');
   Route::post('/admin/manage/doc_manage/recommend_doc', 'publishedController@recommendDoc')->name('recommend_doc');
   Route::post('/admin/manage/doc_manage/hot_doc', 'publishedController@hotDoc')->name('hot_doc');
   Route::post('/admin/manage/doc_manage/put_into_recycle', 'publishedController@putIntoRecycle')->name('put_into_recycle');

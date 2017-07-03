@@ -35,6 +35,7 @@ class publishedController extends Controller
 
   }
 
+
   public function recommendDoc(Request $request)
   {
     $isRec = $request->input('isRec');
