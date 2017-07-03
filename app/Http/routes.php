@@ -54,6 +54,7 @@ Route::group(['namespace' => 'Admin'], function () {
   Route::get('/admin/manage/doc_manage/published', 'publishedController@view')->name('published');
   Route::post('/admin/manage/doc_manage/get_published_doc', 'publishedController@getPublishedDoc')->name('get_published_doc');
   Route::post('/admin/manage/doc_manage/recommend_doc', 'publishedController@recommendDoc')->name('recommend_doc');
+  Route::post('/admin/manage/doc_manage/hot_doc', 'publishedController@hotDoc')->name('hot_doc');
 
   Route::get('/admin/manage/doc_manage/wait_for_verify', 'waitForVerifyController@view')->name('wait_for_verify');
   Route::get('/admin/manage/doc_manage/no_access', 'noAccessController@view')->name('no_access');

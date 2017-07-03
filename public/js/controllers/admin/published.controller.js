@@ -8,31 +8,45 @@ app.controller('published', ['$scope', '$http', 'publishedService', function ($s
      * 按条件获取文档数据
      * */
 
-        $scope.getPublishedByLimitAndCurrentPage = function (limit, currentPage) {
+    $scope.getPublishedByLimitAndCurrentPage = function (limit, currentPage) {
 
-            publishedService.getPublishedByLimitAndCurrentPage(limit, currentPage).then(function success(res) {
-                $scope.data = res.data.data;
-                $scope.count = res.data.count;
-                $scope.allPage = res.data.allPage;
-                $scope.documentCountNum = res.data.documentCountNum;
-                $scope.currentPage = currentPage;
-            }, function error(res) {
+        publishedService.getPublishedByLimitAndCurrentPage(limit, currentPage).then(function success(res) {
+            $scope.data = res.data.data;
+            $scope.count = res.data.count;
+            $scope.allPage = res.data.allPage;
+            $scope.documentCountNum = res.data.documentCountNum;
+            $scope.currentPage = currentPage;
+        }, function error(res) {
 
-            });
-            $scope.currentPage = 1;
+        });
+        $scope.currentPage = 1;
 
-        };
+    };
 
 
-  
-    $scope.recommend = function (isRec, id,x) {
+    $scope.recommend = function (isRec, id, x) {
         publishedService.recommend(isRec, id).then(function success(res) {
             if (res.data.code === 1) {
-if(res.data.action===1){
-    x.recommend='是';
-}else {
-    x.recommend='否';
-}
+                if (res.data.action === 1) {
+                    x.recommend = '是';
+                } else {
+                    x.recommend = '否';
+                }
+
+
+            }
+        }, function error(res) {
+
+        });
+    };
+    $scope.hot = function (isRec, id, x) {
+        publishedService.hot(isRec, id).then(function success(res) {
+            if (res.data.code === 1) {
+                if (res.data.action === 1) {
+                    x.hot = '是';
+                } else {
+                    x.hot = '否';
+                }
 
 
             }

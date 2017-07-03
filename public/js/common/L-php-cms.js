@@ -715,67 +715,77 @@ app.factory('noAccessService',['$http',function ($http) {
 /**
  * Created by v_lljunli on 2017/5/10.
  */
-app.factory('publishedService',['$http',function ($http) {
-  return{
+app.factory('publishedService', ['$http', function ($http) {
+    return {
 
-    /*
-    * 根据每页显示数、第几页来获取已发布文档数据
-    * */
-      getPublishedByLimitAndCurrentPage:function (limit,currentPage) {
-      return $http({
-        method:'POST',
-        url:'/admin/manage/doc_manage/get_published_doc',
-        data:$.param({
-          limit:limit,
-            currentPage:currentPage,
-        }),
-        headers:{'content-type':'application/x-www-form-urlencoded'}
-      });
-    },
-      recommend:function (isRec,id) {
-          return $http({
-              method:'POST',
-              url:'/admin/manage/doc_manage/recommend_doc',
-              data:$.param({
-                  isRec:isRec,
-                  id:id,
+        /*
+         * 根据每页显示数、第几页来获取已发布文档数据
+         * */
+        getPublishedByLimitAndCurrentPage: function (limit, currentPage) {
+            return $http({
+                method: 'POST',
+                url: '/admin/manage/doc_manage/get_published_doc',
+                data: $.param({
+                    limit: limit,
+                    currentPage: currentPage,
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
+        recommend: function (isRec, id) {
+            return $http({
+                method: 'POST',
+                url: '/admin/manage/doc_manage/recommend_doc',
+                data: $.param({
+                    isRec: isRec,
+                    id: id,
 
-              }),
-              headers:{'content-type':'application/x-www-form-urlencoded'}
-          });
-      },
-    /*
-    * 删除单篇文档
-    * */
-    removeOneDocument:function (doc) {
-      return $http({
-        method:'POST',
-        url:'/admin/manage/document_manage/remove_one_document',
-        data:$.param({
-          data:doc,
-        }),
-        headers:{'content-type':'application/x-www-form-urlencoded'}
-      });
-    },
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
+        hot: function (isRec, id) {
+            return $http({
+                method: 'POST',
+                url: '/admin/manage/doc_manage/hot_doc',
+                data: $.param({
+                    isRec: isRec,
+                    id: id,
 
-    /*
-    * 单篇文档放入回收站
-    * */
-    putIntoRecycle:function (doc) {
-      return $http({
-        method:'POST',
-        url:'/admin/manage/document_manage/put_into_recycle',
-        data:$.param({
-          data:doc,
-        }),
-        headers:{'content-type':'application/x-www-form-urlencoded'}
-      });
-    },
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
+        /*
+         * 删除单篇文档
+         * */
+        removeOneDocument: function (doc) {
+            return $http({
+                method: 'POST',
+                url: '/admin/manage/document_manage/remove_one_document',
+                data: $.param({
+                    data: doc,
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
+
+        /*
+         * 单篇文档放入回收站
+         * */
+        putIntoRecycle: function (doc) {
+            return $http({
+                method: 'POST',
+                url: '/admin/manage/document_manage/put_into_recycle',
+                data: $.param({
+                    data: doc,
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
 
 
-
-
-  };
+    };
 }]);
 /**
  * Created by v_lljunli on 2017/5/10.
@@ -2726,31 +2736,45 @@ app.controller('published', ['$scope', '$http', 'publishedService', function ($s
      * 按条件获取文档数据
      * */
 
-        $scope.getPublishedByLimitAndCurrentPage = function (limit, currentPage) {
+    $scope.getPublishedByLimitAndCurrentPage = function (limit, currentPage) {
 
-            publishedService.getPublishedByLimitAndCurrentPage(limit, currentPage).then(function success(res) {
-                $scope.data = res.data.data;
-                $scope.count = res.data.count;
-                $scope.allPage = res.data.allPage;
-                $scope.documentCountNum = res.data.documentCountNum;
-                $scope.currentPage = currentPage;
-            }, function error(res) {
+        publishedService.getPublishedByLimitAndCurrentPage(limit, currentPage).then(function success(res) {
+            $scope.data = res.data.data;
+            $scope.count = res.data.count;
+            $scope.allPage = res.data.allPage;
+            $scope.documentCountNum = res.data.documentCountNum;
+            $scope.currentPage = currentPage;
+        }, function error(res) {
 
-            });
-            $scope.currentPage = 1;
+        });
+        $scope.currentPage = 1;
 
-        };
+    };
 
 
-  
-    $scope.recommend = function (isRec, id,x) {
+    $scope.recommend = function (isRec, id, x) {
         publishedService.recommend(isRec, id).then(function success(res) {
             if (res.data.code === 1) {
-if(res.data.action===1){
-    x.recommend='是';
-}else {
-    x.recommend='否';
-}
+                if (res.data.action === 1) {
+                    x.recommend = '是';
+                } else {
+                    x.recommend = '否';
+                }
+
+
+            }
+        }, function error(res) {
+
+        });
+    };
+    $scope.hot = function (isRec, id, x) {
+        publishedService.hot(isRec, id).then(function success(res) {
+            if (res.data.code === 1) {
+                if (res.data.action === 1) {
+                    x.hot = '是';
+                } else {
+                    x.hot = '否';
+                }
 
 
             }

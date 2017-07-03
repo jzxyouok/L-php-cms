@@ -55,5 +55,25 @@ class publishedController extends Controller
 
   }
 
+  public function hotDoc(Request $request)
+  {
+    $isRec = $request->input('isRec');
+    $id = $request->input('id');
+
+    $res=false;
+    if($isRec=='true'){
+      $res=Doc::where('id',$id)->update(['hot'=>'是']);
+      if($res){
+        return response()->json(['code'=>1,'msg'=>'热门成功','action'=>1]);
+      }
+    }else{
+      $res=Doc::where('id',$id)->update(['hot'=>'否']);
+      if($res){
+        return response()->json(['code'=>1,'msg'=>'取消成功','action'=>0]);
+      }
+    }
+
+  }
+
 
 }

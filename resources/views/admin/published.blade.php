@@ -80,8 +80,8 @@
                     <button type="button" class="btn btn-primary btn-xs btn-flat" ng-click="editDoc(x)">编辑</button>
                     <button type="button" class="btn btn-info btn-xs btn-flat" ng-show="x.recommend=='否'? true : false" ng-click="recommend('true',x.id,x)">推荐</button>
                     <button type="button" class="btn btn-danger btn-xs btn-flat" ng-show="x.recommend=='是'? true : false" ng-click="recommend('false',x.id,x)">取消推荐</button>
-                    <button type="button" class="btn btn-info btn-xs btn-flat" ng-if="x.hot=='否'? true : false" ng-click="hot('true',x.id)">热门</button>
-                    <button type="button" class="btn btn-danger btn-xs btn-flat" ng-if="x.hot=='是'? true : false" ng-click="hot('false',x.id)">取消热门</button>
+                    <button type="button" class="btn btn-info btn-xs btn-flat" ng-if="x.hot=='否'? true : false" ng-click="hot('true',x.id,x)">热门</button>
+                    <button type="button" class="btn btn-danger btn-xs btn-flat" ng-if="x.hot=='是'? true : false" ng-click="hot('false',x.id,x)">取消热门</button>
                     <button type="button" class="btn btn-warning btn-xs btn-flat" ng-click="removeOneDoc(x)">删除</button>
                     <a type="button" class="btn btn-info btn-xs btn-flat" href="http://www.baidu.com">查看</a>
                   </td>
