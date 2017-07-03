@@ -2413,7 +2413,7 @@ input:disabled {
 }
 
 .author-page-header.user-page-config {
-  background-image: url(../img/lll.png);
+  background-image: url(../images/lll.png);
   padding: 50px 0
 }
 
@@ -2511,7 +2511,7 @@ input:disabled {
   width: 89px;
   height: 89px;
   margin-right: 20px;
-  background: url(../img/sb.png) no-repeat 50%;
+  background: url(../images/sb.png) no-repeat 50%;
   font-size: 16px
 }
 

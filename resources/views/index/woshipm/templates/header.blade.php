@@ -8,6 +8,7 @@
   <!--[if lte IE 8]><script src="{{ URL::asset('resources/views/index/woshipm/assets/js/ie/respond.min.js') }}"></script><![endif]-->
   <link rel="stylesheet" href="{{ URL::asset('resources/views/index/woshipm/assets/css/app.css') }}" />
   <link rel="stylesheet" href="{{ URL::asset('resources/views/index/woshipm/assets/css/misc.css') }}" />
+  <link rel="stylesheet" href="{{ URL::asset('resources/views/index/woshipm/assets/css/viralnova.css') }}" />
   <link rel="stylesheet" href="{{ URL::asset('resources/views/index/woshipm/assets/css/swiper.min.css') }}" />
   <!--[if lte IE 9]><link rel="stylesheet" href="{{ URL::asset('resources/views/index/woshipm/assets/css/ie9.css') }}" /><![endif]-->
   <!--[if lte IE 8]><link rel="stylesheet" href="{{ URL::asset('resources/views/index/woshipm/assets/css/ie8.css') }}" /><![endif]-->

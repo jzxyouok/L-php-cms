@@ -1,68 +1,67 @@
-<header id="header-nav" class="site-header u-clearfix" ng-controller="headerCtrl">
-  <div class="contianer">
-    <a href="http://www.woshipm.com/"><img class="logo" src="resources/views/index/woshipm/assets/images/logo.png"></a>
-    <div class="header-block">
-      <nav class="header-nav">
-        <ul id="menu-%e9%a1%b6%e9%83%a8%e5%af%bc%e8%88%aa"
-            class="subnav-ul layoutSingleColumn layoutSingleColumn--wide">
-          <li id="menu-item-155938"
-              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-155938"><a
-                    href="http://www.woshipm.com/">首页</a></li>
-          <li id="menu-item-155939"
-              class="fenlei menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-155939">
-            <a href="http://www.woshipm.com/#" ng-mouseenter="showMenu()" ng-mouseleave="hideMenu()">分类浏览</a>
-            <ul class="sub-menu ng-hide" ng-show="show || hold" ng-mouseenter="hold=true" ng-mouseleave="hold=false">
-              <%categories.forEach(function (cate) {%>
-              <li id="menu-item-155928"
-                  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-155928"><a
-                        href="/list/%=cate.cate_slug%>">%=cate.cate_name%></a></li>
-              <% })%>
+<header id="header-nav" class="site-header u-clearfix" ng-controller="headerCtrl" ng-init="getCategory()">
+    <div class="contianer">
+        <a href="http://www.woshipm.com/">
+            <img class="logo" src="/resources/views/index/woshipm/assets/images/logo.png">
+        </a>
+        <div class="header-block">
+            <nav class="header-nav">
+                <ul id="" class="subnav-ul layoutSingleColumn layoutSingleColumn--wide">
+                    <li id=""
+                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-155938">
+                        <a href="http://www.woshipm.com/">首页</a></li>
+                    <li id=""
+                        class="fenlei menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-155939">
+                        <a href="http://www.woshipm.com/#" ng-mouseenter="showCategory = true" ng-mouseleave="showCategory = false">分类浏览</a>
+                        <ul class="sub-menu" style="display: none" ng-class="{'show_category':showCategory}" ng-mouseenter="showCategory = true" ng-mouseleave="showCategory = false">
 
-          
+                            <li id="" class="menu-item menu-item-type-taxonomy menu-item-object-category"
+                                ng-repeat="cate in category">
+                                <a href="/@{{ cate.slug }}">@{{ cate.name }}</a>
+                            </li>
 
-            </ul>
-          </li>
-          <li id="menu-item-420537"
-              class="niubi menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-420537">
-            <a href="http://www.woshipm.com/categroy/active" ng-mouseenter="showMenu2()" ng-mouseleave="hideMenu2()">活动</a>
-            <ul class="sub-menu ng-hide" ng-show="show2 || hold2" ng-mouseenter="hold2=true" ng-mouseleave="hold2=false">
-              <li id="menu-item-158482"
-                  class="menu-item menu-item-type-gs_sim menu-item-object-gs_sim menu-item-158482">
-                <ul class="hd-ul">
-                  <li class="x-line"><p><a class="e-title" href="http://www.woshipm.com/active/664401.html">听说每个PM都有改变世界的英雄梦？线下实战集训+线上针对学习，为你的产品技能加成</a>
-                    </p>
-                    <div class="nav-event-meta"><span class="nav-event-location">广州-05月20日</span><a target="_blank"
-                                                                                                    href="http://y0.cn/7LHt2"
-                                                                                                    class="nav-event-btn">报名中</a>
-                      <p></p></div>
-                  </li>
-                  <li class="x-line"><p><a class="e-title" href="http://www.woshipm.com/active/660184.html">大咖直播 |
-                        饿了么产品专家：3年经验的产品经理为什么还不好找工作？</a></p>
-                    <div class="nav-event-meta"><span class="nav-event-location">在线直播-5月18日</span><span
-                              class="nav-event-btn ended">已结束</span></div>
-                  </li>
+
+                        </ul>
+                    </li>
+
+
+                    <li id="" class="menu-item menu-item-type-custom menu-item-object-custom">
+                        <a target="_blank" href="http://www.zhaopins.com/">招聘</a>
+                    </li>
+                    <li id="" class="vip menu-item menu-item-type-custom menu-item-object-custom">
+                        <a target="_blank" href="http://vip.qidianla.com/member.html">社员</a>
+                    </li>
+
                 </ul>
-                <p class="hd-more u-clearfix"><a href="http://www.woshipm.com/category/active">更多活动</a></p></li>
-            </ul>
-          </li>
+            </nav>
+        </div>
+        <div class="header-block u-floatRight">
+            <a class="header-action-item tougao" data-action="popLogin" href="http://www.woshipm.com/#">投稿</a>
+            <a href="javascript:void(0);" class="show-search"><span class="iconfont icon-search"></span></a>
+            <a class="header-action-item" ng-click="loginOut()"
+               href="javascript:void(0);">注册/登录</a>
+            <a target="_blank" href="http://www.woshipm.com/me/message" class="message--link u-marginRight10"><span class="svgIcon svgIcon--bell svgIcon--25px">
+<svg class="svgIcon-use" width="25" height="25" viewBox="-293 409 25 25">
+<path d="M-273.327 423.67l-1.673-1.52v-3.646a5.5 5.5 0 0 0-6.04-5.474c-2.86.273-4.96 2.838-4.96 5.71v3.41l-1.68 1.553c-.204.19-.32.456-.32.734V427a1 1 0 0 0 1 1h3.49a3.079 3.079 0 0 0 3.01 2.45 3.08 3.08 0 0 0 3.01-2.45h3.49a1 1 0 0 0 1-1v-2.59c0-.28-.12-.55-.327-.74zm-7.173 5.63c-.842 0-1.55-.546-1.812-1.3h3.624a1.92 1.92 0 0 1-1.812 1.3zm6.35-2.45h-12.7v-2.347l1.63-1.51c.236-.216.37-.522.37-.843v-3.41c0-2.35 1.72-4.356 3.92-4.565a4.353 4.353 0 0 1 4.78 4.33v3.645c0 .324.137.633.376.85l1.624 1.477v2.373z"></path>
+</svg>
+</span></a>
+            <div class="user-avatar">
+                <a href="http://www.woshipm.com/u/288457" target="_blank"><img src="https://static.woshipm.com/woshipm_def_head.jpg?imageView2/1/w/30/h/30/q/100" alt="" height="30" width="30" class="avatar"></a>
+                <div class="user-top-nav">
+                    <h4 class="user-name">不知道取什么昵称</h4>
+                    <ul>
+                        <li><a href="http://www.woshipm.com/me/posts">我的文章</a></li>
+                        <li><a href="http://www.woshipm.com/me/comments">我的评论</a></li>
+                        <li><a href="http://www.woshipm.com/me/bookmarks">我的收藏</a></li>
+                        <li><a href="http://www.woshipm.com/me/subscribe">我的订阅</a></li>
+                        <li><a href="http://www.woshipm.com/u/288457">我的主页</a></li>
+                        <li><a href="http://www.woshipm.com/me/setting">资料修改</a></li>
+                    </ul>
+                    <div class="user-logout">
+                        <a href="http://www.woshipm.com/wp-login.php?action=logout&amp;redirect_to=http%3A%2F%2Fwww.woshipm.com%2F&amp;_wpnonce=4d20ee5531 ">退出登录</a>
+                    </div>
+                </div>
+            </div>
 
-
-          <li id="menu-item-155941" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-155941">
-            <a target="_blank" href="http://www.zhaopins.com/">招聘</a></li>
-          <li id="menu-item-395532"
-              class="vip menu-item menu-item-type-custom menu-item-object-custom menu-item-395532"><a target="_blank"
-                                                                                                      href="http://vip.qidianla.com/member.html">社员</a>
-          </li>
-
-        </ul>
-      </nav>
+        </div>
     </div>
-    <div class="header-block u-floatRight">
-      <a class="header-action-item tougao" data-action="popLogin" href="http://www.woshipm.com/#">投稿</a>
-      <a href="javascript:;" class="show-search"><span class="iconfont icon-search"></span></a>
-      <a class="header-action-item" ng-click="loginOut()"
-         href="#">注册/登录</a>
-
-    </div>
-  </div>
 </header>

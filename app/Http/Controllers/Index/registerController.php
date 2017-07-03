@@ -12,4 +12,12 @@ class registerController extends Controller
   {
     return view('index.woshipm.templates.register');
   }
+  public function step2()
+  {
+    return view('index.woshipm.templates.register2');
+  }
+  public function step3()
+  {
+    return view('index.woshipm.templates.register3');
+  }
 }

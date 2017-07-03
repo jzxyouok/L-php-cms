@@ -1,7 +1,7 @@
 <footer class="site-footer">
     <div class="contianer u-clearfix footer-top">
         <div class="footer-block-left">
-            <p class=""><img src="resources/views/index/woshipm/assets/images/footer-logo.png"></p>
+            <p class=""><img src="/resources/views/index/woshipm/assets/images/footer-logo.png"></p>
             <a class="a-font mar-r27" href="http://zt.woshipm.com/5years/index.html">关于我们</a>
             <a class="a-font" href="http://www.woshipm.com/tougao">投稿须知</a>
             <a class="a-font mar-r27" href="http://wen.woshipm.com/question/detail/omkf.html">意见反馈</a>

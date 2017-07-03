@@ -178,14 +178,32 @@ Route::group(['namespace' => 'Install'], function () {
  * */
 Route::group(['namespace' => 'Index'], function () {
 
-  Route::get('/', 'indexController@view')->name('index');
-  Route::get('/index/banner_get', 'indexController@indexBannerGet')->name('index_banner_get');
-
-  Route::get('/page/:number', 'environmentTestController@view')->name('environment_test');
-  Route::get('/content/:title', 'webSettingController@view')->name('web_setting');
+  //登录
   Route::get('/user/login', 'loginController@view')->name('login');
   Route::get('/user/register', 'registerController@view')->name('register');
+  Route::get('/user/register/step2', 'registerController@step2')->name('register_step2');
+  Route::get('/user/register/step3', 'registerController@step3')->name('register_step3');
+//首页
+  Route::get('/', 'indexController@view')->name('index');
+  Route::get('/index/banner_get', 'indexController@indexBannerGet')->name('index_banner_get');
+  Route::get('/index/get_index_list', 'indexController@getIndexList')->name('get_index_list');
+  Route::get('/index/get_hot_doc', 'indexController@getHotDoc')->name('get_hot_doc');
+  Route::get('/index/get_category', 'indexController@getCategory')->name('get_category');
+
+  Route::get('/me/post', 'meController@mePost')->name('post');
+
+  //内容页
+  Route::get('/{category}/{id}', 'contentController@view')->name('content');
+  Route::post('/index/get_content', 'contentController@getContent')->name('get_content');
+
+
+  Route::get('/content/:title', 'webSettingController@view')->name('web_setting');
+
   Route::get('/user/find_password', 'findPasswordController@view')->name('find_password');
   Route::get('/list/:cate', 'completeController@view')->name('complete');
+
+  //前台用户页面
+
+
 
 });
