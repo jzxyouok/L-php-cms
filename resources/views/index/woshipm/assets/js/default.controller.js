@@ -1,3 +1,15 @@
+app.controller('registerCtrl', ['$scope', '$timeout', 'registerService', function ($scope, $timeout, registerService) {
+    $scope.registerStyle = true;
+    $scope.useEmail = function () {
+        $scope.registerStyle = false;
+
+    };
+    $scope.usePhone = function () {
+        $scope.registerStyle = true;
+
+    };
+
+}]);
 app.controller('headerCtrl', ['$scope', '$timeout', 'headerService', function ($scope, $timeout, headerService) {
 
     $scope.loginOut = function () {

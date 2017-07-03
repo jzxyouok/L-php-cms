@@ -15,19 +15,19 @@
             <ul class="site-icon-list">
                 <li>
                     <div class="app-qrcode">
-                        <img src="#">
+                        <img src="/resources/views/index/woshipm/assets/images/footer-appdownload.png">
                     </div>
                     <span class="iconfont icon-android"></span>
                 </li>
                 <li>
                     <div class="app-qrcode">
-                        <img src="#">
+                        <img src="/resources/views/index/woshipm/assets/images/footer-wechat.png">
                     </div>
                     <span class="iconfont icon-wechat"></span>
                 </li>
                 <li>
                     <div class="app-qrcode">
-                        <img src="#">
+                        <img src="/resources/views/index/woshipm/assets/images/footer-appdownload.png">
                     </div>
                     <span class="iconfont icon-ios"></span>
                 </li>

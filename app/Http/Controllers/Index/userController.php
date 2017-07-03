@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 
-class registerController extends Controller
+class userController extends Controller
 {
   public function view()
   {
-    return view('index.woshipm.templates.register');
+    return view('index.woshipm.templates.user');
   }
 
 }

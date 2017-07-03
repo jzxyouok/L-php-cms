@@ -4,6 +4,20 @@ app.filter('to_trusted', ['$sce', function ($sce) {
         return $sce.trustAsHtml(text);
     };
 }]);
+app.factory('registerService', ['$http', function ($http) {
+    return {
+        getCategory: function () {
+            return $http({
+                method: 'GET',
+                url: '/index/get_category',
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
+
+
+
+    };
+}]);
 app.factory('headerService', ['$http', function ($http) {
     return {
         getCategory: function () {

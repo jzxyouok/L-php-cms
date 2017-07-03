@@ -181,8 +181,8 @@ Route::group(['namespace' => 'Index'], function () {
   //登录
   Route::get('/user/login', 'loginController@view')->name('login');
   Route::get('/user/register', 'registerController@view')->name('register');
-  Route::get('/user/register/step2', 'registerController@step2')->name('register_step2');
-  Route::get('/user/register/step3', 'registerController@step3')->name('register_step3');
+
+
 //首页
   Route::get('/', 'indexController@view')->name('index');
   Route::get('/index/banner_get', 'indexController@indexBannerGet')->name('index_banner_get');
@@ -191,7 +191,7 @@ Route::group(['namespace' => 'Index'], function () {
   Route::get('/index/get_category', 'indexController@getCategory')->name('get_category');
 
   Route::get('/me/post', 'meController@mePost')->name('post');
-
+  Route::get('/user/{userId}', 'userController@view')->name('user_center');
   //内容页
   Route::get('/{category}/{id}', 'contentController@view')->name('content');
   Route::post('/index/get_content', 'contentController@getContent')->name('get_content');
