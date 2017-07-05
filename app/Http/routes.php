@@ -191,7 +191,17 @@ Route::group(['namespace' => 'Index'], function () {
   Route::get('/index/get_hot_doc', 'indexController@getHotDoc')->name('get_hot_doc');
   Route::get('/index/get_category', 'indexController@getCategory')->name('get_category');
 
-  Route::get('/me/post', 'meController@mePost')->name('post');
+//前台用户中心
+  Route::get('/me', 'meController@mePost')->name('me');
+  Route::get('/me/post', 'meController@mePost')->name('me_post');
+  Route::get('/me/collection', 'meController@meCollection')->name('me_collection');
+  Route::get('/me/answer', 'meController@meAnswer')->name('me_answer');
+  Route::get('/me/comment', 'meController@meComment')->name('me_comment');
+  Route::get('/me/subscribe', 'meController@meSubscribe')->name('me_subscribe');
+  Route::get('/me/reward', 'meController@meReward')->name('me_reward');
+  Route::get('/me/message', 'meController@meMessage')->name('me_message');
+  Route::get('/me/setting', 'meController@meSetting')->name('me_setting');
+
   Route::get('/user/{userId}', 'userController@view')->name('user_center');
   //内容页
   Route::get('/{category}/{id}', 'contentController@view')->name('content');
@@ -203,7 +213,6 @@ Route::group(['namespace' => 'Index'], function () {
   Route::get('/user/find_password', 'findPasswordController@view')->name('find_password');
   Route::get('/list/:cate', 'completeController@view')->name('complete');
 
-  //前台用户页面
 
 
 
