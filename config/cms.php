@@ -46,8 +46,6 @@ return [
   'category_all' => '所有分类',
   'category_add' => '添加分类',
   'menu_manage' => '菜单管理',
-  'edit_menu' => '编辑菜单',
-  'menu_location' => '菜单位置',
   'banner_manage' => '轮播管理',
   'banner_manage_edit' => '轮播编辑',
   'tag_manage' => '标签管理',

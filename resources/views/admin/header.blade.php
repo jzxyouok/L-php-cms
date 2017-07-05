@@ -281,18 +281,13 @@
 
                             </ul>
                         </li>
-                        <li>
-                            <a href="#"> 菜单管理
-                                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="/admin/manage/doc_manage/edit_menu">编辑菜单</a></li>
-                                <li><a href="/admin/manage/doc_manage/menu_location">菜单位置</a></li>
 
-                            </ul>
-                        </li>
+
+                                <li><a href="/admin/manage/doc_manage/menu_manage">菜单管理</a></li>
+
+
+
+
 
                         <li><a href="/admin/manage/doc_manage/banner_manage"> 轮播管理</a></li>
                         <li><a href="/admin/manage/doc_manage/tag_manage"> 标签管理</a></li>
