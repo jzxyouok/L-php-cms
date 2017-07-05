@@ -181,7 +181,8 @@ Route::group(['namespace' => 'Index'], function () {
   //登录
   Route::get('/user/login', 'loginController@view')->name('login');
   Route::get('/user/register', 'registerController@view')->name('register');
-
+  Route::post('/user/register', 'registerController@register')->name('register_post');
+  Route::post('/user/check_account', 'registerController@checkAccount')->name('check_account');
 
 //首页
   Route::get('/', 'indexController@view')->name('index');

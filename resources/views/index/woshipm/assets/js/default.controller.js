@@ -1,11 +1,74 @@
-app.controller('registerCtrl', ['$scope', '$timeout', 'registerService', function ($scope, $timeout, registerService) {
+app.controller('registerCtrl', ['$scope', '$timeout', 'registerService','$interval', function ($scope, $timeout, registerService,$interval) {
     $scope.registerStyle = true;
+    $scope.registerBtnStatus = true;
+    $scope.registerSuccess = false;
+    $scope.registerFail = false;
+    $scope.exist = false;
+    $scope.countDown=3;
     $scope.useEmail = function () {
         $scope.registerStyle = false;
 
     };
     $scope.usePhone = function () {
         $scope.registerStyle = true;
+
+    };
+    $scope.register = function () {
+        var account = '';
+        var password = '';
+        if ($scope.registerStyle) {
+            account = $scope.phone;
+            password = $scope.phonePassword;
+        } else {
+            account = $scope.email;
+            password = $scope.emailPassword;
+        }
+
+
+        if ((account && password && $scope.registerForm.email.$valid && $scope.registerForm.emailPassword.$valid) || (account && password && $scope.registerForm.phone.$valid && $scope.registerForm.phonePassword.$valid)) {
+
+            registerService.register($scope.registerStyle, account, password).then(function success(res) {
+                if (res.data.code === 1) {
+                    $scope.registerSuccess = true;
+                    $interval(function () {
+                        console.log($scope.countDown);
+                        $scope.countDown--;
+                        if($scope.countDown==0){
+                            window.location.href='/me';
+                        }
+
+                    }, 1000);
+                } else {
+                    $scope.registerFail = true;
+                }
+            }, function error(res) {
+
+            });
+            $scope.registerBtnStatus = false;
+        }
+
+
+    };
+    $scope.checkAccount = function () {
+        var account = '';
+        if ($scope.registerStyle) {
+            account = $scope.phone;
+
+        } else {
+            account = $scope.email;
+
+        }
+      if($scope.registerForm.email.$valid){
+          registerService.checkAccount($scope.registerStyle, account).then(function success(res) {
+              if (res.data.code === 1) {
+                  $scope.exist = false;
+              } else {
+                  $scope.exist = true;
+              }
+          }, function error(res) {
+
+          });
+      }
 
     };
 
