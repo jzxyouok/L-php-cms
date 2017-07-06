@@ -190,7 +190,7 @@ Route::group(['namespace' => 'Index'], function () {
   Route::get('/index/banner_get', 'indexController@indexBannerGet')->name('index_banner_get');
   Route::get('/index/get_index_list', 'indexController@getIndexList')->name('get_index_list');
   Route::get('/index/get_hot_doc', 'indexController@getHotDoc')->name('get_hot_doc');
-  Route::get('/index/get_category', 'indexController@getCategory')->name('get_category');
+  Route::get('/index/get_menu', 'indexController@getMenu')->name('get_menu');
 
 //前台用户中心
   Route::get('/me', 'meController@mePost')->name('me');

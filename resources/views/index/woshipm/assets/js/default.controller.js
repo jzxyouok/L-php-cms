@@ -1,10 +1,10 @@
-app.controller('registerCtrl', ['$scope', '$timeout', 'registerService','$interval', function ($scope, $timeout, registerService,$interval) {
+app.controller('registerCtrl', ['$scope', '$timeout', 'registerService', '$interval', function ($scope, $timeout, registerService, $interval) {
     $scope.registerStyle = true;
     $scope.registerBtnStatus = true;
     $scope.registerSuccess = false;
     $scope.registerFail = false;
     $scope.exist = false;
-    $scope.countDown=3;
+    $scope.countDown = 3;
     $scope.useEmail = function () {
         $scope.registerStyle = false;
 
@@ -33,8 +33,8 @@ app.controller('registerCtrl', ['$scope', '$timeout', 'registerService','$interv
                     $interval(function () {
                         console.log($scope.countDown);
                         $scope.countDown--;
-                        if($scope.countDown==0){
-                            window.location.href='/me';
+                        if ($scope.countDown == 0) {
+                            window.location.href = '/me';
                         }
 
                     }, 1000);
@@ -58,17 +58,17 @@ app.controller('registerCtrl', ['$scope', '$timeout', 'registerService','$interv
             account = $scope.email;
 
         }
-      if($scope.registerForm.email.$valid){
-          registerService.checkAccount($scope.registerStyle, account).then(function success(res) {
-              if (res.data.code === 1) {
-                  $scope.exist = false;
-              } else {
-                  $scope.exist = true;
-              }
-          }, function error(res) {
+        if ($scope.registerForm.email.$valid) {
+            registerService.checkAccount($scope.registerStyle, account).then(function success(res) {
+                if (res.data.code === 1) {
+                    $scope.exist = false;
+                } else {
+                    $scope.exist = true;
+                }
+            }, function error(res) {
 
-          });
-      }
+            });
+        }
 
     };
 
@@ -89,17 +89,33 @@ app.controller('headerCtrl', ['$scope', '$timeout', 'headerService', function ($
 
     };
 
-    $scope.getCategory = function () {
-        headerService.getCategory().then(function success(res) {
-                $scope.showCategory = false;
+    $scope.getMenu = function () {
+        headerService.getMenu().then(function success(res) {
+            $scope.mouse=false;
+
                 if (res.data.code === 1) {
-                    $scope.category = res.data.data;
+
+                    for (var m = 0; m < res.data.topData.length; m++) {
+                        res.data.topData[m].has_childen = false;
+                        res.data.topData[m].childen=[];
+                    }
+                    for (var i = 0; i < res.data.topData.length; i++) {
+                        for (var j = 0; j < res.data.data.length; j++) {
+                            if (res.data.data[j].parent == res.data.topData[i].name) {
+                                res.data.topData[i].has_childen = true;
+                                res.data.topData[i].childen.push(res.data.data[j]);
+                            }
+                        }
+                    }
+                    $scope.topMenu = res.data.topData;
+                  
                 }
             }, function error(res) {
 
             }
         );
     };
+
 
 }]);
 app.controller('contentCtrl', ['$scope', '$timeout', function ($scope, $timeout) {

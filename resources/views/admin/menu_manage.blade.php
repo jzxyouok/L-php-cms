@@ -37,6 +37,7 @@
 
                 <th>序号</th>
                 <th>名称</th>
+                <th>父级</th>
                 <th>排序</th>
                 <th>地址</th>
                 <th>操作</th>
@@ -45,6 +46,7 @@
 
                 <td>1</td>
                 <td>@{{x.name}}</td>
+                <td>@{{x.parent}}</td>
                 <td>@{{x.order}}</td>
                 <td>@{{x.url}}</td>
 
@@ -61,7 +63,7 @@
           </div>
 
           <div class="box-footer clearfix">
-          
+
           </div>
         </div>
       </div>

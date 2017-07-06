@@ -59,10 +59,10 @@ app.factory('registerService', ['$http', function ($http) {
 }]);
 app.factory('headerService', ['$http', function ($http) {
     return {
-        getCategory: function () {
+        getMenu: function () {
             return $http({
                 method: 'GET',
-                url: '/index/get_category',
+                url: '/index/get_menu',
                 headers: {'content-type': 'application/x-www-form-urlencoded'}
             });
         },

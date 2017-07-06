@@ -6,6 +6,7 @@ use App\Http\Model\Banner;
 use App\Http\Model\BannerSlider;
 use App\Http\Model\Category;
 use App\Http\Model\Doc;
+use App\Http\Model\Menu;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
@@ -39,10 +40,11 @@ class indexController extends Controller
     return response()->json(['code' => 1, 'data' => $docs]);
   }
 
-  public function getCategory(Request $request)
+  public function getMenu(Request $request)
   {
-    $category = Category::where(['parent' => 0])->get(['id', 'name', 'slug']);
-    return response()->json(['code' => 1, 'data' => $category]);
+    $topMenu = Menu::where(['parent' => '0'])->get()->toArray();
+    $menu = Menu::all()->toArray();
+    return response()->json(['code' => 1, 'topData' => $topMenu,'data'=>$menu]);
   }
 
 }
