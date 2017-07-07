@@ -108,7 +108,7 @@ app.controller('headerCtrl', ['$scope', '$timeout', 'headerService', function ($
                         }
                     }
                     $scope.topMenu = res.data.topData;
-                  
+
                 }
             }, function error(res) {
 
