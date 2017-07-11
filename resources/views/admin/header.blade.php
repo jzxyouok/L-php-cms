@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="{{ URL::asset('public/css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('public/css/adminLTE.css') }}">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/admin-lte/2.3.8/css/AdminLTE.min.css">
     <link rel="stylesheet" href="{{ URL::asset('public/css/dataTables.bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('public/css/skins/_all-skins.css') }}">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/admin-lte/2.3.8/css/skins/_all-skins.css">
     <link rel="stylesheet" href="{{ URL::asset('public/css/font-awesome.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('public/css/viralnova.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('public/plugins/zTree_v3-3.5.28/css/zTreeStyle/zTreeStyle.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('public/plugins/uploadify/uploadify.css') }}">
-    <script src="{{ URL::asset('public/js/common/jquery.js') }}"></script>
-    <script src="{{ URL::asset('public/js/common/angular.js') }}"></script>
-    <script src="{{ URL::asset('public/js/common/angular-ui-router.js') }}"></script>
-    <script src="{{ URL::asset('public/js/common/angular-sanitize.js') }}"></script>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular-sanitize.min.js"></script>
     <script src="{{ URL::asset('public/plugins/uploadify/jquery.uploadify.js') }}"></script>
-    <script src="{{ URL::asset('public/js/common/bootstrap.js') }}"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="{{ URL::asset('public/js/common/app.js') }}"></script>
 
 </head>
@@ -40,7 +40,12 @@
             </a>
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
-                    <!-- Messages: style can be found in dropdown.less-->
+                    <li class="dropdown messages-menu">
+                        <a href="/" >
+                          网站首页
+                        </a>
+
+                    </li>
                     <li class="dropdown messages-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-envelope-o"></i>
@@ -54,7 +59,7 @@
                                     <li><!-- start message -->
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="{{ URL::asset('images/user2-160x160.jpg') }}"
+                                                <img src="{{ URL::asset('public/images/user2-160x160.jpg') }}"
                                                      class="img-circle"
                                                      alt="User Image">
                                             </div>
@@ -71,7 +76,7 @@
                             <li class="footer"><a href="#">查看所有信息</a></li>
                         </ul>
                     </li>
-                    <!-- Notifications: style can be found in dropdown.less -->
+
                     <li class="dropdown notifications-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-bell-o"></i>
@@ -80,7 +85,7 @@
                         <ul class="dropdown-menu">
                             <li class="header">你有 10 条通知</li>
                             <li>
-                                <!-- inner menu: contains the actual data -->
+
                                 <ul class="menu">
                                     <li>
                                         <a href="#">
@@ -93,7 +98,7 @@
                             <li class="footer"><a href="#">查看所有通知</a></li>
                         </ul>
                     </li>
-                    <!-- Tasks: style can be found in dropdown.less -->
+
                     <li class="dropdown tasks-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-flag-o"></i>
@@ -102,9 +107,9 @@
                         <ul class="dropdown-menu">
                             <li class="header">你有 9 条任务</li>
                             <li>
-                                <!-- inner menu: contains the actual data -->
+
                                 <ul class="menu">
-                                    <li><!-- Task item -->
+                                    <li>
                                         <a href="#">
                                             <h3>
                                                 任务1
@@ -118,7 +123,7 @@
                                                 </div>
                                             </div>
                                         </a>
-                                    </li><!-- end task item -->
+                                    </li>
                                     ...
                                 </ul>
                             </li>
@@ -127,22 +132,22 @@
                             </li>
                         </ul>
                     </li>
-                    <!-- User Account: style can be found in dropdown.less -->
+
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="{{ URL::asset('images/user2-160x160.jpg') }}" class="user-image" alt="User Image">
+                            <img src="{{ URL::asset('public/images/user2-160x160.jpg') }}" class="user-image" alt="User Image">
                             <span class="hidden-xs"> {{ $userInfo->username }} </span>
                         </a>
                         <ul class="dropdown-menu">
-                            <!-- User image -->
+
                             <li class="user-header">
-                                <img src="{{ URL::asset('images/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+                                <img src="{{ URL::asset('public/images/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
                                 <p>
                                     Kevin - Web Developer
                                     <small>WEB前端工程师，全栈开发尝试者</small>
                                 </p>
                             </li>
-                            <!-- Menu Body -->
+
                             <li class="user-body">
                                 <div class="col-xs-4 text-center">
                                     <a href="#">项目1</a>
@@ -154,7 +159,7 @@
                                     <a href="#">项目3</a>
                                 </div>
                             </li>
-                            <!-- Menu Footer-->
+
                             <li class="user-footer">
                                 <div class="pull-left">
                                     <a href="#" class="btn btn-default btn-flat">简介</a>
@@ -171,23 +176,23 @@
     </header>
 
 
-    <!--左侧菜单栏-->
+
     <div class="main-sidebar">
-        <!-- Inner sidebar -->
+
         <div class="sidebar">
-            <!-- user panel (Optional) -->
+
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="{{ URL::asset('images/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+                    <img src="{{ URL::asset('public/images/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
                     <p> {{ $userInfo->username }} </p>
 
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
-            </div><!-- /.user-panel -->
+            </div>
 
-            <!-- Search Form (Optional) -->
+
             <form action="#" method="get" class="sidebar-form">
                 <div class="input-group">
                     <input type="text" name="q" class="form-control" placeholder="搜索">
@@ -195,9 +200,9 @@
           <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
         </span>
                 </div>
-            </form><!-- /.sidebar-form -->
+            </form>
 
-            <!-- Sidebar Menu -->
+
             <ul class="sidebar-menu">
                 <li class="treeview">
                     <a href="#"><i class="fa fa-dashboard"></i><span>仪表盘</span> <i

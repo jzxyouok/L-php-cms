@@ -3,10 +3,10 @@
 <div class="loadingBar"></div>
 
 </div>
-<script src="{{ URL::asset('resources/views/index/woshipm/assets/js/jquery-1.12.4.min.js') }}"></script>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="{{ URL::asset('resources/views/index/woshipm/assets/js/default.service.js') }}"></script>
 <script src="{{ URL::asset('resources/views/index/woshipm/assets/js/default.controller.js') }}"></script>
-<script src="{{ URL::asset('resources/views/index/woshipm/assets/js/swiper.min.js') }}"></script>
+<script src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.min.js"></script>
 
 
 <!-- Initialize Swiper -->

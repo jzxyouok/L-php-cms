@@ -1,19 +1,19 @@
 <!DOCTYPE HTML>
 <html ng-app="myApp">
 <head>
-    <title></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta charset="utf-8" />
+    <title>Viralnova中文网 | 致力于分享有趣的、正能量的、有价值的资讯消息。</title>
+    <meta name="description" content="Viralnova中文网|致力于分享有趣的、正能量的、有价值的资讯消息。">
+    <meta name="keywords" content="viralnova,viralnova中文网,有趣的，正能量的，有价值的">
     <link rel="Shortcut Icon" href="{{ URL::asset('resources/views/index/woshipm/assets/images/favicon.ico') }}"
           type="image/x-icon">
     <link href="{{ URL::asset('resources/views/index/woshipm/assets/css/web2.0.css') }}" rel="stylesheet"
           type="text/css">
     <link rel="stylesheet" href="{{ URL::asset('resources/views/index/woshipm/assets/css/viralnova.css') }}" />
     <script type="text/javascript"
-            src="{{ URL::asset('resources/views/index/woshipm/assets/js/jquery-1.12.4.min.js') }}"></script>
+            src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript"
-            src="{{ URL::asset('resources/views/index/woshipm/assets/js/angular.js') }}"></script>
+            src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
 
 </head>
 <body>

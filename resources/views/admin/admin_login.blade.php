@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>用户登录 | L-blog</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="stylesheet" href="{{ URL::asset('public/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ URL::asset('public/css/font-awesome.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('public/css/ionicons.min.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('public/css/adminLTE.css') }}">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/admin-lte/2.3.8/css/AdminLTE.min.css">
     <link rel="stylesheet" href="{{ URL::asset('public/plugins/iCheck/square/blue.css') }}">
-    <script src="{{ URL::asset('public/js/common/angular.js') }}"></script>
-    <script src="{{ URL::asset('public/js/common/angular-sanitize.js') }}"></script>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular-sanitize.min.js"></script>
     <!--[if lt IE 9]>
-    <script src="{{ URL::asset('public/js/common/html5shiv.min.js') }}"></script>
-    <script src="{{ URL::asset('public/js/common/respond.min.js') }}"></script>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.6/html5shiv.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
 <body class="hold-transition login-page" ng-app="myApp" ng-controller="adminLogin" ng-init="getCode()">
@@ -73,8 +73,8 @@
 </div>
 
 
-<script src="{{ URL::asset('public/js/common/jquery.js') }}"></script>
-<script src="{{ URL::asset('public/js/common/bootstrap.js') }}"></script>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src="{{ URL::asset('public/plugins/iCheck/icheck.min.js') }}"></script>
 <script src="{{ URL::asset('public/js/common/L-php-cms.js') }}"></script>
 <script>

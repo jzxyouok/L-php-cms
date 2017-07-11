@@ -1,18 +1,22 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Editorial by HTML5 UP</title>
   <meta charset="utf-8" />
+  <title>Viralnova中文网 | 致力于分享有趣的、正能量的、有价值的资讯消息。</title>
+  <meta name="description" content="Viralnova中文网|致力于分享有趣的、正能量的、有价值的资讯消息。">
+  <meta name="keywords" content="viralnova,viralnova中文网,有趣的，正能量的，有价值的">
+  <link rel="Shortcut Icon" href="{{ URL::asset('resources/views/index/woshipm/assets/images/favicon.ico') }}"
+        type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!--[if lte IE 8]><script src="{{ URL::asset('resources/views/index/woshipm/assets/js/ie/html5shiv.js') }}"></script><![endif]-->
-  <!--[if lte IE 8]><script src="{{ URL::asset('resources/views/index/woshipm/assets/js/ie/respond.min.js') }}"></script><![endif]-->
+  <!--[if lte IE 8]><script src="http://apps.bdimg.com/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]-->
+  <!--[if lte IE 8]><script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
   <link rel="stylesheet" href="{{ URL::asset('resources/views/index/woshipm/assets/css/app.css') }}" />
   <link rel="stylesheet" href="{{ URL::asset('resources/views/index/woshipm/assets/css/misc.css') }}" />
   <link rel="stylesheet" href="{{ URL::asset('resources/views/index/woshipm/assets/css/viralnova.css') }}" />
-  <link rel="stylesheet" href="{{ URL::asset('resources/views/index/woshipm/assets/css/swiper.min.css') }}" />
+  <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css" />
   <!--[if lte IE 9]><link rel="stylesheet" href="{{ URL::asset('resources/views/index/woshipm/assets/css/ie9.css') }}" /><![endif]-->
   <!--[if lte IE 8]><link rel="stylesheet" href="{{ URL::asset('resources/views/index/woshipm/assets/css/ie8.css') }}" /><![endif]-->
-  <script src="{{ URL::asset('resources/views/index/woshipm/assets/js/angular.js') }}"></script>
+  <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
 </head>
 <body class="home blog " ng-app="myApp">
 <style>
