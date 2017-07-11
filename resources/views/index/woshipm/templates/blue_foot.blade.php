@@ -32,38 +32,9 @@
         <li><a href="http://www.zcool.com.cn/" target="_blank">站酷</a></li>
         <li><a href="http://www.yanj.cn/" target="_blank">演界网PPT模板</a></li>
         <li><a href="http://www.lagou.com/" target="_blank">招聘网</a></li>
-        <li><a href="http://www.tuicool.com/" target="_blank">推酷</a></li>
-        <li><a href="http://djt.qq.com/" target="_blank">腾讯大讲堂</a></li>
-        <li><a href="http://www.9miao.com/" target="_blank">9秒社团</a></li>
-        <li><a href="http://www.lieyunwang.com/" target="_blank">猎云网</a></li>
-        <li><a href="http://www.zbj.com/" target="_blank">猪八戒网</a></li>
-        <li><a href="http://www.qiniu.com/" target="_blank">七牛</a></li>
-        <li><a href="http://www.paidai.com/" target="_blank">电子商务</a></li>
-        <li><a href="http://www.boxui.com/" target="_blank">盒子UI</a></li>
-        <li><a href="http://www.code4app.com/" target="_blank">Code4App</a></li>
-        <li><a href="http://waimaoquan.alibaba.com/" target="_blank">外贸圈</a></li>
-        <li><a href="http://www.eventdove.com/" target="_blank">会鸽</a></li>
-        <li><a href="http://www.shichangbu.com/" target="_blank">市场部网</a></li>
-        <li><a href="http://www.uimaker.com/" target="_blank">UI设计</a></li>
-        <li><a href="http://www.25xt.com/" target="_blank">25学堂</a></li>
-        <li><a href="http://www.jiguang.cn/" target="_blank">极光推送</a></li>
-        <li><a href="http://www.yixieshi.com/" target="_blank">互联网的一些事</a></li>
-        <li><a href="https://www.teambition.com/" target="_blank">Teambition</a></li>
-        <li><a href="http://www.zzjidi.com/" target="_blank">站长基地</a></li>
-        <li><a href="http://www.cjol.com/" target="_blank">找工作</a></li>
-        <li><a href="http://www.iyiou.com/" target="_blank">亿欧网</a></li>
-        <li><a href="http://www.31huiyi.com/" target="_blank">31会议</a></li>
-        <li><a href="http://www.tvhome.com/" target="_blank">电视之家</a></li>
-        <li><a href="http://www.investide.cn/" target="_blank">投资潮</a></li>
-        <li><a href="http://www.apkbus.com/" target="_blank">安卓巴士</a></li>
-        <li><a href="http://www.php100.com/" target="_blank">PHP100</a></li>
-        <li><a href="http://www.pintu360.com/" target="_blank">品途商业评论</a></li>
-        <li><a href="http://www.huoban.com/" target="_blank">伙伴云表格</a></li>
-        <li><a href="http://www.yopai.com/" target="_blank">优派网</a></li>
-        <li><a href="http://mux.baidu.com/" target="_blank">百度MUX</a></li>
-        <li><a href="http://www.yunyingpai.com/" title="运营派" target="_blank">运营派</a></li>
+
       </ul>
       <div class="clearfix"></div>
     </div>
-  </div><!--foot-box-->
-</div><!--blue-foot-->
+  </div>
+</div>
