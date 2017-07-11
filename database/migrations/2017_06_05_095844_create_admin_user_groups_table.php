@@ -19,7 +19,7 @@ class CreateAdminUserGroupsTable extends Migration
         $table->integer('group_id')->default('1')->nullable();
         $table->integer('pid')->default('1')->nullable();
         $table->integer('status')->default('1')->nullable();
-        $table->json('power');
+//        $table->json('power');
         $table->timestamps();
       });
     }

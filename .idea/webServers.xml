@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="6dc21668-af8f-4e9d-98fb-b393a1f7d1c7" name="viralnova" url="http://120.27.7.163/">
+        <fileTransfer host="120.27.7.163" port="21" rootFolder="/data/wwwroot">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
