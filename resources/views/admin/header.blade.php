@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/admin-lte/2.3.8/css/AdminLTE.min.css">
     <link rel="stylesheet" href="{{ URL::asset('public/css/dataTables.bootstrap.css') }}">
     <link rel="stylesheet" href="https://cdn.bootcss.com/admin-lte/2.3.8/css/skins/_all-skins.css">
-    <link rel="stylesheet" href="{{ URL::asset('public/css/font-awesome.css') }}">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ URL::asset('public/css/viralnova.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('public/plugins/zTree_v3-3.5.28/css/zTreeStyle/zTreeStyle.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('public/plugins/uploadify/uploadify.css') }}">

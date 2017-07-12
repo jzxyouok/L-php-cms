@@ -1,6 +1,6 @@
 <div class="right-column">
     <div class="sidebar">
-        <aside id="widget_notice-2" class="widget widget_widget_notice"><h3 class="widget-title">加入圈子</h3>
+        <aside id="widget_notice-2" class="widget widget_widget_notice"><h3 class="widget-title">关注微信公众号</h3>
             <div class="widget-site-info">
                 <div class="join-info">
 
@@ -11,11 +11,11 @@
                         <dt>关注微信公众号</dt>
                     </dl>
                     <ul class="code-ul">
-                        <li>运营交流群：193274344</li>
-                        <li>北京产品群：485701965</li>
-                        <li>福建产品群：397675573</li>
-                        <li>全国产品群：617953507</li>
-                        <li>江浙沪产品群：136399658</li>
+                        <li>QQ：1358180015</li>
+                        <li>QQ：1358180015</li>
+                        <li>QQ：1358180015</li>
+                        <li>QQ：1358180015</li>
+                        <li>QQ：1358180015</li>
                     </ul>
                 </div>
                 <div class="app-info"><a class="ios"

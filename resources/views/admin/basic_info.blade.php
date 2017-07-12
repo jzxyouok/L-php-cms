@@ -81,7 +81,7 @@
 
                 <div class="col-md-3">
 
-                    <img style="width: 100%" src=" userInfo.avatar %>" alt="">
+                    <img style="width: 100%" src="{{ $userInfo->avatar }}" alt="">
                 </div>
 
 
