@@ -31,10 +31,15 @@ Route::group(['namespace' => 'Admin'], function () {
   Route::post('/admin/manage/user_manage/user_group_edit', 'adminUserGroupAllController@userGroupEdit')->name('admin_user_group_all_user_group_edit');
   Route::post('/admin/manage/user_manage/modify_power', 'adminUserGroupAllController@modifyPower')->name('admin_user_group_all_modify_power');
   Route::get('/admin/manage/user_manage/admin_user_group_get', 'adminUserGroupAllController@get')->name('admin_user_group_get');
+
   Route::get('/admin/manage/user_manage/admin_user_group_add', 'adminUserGroupAddController@view')->name('admin_user_group_add');
   Route::post('/admin/manage/user_manage/admin_user_group_add', 'adminUserGroupAddController@add')->name('admin_user_group_add_post');
+
   Route::get('/admin/manage/user_manage/admin_user_all', 'adminUserAllController@view')->name('admin_user_all');
   Route::get('/admin/manage/user_manage/admin_user_get', 'adminUserAllController@get')->name('admin_user_get');
+  Route::post('/admin/manage/user_manage/upload_avatar', 'adminUserAllController@uploadAvatar')->name('upload_avatar');
+  Route::post('/admin/manage/user_manage/upload_avatar_for_admin_user', 'adminUserAllController@uploadAvatarForAdminUser')->name('upload_avatar_for_admin_user');
+
   Route::get('/admin/manage/user_manage/admin_user_add', 'adminUserAddController@view')->name('admin_user_add');
 
   Route::get('/admin/manage/user_manage/user_all', 'userAllController@view')->name('user_get');

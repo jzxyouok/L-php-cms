@@ -77,17 +77,27 @@ app.factory('adminUserAddService',['$http',function ($http) {
 /**
  * Created by v_lljunli on 2017/5/10.
  */
-app.factory('adminUserAllService',['$http',function ($http) {
-  return {
-      adminUserGet:function () {
-      return $http({
-        method: 'GET',
-        url: '/admin/manage/user_manage/admin_user_get',
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-      });
-    },
-
-  };
+app.factory('adminUserAllService', ['$http', function ($http) {
+    return {
+        adminUserGet: function () {
+            return $http({
+                method: 'GET',
+                url: '/admin/manage/user_manage/admin_user_get',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+            });
+        },
+        uploadAvatarForAdminUser: function (id,avatar) {
+            return $http({
+                method: 'POST',
+                url: '/admin/manage/user_manage/upload_avatar_for_admin_user',
+                data:$.param({
+                    id:id,
+                    avatar:avatar
+                }),
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+            });
+        },
+    };
 }]);
 /**
  * Created by v_lljunli on 2017/5/11.
@@ -1216,7 +1226,8 @@ app.controller('adminUserAdd', ['$scope','$http','adminUserAddService',function 
  * Created by v_lljunli on 2017/5/10.
  */
 app.controller('adminUserAll', ['$scope', '$http', 'adminUserAllService', function ($scope, $http, adminUserAllService) {
-    $scope.adminUserGet=function () {
+    $scope.logo = '/public/upload/image/author-avatar.jpg';
+    $scope.adminUserGet = function () {
         adminUserAllService.adminUserGet().then(function success(res) {
             $scope.data = res.data;
 
@@ -1224,13 +1235,27 @@ app.controller('adminUserAll', ['$scope', '$http', 'adminUserAllService', functi
 
         });
     };
+    $scope.uploadAvatar=function (x) {
+        $scope.username=x.username;
+        $scope.id=x.id;
 
 
+        // adminUserAllService.uploadAvatar(x.id,avatar).then(function success(res) {
+        //
+        // }, function error(res) {
+        //
+        // });
+    };
+    $scope.uploadAvatarForAdminUser=function (avatar) {
+        adminUserAllService.uploadAvatarForAdminUser($scope.id,avatar).then(function success(res) {
 
-    $scope.logo = '/public/upload/image/author-avatar.jpg';
+if(res.data.code===1){
+    $('#admin_user_all_avatar_modal').modal('hide');
+}
+        }, function error(res) {
 
-
-
+        });
+    };
 
 }]);
 /**
