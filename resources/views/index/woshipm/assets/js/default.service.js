@@ -4,7 +4,6 @@ app.filter('to_trusted', ['$sce', function ($sce) {
         return $sce.trustAsHtml(text);
     };
 }]);
-//确认密码一致校验
 app.directive('pwCheck', [function () {
     return {
         require: 'ngModel',
@@ -19,7 +18,16 @@ app.directive('pwCheck', [function () {
         }
     }
 }]);
+app.directive("lBanner", function () {
+    return {
+        restrick: 'A',
+        template: function (elem,attr) {
+            return '<div class="swiper-container"><div class="swiper-wrapper"><div class="swiper-slide" ng-repeat="x in  mainBannerData"><a href=""><img ng-src="@{{x.img_src}}" alt=""><h3>@{{x.title}}</h3></a></div></div><div class="swiper-pagination"></div><div class="swiper-button-next"></div><div class="swiper-button-prev"></div></div>		';
+        },
 
+        replace:true,
+    };
+});
 
 app.factory('registerService', ['$http', function ($http) {
     return {

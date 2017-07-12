@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+    <title>L-php-cms管理系统</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/admin-lte/2.3.8/css/AdminLTE.min.css">
     <link rel="stylesheet" href="{{ URL::asset('public/css/dataTables.bootstrap.css') }}">
     <link rel="stylesheet" href="https://cdn.bootcss.com/admin-lte/2.3.8/css/skins/_all-skins.css">
-    <link rel="stylesheet" href="http://apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ URL::asset('public/css/viralnova.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('public/plugins/zTree_v3-3.5.28/css/zTreeStyle/zTreeStyle.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('public/plugins/uploadify/uploadify.css') }}">
@@ -16,7 +16,7 @@
     <script src="http://apps.bdimg.com/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
     <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular-sanitize.min.js"></script>
     <script src="{{ URL::asset('public/plugins/uploadify/jquery.uploadify.js') }}"></script>
-    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="{{ URL::asset('public/js/common/app.js') }}"></script>
 
 </head>
@@ -188,7 +188,7 @@
                 <div class="pull-left info">
                     <p> {{ $userInfo->username }} </p>
 
-                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                    <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
                 </div>
             </div>
 

@@ -19,7 +19,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel">
-                    <a href="" role="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#banner_add_modal"><span class="fa fa-plus-square" aria-hidden="true">&nbsp;</span>新增轮播</a>
+                    <a href="" role="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#banner_add_modal">
+                        <span class="fa fa-plus-square" aria-hidden="true">&nbsp;</span>新增轮播
+                    </a>
                 </div>
                 <div class="box box-primary">
                     <div class="box-header with-border">
@@ -42,8 +44,6 @@
                                 <td>@{{x.name}}</td>
                                 <td>@{{x.location}}</td>
                                 <td>@{{x.remark}}</td>
-
-
                                 <td>
                                     <button type="button" class="btn btn-primary btn-xs btn-flat" data-toggle="modal"
                                             data-target="#category_all_edit_modal" ng-click="editBanner(x)">编辑</button>

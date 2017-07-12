@@ -220,8 +220,8 @@
                         </div>
 
                     </form>
-                    <script src="http://apps.bdimg.com/libs/ueditor/1.4.3.1/ueditor.config.js"></script>
-                    <script src="http://apps.bdimg.com/libs/ueditor/1.4.3.1/ueditor.all.min.js"></script>
+                    <script src="/public/plugins/ueditor/ueditor.config.js"></script>
+                    <script src="/public/plugins/ueditor/ueditor.all.min.js"></script>
                     <script type="text/javascript">
                         var ue = UE.getEditor('container', {
                             initialFrameWidth: '100%'

@@ -110,6 +110,7 @@ class writeController extends Controller
     $doc->author = $author;
     $doc->from = $from;
     $doc->content = $content;
+    $doc->status = 'published';
     $doc->published_date = date('Y-m-d H:i:s', time());
     $doc->url = date('Y-m-d H:i:s', time());
     $doc->publisher_id =$request->session()->get('userInfo')->id;

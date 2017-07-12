@@ -1,20 +1,16 @@
 <div class="left-column">
-
     <div class="banner" ng-controller="bannerCtrl" ng-init="getBanner()">
-
         <div class="tabBox u-clearfix">
-
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" ng-repeat="x in  mainBannerData"><a href=""><img ng-src="@{{x.img_src}}"
-                                                                                               alt="">
-                            <h3>@{{x.title}}</h3></a></div>
-
-
+                    <div class="swiper-slide" ng-repeat="x in  mainBannerData">
+                        <a href="">
+                            <img ng-src="@{{x.img_src}}" alt="">
+                            <h3>@{{x.title}}</h3>
+                        </a>
+                    </div>
                 </div>
-
                 <div class="swiper-pagination"></div>
-
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
@@ -24,8 +20,8 @@
 
                     <li>
                         <a href="http://www.woshipm.com/pmd/662334.html" target="_blank"
-                           title="%= doc.document_title %>"><img
-                                    src="resources/views/index/woshipm/assets/images/little1.gif"></a>
+                           title="%= doc.document_title %>">
+                            <img src="resources/views/index/woshipm/assets/images/little1.gif"></a>
                         <h3><a href="http://www.woshipm.com/pmd/662334.html" target="_blank"
                                title="%= doc.document_title %>">%= doc.document_title %></a>
                         </h3></li>
@@ -61,14 +57,15 @@
             <article class="u-clearfix stream-list-item sticky" ng-repeat="x in indexDocList">
                 <div class="stream-list-image">
                     <a href="@{{ x.category }}/@{{ x.id }}" target="_blank" title="@{{ x.title }}">
-                        <img src="@{{ x.preview_img }}" width="202" height="145"></a>
+                        <img ng-src="@{{ x.preview_img }}" width="202" height="145"></a>
                     <div class="stream-list-category">
                         <a href="http://www.woshipm.com/category/chuangye" rel="category tag">@{{ x.category }}</a>
                     </div>
                 </div>
                 <div class="stream-list-content">
                     <h2 class="stream-list-title">
-                        <a target="_blank" href="@{{ x.category }}/@{{ x.id }}" title="@{{ x.title }}">@{{ x.title }}</a>
+                        <a target="_blank" href="@{{ x.category }}/@{{ x.id }}"
+                           title="@{{ x.title }}">@{{ x.title }}</a>
                         <span class="iconfont icon-hot" ng-if="x.hot==='是' ? true : false"></span>
                     </h2>
                     <div class="stream-list-meta">
@@ -92,7 +89,6 @@
                     </footer>
                 </div>
             </article>
-
         </div>
         <div class="loadmore loadmore-home">加载更多</div>
     </section>

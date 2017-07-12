@@ -316,7 +316,7 @@ input:disabled {
 }
 
 .loadingBar {
-  background-color: #3889c2;
+  background-color: #e74026;
   display: none;
   height: 2px;
   left: 0;
@@ -348,7 +348,7 @@ input:disabled {
 }
 
 .user-qes-item h2:hover {
-  color: #3889c2
+  color: #e74026
 }
 
 .user-qes-meta {
@@ -437,8 +437,8 @@ input:disabled {
   font-size: 12px !important;
   line-height: 24px !important;
   margin-right: 20px;
-  border-color: #3889c2 !important;
-  color: #3889c2 !important
+  border-color: #e74026 !important;
+  color: #e74026 !important
 }
 
 .button--postlike .iconfont, .button--recommend .iconfont {
@@ -446,7 +446,7 @@ input:disabled {
 }
 
 .button--postlike.is-active, .button--recommend.is-active {
-  background-color: #3889c2;
+  background-color: #e74026;
   color: #fff !important
 }
 
@@ -483,7 +483,7 @@ input:disabled {
 }
 
 .cute {
-  color: #3889c2
+  color: #e74026
 }
 
 .books-nav span {
@@ -888,7 +888,7 @@ input:disabled {
   transition: all .5s cubic-bezier(.3, 0, 0, 1.3) 0s;
   width: 40px;
   z-index: 0;
-  background-color: #3889c2;
+  background-color: #e74026;
   right: 0
 }
 
@@ -930,7 +930,7 @@ input:disabled {
 }
 
 .hot-job-title:hover {
-  color: #3889c2
+  color: #e74026
 }
 
 .hot-job-meta {
@@ -1117,8 +1117,8 @@ input:disabled {
 }
 
 .comment-form .submit:hover {
-  color: #3889c2;
-  border-color: #3889c2
+  color: #e74026;
+  border-color: #e74026
 }
 
 .comment-form p {
@@ -1204,8 +1204,8 @@ input:disabled {
 }
 
 .button--primary {
-  color: #3889c2;
-  border-color: #3889c2
+  color: #e74026;
+  border-color: #e74026
 }
 
 .entry-content {
@@ -1279,7 +1279,7 @@ input:disabled {
   left: 0;
   top: 0;
   bottom: 0;
-  background-color: #3889c2
+  background-color: #e74026
 }
 
 .comment-block {
@@ -1303,7 +1303,7 @@ input:disabled {
 }
 
 .comment-block .comment-avatar .avatar--border svg {
-  fill: #3889c2
+  fill: #e74026
 }
 
 .comment-block .comment-avatar .avatar {
@@ -1335,7 +1335,7 @@ input:disabled {
 }
 
 .hot-post-title:hover {
-  color: #3889c2
+  color: #e74026
 }
 
 .hot-post-meta {
@@ -1405,7 +1405,7 @@ input:disabled {
 }
 
 .user-bookmark li a:hover {
-  color: #3889c2
+  color: #e74026
 }
 
 .user-bookmark li .meta {
@@ -1480,7 +1480,7 @@ input:disabled {
 }
 
 .user-comments .comment-list-left a:hover {
-  color: #3889c2
+  color: #e74026
 }
 
 .user-comments .comment-list-right {
@@ -1513,7 +1513,7 @@ input:disabled {
 }
 
 .author-board-left .author-avatar .avatar--border svg {
-  fill: #3889c2
+  fill: #e74026
 }
 
 .author-board-left .avatar {
@@ -1526,7 +1526,7 @@ input:disabled {
   text-align: center;
   font-size: 12px;
   color: #fff;
-  background-color: #3889c2;
+  background-color: #e74026;
   padding: 2px 6px;
   border-radius: 3px;
   line-height: 1.8
@@ -1612,7 +1612,7 @@ input:disabled {
 }
 
 .hot-question-list .hot-question-item .link:hover {
-  color: #3889c2
+  color: #e74026
 }
 
 .site-tel {
@@ -1634,7 +1634,7 @@ input:disabled {
 
 .comment .comment-author {
   float: left;
-  color: #3889c2
+  color: #e74026
 }
 
 .comment .comment-author .iconfont {
@@ -1700,21 +1700,21 @@ input:disabled {
 }
 
 .rec-book-bottom a:hover {
-  color: #3889c2
+  color: #e74026
 }
 
 .rec-book-bottom a:hover .svgIcon-use {
-  fill: #3889c2
+  fill: #e74026
 }
 
 .post-wrapper:not(:first-child) {
-  border-top: 3px solid #3889c2
+  border-top: 3px solid #e74026
 }
 
 .footer-block-center {
   width: 580px;
   float: left;
-  background: url(../img/footersep.png) no-repeat 100% 0;
+  background: url(../images/footersep.png) no-repeat 100% 0;
   padding-right: 100px
 }
 
@@ -1723,7 +1723,7 @@ input:disabled {
 }
 
 .footer-block-left {
-  background: url(../img/footersep.png) no-repeat 100% 0;
+  background: url(../images/footersep.png) no-repeat 100% 0;
   width: 230px;
   float: left;
   margin-right: 100px;
@@ -1806,8 +1806,8 @@ input:disabled {
 }
 
 .index-nav span.current {
-  border-bottom: 2px solid #3889c2;
-  color: #3889c2
+  border-bottom: 2px solid #e74026;
+  color: #e74026
 }
 
 .index-nav span.mySub {
@@ -1816,7 +1816,7 @@ input:disabled {
 
 .index-nav span.mySub .iconfont {
   margin-right: 5px;
-  color: #3889c2
+  color: #e74026
 }
 
 .widget {
@@ -1841,7 +1841,7 @@ input:disabled {
   width: 3px;
   left: 0;
   top: 4px;
-  background-color: #3889c2
+  background-color: #e74026
 }
 
 .sticky .stream-list-title {
@@ -1882,8 +1882,8 @@ input:disabled {
 }
 
 .nav-links .page-numbers.current, .nav-links .page-numbers:hover {
-  background-color: #3889c2;
-  border-color: #3889c2;
+  background-color: #e74026;
+  border-color: #e74026;
   color: #fff
 }
 
@@ -1905,8 +1905,8 @@ input:disabled {
   display: inline-block;
   margin-top: 30px;
   border-radius: 999em;
-  color: #3889c2;
-  border: 1px solid #3889c2;
+  color: #e74026;
+  border: 1px solid #e74026;
   font-size: 12px;
   padding: 3px 14px
 }
@@ -1916,7 +1916,7 @@ input:disabled {
 }
 
 .error-page .error-btn:hover {
-  background-color: #3889c2;
+  background-color: #e74026;
   color: #fff
 }
 
@@ -1930,7 +1930,7 @@ input:disabled {
 }
 
 .tagPage-header h1 {
-  border-bottom: 2px solid #3889c2;
+  border-bottom: 2px solid #e74026;
   display: inline-block;
   font-size: 18px;
   margin-bottom: -1px;
@@ -1938,7 +1938,7 @@ input:disabled {
 }
 
 .tagPage-header h1 .iconfont {
-  color: #3889c2;
+  color: #e74026;
   margin-right: 8px;
   font-size: 20px;
   display: inline-block
@@ -1959,9 +1959,9 @@ input:disabled {
 }
 
 .tagPage-header .button--subtag.is-active, .tagPage-header .button--subtag:hover {
-  background-color: #3889c2;
+  background-color: #e74026;
   color: #fff;
-  border-color: #3889c2
+  border-color: #e74026
 }
 
 .stream-list-meta {
@@ -2092,7 +2092,7 @@ input:disabled {
 }
 
 .stream-list-item:hover .stream-list-title {
-  color: #3889c2
+  color: #e74026
 }
 
 .stream-list-item:last-child {
@@ -2178,7 +2178,7 @@ input:disabled {
 }
 
 .demo--radio:checked + .demo--radioInput:after {
-  background-color: #3889c2;
+  background-color: #e74026;
   border-radius: 100%;
   content: "";
   display: inline-block;
@@ -2310,7 +2310,7 @@ input:disabled {
 }
 
 .tabBox .supernice li.on {
-  background-color: #3889c2
+  background-color: #e74026
 }
 
 .tabBox .hd {
@@ -2335,7 +2335,7 @@ input:disabled {
 }
 
 .tabBox .hd li.on {
-  box-shadow: inset 0 0 0 2px #3889c2
+  box-shadow: inset 0 0 0 2px #e74026
 }
 
 .tabBox .hd li h3 {
@@ -2399,7 +2399,7 @@ input:disabled {
 }
 
 .here-avatar .avatar--border svg {
-  fill: #3889c2
+  fill: #e74026
 }
 
 .author-page-header {
@@ -2565,8 +2565,8 @@ input:disabled {
 }
 
 .author-page-nav span.current, .author-page-nav span:hover {
-  border-color: #3889c2;
-  color: #3889c2
+  border-color: #e74026;
+  color: #e74026
 }
 
 .block--author {
@@ -2599,7 +2599,7 @@ input:disabled {
 .block--author .date-box time:before {
   height: 11px;
   width: 11px;
-  background-color: #3889c2;
+  background-color: #e74026;
   border-radius: 100%;
   display: inline-block;
   content: "";
@@ -2676,7 +2676,7 @@ input:disabled {
 }
 
 .follow-nav span.current {
-  border-bottom-color: #3889c2
+  border-bottom-color: #e74026
 }
 
 .user-list-item {
@@ -2782,11 +2782,11 @@ input:disabled {
 }
 
 .subnav-ul .menu-item.current-menu-item {
-  color: #3889c2
+  color: #e74026
 }
 
 .subnav-ul .menu-item.current-menu-item.menu-item-has-children:after {
-  border-top-color: #3889c2
+  border-top-color: #e74026
 }
 
 .subnav-ul .menu-item a {
@@ -2794,7 +2794,7 @@ input:disabled {
 }
 
 .subnav-ul .menu-item:hover {
-  color: #3889c2
+  color: #e74026
 }
 
 .subnav-ul .menu-item:hover.menu-item-type-gs_sim {
@@ -2802,7 +2802,7 @@ input:disabled {
 }
 
 .subnav-ul .menu-item:hover.menu-item-has-children:after {
-  border-top-color: #3889c2
+  border-top-color: #e74026
 }
 
 .subnav-ul .menu-item .sub-menu.is-active {
@@ -2900,7 +2900,7 @@ input:disabled {
 }
 
 .header-block .sub-menu .menu-item.menu-item-type-gs_sim .x-line .e-title:hover {
-  color: #3889c2
+  color: #e74026
 }
 
 .header-block .sub-menu .menu-item.menu-item-type-gs_sim .x-line:last-child {
@@ -3024,7 +3024,7 @@ input:disabled {
 
 .user-menu li.current-menu-item {
   background-color: #fff;
-  border-left: 3px solid #3889c2
+  border-left: 3px solid #e74026
 }
 
 .user-menu .iconfont {
@@ -3093,9 +3093,9 @@ input:disabled {
 }
 
 .password-form input[type=submit] {
-  background-color: #3889c2;
+  background-color: #e74026;
   color: #fff;
-  border-color: #3889c2;
+  border-color: #e74026;
   cursor: pointer
 }
 
@@ -3165,7 +3165,7 @@ input:disabled {
 }
 
 .event-banner .hd li.on {
-  background-color: #3889c2
+  background-color: #e74026
 }
 
 .eventGroup {
@@ -3236,7 +3236,7 @@ input:disabled {
 }
 
 .bigfa-paylist-item .post-title:hover {
-  color: #3889c2
+  color: #e74026
 }
 
 .bigfa-paylist-item .date {
@@ -3278,8 +3278,8 @@ input:disabled {
 }
 
 .commentnav .page-numbers.current {
-  background: #3889c2;
-  border-color: #3889c2;
+  background: #e74026;
+  border-color: #e74026;
   color: #fff
 }
 
@@ -3309,11 +3309,11 @@ input:disabled {
 }
 
 .tixian-submit {
-  border: 1px solid #3889c2;
+  border: 1px solid #e74026;
   width: 250px;
   text-align: center;
   line-height: 30px;
-  background-color: #3889c2;
+  background-color: #e74026;
   color: #fff;
   cursor: pointer;
   margin-left: 120px;
@@ -3724,8 +3724,8 @@ input:disabled {
 }
 
 .writing-action-item.pending {
-  background-color: #3889c2;
-  border-color: #3889c2;
+  background-color: #e74026;
+  border-color: #e74026;
   color: #fff
 }
 
@@ -4478,7 +4478,7 @@ img.zoom-img {
 }
 
 .search-form-submit {
-  background: #3889c2;
+  background: #e74026;
   border-radius: 0 5px 5px 0;
   color: #fff;
   border: 0;
@@ -4647,8 +4647,8 @@ img.zoom-img {
 }
 
 .widget-tag-list a:hover {
-  color: #3889c2;
-  border-color: #3889c2
+  color: #e74026;
+  border-color: #e74026
 }
 
 .button--chromeless {
@@ -4663,12 +4663,12 @@ img.zoom-img {
 }
 
 .button--chromeless.is-active {
-  color: #3889c2
+  color: #e74026
 }
 
 .button--recommend.button--chromeless.is-active {
   background-color: #fff;
-  color: #3889c2;
+  color: #e74026;
   border: 0
 }
 
@@ -4735,7 +4735,7 @@ img.zoom-img {
 
 .button--upload {
   display: inline-block;
-  background-color: #3889c2;
+  background-color: #e74026;
   color: #fff;
   margin-right: 10px;
   border-radius: 3px;
@@ -4978,13 +4978,13 @@ body.body-search .icon-search:before {
 .fa-tools-item .tool-btn-item {
   display: inline-block;
   padding: 2px;
-  color: #3889c2;
+  color: #e74026;
   vertical-align: middle;
   font-size: 14px
 }
 
 .fa-tools-item .tool-btn-item:hover {
-  fill: #3889c2
+  fill: #e74026
 }
 
 .hero--standalone {
@@ -5024,7 +5024,7 @@ body.body-search .icon-search:before {
 }
 
 .tools-more-item:hover {
-  color: #3889c2
+  color: #e74026
 }
 
 .button--sendMessage {
@@ -5041,8 +5041,8 @@ body.body-search .icon-search:before {
 }
 
 .header-action-item.tougao {
-  border: 1px solid #3889c2;
-  color: #3889c2;
+  border: 1px solid #e74026;
+  color: #e74026;
   line-height: 27px;
   padding: 0 15px;
   border-radius: 999px;
@@ -5050,7 +5050,7 @@ body.body-search .icon-search:before {
 }
 
 .header-action-item.tougao:hover {
-  background-color: #3889c2;
+  background-color: #e74026;
   color: #fff
 }
 
@@ -5090,8 +5090,8 @@ body.body-search .icon-search:before {
 }
 
 .term-buttons .button.is-active {
-  border-color: #3889c2;
-  background-color: #3889c2
+  border-color: #e74026;
+  background-color: #e74026
 }
 
 .topic-post-list {
@@ -5125,7 +5125,7 @@ body.body-search .icon-search:before {
 }
 
 .topic-post-item h2:hover {
-  color: #3889c2
+  color: #e74026
 }
 
 .topic-post-item p {
@@ -5221,7 +5221,7 @@ body.body-search .icon-search:before {
 
 .phone-form .button--sendMessage {
   border: 0;
-  background-color: #3889c2;
+  background-color: #e74026;
   color: #fff;
   border-radius: 3px;
   padding: 4px
@@ -5249,7 +5249,7 @@ body.body-search .icon-search:before {
   color: #fff;
   border-radius: 3px;
   border: 0;
-  background-color: #3889c2
+  background-color: #e74026
 }
 
 .phone-form {
@@ -5391,7 +5391,7 @@ body.body-search .icon-search:before {
 }
 
 .search-overlay-title:before {
-  background-color: #3889c2;
+  background-color: #e74026;
   border-radius: 3px;
   content: "";
   display: inline-block;
@@ -5448,7 +5448,7 @@ body.body-search .icon-search:before {
 }
 
 .postMetaInline-authorLockup a {
-  color: #3889c2
+  color: #e74026
 }
 
 .postMetaInline-authorLockup time {
@@ -5502,7 +5502,7 @@ body.body-search .icon-search:before {
 }
 
 .massage_ul li a {
-  color: #3889c2
+  color: #e74026
 }
 
 .more_message a {
@@ -5708,7 +5708,7 @@ body.body-search .icon-search:before {
   max-height: 2.8em;
   overflow: hidden;
   flex: 1 1 auto;
-  color: #3889c2;
+  color: #e74026;
   opacity: .8;
   font-weight: 700
 }
@@ -5922,7 +5922,7 @@ body.body-search .icon-search:before {
   color: #fff;
   margin-left: 5px;
   display: inline-block;
-  background-color: #3889c2;
+  background-color: #e74026;
   font-size: 12px;
   padding: 0 4px;
   border-radius: 3px;
@@ -5952,15 +5952,15 @@ body.body-search .icon-search:before {
   display: inline-block;
   border-radius: 999em;
   line-height: 1.1;
-  border: 1px solid #3889c2;
+  border: 1px solid #e74026;
   padding: 1px 5px;
-  color: #3889c2;
+  color: #e74026;
   margin-right: 8px;
   font-size: 12px
 }
 
 .add-cities.is-active {
-  background-color: #3889c2;
+  background-color: #e74026;
   color: #fff
 }
 
@@ -5972,9 +5972,9 @@ body.body-search .icon-search:before {
   display: inline-block;
   border-radius: 999em;
   line-height: 1.1;
-  border: 1px solid #3889c2;
+  border: 1px solid #e74026;
   padding: 1px 5px;
-  color: #3889c2;
+  color: #e74026;
   margin-right: 8px
 }
 
@@ -6083,7 +6083,7 @@ body.body-search .icon-search:before {
 }
 
 .ad-edit-link {
-  color: #3889c2;
+  color: #e74026;
   font-size: 12px;
   display: inline-block;
   margin-left: 5px
@@ -6167,7 +6167,7 @@ body.body-search .icon-search:before {
 }
 
 .news-list-content a {
-  color: #3889c2
+  color: #e74026
 }
 
 .news-list-content br, .news-list-content p {

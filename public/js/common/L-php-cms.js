@@ -250,6 +250,30 @@ app.factory('bannerManageEditService', ['$http', function ($http) {
     };
 }]);
 /**
+ * Created by v_lljunli on 2017/5/17.
+ */
+app.factory('basicInfoService', ['$http', function ($http) {
+    return {
+        saveSlider: function (bannerId,sliderDataExist,sliderDataNewAllFormat) {
+           return $http({
+                method: 'POST',
+                url: '/admin/manage/doc_manage/banner_edit_save_slider',
+                data: $.param({
+
+                    bannerId:bannerId,
+                    sliderDataExist:sliderDataExist,
+                    sliderDataNewAllFormat:sliderDataNewAllFormat
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
+
+
+
+
+    };
+}]);
+/**
  * Created by v_lljunli on 2017/5/10.
  */
 app.factory('categoryAddService', ['$http', function ($http) {
@@ -952,23 +976,23 @@ app.factory('waitForVerifyService',['$http',function ($http) {
  * Created by v_lljunli on 2017/4/25.
  */
 /*
-* L-blog 自定义指令
-* */
+ * L-blog 自定义指令
+ * */
 
 //确认密码一致校验
 app.directive('pwCheck', [function () {
-  return {
-    require: 'ngModel',
-    link: function (scope, elem, attrs, ctrl) {
-      var firstPassword = '#' + attrs.pwCheck;
-      elem.add(firstPassword).on('keyup', function () {
-        scope.$apply(function () {
-          var v = elem.val()===$(firstPassword).val();
-          ctrl.$setValidity('pwmatch', v);
-        });
-      });
+    return {
+        require: 'ngModel',
+        link: function (scope, elem, attrs, ctrl) {
+            var firstPassword = '#' + attrs.pwCheck;
+            elem.add(firstPassword).on('keyup', function () {
+                scope.$apply(function () {
+                    var v = elem.val() === $(firstPassword).val();
+                    ctrl.$setValidity('pwmatch', v);
+                });
+            });
+        }
     }
-  }
 }]);
 
 
@@ -1911,6 +1935,13 @@ app.controller('bannerManageEdit', ['$scope', '$http', 'bannerManageEditService'
 
         });
     };
+
+}]);
+/**
+ * Created by v_lljunli on 2017/5/10.
+ */
+app.controller('basicInfo' , ['$scope', '$http', 'basicInfoService', function ($scope, $http, basicInfoService) {
+
 
 }]);
 /**

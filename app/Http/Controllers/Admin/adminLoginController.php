@@ -45,7 +45,7 @@ class adminLoginController extends Controller
     $password = $request->input('password');
     $code = $request->input('code');
 
-
+//dd(Crypt::encrypt(''));
     /*
      * 从session中获取code
      * */
