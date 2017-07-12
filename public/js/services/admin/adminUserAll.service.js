@@ -3,10 +3,10 @@
  */
 app.factory('adminUserAllService',['$http',function ($http) {
   return {
-    get:function () {
+      adminUserGet:function () {
       return $http({
         method: 'GET',
-        url: 'admin_user_get',
+        url: '/admin/manage/user_manage/admin_user_get',
         headers: {'Content-Type': 'application/x-www-form-urlencoded'}
       });
     },

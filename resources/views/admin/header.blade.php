@@ -15,7 +15,7 @@
     <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
     <script src="http://apps.bdimg.com/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
     <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular-sanitize.min.js"></script>
-    <script src="{{ URL::asset('public/plugins/uploadify/jquery.uploadify.js') }}"></script>
+    <script src="{{ URL::asset('public/plugins/uploadify/jquery.uploadify.min.js') }}"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="{{ URL::asset('public/js/common/app.js') }}"></script>
 
