@@ -30,6 +30,8 @@ class indexController extends Controller
   public function getIndexList(Request $request)
   {
     $docs = Doc::where(['type' => 'post', 'status' => 'published'])->orderBy('published_date', 'desc')->get(['id', 'title', 'published_date', 'category', 'from', 'recommend', 'hot', 'view', 'collection', 'like', 'author', 'tag', 'keyword', 'abstract', 'preview_img', 'content']);
+    $docs2 = Doc::find(1);
+    dd($docs2->adminUser->nickname);
     return response()->json(['code' => 1, 'data' => $docs]);
   }
 
