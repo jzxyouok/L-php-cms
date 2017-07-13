@@ -24,7 +24,31 @@ app.factory('menuManageService', ['$http', function ($http) {
                 headers: {'content-type': 'application/x-www-form-urlencoded'}
             });
         },
-
+        removeMenuCommit: function (id) {
+            return $http({
+                method: 'POST',
+                url: '/admin/manage/doc_manage/remove_menu',
+                data:$.param({
+                    id:id
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
+        editMenuCommit: function (id,name,url,target,parent,order) {
+            return $http({
+                method: 'POST',
+                url: '/admin/manage/doc_manage/edit_menu',
+                data:$.param({
+                    id:id,
+                    name:name,
+                    url:url,
+                    target:target,
+                    parent:parent,
+                    order:order
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
 
     };
 

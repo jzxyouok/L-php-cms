@@ -738,7 +738,31 @@ app.factory('menuManageService', ['$http', function ($http) {
                 headers: {'content-type': 'application/x-www-form-urlencoded'}
             });
         },
-
+        removeMenuCommit: function (id) {
+            return $http({
+                method: 'POST',
+                url: '/admin/manage/doc_manage/remove_menu',
+                data:$.param({
+                    id:id
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
+        editMenuCommit: function (id,name,url,target,parent,order) {
+            return $http({
+                method: 'POST',
+                url: '/admin/manage/doc_manage/edit_menu',
+                data:$.param({
+                    id:id,
+                    name:name,
+                    url:url,
+                    target:target,
+                    parent:parent,
+                    order:order
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
 
     };
 
@@ -2836,7 +2860,10 @@ app.controller('menuManage', ['$scope', '$http', 'menuManageService', function (
     $scope.parent = $scope.parentOptions[0].id;//设置默认值
     $scope.addMenu = function () {
         menuManageService.addMenu($scope.name, $scope.url, $scope.target, $scope.parent, $scope.order).then(function success(res) {
-
+            if (res.data.code === 1) {
+                $('#menu_manage_add_menu_modal').modal('hide');
+                $scope.getMenu();
+            }
         }, function error(res) {
 
         });
@@ -2862,8 +2889,41 @@ app.controller('menuManage', ['$scope', '$http', 'menuManageService', function (
 
         });
     };
+    $scope.removeMenu = function (x) {
+        $scope.menuWaitingForRemove = x;
+    };
+    $scope.removeMenuCommit = function () {
+        menuManageService.removeMenuCommit($scope.menuWaitingForRemove.id).then(function success(res) {
+            if (res.data.code === 1) {
+                $('#menu_manage_remove_menu_modal').modal('hide');
+                $scope.getMenu();
+            }
+        }, function error(res) {
 
+        });
+    };
+    $scope.editMenu = function (x) {
+        $scope.menuWaitingForEdit = x;
+        function extendCopy(p) {
+            var c = {};
+            for (var j in p) {
+                c[j] = p[j];
+            }
+            c.uber = p;
+            return c;
+        }
+        $scope.newMenuWaitingForEdit =extendCopy(x);
+    };
+    $scope.editMenuCommit = function () {
+        menuManageService.editMenuCommit($scope.menuWaitingForEdit.id).then(function success(res) {
+            if (res.data.code === 1) {
+                $('#menu_manage_edit_menu_modal').modal('hide');
+                $scope.getMenu();
+            }
+        }, function error(res) {
 
+        });
+    };
 }]);
 /**
  * Created by v_lljunli on 2017/5/10.

@@ -1,5 +1,5 @@
 <!-- 模态框（Modal） -->
-<div class="modal fade" id="menu_manage_add_menu_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<div class="modal fade" id="menu_manage_edit_menu_modal" tabindex="" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true"
      ng-click="">
     <div class="modal-dialog">
@@ -7,7 +7,7 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">添加菜单项</h4>
+                <h4 class="modal-title">编辑菜单项(<span ng-bind="menuWaitingForEdit.name"></span>)</h4>
             </div>
             <div class="modal-body">
 
@@ -19,7 +19,7 @@
 
                             <div class="col-sm-10">
                                 <input type="text" name="name" class="form-control" id="" placeholder=""
-                                       ng-model="name" ng-pattern="/[\u4e00-\u9fa5a-zA-Z0-9\-_]{2,20}/" required>
+                                       ng-model="newMenuWaitingForEdit.name" ng-pattern="/[\u4e00-\u9fa5a-zA-Z0-9\-_]{2,20}/" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -27,7 +27,7 @@
 
                             <div class="col-sm-10">
                                 <input type="text" name="" class="form-control" id="" placeholder=""
-                                       ng-model="url" required>
+                                       ng-model="newMenuWaitingForEdit.url" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -53,7 +53,7 @@
 
                             <div class="col-sm-10">
                                 <input type="text" name="" class="form-control" id="" placeholder=""
-                                       ng-model="order" ng-pattern="/\d{1,1000}/" required>
+                                       ng-model="newMenuWaitingForEdit.order" ng-pattern="/\d{1,1000}/" required>
                             </div>
                         </div>
 

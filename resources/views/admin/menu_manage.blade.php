@@ -1,6 +1,8 @@
 @include('admin.header')
 <div class="content-wrapper"  ng-controller="menuManage" ng-init="getMenu()">
   @include('admin.modal.menu_manage_add_menu_modal')
+  @include('admin.modal.menu_manage_edit_menu_modal')
+  @include('admin.modal.menu_manage_remove_menu_modal')
   <section class="content-header">
     <h1>
       {{$cms}}
@@ -53,9 +55,9 @@
 
                 <td>
                   <button type="button" class="btn btn-primary btn-xs btn-flat" data-toggle="modal"
-                          data-target="#category_all_edit_modal" ng-click="edit(x)">编辑</button>
+                          data-target="#menu_manage_edit_menu_modal" ng-click="editMenu(x)">编辑</button>
                   <button type="button" class="btn btn-danger btn-xs btn-flat" data-toggle="modal"
-                          data-target="#category_all_remove_modal" ng-click="remove(x)">删除</button>
+                          data-target="#menu_manage_remove_menu_modal" ng-click="removeMenu(x)">删除</button>
                 </td>
               </tr>
 
