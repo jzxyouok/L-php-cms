@@ -222,7 +222,7 @@
 
                     </form>
                     <script src="{{ URL::asset('public/plugins/ueditor/ueditor.config.js') }}"></script>
-                    <script src="{{ URL::asset('public/plugins/ueditor/ueditor.all.js') }}"></script>
+                    <script src="{{ URL::asset('public/plugins/ueditor/ueditor.all.min.js') }}"></script>
                     <script type="text/javascript">
                         var ue = UE.getEditor('container', {
                             initialFrameWidth: '100%'
@@ -248,8 +248,8 @@
                             'multi': false,//设置为true将允许多文件上传
 
                             'onUploadSuccess': function (file, data, response) {//上传成功的回调
-                                console.log(data);
-                                $("#doc_preview_img_preview").attr("src", JSON.parse(data).url);
+
+                                $("#edit_doc_preview_img_preview").attr("src", JSON.parse(data).url);
 
 
                             },

@@ -1,5 +1,5 @@
 <!-- 模态框（Modal） -->
-<div class="modal fade" id="category_all_edit_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<div class="modal fade" id="category_all_edit_modal" tabindex="" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true"
      ng-click="">
     <div class="modal-dialog">
@@ -17,16 +17,16 @@
                             <label for="" class="col-sm-2 control-label">分类名称</label>
 
                             <div class="col-sm-10">
-                                <input type="text" name="name"  class="form-control" id="" placeholder="请输入分类名称"
-                                       ng-model="category.name">
+                                <input type="text" name="name"  class="form-control" id="" placeholder=""
+                                       ng-model="newCategory.name">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="" class="col-sm-2 control-label">别名</label>
 
                             <div class="col-sm-10">
-                                <input type="text" name="slug" class="form-control" id="" placeholder="请输入别名"
-                                       ng-model="category.slug">
+                                <input type="text" name="slug" class="form-control" id="" placeholder=""
+                                       ng-model="newCategory.slug">
                             </div>
                         </div>
                         <div class="form-group">
@@ -42,15 +42,15 @@
                             <label for="" class="col-sm-2 control-label">排序数字</label>
 
                             <div class="col-sm-10">
-                                <input type="text" name="order" class="form-control" id="" placeholder="请输入排序数字"
-                                       ng-model="category.order">
+                                <input type="text" name="order" class="form-control" id="" placeholder=""
+                                       ng-model="order">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">描述</label>
                             <div class="col-sm-10">
-                                <textarea name="remark" class="form-control" rows="3" placeholder="请输入描述信息"
-                                          ng-model="category.remark"></textarea>
+                                <textarea name="remark" class="form-control" rows="3" placeholder=""
+                                          ng-model="remark"></textarea>
                             </div>
                         </div>
                     </div>
@@ -61,8 +61,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
-
-                <button type="button" class="btn btn-primary" ng-click="editCategoryCommit(category)">提交</button>
+                <button type="button" class="btn btn-primary" ng-click="editCategoryCommit()">提交</button>
             </div>
         </div>
 

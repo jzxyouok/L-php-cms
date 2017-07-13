@@ -1,5 +1,5 @@
 @include('admin.header')
-<div class="content-wrapper" ng-controller="categoryAll">
+<div class="content-wrapper" ng-controller="categoryAll" ng-init="getCategories()">
     @include('admin.modal.category_all_edit_modal')
     @include('admin.modal.category_all_remove_modal')
     <section class="content-header">
@@ -37,11 +37,11 @@
                             </tr>
                             <tr ng-repeat="x in data">
                                 <td><input type="checkbox" class="minimal"></td>
-                                <td>@{{x.name}}</td>
-                                <td>@{{x.slug}}</td>
-                                <td>@{{x.parent}}</td>
-                                <td>@{{x.order}}</td>
-                                <td>@{{x.name}}</td>
+                                <td ng-bind="x.name"></td>
+                                <td ng-bind="x.slug"></td>
+                                <td ng-bind="x.parent"></td>
+                                <td ng-bind="x.order"></td>
+                                <td ng-bind="x.name"></td>
 
                                 <td>
                                     <button type="button" class="btn btn-primary btn-xs btn-flat" data-toggle="modal"

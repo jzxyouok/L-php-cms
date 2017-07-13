@@ -62,7 +62,7 @@
                         <a href="http://www.woshipm.com/category/chuangye" rel="category tag">@{{ x.category }}</a>
                     </div>
                 </div>
-               
+
                 <div class="stream-list-content">
                     <h2 class="stream-list-title">
                         <a target="_blank" href="@{{ x.category }}/@{{ x.id }}"
@@ -72,7 +72,7 @@
                     <div class="stream-list-meta">
                 <span class="avatar-inline">
                     <a target="_blank" href="http://www.woshipm.com/u/31217">
-                        <img ng-src="@{{ x.title }}" alt="" height="32" width="32" class="avatar">
+                        <img ng-src="@{{ x.admin_user.avatar }}" alt="" height="32" width="32" class="avatar">
                     </a>
                 </span>
                         <span class="author" data-id="31217">
