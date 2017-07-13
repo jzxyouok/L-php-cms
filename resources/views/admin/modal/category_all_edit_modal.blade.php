@@ -43,14 +43,14 @@
 
                             <div class="col-sm-10">
                                 <input type="text" name="order" class="form-control" id="" placeholder=""
-                                       ng-model="order">
+                                       ng-model="newCategory.order">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 control-label">描述</label>
                             <div class="col-sm-10">
                                 <textarea name="remark" class="form-control" rows="3" placeholder=""
-                                          ng-model="remark"></textarea>
+                                          ng-model="newCategory.remark"></textarea>
                             </div>
                         </div>
                     </div>

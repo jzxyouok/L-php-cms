@@ -2058,11 +2058,7 @@ app.controller('categoryAll', ['$scope', '$http', 'categoryAllService', function
         });
     };
 
-    $scope.edit2 = function () {
-        console.log($scope.category);
-        console.log($scope.newCategory);
 
-    };
 
     $scope.edit = function (x) {
         function extendCopy(p) {
@@ -2078,11 +2074,11 @@ app.controller('categoryAll', ['$scope', '$http', 'categoryAllService', function
         $scope.newCategory =extendCopy(x);
 
 
-        if ($scope.category.parent == 0) {
+        if ($scope.newCategory.parent == 0) {
             $scope.cate = $scope.cateOptions[0].id;
         } else {
             for (var i = 0; i < $scope.cateOptions.length; i++) {
-                if ($scope.cateOptions[i].slug === $scope.category.parent) {
+                if ($scope.cateOptions[i].slug === $scope.newCategory.parent) {
                     $scope.cate = $scope.cateOptions[i].id;
                 }
             }
@@ -2092,7 +2088,7 @@ app.controller('categoryAll', ['$scope', '$http', 'categoryAllService', function
 
     $scope.editCategoryCommit = function () {
 
-        categoryAllService.editCategoryCommit($scope.category.original_id, $scope.name, $scope.slug, $scope.parent, $scope.order, $scope.remark).then(function success(res) {
+        categoryAllService.editCategoryCommit($scope.newCategory.original_id, $scope.newCategory.name, $scope.newCategory.slug, $scope.newCategory.parent, $scope.newCategory.order, $scope.newCategory.remark).then(function success(res) {
             if (res.data.code === 1) {
                 $('#category_all_edit_modal').modal('hide');
             } else {
