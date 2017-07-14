@@ -33,8 +33,8 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">打开方式</label>
                             <div class="col-sm-10">
-                                <select class="form-control" name="target" ng-model="target"
-                                        ng-options="x.id as x.name for x in targetOptions" required>
+                                <select class="form-control" name="targetForEditMenu" ng-model="targetForEditMenu"
+                                        ng-options="x.id as x.name for x in targetForEditMenuOptions" required>
                                     <option value="">-- 请选择 --</option>
                                 </select>
                             </div>
@@ -42,8 +42,8 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">父级菜单项</label>
                             <div class="col-sm-10">
-                                <select class="form-control" name="parent" ng-model="parent"
-                                        ng-options="x.id as x.name for x in parentOptions" required>
+                                <select class="form-control" name="parentForEditMenu" ng-model="parentForEditMenu"
+                                        ng-options="x.id as x.name for x in parentForEditMenuOptions" required>
                                     <option value="">-- 请选择 --</option>
                                 </select>
                             </div>
@@ -66,7 +66,7 @@
             <div class="modal-footer">
 
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary" ng-click="addMenu()">添加</button>
+                <button type="button" class="btn btn-primary" ng-click="editMenuCommit()">保存</button>
             </div>
         </div>
 

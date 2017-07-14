@@ -21,7 +21,7 @@
       <div class="col-md-12">
         <div class="panel">
           <a href="" role="button" class="btn btn-primary btn-sm" data-toggle="modal"
-             data-target="#menu_manage_add_menu_modal" ng-click="getMenu()">
+             data-target="#menu_manage_add_menu_modal" ng-click="addMenu()">
             <span class="fa fa-plus-square" aria-hidden="true">&nbsp;</span>添加菜单
           </a>
 
@@ -37,20 +37,20 @@
             <table class="table table-bordered  table-striped">
               <tr>
 
-                <th>序号</th>
+                <th>id</th>
                 <th>名称</th>
                 <th>父级</th>
                 <th>排序</th>
                 <th>地址</th>
                 <th>操作</th>
               </tr>
-              <tr ng-repeat="x in topMenuData">
+              <tr ng-repeat="x in menuData">
 
-                <td>1</td>
-                <td>@{{x.name}}</td>
-                <td>@{{x.parent}}</td>
-                <td>@{{x.order}}</td>
-                <td>@{{x.url}}</td>
+                <td ng-bind="x.id"></td>
+                <td ng-bind="x.name"></td>
+                <td ng-bind="x.parent"></td>
+                <td ng-bind="x.order"></td>
+                <td ng-bind="x.url"></td>
 
 
                 <td>

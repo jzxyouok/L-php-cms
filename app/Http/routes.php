@@ -82,9 +82,10 @@ Route::group(['namespace' => 'Admin'], function () {
   //菜单管理
   Route::get('/admin/manage/doc_manage/menu_manage', 'menuManageController@view')->name('menu_manage');
   Route::get('/admin/manage/doc_manage/get_menu', 'menuManageController@getMenu')->name('get_menu');
-  Route::post('/admin/manage/doc_manage/add_menu', 'menuManageController@addMenu')->name('add_menu');
+  Route::post('/admin/manage/doc_manage/add_menu_commit', 'menuManageController@addMenuCommit')->name('add_menu_commit');
   Route::post('/admin/manage/doc_manage/remove_menu', 'menuManageController@removeMenu')->name('remove_menu');
   Route::post('/admin/manage/doc_manage/edit_menu', 'menuManageController@editMenu')->name('edit_menu');
+  Route::GET('/admin/manage/doc_manage/get_parent_menu', 'menuManageController@getParentMenu')->name('get_parent_menu');
 
   //轮播管理
   Route::get('/admin/manage/doc_manage/banner_manage', 'bannerManageController@view')->name('banner_manage');

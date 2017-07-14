@@ -3,10 +3,10 @@
  */
 app.factory('menuManageService', ['$http', function ($http) {
     return {
-        addMenu: function (name, url, taget, parent, order) {
+        addMenuCommit: function (name, url, taget, parent, order) {
             return $http({
                 method: 'POST',
-                url: '/admin/manage/doc_manage/add_menu',
+                url: '/admin/manage/doc_manage/add_menu_commit',
                 data: $.param({
                     name: name,
                     url: url,
@@ -46,6 +46,13 @@ app.factory('menuManageService', ['$http', function ($http) {
                     parent:parent,
                     order:order
                 }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
+        getParentMenu: function () {
+            return $http({
+                method: 'GET',
+                url: '/admin/manage/doc_manage/get_parent_menu',
                 headers: {'content-type': 'application/x-www-form-urlencoded'}
             });
         },

@@ -25,7 +25,7 @@ class menuManageController extends Controller
     ]);
   }
 
-  public function addMenu(Request $request)
+  public function addMenuCommit(Request $request)
   {
     $input = Input::all();
     $name = $request->input('name');
@@ -94,5 +94,12 @@ class menuManageController extends Controller
     }else{
       return response()->json(['code'=>0,'msg'=>'更新失败！']);
     }
+  }
+
+
+  public function getParentMenu(Request $request)
+  {
+    $parentMenu=Menu::where('parent',0)->get(['id','name']);
+    return response()->json(['code'=>1,'msg'=>'获取成功','data'=>$parentMenu]);
   }
 }

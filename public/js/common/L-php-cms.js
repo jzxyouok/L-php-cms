@@ -717,10 +717,10 @@ app.factory('mediaManageService', ['$http', function ($http) {
  */
 app.factory('menuManageService', ['$http', function ($http) {
     return {
-        addMenu: function (name, url, taget, parent, order) {
+        addMenuCommit: function (name, url, taget, parent, order) {
             return $http({
                 method: 'POST',
-                url: '/admin/manage/doc_manage/add_menu',
+                url: '/admin/manage/doc_manage/add_menu_commit',
                 data: $.param({
                     name: name,
                     url: url,
@@ -760,6 +760,13 @@ app.factory('menuManageService', ['$http', function ($http) {
                     parent:parent,
                     order:order
                 }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
+        getParentMenu: function () {
+            return $http({
+                method: 'GET',
+                url: '/admin/manage/doc_manage/get_parent_menu',
                 headers: {'content-type': 'application/x-www-form-urlencoded'}
             });
         },
@@ -2843,23 +2850,36 @@ app.controller('mediaManageUpload', ['$scope', '$http', 'mediaManageAllService',
  * Created by v_lljunli on 2017/5/10.
  */
 app.controller('menuManage', ['$scope', '$http', 'menuManageService', function ($scope, $http, menuManageService) {
-    $scope.targetOptions = [
-        {name: '新页面', id: 1},
-        {name: '当前页', id: 2},
 
-    ];
-    $scope.target = $scope.targetOptions[0].id;//设置默认值
-
-
-    $scope.parentOptions = [
-        {name: '新页面', id: 1},
-        {name: '当前页', id: 2},
-
-    ];
-    $scope.parentOptions.unshift({name: '无', id: 0});
-    $scope.parent = $scope.parentOptions[0].id;//设置默认值
     $scope.addMenu = function () {
-        menuManageService.addMenu($scope.name, $scope.url, $scope.target, $scope.parent, $scope.order).then(function success(res) {
+        $scope.targetForAddMenuOptions = [
+            {name: '新页面', id: 1},
+            {name: '当前页', id: 0},
+
+        ];
+        $scope.targetForAddMenu = $scope.targetForAddMenuOptions[0].id;
+
+        menuManageService.getParentMenu().then(function success(res) {
+            $scope.parentForAddMenuOptions = [];
+            if (res.data.code === 1) {
+
+                for (var m = 0; m < res.data.data.length; m++) {
+                    $scope.parentForAddMenuOptions.push({
+                        name: res.data.data[m].name,
+                        id: res.data.data[m].id,
+                    });
+                }
+                $scope.parentForAddMenuOptions.unshift({name: '无', id: 0});
+
+                $scope.parentForAddMenu = $scope.parentForAddMenuOptions[0].id;
+            }
+        }, function error(res) {
+
+        });
+        $scope.getMenu();
+    };
+    $scope.addMenuCommit = function () {
+        menuManageService.addMenuCommit($scope.name, $scope.url, $scope.targetForAddMenu, $scope.parentForAddMenu, $scope.order).then(function success(res) {
             if (res.data.code === 1) {
                 $('#menu_manage_add_menu_modal').modal('hide');
                 $scope.getMenu();
@@ -2903,6 +2923,8 @@ app.controller('menuManage', ['$scope', '$http', 'menuManageService', function (
         });
     };
     $scope.editMenu = function (x) {
+
+
         $scope.menuWaitingForEdit = x;
         function extendCopy(p) {
             var c = {};
@@ -2912,10 +2934,56 @@ app.controller('menuManage', ['$scope', '$http', 'menuManageService', function (
             c.uber = p;
             return c;
         }
-        $scope.newMenuWaitingForEdit =extendCopy(x);
+
+        $scope.newMenuWaitingForEdit = extendCopy(x);
+
+        $scope.targetForEditMenuOptions = [
+            {name: '新页面', id: 1},
+            {name: '当前页', id: 0},
+
+        ];
+        // console.log($scope.newMenuWaitingForEdit);
+        // console.log($scope.targetForEditMenuOptions);
+        for (var h = 0; h < $scope.targetForEditMenuOptions.length; h++) {
+            if ($scope.targetForEditMenuOptions[h].id == $scope.menuWaitingForEdit.target) {
+                // console.log(h);
+                // console.log($scope.targetForEditMenuOptions);
+                $scope.targetForEditMenu = $scope.targetForEditMenuOptions[h].id;
+            }
+        }
+
+        menuManageService.getParentMenu().then(function success(res) {
+            for (var z = 0; z < res.data.data.length; z++) {
+                if ($scope.menuWaitingForEdit.id === res.data.data[z].id) {
+                    res.data.data.splice(z, 1);
+
+                }
+            }
+            $scope.parentForEditMenuOptions = [];
+            if (res.data.code === 1) {
+
+                for (var m = 0; m < res.data.data.length; m++) {
+                    $scope.parentForEditMenuOptions.push({
+                        name: res.data.data[m].name,
+                        id: res.data.data[m].id,
+                    });
+                }
+                console.log($scope.newMenuWaitingForEdit);
+                console.log($scope.parentForEditMenuOptions);
+                $scope.parentForEditMenuOptions.unshift({name: '无', id: 0});
+                for (var h = 0; h < $scope.parentForEditMenuOptions.length; h++) {
+                    if ($scope.parentForEditMenuOptions[h].id == $scope.menuWaitingForEdit.parent) {
+                        $scope.parentForEditMenu = $scope.parentForEditMenuOptions[h].id;
+                    }
+                }
+
+            }
+        }, function error(res) {
+
+        });
     };
     $scope.editMenuCommit = function () {
-        menuManageService.editMenuCommit($scope.menuWaitingForEdit.id).then(function success(res) {
+        menuManageService.editMenuCommit($scope.menuWaitingForEdit.id, $scope.newMenuWaitingForEdit.name, $scope.newMenuWaitingForEdit.url, $scope.targetForEditMenu, $scope.parentForEditMenu, $scope.newMenuWaitingForEdit.order).then(function success(res) {
             if (res.data.code === 1) {
                 $('#menu_manage_edit_menu_modal').modal('hide');
                 $scope.getMenu();
