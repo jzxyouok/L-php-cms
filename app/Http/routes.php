@@ -96,6 +96,10 @@ Route::group(['namespace' => 'Admin'], function () {
   Route::post('/admin/manage/doc_manage/banner_edit_save_slider', 'bannerManageEditController@saveSlider')->name('banner_edit_save_slider');
   Route::post('/admin/manage/doc_manage/banner_edit_slider_get', 'bannerManageEditController@sliderGet')->name('banner_edit_slider_get');
 
+  //采集管理
+  Route::get('/admin/manage/doc_manage/gather_manage', 'gatherManageController@view')->name('gather_manage');
+  Route::get('/admin/manage/doc_manage/start_gather', 'gatherManageController@startGather')->name('start_gather');
+
   //标签管理
   Route::get('/admin/manage/doc_manage/tag_manage', 'tagManageController@view')->name('tag_manage');
   Route::get('/admin/manage/doc_manage/comment_manage', 'commentManageController@view')->name('comment_manage');

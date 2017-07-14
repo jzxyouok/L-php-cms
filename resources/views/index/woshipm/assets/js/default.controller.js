@@ -1,4 +1,5 @@
 app.controller('registerCtrl', ['$scope', '$timeout', 'registerService', '$interval', function ($scope, $timeout, registerService, $interval) {
+
     $scope.registerStyle = true;
     $scope.registerBtnStatus = true;
     $scope.registerSuccess = false;
@@ -73,6 +74,7 @@ app.controller('registerCtrl', ['$scope', '$timeout', 'registerService', '$inter
     };
 
 }]);
+
 app.controller('headerCtrl', ['$scope', '$timeout', 'headerService', function ($scope, $timeout, headerService) {
 
     $scope.loginOut = function () {
@@ -91,13 +93,13 @@ app.controller('headerCtrl', ['$scope', '$timeout', 'headerService', function ($
 
     $scope.getMenu = function () {
         headerService.getMenu().then(function success(res) {
-            $scope.mouse=false;
+                $scope.mouse = false;
 
                 if (res.data.code === 1) {
 
                     for (var m = 0; m < res.data.topData.length; m++) {
                         res.data.topData[m].has_childen = false;
-                        res.data.topData[m].childen=[];
+                        res.data.topData[m].childen = [];
                     }
                     for (var i = 0; i < res.data.topData.length; i++) {
                         for (var j = 0; j < res.data.data.length; j++) {
@@ -118,6 +120,7 @@ app.controller('headerCtrl', ['$scope', '$timeout', 'headerService', function ($
 
 
 }]);
+
 app.controller('contentCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
     $scope.collection = function () {
 
@@ -125,12 +128,13 @@ app.controller('contentCtrl', ['$scope', '$timeout', function ($scope, $timeout)
 
 
 }]);
+
 app.controller('bannerCtrl', ['$scope', 'bannerService', function ($scope, bannerService) {
     $scope.getBanner = function () {
         bannerService.getBanner().then(function success(res) {
             if (res.data.code === 1) {
                 $scope.mainBannerData = res.data.data;
-
+                $scope.littleBannerData = res.data.littleSlider;
             }
         }, function error(res) {
 
@@ -139,6 +143,7 @@ app.controller('bannerCtrl', ['$scope', 'bannerService', function ($scope, banne
 
 
 }]);
+
 app.controller('indexListCtrl', ['$scope', 'indexListService', function ($scope, indexListService) {
     $scope.getDocList = function () {
         indexListService.getDocList().then(function success(res) {
@@ -153,6 +158,7 @@ app.controller('indexListCtrl', ['$scope', 'indexListService', function ($scope,
 
 
 }]);
+
 app.controller('contentCtrl', ['$scope', 'contentService', '$sce', function ($scope, contentService, $sce) {
     $scope.getContent = function () {
         var id = $('#content_id').val();
@@ -168,6 +174,7 @@ app.controller('contentCtrl', ['$scope', 'contentService', '$sce', function ($sc
 
 
 }]);
+
 app.controller('authorBoardCtrl', ['$scope', 'authorBoardService', '$sce', function ($scope, authorBoardService, $sce) {
     $scope.getAuthor = function () {
         var id = $('#content_id').val();
@@ -183,6 +190,7 @@ app.controller('authorBoardCtrl', ['$scope', 'authorBoardService', '$sce', funct
 
 
 }]);
+
 app.controller('hotDocCtrl', ['$scope', 'hotDocService', function ($scope, hotDocService) {
     $scope.getHotDoc = function () {
 

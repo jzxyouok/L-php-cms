@@ -1,9 +1,11 @@
 var app = angular.module('myApp', []);
+
 app.filter('to_trusted', ['$sce', function ($sce) {
     return function (text) {
         return $sce.trustAsHtml(text);
     };
 }]);
+
 app.directive('pwCheck', [function () {
     return {
         require: 'ngModel',
@@ -18,6 +20,7 @@ app.directive('pwCheck', [function () {
         }
     }
 }]);
+
 app.directive("lBanner", function () {
     return {
         restrick: 'A',
@@ -65,6 +68,7 @@ app.factory('registerService', ['$http', function ($http) {
 
     };
 }]);
+
 app.factory('headerService', ['$http', function ($http) {
     return {
         getMenu: function () {
@@ -79,6 +83,7 @@ app.factory('headerService', ['$http', function ($http) {
 
     };
 }]);
+
 app.factory('bannerService', ['$http', function ($http) {
     return {
         getBanner: function () {
@@ -93,6 +98,7 @@ app.factory('bannerService', ['$http', function ($http) {
 
     };
 }]);
+
 app.factory('indexListService', ['$http', function ($http) {
     return {
         getDocList: function () {
@@ -107,6 +113,7 @@ app.factory('indexListService', ['$http', function ($http) {
 
     };
 }]);
+
 app.factory('contentService', ['$http', function ($http) {
     return {
         getContent: function (id) {
@@ -124,6 +131,7 @@ app.factory('contentService', ['$http', function ($http) {
 
     };
 }]);
+
 app.factory('authorBoardService', ['$http', function ($http) {
     return {
         getAuthor: function (id) {
@@ -141,6 +149,7 @@ app.factory('authorBoardService', ['$http', function ($http) {
 
     };
 }]);
+
 app.factory('hotDocService', ['$http', function ($http) {
     return {
         getHotDoc: function () {

@@ -18,29 +18,16 @@
             <div class="hd smallScroll">
                 <ul class="">
 
-                    <li>
+                    <li ng-repeat="little in littleBannerData">
                         <a href="http://www.woshipm.com/pmd/662334.html" target="_blank"
-                           title="%= doc.document_title %>">
-                            <img src="resources/views/index/woshipm/assets/images/little1.gif"></a>
-                        <h3><a href="http://www.woshipm.com/pmd/662334.html" target="_blank"
-                               title="%= doc.document_title %>">%= doc.document_title %></a>
-                        </h3></li>
-
-                    <li>
-                        <a href="http://www.woshipm.com/pmd/662334.html" target="_blank"
-                           title="%= doc.document_title %>"><img
-                                    src="resources/views/index/woshipm/assets/images/little2.gif"></a>
-                        <h3><a href="http://www.woshipm.com/pmd/662334.html" target="_blank"
-                               title="%= doc.document_title %>">%= doc.document_title %></a>
-                        </h3></li>
-                    <li>
-                        <a href="http://www.woshipm.com/pmd/662334.html" target="_blank"
-                           title="%= doc.document_title %>"><img
-                                    src="resources/views/index/woshipm/assets/images/little3.gif"></a>
-                        <h3><a href="http://www.woshipm.com/pmd/662334.html" target="_blank"
-                               title="%= doc.document_title %>">%= doc.document_title %></a>
-                        </h3></li>
-
+                           title="@{{little.title}}">
+                            <img ng-src="@{{little.img_src}}">
+                        </a>
+                        <h3>
+                            <a href="http://www.woshipm.com/pmd/662334.html" target="_blank"
+                               title="@{{little.title}}" ng-bind="little.title"></a>
+                        </h3>
+                    </li>
                 </ul>
             </div>
         </div>

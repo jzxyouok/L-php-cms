@@ -629,6 +629,21 @@ app.factory('editDocService', ['$http', function ($http) {
     };
 }]);
 /**
+ * Created by v_lljunli on 2017/5/10.
+ */
+app.factory('gatherManageService',['$http',function ($http) {
+  return {
+    startGather:function () {
+      return $http({
+        method: 'GET',
+        url: '/admin/manage/doc_manage/start_gather',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+      });
+    },
+
+  };
+}]);
+/**
  * Created by v_lljunli on 2017/5/15.
  */
 
@@ -2121,6 +2136,7 @@ app.controller('categoryAll', ['$scope', '$http', 'categoryAllService', function
 
         categoryAllService.editCategoryCommit($scope.newCategory.original_id, $scope.newCategory.name, $scope.newCategory.slug, $scope.newCategory.parent, $scope.newCategory.order, $scope.newCategory.remark).then(function success(res) {
             if (res.data.code === 1) {
+                $scope.getCategories();
                 $('#category_all_edit_modal').modal('hide');
             } else {
                 $scope.category_edit_msg = res.data.msg;
@@ -2692,6 +2708,19 @@ app.controller('editDoc', ['$scope', '$http', 'editDocService', 'categoryAllServ
             $scope.from,
             $scope.content
         ).then(function success(res) {
+
+        }, function error(res) {
+
+        });
+    };
+
+}]);
+/**
+ * Created by v_lljunli on 2017/5/17.
+ */
+app.controller('gatherManage', ['$scope', '$http', 'gatherManageService', function ($scope, $http, gatherManageService) {
+    $scope.startGather=function(){
+        gatherManageService.startGather().then(function success(res) {
 
         }, function error(res) {
 

@@ -24,7 +24,8 @@ class indexController extends Controller
     //$bannerId =Banner::where('name', '首页主轮播')->first()->toArray();
 
     $sliders = BannerSlider::where('banner_id', 1)->get(['id', 'banner_id', 'img_src', 'title', 'url', 'img_title', 'img_alt'])->toArray();
-    return response()->json(['code' => 1, 'data' => $sliders]);
+    $littleSliders = BannerSlider::where('banner_id', 2)->get(['id', 'banner_id', 'img_src', 'title', 'url', 'img_title', 'img_alt'])->toArray();
+    return response()->json(['code' => 1, 'data' => $sliders,'littleSlider'=>$littleSliders]);
   }
 
   public function getIndexList(Request $request)

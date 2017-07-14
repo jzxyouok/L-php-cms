@@ -47,6 +47,7 @@ return [
   'category_add' => '添加分类',
   'menu_manage' => '菜单管理',
   'banner_manage' => '轮播管理',
+  'gather_manage'=>'采集管理',
   'banner_manage_edit' => '轮播编辑',
   'tag_manage' => '标签管理',
   'comment_manage' => '评论管理',

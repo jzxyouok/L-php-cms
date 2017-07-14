@@ -90,6 +90,7 @@ app.controller('categoryAll', ['$scope', '$http', 'categoryAllService', function
 
         categoryAllService.editCategoryCommit($scope.newCategory.original_id, $scope.newCategory.name, $scope.newCategory.slug, $scope.newCategory.parent, $scope.newCategory.order, $scope.newCategory.remark).then(function success(res) {
             if (res.data.code === 1) {
+                $scope.getCategories();
                 $('#category_all_edit_modal').modal('hide');
             } else {
                 $scope.category_edit_msg = res.data.msg;

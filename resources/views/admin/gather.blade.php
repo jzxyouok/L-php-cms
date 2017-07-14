@@ -1,5 +1,5 @@
 @include('admin.header')
-<div class="content-wrapper" ng-controller="categoryAll" ng-init="getCategories()">
+<div class="content-wrapper" ng-controller="gatherManage" ng-init="startGather()">
     @include('admin.modal.category_all_edit_modal')
     @include('admin.modal.category_all_remove_modal')
     <section class="content-header">

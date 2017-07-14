@@ -295,6 +295,7 @@
 
 
                         <li><a href="/admin/manage/doc_manage/banner_manage"> 轮播管理</a></li>
+                        <li><a href="/admin/manage/doc_manage/gather_manage"> 采集管理</a></li>
                         <li><a href="/admin/manage/doc_manage/tag_manage"> 标签管理</a></li>
                         <li><a href="/admin/manage/doc_manage/comment_manage"> 评论管理</a></li>
                         <li><a href="/admin/manage/doc_manage/message_manage"> 消息管理</a></li>
