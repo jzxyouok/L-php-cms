@@ -1,6 +1,6 @@
 @include('admin.header')
 <div class="content-wrapper" ng-controller="docWrite">
-
+    @include('admin.modal.write_doc_gather_modal')
     <section class="content-header">
         <h1>
             {{$cms}}
@@ -17,6 +17,11 @@
     <section class="content">
         <div class="row">
             <div class="col-md-12">
+                <div class="panel">
+                    <a href="" role="button" class="btn btn-primary btn-sm" data-toggle="modal"
+                       data-target="#write_doc_gather_modal" ng-click="gatherDoc()"> 采集文章 </a>
+
+                </div>
                 <div class="box box-primary">
                     <div class="box-header with-border">
                         <h3 class="box-title">{{$item}}</h3>
@@ -63,9 +68,9 @@
                                 <label class="col-sm-2 control-label">缩略图</label>
                                 <div class="col-sm-10">
                                     <div class="row">
-                                    <img src="/public/upload/image/doc-default.jpg" alt="" class=" col-sm-4"
-                                         id="doc_preview_img_preview"/>
-                                    <p id="doc_preview_img"></p>
+                                        <img src="/public/upload/image/doc-default.jpg" alt="" class=" col-sm-4"
+                                             id="doc_preview_img_preview"/>
+                                        <p id="doc_preview_img"></p>
                                     </div>
                                 </div>
                             </div>
@@ -121,7 +126,8 @@
                                  ng-class="{'has-error':myForm.abstract.$invalid && !myForm.abstract.$pristine,'has-success':myForm.abstract.$valid && !myForm.abstract.$pristine}">
                                 <label class="col-sm-2 control-label">内容摘要</label>
                                 <div class="col-sm-10">
-                                    <textarea name="abstract" class="form-control" rows="3" ng-model="abstract"></textarea>
+                                    <textarea name="abstract" class="form-control" rows="3"
+                                              ng-model="abstract"></textarea>
                                     <span class="help-block ng-hide"
                                           ng-show="myForm.abstract.$invalid && !myForm.abstract.$pristine"><span
                                                 class="glyphicon glyphicon-remove"></span>对不起，排序格式不正确！</span>

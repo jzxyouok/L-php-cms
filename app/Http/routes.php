@@ -55,6 +55,7 @@ Route::group(['namespace' => 'Admin'], function () {
   Route::get('/admin/manage/doc_manage/write', 'writeController@view')->name('write');
   Route::post('/admin/manage/doc_manage/write', 'writeController@write')->name('write_post');
   Route::post('/admin/manage/doc_manage/preview_img_upload', 'writeController@previewImgUpload')->name('preview_img_upload');
+  Route::post('/admin/manage/doc_manage/gather_doc_commit', 'writeController@gatherDocCommit')->name('gather_doc_commit');
 
   Route::get('/admin/manage/doc_manage/published', 'publishedController@view')->name('published');
   Route::post('/admin/manage/doc_manage/get_published_doc', 'publishedController@getPublishedDoc')->name('get_published_doc');
@@ -98,7 +99,8 @@ Route::group(['namespace' => 'Admin'], function () {
 
   //采集管理
   Route::get('/admin/manage/doc_manage/gather_manage', 'gatherManageController@view')->name('gather_manage');
-  Route::get('/admin/manage/doc_manage/start_gather', 'gatherManageController@startGather')->name('start_gather');
+  Route::get('/admin/manage/doc_manage/get_gather', 'gatherManageController@getGather')->name('get_gather');
+  Route::post('/admin/manage/doc_manage/add_gather', 'gatherManageController@addGather')->name('add_gather');
 
   //标签管理
   Route::get('/admin/manage/doc_manage/tag_manage', 'tagManageController@view')->name('tag_manage');

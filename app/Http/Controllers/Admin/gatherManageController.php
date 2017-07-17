@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Model\Doc;
+use App\Http\Model\Gather;
 use App\Http\Model\Upload;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
-use QL\QueryList;
+
 
 
 class gatherManageController extends Controller
@@ -23,33 +24,32 @@ class gatherManageController extends Controller
     ]);
   }
 
-  public function startGather(Request $request)
+  public function getGather(Request $request)
   {
-    $rules = array(
-      //采集id为one这个元素里面的纯文本内容
-      'text' => array('#one', 'text'),
-      //采集class为two下面的超链接的链接
-      'link' => array('.two>a', 'href'),
-      //采集class为two下面的第二张图片的链接
-      'img' => array('.two>img:eq(1)', 'src'),
-      //采集span标签中的HTML内容
-      'other' => array('span', 'html')
-    );
 
-    $html = <<<STR
-<div id="one">
-    <div class="two">
-        <a href="http://querylist.cc">QueryList官网</a>
-        <img src="http://querylist.com/1.jpg" alt="这是图片">
-        <img src="http://querylist.com/2.jpg" alt="这是图片2">
-    </div>
-    <span>其它的<b>一些</b>文本</span>
-</div>        
-STR;
+   $gather= Gather::all();
 
-    $data = QueryList::Query($html, $rules)->data;
-//打印结果
-    dd($data);
+    return response()->json(['code'=>1,'msg'=>'获取成功','data'=>$gather->toArray()]);
+
+  }
+
+  public function addGather(Request $request)
+  {
+    $siteName = $request->input('siteName');
+    $docTitle = $request->input('docTitle');
+    $docContent = $request->input('docContent');
+    $gather = new Gather;
+    $gather->site_name = $siteName;
+    $gather->doc_title = $docTitle;
+    $gather->doc_content = $docContent;
+    $res = $gather->save();
+    if($res){
+      return response()->json(['code'=>1,'msg'=>'添加成功']);
+    }else{
+      return response()->json(['code'=>0,'msg'=>'添加失败']);
+    }
+
+
   }
 
 

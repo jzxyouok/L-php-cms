@@ -535,6 +535,18 @@ app.factory('docWriteService', ['$http', function ($http) {
             });
         },
 
+        gatherDocCommit: function (id,url) {
+            return $http({
+                method: 'POST',
+                url: '/admin/manage/doc_manage/gather_doc_commit',
+                data: $.param({
+                    id: id,
+                    url: url,
+
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
     };
 }]);
 /**
@@ -633,14 +645,26 @@ app.factory('editDocService', ['$http', function ($http) {
  */
 app.factory('gatherManageService',['$http',function ($http) {
   return {
-    startGather:function () {
+    getGather:function () {
       return $http({
         method: 'GET',
-        url: '/admin/manage/doc_manage/start_gather',
+        url: '/admin/manage/doc_manage/get_gather',
         headers: {'Content-Type': 'application/x-www-form-urlencoded'}
       });
     },
 
+      addGather:function (siteName,docTitle,docContent) {
+          return $http({
+              method: 'POST',
+              url: '/admin/manage/doc_manage/add_gather',
+              data:$.param({
+                siteName:siteName,
+                  docTitle:docTitle,
+                  docContent:docContent,
+              }),
+              headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+          });
+      },
   };
 }]);
 /**
@@ -2419,7 +2443,7 @@ app.controller('documentEdit', ['$scope', '$http', 'documentEditService', 'categ
 /**
  * Created by v_lljunli on 2017/4/27.
  */
-app.controller('docWrite', ['$scope', '$http', 'docWriteService', 'categoryAllService', function ($scope, $http, docWriteService, categoryAllService) {
+app.controller('docWrite', ['$scope', '$http', 'docWriteService', 'categoryAllService', 'gatherManageService', function ($scope, $http, docWriteService, categoryAllService, gatherManageService) {
 
     categoryAllService.getCategories().then(function success(res) {
         var data = res.data;
@@ -2470,12 +2494,9 @@ app.controller('docWrite', ['$scope', '$http', 'docWriteService', 'categoryAllSe
 
     });
 
-
     $scope.type = {
         name: 'post'
     };
-
-
 
     $scope.docWrite = function () {
 
@@ -2487,7 +2508,7 @@ app.controller('docWrite', ['$scope', '$http', 'docWriteService', 'categoryAllSe
                 $scope.content = Content;
 
             });
-            $scope.previewImg=$('#doc_preview_img_preview').attr('src');
+            $scope.previewImg = $('#doc_preview_img_preview').attr('src');
 
             docWriteService.get(
                 $scope.type.name,
@@ -2503,7 +2524,7 @@ app.controller('docWrite', ['$scope', '$http', 'docWriteService', 'categoryAllSe
                 $scope.content
             ).then(function success(res) {
                 if (res.data.code === 1) {
-
+window.location.href='/admin/manage/doc_manage/edit_doc/'+res.data.id;
                 }
 
             }, function error(res) {
@@ -2514,8 +2535,41 @@ app.controller('docWrite', ['$scope', '$http', 'docWriteService', 'categoryAllSe
 
     };
 
+    $scope.gatherDoc = function () {
+        gatherManageService.getGather().then(function success(res) {
+            if (res.data.code === 1) {
+                $scope.gatherData = res.data.data;
+                $scope.gatherOptions = [];
 
 
+                for (var i = 0; i < res.data.data.length; i++) {
+                    $scope.gatherOptions.push({
+                        'name': res.data.data[i].site_name,
+                        'id': res.data.data[i].id,
+
+                    });
+                }
+
+                $scope.gather = $scope.gatherOptions[0].id;
+
+            }
+        }, function error(res) {
+
+        });
+    };
+    $scope.gatherDocCommit = function () {
+        docWriteService.gatherDocCommit($scope.gather, $scope.gatherUrl).then(function success(res) {
+            if (res.data.code === 1) {
+                $scope.title = res.data.gatheredData.title;
+                ue.ready(function () {
+                    ue.setContent(res.data.gatheredData.content, false);
+                });
+                $('#write_doc_gather_modal').modal('hide');
+            }
+        }, function error(res) {
+
+        });
+    };
 
 
 }]);
@@ -2719,10 +2773,22 @@ app.controller('editDoc', ['$scope', '$http', 'editDocService', 'categoryAllServ
  * Created by v_lljunli on 2017/5/17.
  */
 app.controller('gatherManage', ['$scope', '$http', 'gatherManageService', function ($scope, $http, gatherManageService) {
-    $scope.startGather=function(){
-        gatherManageService.startGather().then(function success(res) {
+    $scope.getGather = function () {
+        gatherManageService.getGather().then(function success(res) {
+            if (res.data.code === 1) {
+                $scope.gatherData = res.data.data;
+
+
+            }
+        }, function error(res) {
+
+        });
+    };
+    $scope.addGather = function () {
+        gatherManageService.addGather($scope.siteName, $scope.docTitle, $scope.docContent).then(function success(res) {
 
         }, function error(res) {
+
 
         });
     };

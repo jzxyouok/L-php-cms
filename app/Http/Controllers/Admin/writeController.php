@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Model\Doc;
+use App\Http\Model\Gather;
 use App\Http\Model\Upload;
 use Illuminate\Http\Request;
-
+use QL\QueryList;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 
@@ -18,10 +19,9 @@ class writeController extends Controller
       'cms_name' => config('cms.cms_name'),
       'category' => config('cms.doc_manage'),
       'item' => config('cms.write'),
-      'userInfo'=>$request->session()->get('userInfo'),
+      'userInfo' => $request->session()->get('userInfo'),
     ]);
   }
-
 
 
   public function previewImgUpload(Request $request)
@@ -68,8 +68,7 @@ class writeController extends Controller
       }
 
 
-      return response()->json(['code' => 1, 'msg' => '上传成功', 'url' =>'/public/upload/'. $dir . '/' . date('Ymd') . '/' . $fileName, 'fileName' => $fileName, 'size' => round($size / 1024, 2)]);
-
+      return response()->json(['code' => 1, 'msg' => '上传成功', 'url' => '/public/upload/' . $dir . '/' . date('Ymd') . '/' . $fileName, 'fileName' => $fileName, 'size' => round($size / 1024, 2)]);
 
 
     }
@@ -85,17 +84,17 @@ class writeController extends Controller
 
   public function write(Request $request)
   {
-    $type=$request->input('type');
-    $title=$request->input('title');
-    $previewImg=$request->input('previewImg');
-    $tag=$request->input('tag');
-    $category=$request->input('category');
-    $abstract=$request->input('abstract');
-    $keyword=$request->input('keyword');
-    $view=$request->input('view');
-    $author=$request->input('author');
-    $from=$request->input('from');
-    $content=$request->input('content');
+    $type = $request->input('type');
+    $title = $request->input('title');
+    $previewImg = $request->input('previewImg');
+    $tag = $request->input('tag');
+    $category = $request->input('category');
+    $abstract = $request->input('abstract');
+    $keyword = $request->input('keyword');
+    $view = $request->input('view');
+    $author = $request->input('author');
+    $from = $request->input('from');
+    $content = $request->input('content');
 
     $doc = new Doc;
 
@@ -113,27 +112,34 @@ class writeController extends Controller
     $doc->status = 'published';
     $doc->published_date = date('Y-m-d H:i:s', time());
     $doc->url = date('Y-m-d H:i:s', time());
-    $doc->publisher_id =$request->session()->get('userInfo')->id;
+    $doc->publisher_id = $request->session()->get('userInfo')->id;
     $res = $doc->save();
 
-    if($res){
-      return response()->json(['code'=>1,'msg'=>'添加成功']);
+
+    if ($res) {
+      return response()->json(['code' => 1, 'msg' => '添加成功','id'=>$doc->id]);
     }
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+  public function gatherDocCommit(Request $request)
+  {
+    $id = $request->input('id');
+    $url = $request->input('url');
+    $gather=Gather::where('id',$id)->first();
+$title=$gather->toArray()['doc_title'];
+    $content=$gather->toArray()['doc_content'];
+    $rules = array(
+      'title' => array($title, 'text'),
+      'content' => array($content, 'html'),
+    );
+
+    $html = $url;
+
+    $data = QueryList::Query($html, $rules)->data;
+//打印结果
+   return response()->json(['code'=>1,'msg'=>'采集成功','gatheredData'=>$data[0]]);
+  }
+
+
 }

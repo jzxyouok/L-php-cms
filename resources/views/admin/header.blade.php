@@ -41,7 +41,7 @@
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
                     <li class="dropdown messages-menu">
-                        <a href="/" >
+                        <a href="/" target="_blank">
                           网站首页
                         </a>
 

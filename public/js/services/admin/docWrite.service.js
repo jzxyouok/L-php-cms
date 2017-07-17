@@ -24,5 +24,17 @@ app.factory('docWriteService', ['$http', function ($http) {
             });
         },
 
+        gatherDocCommit: function (id,url) {
+            return $http({
+                method: 'POST',
+                url: '/admin/manage/doc_manage/gather_doc_commit',
+                data: $.param({
+                    id: id,
+                    url: url,
+
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
     };
 }]);

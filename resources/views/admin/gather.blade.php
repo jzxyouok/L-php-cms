@@ -1,5 +1,6 @@
 @include('admin.header')
-<div class="content-wrapper" ng-controller="gatherManage" ng-init="startGather()">
+<div class="content-wrapper" ng-controller="gatherManage" ng-init="getGather()">
+    @include('admin.modal.gather_manage_add_gather_modal')
     @include('admin.modal.category_all_edit_modal')
     @include('admin.modal.category_all_remove_modal')
     <section class="content-header">
@@ -18,6 +19,11 @@
     <section class="content">
         <div class="row">
             <div class="col-md-12">
+                <div class="panel">
+                    <a href="" role="button" class="btn btn-primary btn-sm" data-toggle="modal"
+                       data-target="#gather_manage_add_gather_modal" ng-click=""> 添加采集 </a>
+
+                </div>
                 <div class="box box-primary">
                     <div class="box-header with-border">
                         <h3 class="box-title">{{$item}}</h3>
@@ -27,20 +33,15 @@
                         <table class="table table-bordered  table-striped">
                             <tr>
 
-                                <th>分类名称</th>
-                                <th>别名</th>
-                                <th>父级分类</th>
-                                <th>排序</th>
-                                <th>文章数量</th>
-
+                                <th>网站名称</th>
+                                <th>标题类名</th>
+                                <th>内容类名</th>
                                 <th>操作</th>
                             </tr>
-                            <tr ng-repeat="x in data">
-                                <td ng-bind="x.name"></td>
-                                <td ng-bind="x.slug"></td>
-                                <td ng-bind="x.parent"></td>
-                                <td ng-bind="x.order"></td>
-                                <td ng-bind="">999</td>
+                            <tr ng-repeat="x in gatherData">
+                                <td ng-bind="x.site_name"></td>
+                                <td ng-bind="x.doc_title"></td>
+                                <td ng-bind="x.doc_content"></td>
 
                                 <td>
                                     <button type="button" class="btn btn-primary btn-xs btn-flat" data-toggle="modal"
