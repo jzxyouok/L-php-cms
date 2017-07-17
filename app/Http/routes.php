@@ -24,7 +24,7 @@ Route::group(['namespace' => 'Admin'], function () {
  * 用户管理
  * */
 Route::group(['namespace' => 'Admin'], function () {
-
+//后台用户组
   Route::get('/admin/manage/user_manage/admin_user_group_all', 'adminUserGroupAllController@view')->name('admin_user_group_all');
   Route::post('/admin/manage/user_manage/forbidden_status', 'adminUserGroupAllController@forbiddenStatus')->name('admin_user_group_all_forbidden_status');
   Route::post('/admin/manage/user_manage/start_using', 'adminUserGroupAllController@startUsing')->name('admin_user_group_all_start_using');
@@ -35,6 +35,7 @@ Route::group(['namespace' => 'Admin'], function () {
   Route::get('/admin/manage/user_manage/admin_user_group_add', 'adminUserGroupAddController@view')->name('admin_user_group_add');
   Route::post('/admin/manage/user_manage/admin_user_group_add', 'adminUserGroupAddController@add')->name('admin_user_group_add_post');
 
+  //后台用户
   Route::get('/admin/manage/user_manage/admin_user_all', 'adminUserAllController@view')->name('admin_user_all');
   Route::get('/admin/manage/user_manage/admin_user_get', 'adminUserAllController@get')->name('admin_user_get');
   Route::post('/admin/manage/user_manage/upload_avatar', 'adminUserAllController@uploadAvatar')->name('upload_avatar');
@@ -42,7 +43,8 @@ Route::group(['namespace' => 'Admin'], function () {
 
   Route::get('/admin/manage/user_manage/admin_user_add', 'adminUserAddController@view')->name('admin_user_add');
 
-  Route::get('/admin/manage/user_manage/user_all', 'userAllController@view')->name('user_get');
+  //前台用户
+  Route::get('/admin/manage/user_manage/user_all', 'userAllController@view')->name('user_all');
   Route::get('/admin/manage/user_manage/user_add', 'userAddController@view')->name('user_add');
 });
 

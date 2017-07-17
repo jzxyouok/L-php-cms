@@ -38,6 +38,7 @@ class indexController extends Controller
      $doc->adminUser;
 
     }
+    //dd($docs);
    // dd($docs->toArray());
    // dd($docs2->adminUser->nickname);
     return response()->json(['code' => 1, 'data' => $docs->toArray()]);
