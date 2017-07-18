@@ -21,7 +21,7 @@ class CreateDocsTable extends Migration
         $table->string('from');
         $table->string('type');
         $table->string('url');
-        $table->string('recommend');
+        $table->string('recommend')->default(0);
         $table->string('hot');
         $table->string('status');
         $table->string('view');

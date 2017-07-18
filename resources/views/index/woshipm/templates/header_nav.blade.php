@@ -6,15 +6,19 @@
         <div class="header-block">
             <nav class="header-nav">
                 <ul id="" class="subnav-ul layoutSingleColumn layoutSingleColumn--wide">
+                    <li id="" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home">
+                        <a href="/">首页</a>
+                    </li>
                     <li id="" ng-repeat="x in topMenu"
                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home"
                         ng-class="{'menu-item-has-children': x.has_childen }">
-                        <a href="@{{ x.url }}" ng-mouseenter="mouse = true"
+                        <a href="/category/@{{ x.url }}" ng-mouseenter="mouse = true"
                            ng-mouseleave="mouse = false" ng-bind="x.name"></a>
                         <ul class="sub-menu" ng-show="x.has_childen && mouse" ng-mouseenter="mouse = true"
                             ng-mouseleave="mouse = false">
 
-                            <li id="" class="menu-item menu-item-type-taxonomy menu-item-object-category" ng-repeat="xx in x.childen track by $index">
+                            <li id="" class="menu-item menu-item-type-taxonomy menu-item-object-category"
+                                ng-repeat="xx in x.childen track by $index">
                                 <a href="@{{ xx.url }}" ng-bind="xx.name"></a>
                             </li>
 

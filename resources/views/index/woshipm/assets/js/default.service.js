@@ -165,6 +165,26 @@ app.factory('hotDocService', ['$http', function ($http) {
     };
 }]);
 
+app.factory('categoryService', ['$http', function ($http) {
+    return {
+        getCategory: function (name) {
+            return $http({
+                method: 'POST',
+                url: '/category/get_category',
+                data:$.param({
+                    name:name
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
+
+
+
+    };
+}]);
+
+
+
 
 
 

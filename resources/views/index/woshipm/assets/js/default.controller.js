@@ -206,3 +206,18 @@ app.controller('hotDocCtrl', ['$scope', 'hotDocService', function ($scope, hotDo
 
 
 }]);
+
+app.controller('categoryCtrl', ['$scope', 'categoryService', function ($scope, categoryService) {
+    var name = $('.tagPage-header h1').html();
+    console.log(name);
+    $scope.getCategory = function (name) {
+        categoryService.getCategory(name).then(function success(res) {
+            if (res.data.code === 1) {
+                $scope.docByCategory = res.data.docByCategory;
+            }
+        }, function error(res) {
+
+        });
+    };
+
+}]);

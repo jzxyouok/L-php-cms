@@ -201,14 +201,14 @@ Route::group(['namespace' => 'Index'], function () {
   Route::post('/user/register', 'registerController@register')->name('register_post');
   Route::post('/user/check_account', 'registerController@checkAccount')->name('check_account');
 
-//首页
+  //首页
   Route::get('/', 'indexController@view')->name('index');
   Route::get('/index/banner_get', 'indexController@indexBannerGet')->name('index_banner_get');
   Route::get('/index/get_index_list', 'indexController@getIndexList')->name('get_index_list');
   Route::get('/index/get_hot_doc', 'indexController@getHotDoc')->name('get_hot_doc');
   Route::get('/index/get_menu', 'indexController@getMenu')->name('get_menu');
 
-//前台用户中心
+  //前台用户中心
   Route::get('/me', 'meController@mePost')->name('me');
   Route::get('/me/post', 'meController@mePost')->name('me_post');
   Route::get('/me/collection', 'meController@meCollection')->name('me_collection');
@@ -218,19 +218,18 @@ Route::group(['namespace' => 'Index'], function () {
   Route::get('/me/reward', 'meController@meReward')->name('me_reward');
   Route::get('/me/message', 'meController@meMessage')->name('me_message');
   Route::get('/me/setting', 'meController@meSetting')->name('me_setting');
-
   Route::get('/user/{userId}', 'userController@view')->name('user_center');
+
   //内容页
-  Route::get('/{category}/{id}', 'contentController@view')->name('content');
   Route::post('/index/get_content', 'contentController@getContent')->name('get_content');
-
-
   Route::get('/content/:title', 'webSettingController@view')->name('web_setting');
-
   Route::get('/user/find_password', 'findPasswordController@view')->name('find_password');
-  Route::get('/list/:cate', 'completeController@view')->name('complete');
 
 
-
+  //分类页
+  //  Route::get('/list/:cate', 'completeController@view')->name('complete');
+  Route::get('/category/{category}', 'categoryController@view')->name('category');
+  Route::post('/category/get_category', 'categoryController@getCategory')->name('get_category');
+  Route::get('/category/{category}/page/{id?}', 'categoryController@view')->name('');
 
 });
