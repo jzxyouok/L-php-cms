@@ -19,6 +19,7 @@
     <script src="https://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="{{ URL::asset('public/js/common/app.js') }}"></script>
 
+
 </head>
 <body class="skin-blue sidebar-mini hold-transition" ng-app="myApp">
 

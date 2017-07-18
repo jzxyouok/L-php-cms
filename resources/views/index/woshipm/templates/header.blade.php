@@ -17,6 +17,15 @@
   <!--[if lte IE 9]><link rel="stylesheet" href="{{ URL::asset('resources/views/index/woshipm/assets/css/ie9.css') }}" /><![endif]-->
   <!--[if lte IE 8]><link rel="stylesheet" href="{{ URL::asset('resources/views/index/woshipm/assets/css/ie8.css') }}" /><![endif]-->
   <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?721410eda0817f630d9651180070be19";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
 </head>
 <body class="home blog " ng-app="myApp">
 <style>
