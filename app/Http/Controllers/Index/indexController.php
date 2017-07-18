@@ -37,6 +37,8 @@ class indexController extends Controller
       //dd($doc->adminUser->avatar);
      $doc->adminUser;
 
+      $doc->categorys;
+
     }
     //dd($docs);
    // dd($docs->toArray());

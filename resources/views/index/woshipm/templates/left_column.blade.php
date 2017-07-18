@@ -46,7 +46,7 @@
                     <a href="@{{ x.category }}/@{{ x.id }}" target="_blank" title="@{{ x.title }}">
                         <img ng-src="@{{ x.preview_img }}" width="202" height="145"></a>
                     <div class="stream-list-category">
-                        <a href="http://www.woshipm.com/category/chuangye" rel="category tag">@{{ x.category }}</a>
+                        <a href="http://www.woshipm.com/category/chuangye" rel="category tag" ng-bind=" x.categorys.name "></a>
                     </div>
                 </div>
 
