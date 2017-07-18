@@ -30,7 +30,13 @@ class indexController extends Controller
 
   public function getIndexList(Request $request)
   {
-    $docs = Doc::with('adminUser','categorys')->where(['type' => 'post', 'status' => 'published'])->orderBy('published_date', 'desc')->get(['id','publisher_id', 'title', 'published_date', 'category', 'from', 'recommend', 'hot', 'view', 'collection', 'like', 'author', 'tag', 'keyword', 'abstract', 'preview_img', 'content']);
+    $docs = Doc::with(['adminUser'=> function ($query) {
+      $query->select('id','avatar');
+
+    },'categorys'=> function ($query) {
+      $query->select('slug','name');
+
+    }])->where(['type' => 'post', 'status' => 'published'])->orderBy('published_date', 'desc')->get(['id','publisher_id', 'title', 'published_date', 'category', 'from', 'recommend', 'hot', 'view', 'collection', 'like', 'author', 'tag', 'keyword', 'abstract', 'preview_img', 'content']);
 
 
     foreach ($docs as $doc) {
