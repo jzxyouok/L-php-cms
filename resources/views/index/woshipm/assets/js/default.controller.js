@@ -208,12 +208,14 @@ app.controller('hotDocCtrl', ['$scope', 'hotDocService', function ($scope, hotDo
 }]);
 
 app.controller('categoryCtrl', ['$scope', 'categoryService', function ($scope, categoryService) {
-    var name = $('.tagPage-header h1').html();
-    console.log(name);
-    $scope.getCategory = function (name) {
-        categoryService.getCategory(name).then(function success(res) {
+     $scope.name = $('.tagPage-header h1').html();
+
+    $scope.getDocByCategory = function () {
+
+        categoryService.getDocByCategory($scope.name).then(function success(res) {
             if (res.data.code === 1) {
-                $scope.docByCategory = res.data.docByCategory;
+                $scope.docByCategory = res.data.docByCategory.find_doc_by_category;
+
             }
         }, function error(res) {
 

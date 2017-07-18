@@ -12,11 +12,12 @@ class Doc extends Model
 
   public function adminUser()
   {
-    return $this->belongsTo('App\Http\Model\AdminUser', 'publisher_id', 'id')->select('avatar');
+    return $this->belongsTo('App\Http\Model\AdminUser', 'publisher_id', 'id');
   }
 
   public function categorys()
   {
-    return $this->belongsTo('App\Http\Model\Category', 'category', 'slug')->select('name');
+    //return $this->belongsTo('App\Http\Model\Category', 'category', 'slug')->select('name');
+    return $this->belongsTo('App\Http\Model\Category', 'category', 'slug');
   }
 }

@@ -7,6 +7,7 @@ use App\Http\Model\Doc;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
+use Illuminate\Support\Facades\DB;
 
 class categoryController extends Controller
 {
@@ -18,14 +19,19 @@ class categoryController extends Controller
     ]);
   }
 
-  public function getCategory(Request $request)
+  public function getDocByCategory(Request $request)
   {
 
     $name=$request->input('name');
-    $res=Doc::where('title',$name)->get();
-    if($res){
-      return response()->json(['code'=>1,'msg'=>'获取成功','docByCategory'=>$res]);
-    }
+
+
+    $cate=Category::where('name',$name)->first(['name','slug']);
+
+    $cate->findDocByCategory;
+
+
+      return response()->json(['code'=>1,'msg'=>'获取成功','docByCategory'=>$cate->toArray()]);
+
   }
 
 }

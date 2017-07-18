@@ -167,10 +167,10 @@ app.factory('hotDocService', ['$http', function ($http) {
 
 app.factory('categoryService', ['$http', function ($http) {
     return {
-        getCategory: function (name) {
+        getDocByCategory: function (name) {
             return $http({
                 method: 'POST',
-                url: '/category/get_category',
+                url: '/category/get_doc_by_category',
                 data:$.param({
                     name:name
                 }),

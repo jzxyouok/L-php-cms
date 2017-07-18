@@ -229,7 +229,7 @@ Route::group(['namespace' => 'Index'], function () {
   //分类页
   //  Route::get('/list/:cate', 'completeController@view')->name('complete');
   Route::get('/category/{category}', 'categoryController@view')->name('category');
-  Route::post('/category/get_category', 'categoryController@getCategory')->name('get_category');
+  Route::post('/category/get_doc_by_category', 'categoryController@getDocByCategory')->name('get_doc_by_category');
   Route::get('/category/{category}/page/{id?}', 'categoryController@view')->name('');
 
 });

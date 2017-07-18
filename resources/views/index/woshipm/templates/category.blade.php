@@ -1,7 +1,7 @@
 @include('index.woshipm.templates.header')
 @include('index.woshipm.templates.header_nav')
 @include('index.woshipm.templates.search_overlay')
-<div class="contianer u-clearfix" ng-controller="categoryCtrl" ng-init="getCategory()">
+<div class="contianer u-clearfix" ng-controller="categoryCtrl" ng-init="getDocByCategory()">
     <div class="cate-banner">
         <section class="cover cover--grid4">
             <article class="cover-story">
@@ -64,8 +64,8 @@
                     <a href="@{{ x.category }}/@{{ x.id }}" target="_blank" title="@{{x.title}}">
                         <img ng-src="@{{ x.preview_img }}" width="202" height="145">
                     </a>
-                    <div class="stream-list-category"><a href="http://www.woshipm.com/category/pmd" rel="category tag"
-                                                         ng-bind="x.category"></a>
+                    <div class="stream-list-category">
+                        <a href="http://www.woshipm.com/category/pmd" rel="category tag" ng-bind="name"></a>
                     </div>
                 </div>
                 <div class="stream-list-content">
@@ -80,15 +80,19 @@
                                      alt="" height="32" width="32" class="avatar">
                             </a></span>
                         <span class="author"><a
-                                    target="_blank" href="http://www.woshipm.com/u/250387" ng-bind="x.author"></a></span>
+                                    target="_blank" href="http://www.woshipm.com/u/250387"
+                                    ng-bind="x.author"></a></span>
                         <span class="dot"></span>
                         <time ng-bind="x.published_date"></time>
                     </div>
                     <div class="stream-list-snipper" ng-bind="x.abstract"></div>
                     <footer class="stream-list-footer">
-                        <span class="post-views"><span class="iconfont icon-view"></span>阅读 <span ng-bind="x.view"></span></span>
-                        <span class="post-marks"><span class="iconfont icon-heart"></span>收藏 <span ng-bind="x.collection"></span></span>
-                        <span class="post-likes"><span class="iconfont icon-zan"></span>被赞 <span ng-bind="x.like"></span></span>
+                        <span class="post-views"><span class="iconfont icon-view"></span>阅读 <span
+                                    ng-bind="x.view"></span></span>
+                        <span class="post-marks"><span class="iconfont icon-heart"></span>收藏 <span
+                                    ng-bind="x.collection"></span></span>
+                        <span class="post-likes"><span class="iconfont icon-zan"></span>被赞 <span
+                                    ng-bind="x.like"></span></span>
                     </footer>
                 </div>
             </article>
