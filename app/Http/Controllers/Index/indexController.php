@@ -30,7 +30,7 @@ class indexController extends Controller
 
   public function getIndexList(Request $request)
   {
-    $docs = Doc::where(['type' => 'post', 'status' => 'published'])->orderBy('published_date', 'desc')->get(['id', 'title', 'published_date', 'category', 'from', 'recommend', 'hot', 'view', 'collection', 'like', 'author', 'tag', 'keyword', 'abstract', 'preview_img', 'content']);
+    $docs = Doc::where(['type' => 'post', 'status' => 'published'])->orderBy('published_date', 'desc')->get(['id','publisher_id', 'title', 'published_date', 'category', 'from', 'recommend', 'hot', 'view', 'collection', 'like', 'author', 'tag', 'keyword', 'abstract', 'preview_img', 'content']);
     //dd($docs);
 
     foreach ($docs as $doc) {

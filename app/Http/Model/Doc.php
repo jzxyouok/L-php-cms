@@ -13,6 +13,6 @@ class Doc extends Model
   public function adminUser()
   {
     //return $this->belongsTo('App\Http\Model\AdminUser','author','nickname')->select('avatar');
-    return $this->belongsTo('App\Http\Model\AdminUser','publisher_id');
+    return $this->belongsTo('App\Http\Model\AdminUser','publisher_id','id');
     }
 }
