@@ -220,11 +220,8 @@ Route::group(['namespace' => 'Index'], function () {
   Route::get('/me/setting', 'meController@meSetting')->name('me_setting');
   Route::get('/user/{userId}', 'userController@view')->name('user_center');
 
-  //内容页
-
-  Route::post('/index/get_content', 'contentController@getContent')->name('get_content');
-  Route::get('/content/:title', 'webSettingController@view')->name('web_setting');
-  Route::get('/user/find_password', 'findPasswordController@view')->name('find_password');
+  //tag页
+  Route::get('/tag/{tag}', 'tagController@view')->name('tag');
 
 
   //分类页
@@ -232,5 +229,10 @@ Route::group(['namespace' => 'Index'], function () {
   Route::get('/category/{category}', 'categoryController@view')->name('category');
   Route::post('/category/get_doc_by_category', 'categoryController@getDocByCategory')->name('get_doc_by_category');
   Route::get('/category/{category}/page/{id?}', 'categoryController@view')->name('');
+
+  //内容页
+  Route::post('/index/get_content', 'contentController@getContent')->name('get_content');
+  Route::get('/content/:title', 'webSettingController@view')->name('web_setting');
+  Route::get('/user/find_password', 'findPasswordController@view')->name('find_password');
   Route::get('/{category}/{id}', 'contentController@view')->name('content');
 });

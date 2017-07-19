@@ -221,5 +221,8 @@ app.controller('categoryCtrl', ['$scope', 'categoryService', function ($scope, c
 
         });
     };
+    $scope.bb=function () {
+      console.log('bb');
+    };
 
 }]);
