@@ -26,7 +26,7 @@ class categoryController extends Controller
 
 
     $cate=Category::with(['findDocByCategory' => function ($query) {
-      $query->select('category','title','status','publisher_id','published_date','from','type','url','recommend','hot','status','view','collection','like','author','tag','keyword','abstract','preview_img','created_at'        );
+      $query->select('category','title','status','publisher_id','published_date','from','type','url','recommend','hot','status','view','collection','like','author','keyword','abstract','preview_img','created_at'        );
 
     },'findDocByCategory.adminUser'=> function ($query) {
       $query->select('id','avatar');

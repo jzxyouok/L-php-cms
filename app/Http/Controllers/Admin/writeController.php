@@ -117,15 +117,15 @@ class writeController extends Controller
     $res = $doc->save();
     $newDocId = $doc->id;
     $tagFormat = [];
-   // dd($tag);
+    // dd($tag);
     foreach ($tag as $ta) {
 //      $tagFormat['doc_id'] = $newDocId;
 //      $tagFormat['tag'] = $ta;
-      array_push($tagFormat,['doc_id'=>$newDocId,'tag'=>$ta]);
+      array_push($tagFormat, ['doc_id' => $newDocId, 'tag' => $ta]);
     }
-   // dd($tagFormat);
+    // dd($tagFormat);
     //$tagRes =  DB::table('tags')->insert($tagFormat);
-    foreach ($tagFormat as $tagF){
+    foreach ($tagFormat as $tagF) {
       Tag::create($tagF);
     }
 

@@ -22,7 +22,7 @@ class contentController extends Controller
   public function getContent(Request $request)
   {
     $id=$request->input('id');
-    $docs=Doc::where('id',$id)->first(['title','published_date','category','from','recommend','hot','view','collection','like','author','tag','keyword','abstract','preview_img','content']);
+    $docs=Doc::where('id',$id)->first(['title','published_date','category','from','recommend','hot','view','collection','like','author','keyword','abstract','preview_img','content']);
     return response()->json(['code'=>1,'data'=>$docs]);
 }
   

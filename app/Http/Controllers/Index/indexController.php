@@ -36,7 +36,7 @@ class indexController extends Controller
     },'categorys'=> function ($query) {
       $query->select('slug','name');
 
-    }])->where(['type' => 'post', 'status' => 'published'])->orderBy('published_date', 'desc')->get(['id','publisher_id', 'title', 'published_date', 'category', 'from', 'recommend', 'hot', 'view', 'collection', 'like', 'author', 'tag', 'keyword', 'abstract', 'preview_img', 'content']);
+    }])->where(['type' => 'post', 'status' => 'published'])->orderBy('published_date', 'desc')->get(['id','publisher_id', 'title', 'published_date', 'category', 'from', 'recommend', 'hot', 'view', 'collection', 'like', 'author',  'keyword', 'abstract', 'preview_img', 'content']);
 
 
     foreach ($docs as $doc) {
@@ -50,7 +50,7 @@ class indexController extends Controller
 
   public function getHotDoc(Request $request)
   {
-    $docs = Doc::where(['type' => 'post', 'status' => 'published', 'hot' => '是'])->orderBy('published_date', 'desc')->limit(10)->get(['id', 'title', 'published_date', 'category', 'from', 'recommend', 'hot', 'view', 'collection', 'like', 'author', 'tag', 'keyword', 'abstract', 'preview_img', 'content']);
+    $docs = Doc::where(['type' => 'post', 'status' => 'published', 'hot' => '是'])->orderBy('published_date', 'desc')->limit(10)->get(['id', 'title', 'published_date', 'category', 'from', 'recommend', 'hot', 'view', 'collection', 'like', 'author',  'keyword', 'abstract', 'preview_img', 'content']);
     return response()->json(['code' => 1, 'data' => $docs]);
   }
 

@@ -51,7 +51,7 @@
                                  ng-class="{'has-error':myForm.title.$invalid && !myForm.title.$pristine,'has-success':myForm.title.$valid && !myForm.title.$pristine}">
                                 <label for="document_title" class="col-sm-2 control-label">文章标题</label>
 
-                                <div class="col-sm-10">
+                                <div class="col-sm-4">
                                     <input type="text" name="title" ng-model="title"
                                            class="form-control"
                                            id="title" ng-minlength="5" ng-maxlength="30"
@@ -66,7 +66,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">缩略图</label>
-                                <div class="col-sm-10">
+                                <div class="col-sm-7">
                                     <div class="row">
                                         <img src="/public/upload/image/doc-default.jpg" alt="" class=" col-sm-4"
                                              id="doc_preview_img_preview"/>
@@ -80,7 +80,7 @@
                                  ng-class="{'has-error':myForm.tag.$invalid && !myForm.tag.$pristine,'has-success':myForm.tag.$valid && !myForm.tag.$pristine}">
                                 <label for="document_tags" class="col-sm-2 control-label">TAG标签</label>
 
-                                <div class="col-sm-8">
+                                <div class="col-sm-4">
                                     <div class="input-group">
                                         <input type="text" name="tag" ng-model="tag"
                                                class="form-control" required>
@@ -97,18 +97,14 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-2">
-                                    <a href="#addContentTags" role="button" class="btn btn-link"
-                                       data-toggle="modal"><span class="fa fa-tags" aria-hidden="true"></span>新标签</a>
 
-                                </div>
                             </div>
 
 
                             <div class="form-group"
                                  ng-class="{'has-error':myForm.category.$invalid && !myForm.category.$pristine,'has-success':myForm.category.$valid && !myForm.category.$pristine}">
                                 <label class="col-sm-2 control-label">文档分类</label>
-                                <div class="col-sm-10">
+                                <div class="col-sm-4">
 
 
                                     <select class="form-control" name="category" ng-model="category"
@@ -125,7 +121,7 @@
                             <div class="form-group"
                                  ng-class="{'has-error':myForm.abstract.$invalid && !myForm.abstract.$pristine,'has-success':myForm.abstract.$valid && !myForm.abstract.$pristine}">
                                 <label class="col-sm-2 control-label">内容摘要</label>
-                                <div class="col-sm-10">
+                                <div class="col-sm-4">
                                     <textarea name="abstract" class="form-control" rows="3"
                                               ng-model="abstract"></textarea>
                                     <span class="help-block ng-hide"
@@ -140,7 +136,7 @@
                             <div class="form-group"
                                  ng-class="{'has-error':myForm.keyword.$invalid && !myForm.keyword.$pristine,'has-success':myForm.keyword.$valid && !myForm.keyword.$pristine}">
                                 <label class="col-sm-2 control-label">关键字</label>
-                                <div class="col-sm-10">
+                                <div class="col-sm-4">
                                     <input type="text" name="keyword" ng-model="keyword"
                                            class="form-control"
                                            id="" required>
@@ -157,7 +153,7 @@
                             <div class="form-group"
                                  ng-class="{'has-error':myForm.view.$invalid && !myForm.view.$pristine,'has-success':myForm.view.$valid && !myForm.view.$pristine}">
                                 <label class="col-sm-2 control-label">浏览量</label>
-                                <div class="col-sm-10">
+                                <div class="col-sm-4">
                                     <input type="text" name="view" ng-model="view"
                                            class="form-control"
                                            id="" ng-pattern="/^\d{1,4}$/" required>
@@ -173,7 +169,7 @@
 
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">发布人</label>
-                                <div class="col-sm-8">
+                                <div class="col-sm-4">
                                     <div class="input-group">
                                         <input type="text" name="author" ng-model="author"
                                                class="form-control" required>
@@ -193,7 +189,7 @@
                                  ng-class="{'has-error':myForm.from.$invalid && !myForm.from.$pristine,'has-success':myForm.from.$valid && !myForm.from.$pristine}">
                                 <label for="" class="col-sm-2 control-label">来源</label>
 
-                                <div class="col-sm-10">
+                                <div class="col-sm-4">
                                     <input type="text" name="from" ng-model="from"
                                            class="form-control"
                                            id="" required>
@@ -208,7 +204,7 @@
 
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">文档内容</label>
-                                <div class="col-sm-10">
+                                <div class="col-sm-7">
 
                                     <script id="container" name="content" type="text/plain"></script>
 
