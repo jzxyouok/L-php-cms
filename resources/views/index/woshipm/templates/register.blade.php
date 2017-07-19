@@ -21,7 +21,7 @@
 
 <div class="top_box">
     <div class="top_main po_rela">
-        <a href="/" class="top_logo">VIRALNOVA中文网</a>
+        <a href="/" class="top_logo"></a>
         <span class="txz_font">通行证</span>
         <a href="javascript:void(0);" class="t_nav float_r" id="">旗下平台</a>
 

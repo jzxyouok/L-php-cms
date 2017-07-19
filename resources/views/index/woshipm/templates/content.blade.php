@@ -27,7 +27,7 @@
                                 </span>
                             </div>
                         </header>
-                        <div class="post-top-ad">专为互联网人打造的365天成长计划，构建你的产品、运营知识体系，做个有竞争力的互联网人。
+                        <div class="post-top-ad">广告
                             <a target="_blank" href="http://y0.cn/aM4DS">查看详情</a>
                         </div>
                         <div class="entry-content">
