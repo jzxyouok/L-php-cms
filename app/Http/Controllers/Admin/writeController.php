@@ -7,6 +7,7 @@ use App\Http\Model\Gather;
 use App\Http\Model\Tag;
 use App\Http\Model\Upload;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use QL\QueryList;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
@@ -95,14 +96,7 @@ class writeController extends Controller
     $author = $request->input('author');
     $from = $request->input('from');
     $content = $request->input('content');
-    $tagFormat = [];
-    foreach ($tag as $ta) {
-      $tagFormat['doc_id'] = 1;
-      $tagFormat['tag'] = $ta;
-    }
-    //dd($tagFormat);
-    $tagRes = Tag::create($tagFormat);
-    dd($tagRes);
+
 
     $doc = new Doc;
 
@@ -122,6 +116,20 @@ class writeController extends Controller
     $doc->publisher_id = $request->session()->get('userInfo')->id;
     $res = $doc->save();
     $newDocId = $doc->id;
+    $tagFormat = [];
+   // dd($tag);
+    foreach ($tag as $ta) {
+//      $tagFormat['doc_id'] = $newDocId;
+//      $tagFormat['tag'] = $ta;
+      array_push($tagFormat,['doc_id'=>$newDocId,'tag'=>$ta]);
+    }
+   // dd($tagFormat);
+    //$tagRes =  DB::table('tags')->insert($tagFormat);
+    foreach ($tagFormat as $tagF){
+      Tag::create($tagF);
+    }
+
+    //dd($tagFormat);
 
 
     if ($res) {

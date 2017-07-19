@@ -221,6 +221,7 @@ Route::group(['namespace' => 'Index'], function () {
   Route::get('/user/{userId}', 'userController@view')->name('user_center');
 
   //内容页
+  Route::get('/{category}/{id}', 'contentController@view')->name('content');
   Route::post('/index/get_content', 'contentController@getContent')->name('get_content');
   Route::get('/content/:title', 'webSettingController@view')->name('web_setting');
   Route::get('/user/find_password', 'findPasswordController@view')->name('find_password');
