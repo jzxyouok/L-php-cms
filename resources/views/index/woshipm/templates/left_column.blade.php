@@ -6,7 +6,7 @@
                     <div class="swiper-slide" ng-repeat="x in  mainBannerData">
                         <a href="">
                             <img ng-src="@{{x.img_src}}" alt="">
-                            <h3>@{{x.title}}</h3>
+                            <h3 ng-bind="x.title"></h3>
                         </a>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                 <div class="stream-list-content">
                     <h2 class="stream-list-title">
                         <a target="_blank" href="@{{ x.category }}/@{{ x.id }}"
-                           title="@{{ x.title }}">@{{ x.title }}</a>
+                           title="@{{ x.title }}" ng-bind="x.title"></a>
                         <span class="iconfont icon-hot" ng-if="x.hot==='是' ? true : false"></span>
                     </h2>
                     <div class="stream-list-meta">

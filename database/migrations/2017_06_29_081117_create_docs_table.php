@@ -23,11 +23,11 @@ class CreateDocsTable extends Migration
         $table->string('tag');
         $table->string('url');
         $table->string('recommend')->default(0);
-        $table->string('hot');
+        $table->string('hot')->default(0);
         $table->string('status');
-        $table->string('view');
-        $table->string('collection');
-        $table->string('like');
+        $table->string('view')->default(0);
+        $table->string('collection')->default(0);
+        $table->string('like')->default(0);
         $table->string('author');
         $table->string('keyword');
         $table->string('abstract');
