@@ -208,7 +208,7 @@ app.controller('hotDocCtrl', ['$scope', 'hotDocService', function ($scope, hotDo
 }]);
 
 app.controller('categoryCtrl', ['$scope', 'categoryService', function ($scope, categoryService) {
-     $scope.name = $('.tagPage-header h1').html();
+    $scope.name = $('.tagPage-header h1').html();
 
     $scope.getDocByCategory = function () {
 
@@ -221,8 +221,14 @@ app.controller('categoryCtrl', ['$scope', 'categoryService', function ($scope, c
 
         });
     };
-    $scope.getTag=function () {
-        categoryService.getTag().then(function success(res) {
+
+
+}]);
+
+app.controller('cateTagCtrl', ['$scope', 'cateTagService', function ($scope, cateTagService) {
+
+    $scope.getTag = function () {
+        cateTagService.getTag().then(function success(res) {
             if (res.data.code === 1) {
                 $scope.tagData = res.data.tagData;
 
@@ -236,15 +242,29 @@ app.controller('categoryCtrl', ['$scope', 'categoryService', function ($scope, c
 
 app.controller('tagCtrl', ['$scope', 'tagService', function ($scope, tagService) {
     $scope.tag = $('#tag_location').html();
-$scope.getDocByTag=function () {
-    tagService.getDocByTag($scope.tag).then(function success(res) {
-        if (res.data.code === 1) {
-            $scope.docByTag = res.data.docByTag;
+    $scope.getDocByTag = function () {
+        tagService.getDocByTag($scope.tag).then(function success(res) {
+            if (res.data.code === 1) {
+                $scope.docByTag = res.data.docByTag;
 
-        }
-    },function error(res) {
+            }
+        }, function error(res) {
 
-    });
-};
+        });
+    };
+
+}]);
+
+app.controller('cateHotDocCtrl', ['$scope', 'cateHotDocService', 'hotDocService', function ($scope, cateHotDocService, hotDocService) {
+    $scope.cateGetHotDoc = function () {
+        hotDocService.getHotDoc().then(function success(res) {
+            if (res.data.code === 1) {
+                $scope.hotList = res.data.data;
+
+            }
+        }, function error(res) {
+
+        });
+    }
 
 }]);

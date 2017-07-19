@@ -177,6 +177,14 @@ app.factory('categoryService', ['$http', function ($http) {
                 headers: {'content-type': 'application/x-www-form-urlencoded'}
             });
         },
+
+
+    };
+}]);
+
+app.factory('cateTagService', ['$http', function ($http) {
+    return {
+
         getTag: function () {
             return $http({
                 method: 'GET',
@@ -205,6 +213,17 @@ app.factory('tagService', ['$http', function ($http) {
 
     };
 }]);
+
+app.factory('cateHotDocService', ['$http', function ($http) {
+    return {
+
+
+
+    };
+}]);
+
+
+
 
 
 

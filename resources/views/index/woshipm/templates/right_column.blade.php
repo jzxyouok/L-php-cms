@@ -63,9 +63,9 @@
             <ul class="hot-question-list widget-posts-list">
 
                 <li class="hot-question-item" ng-repeat="hot in hotList">
-                    <span class="num">1</span>
+                    <span class="num" ng-bind="$index+1"></span>
                     <a href="@{{ hot.category }}/@{{ hot.id }}" target="_blank"
-                       class="link">@{{ hot.title }}</a>
+                       class="link" ng-bind="hot.title"></a>
                 </li>
 
 

@@ -1,7 +1,7 @@
 @include('index.woshipm.templates.header')
 @include('index.woshipm.templates.header_nav')
 @include('index.woshipm.templates.search_overlay')
-<div class="contianer u-clearfix" ng-controller="categoryCtrl" ng-init="getDocByCategory();getTag();">
+<div class="contianer u-clearfix" >
     <div class="cate-banner">
         <section class="cover cover--grid4">
             <article class="cover-story">
@@ -54,7 +54,7 @@
             </article>
         </section>
     </div>
-    <div class="left-column">
+    <div class="left-column" ng-controller="categoryCtrl" ng-init="getDocByCategory()">
         <header class="tagPage-header">
             <h1>{{$category}}</h1>
         </header>
@@ -114,69 +114,36 @@
     </div>
     <div class="right-column">
         <div class="sidebar">
-            <aside id="" class="widget widget_tags">
+            <aside id="" class="widget widget_tags" ng-controller="cateTagCtrl" ng-init="getTag()">
                 <h3 class="widget-title">热门标签</h3>
                 <div class="widget-tag-list">
                     <a href="/tag/@{{tag.tag}}" target="_blank" ng-repeat="tag in tagData" ng-bind="tag.tag"></a>
-
-
                 </div>
             </aside>
-            <div class="widget-ad"><a href="http://y0.cn/N1aeF" target="_blank"><img
-                            src="http://image.woshipm.com/wp-files/2017/05/WE8RfIvnmganLlRq40xC.gif" alt=""></a></div>
-            <div class="widget-ad"><a href="http://y0.cn/TdHlL" target="_blank"> <img
-                            src="http://image.woshipm.com/wp-files/2017/02/uFvoT70ipUeszC1lkgJ0.png" alt=""> </a></div>
-            <div class="widget-ad"><a href="https://ke.qq.com/course/194507" target="_blank"> <img
-                            src="http://image.woshipm.com/wp-files/2017/06/Q1CJICv8HZNeCr5FKBPN.jpg" alt=""> </a></div>
-            <aside id="hot_posts-3" class="widget widget_hot_posts"><h3 class="widget-title">热门文章</h3>
+            <div class="widget-ad"><a href="http://y0.cn/N1aeF" target="_blank">
+                    <img src="http://image.woshipm.com/wp-files/2017/05/WE8RfIvnmganLlRq40xC.gif" alt=""></a>
+            </div>
+            <div class="widget-ad"><a href="http://y0.cn/TdHlL" target="_blank">
+                    <img src="http://image.woshipm.com/wp-files/2017/02/uFvoT70ipUeszC1lkgJ0.png" alt=""> </a>
+            </div>
+            <div class="widget-ad"><a href="https://ke.qq.com/course/194507" target="_blank">
+                    <img src="http://image.woshipm.com/wp-files/2017/06/Q1CJICv8HZNeCr5FKBPN.jpg" alt=""> </a>
+            </div>
+            <aside id="hot_posts-3" class="widget widget_hot_posts" ng-controller="cateHotDocCtrl" ng-init="cateGetHotDoc()">
+                <h3 class="widget-title">热门文章</h3>
                 <ul class="hot-post-list">
-                    <li class="hot-post-item">
-                        <div class="hot-post-image"><a href="http://www.woshipm.com/pmd/718550.html"
-                                                       target="_blank"><img
-                                        src="http://image.woshipm.com/wp-files/2017/07/VJk4FEqGbnOcgeXXMo52.png!widget65"
-                                        width="95" height="65"></a></div>
-                        <h3 class="hot-post-title"><a target="_blank" href="http://www.woshipm.com/pmd/718550.html">万字干货：手把手教你做需求管理</a>
-                        </h3>
-                        <div class="hot-post-meta"><a target="_blank" href="http://www.woshipm.com/u/48739">wideplum</a>
+                    <li class="hot-post-item" ng-repeat="x in hotList">
+                        <div class="hot-post-image">
+                            <a href="http://www.woshipm.com/pmd/718550.html" target="_blank">
+                                <img ng-src="@{{ x.preview_img }}"
+                                     width="95" height="65">
+                            </a>
                         </div>
-                    </li>
-                    <li class="hot-post-item">
-                        <div class="hot-post-image"><a href="http://www.woshipm.com/pmd/720052.html"
-                                                       target="_blank"><img
-                                        src="http://image.woshipm.com/wp-files/2017/07/pFG8xKaUUGXhmOVlHSyp.png!widget65"
-                                        width="95" height="65"></a></div>
-                        <h3 class="hot-post-title"><a target="_blank" href="http://www.woshipm.com/pmd/720052.html">当我们接到一个新需求点时，应遵循的需求分...</a>
+                        <h3 class="hot-post-title">
+                            <a target="_blank" href="http://www.woshipm.com/pmd/718550.html" ng-bind="x.title"></a>
                         </h3>
-                        <div class="hot-post-meta"><a target="_blank" href="http://www.woshipm.com/u/250387">小麻雀</a>
-                        </div>
-                    </li>
-                    <li class="hot-post-item">
-                        <div class="hot-post-image"><a href="http://www.woshipm.com/pmd/711057.html"
-                                                       target="_blank"><img
-                                        src="http://image.woshipm.com/wp-files/2017/07/Cq5o1g7CDBiqAso3MHLS.png!widget65"
-                                        width="95" height="65"></a></div>
-                        <h3 class="hot-post-title"><a target="_blank" href="http://www.woshipm.com/pmd/711057.html">你自以为知道？产品调研之功能调研的基础方法</a>
-                        </h3>
-                        <div class="hot-post-meta"><a target="_blank"
-                                                      href="http://www.woshipm.com/u/282708">jasonnine</a></div>
-                    </li>
-                    <li class="hot-post-item">
-                        <div class="hot-post-image"><a href="http://www.woshipm.com/pmd/715900.html"
-                                                       target="_blank"><img
-                                        src="http://image.woshipm.com/wp-files/2017/07/ahIrIWegt280Xu55QoUr.jpg!widget65"
-                                        width="95" height="65"></a></div>
-                        <h3 class="hot-post-title"><a target="_blank" href="http://www.woshipm.com/pmd/715900.html">需求管理：如何科学管理需求池内容？</a>
-                        </h3>
-                        <div class="hot-post-meta"><a target="_blank" href="http://www.woshipm.com/u/40201">谭喵</a></div>
-                    </li>
-                    <li class="hot-post-item">
-                        <div class="hot-post-image"><a href="http://www.woshipm.com/pmd/717704.html"
-                                                       target="_blank"><img
-                                        src="http://image.woshipm.com/wp-files/2017/07/anXNKgYCKiYO3b5THCp1.png!widget65"
-                                        width="95" height="65"></a></div>
-                        <h3 class="hot-post-title"><a target="_blank" href="http://www.woshipm.com/pmd/717704.html">数据模型落地产品需求｜数据产品经理的门槛...</a>
-                        </h3>
-                        <div class="hot-post-meta"><a target="_blank" href="http://www.woshipm.com/u/160566">Kevin</a>
+                        <div class="hot-post-meta">
+                            <a target="_blank" href="http://www.woshipm.com/u/48739" ng-bind="x.published_date"></a>
                         </div>
                     </li>
                 </ul>
