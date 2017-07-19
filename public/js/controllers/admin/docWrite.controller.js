@@ -72,7 +72,7 @@ app.controller('docWrite', ['$scope', '$http', 'docWriteService', 'categoryAllSe
                 $scope.type.name,
                 $scope.title,
                 $scope.previewImg,
-                $scope.tag,
+                $scope.tag.split(','),
                 $scope.category,
                 $scope.abstract,
                 $scope.keyword,

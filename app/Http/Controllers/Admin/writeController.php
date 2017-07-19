@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Model\Doc;
 use App\Http\Model\Gather;
+use App\Http\Model\Tag;
 use App\Http\Model\Upload;
 use Illuminate\Http\Request;
 use QL\QueryList;
@@ -22,7 +23,6 @@ class writeController extends Controller
       'userInfo' => $request->session()->get('userInfo'),
     ]);
   }
-
 
   public function previewImgUpload(Request $request)
   {
@@ -95,13 +95,20 @@ class writeController extends Controller
     $author = $request->input('author');
     $from = $request->input('from');
     $content = $request->input('content');
+    $tagFormat = [];
+    foreach ($tag as $ta) {
+      $tagFormat['doc_id'] = 1;
+      $tagFormat['tag'] = $ta;
+    }
+    //dd($tagFormat);
+    $tagRes = Tag::create($tagFormat);
+    dd($tagRes);
 
     $doc = new Doc;
 
     $doc->type = $type;
     $doc->title = $title;
     $doc->preview_img = $previewImg;
-    $doc->tag = $tag;
     $doc->category = $category;
     $doc->abstract = $abstract;
     $doc->keyword = $keyword;
@@ -114,21 +121,21 @@ class writeController extends Controller
     $doc->url = date('Y-m-d H:i:s', time());
     $doc->publisher_id = $request->session()->get('userInfo')->id;
     $res = $doc->save();
+    $newDocId = $doc->id;
 
 
     if ($res) {
-      return response()->json(['code' => 1, 'msg' => '添加成功','id'=>$doc->id]);
+      return response()->json(['code' => 1, 'msg' => '添加成功', 'id' => $doc->id]);
     }
   }
-
 
   public function gatherDocCommit(Request $request)
   {
     $id = $request->input('id');
     $url = $request->input('url');
-    $gather=Gather::where('id',$id)->first();
-$title=$gather->toArray()['doc_title'];
-    $content=$gather->toArray()['doc_content'];
+    $gather = Gather::where('id', $id)->first();
+    $title = $gather->toArray()['doc_title'];
+    $content = $gather->toArray()['doc_content'];
     $rules = array(
       'title' => array($title, 'text'),
       'content' => array($content, 'html'),
@@ -138,7 +145,7 @@ $title=$gather->toArray()['doc_title'];
 
     $data = QueryList::Query($html, $rules)->data;
 //打印结果
-   return response()->json(['code'=>1,'msg'=>'采集成功','gatheredData'=>$data[0]]);
+    return response()->json(['code' => 1, 'msg' => '采集成功', 'gatheredData' => $data[0]]);
   }
 
 
