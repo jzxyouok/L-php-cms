@@ -1,41 +1,47 @@
 @include('index.woshipm.templates.header')
 @include('index.woshipm.templates.header_nav')
 @include('index.woshipm.templates.search_overlay')
-<div class="contianer">
+<div class="contianer" ng-controller="tagCtrl" ng-init="getDocByTag()">
     <div class="left-column">
         <header class="tagPage-header">
             <div class="u-floatRight"></div>
-            <h1><span class="iconfont icon-tag"></span>和 "{{$tag}}" 相关的文章</h1></header>
+            <h1><span class="iconfont icon-tag"></span>和 "<span id="tag_location">{{$tag}}</span>" 相关的文章</h1>
+        </header>
         <div class="blockGroup homeGroup">
-            <article class="u-clearfix stream-list-item">
+            <article class="u-clearfix stream-list-item" ng-repeat="x in docByTag">
                 <div class="stream-list-image">
-                    <a href="http://www.woshipm.com/it/722585.html" target="_blank" title="残酷的下半场，残酷的收割机"><img
-                                src="http://image.woshipm.com/wp-files/2017/07/yQXUJHmxEYwfMlD0wRql.jpg!/both/202x145"
-                                width="202" height="145"></a>
-                    <div class="stream-list-category"><a href="http://www.woshipm.com/category/it" rel="category tag">业界动态</a>
+                    <a href="@{{ x.find_doc_by_tag.category }}/@{{ x.doc_id }}" target="_blank" title="@{{x.find_doc_by_tag.title}}">
+                        <img ng-src="@{{ x.find_doc_by_tag.preview_img }}" width="202" height="145">
+                    </a>
+                    <div class="stream-list-category">
+                        <a href="http://www.woshipm.com/category/pmd" rel="category tag" ng-bind="x.find_doc_by_tag.categorys.name"></a>
                     </div>
                 </div>
                 <div class="stream-list-content">
-                    <h2 class="stream-list-title"><a target="_blank" href="http://www.woshipm.com/it/722585.html"
-                                                     title="残酷的下半场，残酷的收割机">残酷的下半场，残酷的收割机</a></h2>
+                    <h2 class="stream-list-title">
+                        <a target="_blank" href="@{{ x.find_doc_by_tag.category }}/@{{ x.doc_id }}"
+                           title="@{{ x.find_doc_by_tag.title }}" ng-bind="x.find_doc_by_tag.title"></a>
+                    </h2>
                     <div class="stream-list-meta">
-                        <span class="avatar-inline"><a target="_blank" href="http://www.woshipm.com/u/44968"><img
-                                        src="http://image.woshipm.com/wp-files/2015/07/杰伦胖胖动漫.jpg!/both/32x32" alt=""
-                                        height="32" width="32" class="avatar"></a></span><span class="author"
-                                                                                               data-id="44968"><a
-                                    target="_blank" href="http://www.woshipm.com/u/44968">柳胖胖</a></span>
+                        <span class="avatar-inline">
+                            <a target="_blank" href="http://www.woshipm.com/u/250387">
+                                <img ng-src="@{{ x.find_doc_by_tag.admin_user.avatar }}"
+                                     alt="" height="32" width="32" class="avatar">
+                            </a></span>
+                        <span class="author"><a
+                                    target="_blank" href="http://www.woshipm.com/u/250387"
+                                    ng-bind="x.find_doc_by_tag.author"></a></span>
                         <span class="dot"></span>
-                        <time datetime="2017-07-18T13:30:12+08:00">2017/07/18</time>
+                        <time ng-bind="x.find_doc_by_tag.published_date"></time>
                     </div>
-                    <div class="stream-list-snipper">
-                        互联网下半场，APP的红利期已经逐渐远去，头部APP正在残酷的挤压着腰部与底部APP的市场……
-
-                        QM曾经出过一个很有意思的榜单，关于不同月活规模的app产品的数量变化（见下...
-                    </div>
+                    <div class="stream-list-snipper" ng-bind="x.find_doc_by_tag.abstract"></div>
                     <footer class="stream-list-footer">
-                        <span class="post-views"><span class="iconfont icon-view"></span>阅读 2.3k</span>
-                        <span class="post-marks"><span class="iconfont icon-heart"></span>收藏 6</span>
-                        <span class="post-likes"><span class="iconfont icon-zan"></span>被赞 3</span>
+                        <span class="post-views"><span class="iconfont icon-view"></span>阅读 <span
+                                    ng-bind="x.find_doc_by_tag.view"></span></span>
+                        <span class="post-marks"><span class="iconfont icon-heart"></span>收藏 <span
+                                    ng-bind="x.find_doc_by_tag.collection"></span></span>
+                        <span class="post-likes"><span class="iconfont icon-zan"></span>被赞 <span
+                                    ng-bind="x.find_doc_by_tag.like"></span></span>
                     </footer>
                 </div>
             </article>

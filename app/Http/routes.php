@@ -221,14 +221,15 @@ Route::group(['namespace' => 'Index'], function () {
   Route::get('/user/{userId}', 'userController@view')->name('user_center');
 
   //tag页
+  Route::post('/tag/get_doc_by_tag', 'tagController@getDocByTag')->name('get_doc_by_tag');
   Route::get('/tag/{tag}', 'tagController@view')->name('tag');
 
-
   //分类页
-  //  Route::get('/list/:cate', 'completeController@view')->name('complete');
+  Route::get('/category/get_tag', 'categoryController@getTag')->name('category_get_tag');
   Route::get('/category/{category}', 'categoryController@view')->name('category');
   Route::post('/category/get_doc_by_category', 'categoryController@getDocByCategory')->name('get_doc_by_category');
   Route::get('/category/{category}/page/{id?}', 'categoryController@view')->name('');
+
 
   //内容页
   Route::post('/index/get_content', 'contentController@getContent')->name('get_content');

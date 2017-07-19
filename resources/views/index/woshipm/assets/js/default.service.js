@@ -177,11 +177,35 @@ app.factory('categoryService', ['$http', function ($http) {
                 headers: {'content-type': 'application/x-www-form-urlencoded'}
             });
         },
-
+        getTag: function () {
+            return $http({
+                method: 'GET',
+                url: '/category/get_tag',
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
 
 
     };
 }]);
+
+app.factory('tagService', ['$http', function ($http) {
+    return {
+        getDocByTag: function (tag) {
+            return $http({
+                method: 'POST',
+                url: '/tag/get_doc_by_tag',
+                data:$.param({
+                    tag:tag
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
+
+
+    };
+}]);
+
 
 
 

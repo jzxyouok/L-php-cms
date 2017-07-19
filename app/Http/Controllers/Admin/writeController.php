@@ -103,6 +103,7 @@ class writeController extends Controller
     $doc->type = $type;
     $doc->title = $title;
     $doc->preview_img = $previewImg;
+    $doc->tag = implode(',',$tag);
     $doc->category = $category;
     $doc->abstract = $abstract;
     $doc->keyword = $keyword;

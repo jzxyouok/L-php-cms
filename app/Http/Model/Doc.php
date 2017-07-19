@@ -20,4 +20,6 @@ class Doc extends Model
     //return $this->belongsTo('App\Http\Model\Category', 'category', 'slug')->select('name');
     return $this->belongsTo('App\Http\Model\Category', 'category', 'slug');
   }
+
+
 }

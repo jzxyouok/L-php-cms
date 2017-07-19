@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="735742ba-6989-49b0-a7fe-9f9d75cc8c11" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Index/tagController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/templates/tag.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/writeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/writeController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Index/categoryController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Index/categoryController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Index/tagController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Index/tagController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Model/Doc.php" afterPath="$PROJECT_DIR$/app/Http/Model/Doc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Model/Tag.php" afterPath="$PROJECT_DIR$/app/Http/Model/Tag.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2017_06_29_081117_create_docs_table.php" afterPath="$PROJECT_DIR$/database/migrations/2017_06_29_081117_create_docs_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/assets/js/default.controller.js" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/assets/js/default.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/assets/js/default.service.js" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/assets/js/default.service.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/templates/category.blade.php" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/templates/category.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/templates/tag.blade.php" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/templates/tag.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,8 +41,8 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="233" column="54" lean-forward="true" selection-start-line="233" selection-start-column="54" selection-end-line="233" selection-end-column="54" />
+            <state relative-caret-position="368">
+              <caret line="223" column="63" lean-forward="false" selection-start-line="223" selection-start-column="52" selection-end-line="223" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -46,38 +51,8 @@
       <file leaf-file-name="tagController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Index/tagController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="category.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/index/woshipm/templates/category.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="3" column="96" lean-forward="false" selection-start-line="3" selection-start-column="96" selection-end-line="3" selection-end-column="96" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="default.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/index/woshipm/assets/js/default.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="224" column="21" lean-forward="false" selection-start-line="224" selection-start-column="21" selection-end-line="224" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="default.service.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/index/woshipm/assets/js/default.service.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="168" column="12" lean-forward="true" selection-start-line="168" selection-start-column="12" selection-end-line="168" selection-end-column="12" />
+            <state relative-caret-position="186">
+              <caret line="16" column="48" lean-forward="true" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -86,20 +61,70 @@
       <file leaf-file-name="categoryController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Index/categoryController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="28" column="164" lean-forward="false" selection-start-line="28" selection-start-column="164" selection-end-line="28" selection-end-column="164" />
+            <state relative-caret-position="452">
+              <caret line="39" column="91" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="91" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tag.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Category.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Model/Category.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default.controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/index/woshipm/assets/js/default.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="587">
+              <caret line="242" column="0" lean-forward="true" selection-start-line="242" selection-start-column="0" selection-end-line="242" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Doc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Model/Doc.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="410">
+              <caret line="20" column="72" lean-forward="false" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tag.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Model/Tag.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default.service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/index/woshipm/assets/js/default.service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="188" column="6" lean-forward="true" selection-start-line="188" selection-start-column="6" selection-end-line="188" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tag.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/index/woshipm/templates/tag.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="7" column="64" lean-forward="false" selection-start-line="7" selection-start-column="64" selection-end-line="7" selection-end-column="64" />
+            <state relative-caret-position="378">
+              <caret line="16" column="126" lean-forward="false" selection-start-line="16" selection-start-column="126" selection-end-line="16" selection-end-column="126" />
               <folding>
-                <element signature="e#3298#3302#1#HTML" expanded="true" />
+                <element signature="e#3647#3651#1#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -110,26 +135,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="502">
               <caret line="26" column="44" lean-forward="true" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="indexController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Index/indexController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="536">
-              <caret line="38" column="229" lean-forward="false" selection-start-line="38" selection-start-column="229" selection-end-line="38" selection-end-column="229" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contentController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Index/contentController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="29" column="2" lean-forward="true" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -228,24 +233,24 @@
         <option value="$PROJECT_DIR$/resources/views/index/woshipm/templates/header.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/index/woshipm/templates/header_nav.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/index/woshipm/templates/left_column.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/index/woshipm/assets/js/default.service.js" />
         <option value="$PROJECT_DIR$/app/Http/Model/Category.php" />
-        <option value="$PROJECT_DIR$/app/Http/Model/Doc.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2017_06_29_081117_create_docs_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_07_19_013043_create_tags_table.php" />
         <option value="$PROJECT_DIR$/public/js/controllers/admin/docWrite.controller.js" />
-        <option value="$PROJECT_DIR$/app/Http/Model/Tag.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/edit_doc.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/write.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/writeController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Index/indexController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Index/contentController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Index/categoryController.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/resources/views/index/woshipm/templates/tag.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Index/tagController.php" />
-        <option value="$PROJECT_DIR$/resources/views/index/woshipm/assets/js/default.controller.js" />
         <option value="$PROJECT_DIR$/resources/views/index/woshipm/templates/category.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/index/woshipm/assets/js/default.service.js" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2017_06_29_081117_create_docs_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/writeController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Model/Tag.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Index/categoryController.php" />
+        <option value="$PROJECT_DIR$/resources/views/index/woshipm/assets/js/default.controller.js" />
+        <option value="$PROJECT_DIR$/app/Http/Model/Doc.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Index/tagController.php" />
+        <option value="$PROJECT_DIR$/resources/views/index/woshipm/templates/tag.blade.php" />
       </list>
     </option>
   </component>
@@ -1021,12 +1026,12 @@
       <workItem from="1500341519646" duration="28467000" />
       <workItem from="1500430019366" duration="18000" />
       <workItem from="1500430171355" duration="144000" />
-      <workItem from="1500430361436" duration="6072000" />
+      <workItem from="1500430361436" duration="14476000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1451705000" />
+    <option name="totallyTimeSpent" value="1460109000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1046,10 +1051,10 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279003" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32981783" sideWeight="0.50586355" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32981783" sideWeight="0.49413645" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32981783" sideWeight="0.49413645" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32981783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2496871" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32885906" sideWeight="0.49200428" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.49200428" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26439232" sideWeight="0.50499284" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1294,28 +1299,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Model/Doc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="72" lean-forward="false" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Model/Category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="56" lean-forward="false" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2017_06_29_081117_create_docs_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="28" column="31" lean-forward="true" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2017_07_17_074427_create_gather_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="451">
@@ -1366,14 +1349,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Model/Tag.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/write.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -1390,30 +1365,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/writeController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="121" column="41" lean-forward="false" selection-start-line="121" selection-start-column="41" selection-end-line="121" selection-end-column="41" />
-          <folding>
-            <element signature="e#336#642#0#PHP" expanded="false" />
-            <element signature="e#646#2515#0#PHP" expanded="false" />
-            <element signature="e#4073#4621#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/services/admin/docWrite.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="26" column="44" lean-forward="true" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Index/indexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="38" column="229" lean-forward="false" selection-start-line="38" selection-start-column="229" selection-end-line="38" selection-end-column="229" />
+        <state relative-caret-position="368">
+          <caret line="223" column="63" lean-forward="false" selection-start-line="223" selection-start-column="52" selection-end-line="223" selection-end-column="63" />
           <folding />
         </state>
       </provider>
@@ -1426,61 +1381,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Index/indexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="233" column="54" lean-forward="true" selection-start-line="233" selection-start-column="54" selection-end-line="233" selection-end-column="54" />
+        <state relative-caret-position="536">
+          <caret line="38" column="229" lean-forward="false" selection-start-line="38" selection-start-column="229" selection-end-line="38" selection-end-column="229" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Index/tagController.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2017_06_29_081117_create_docs_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        <state relative-caret-position="315">
+          <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Index/categoryController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/writeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="28" column="164" lean-forward="false" selection-start-line="28" selection-start-column="164" selection-end-line="28" selection-end-column="164" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/index/woshipm/templates/tag.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="7" column="64" lean-forward="false" selection-start-line="7" selection-start-column="64" selection-end-line="7" selection-end-column="64" />
+        <state relative-caret-position="-84">
+          <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
           <folding>
-            <element signature="e#3298#3302#1#HTML" expanded="true" />
+            <element signature="e#336#642#0#PHP" expanded="false" />
+            <element signature="e#646#2515#0#PHP" expanded="false" />
+            <element signature="e#4108#4656#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/index/woshipm/assets/js/default.service.js">
+    <entry file="file://$PROJECT_DIR$/resources/views/index/woshipm/templates/category.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="168" column="12" lean-forward="true" selection-start-line="168" selection-start-column="12" selection-end-line="168" selection-end-column="12" />
+        <state relative-caret-position="295">
+          <caret line="61" column="11" lean-forward="true" selection-start-line="61" selection-start-column="11" selection-end-line="97" selection-end-column="22" />
+          <folding>
+            <element signature="e#3622#5900#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/services/admin/docWrite.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="26" column="44" lean-forward="true" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/index/woshipm/assets/js/default.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="224" column="21" lean-forward="false" selection-start-line="224" selection-start-column="21" selection-end-line="224" selection-end-column="21" />
+        <state relative-caret-position="587">
+          <caret line="242" column="0" lean-forward="true" selection-start-line="242" selection-start-column="0" selection-end-line="242" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/index/woshipm/templates/category.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Model/Category.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="96" lean-forward="false" selection-start-line="3" selection-start-column="96" selection-end-line="3" selection-end-column="96" />
+        <state relative-caret-position="357">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Index/categoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="39" column="91" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Index/tagController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="16" column="48" lean-forward="true" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Model/Doc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="20" column="72" lean-forward="false" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Model/Tag.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/index/woshipm/assets/js/default.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="188" column="6" lean-forward="true" selection-start-line="188" selection-start-column="6" selection-end-line="188" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/index/woshipm/templates/tag.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="16" column="126" lean-forward="false" selection-start-line="16" selection-start-column="126" selection-end-line="16" selection-end-column="126" />
+          <folding>
+            <element signature="e#3647#3651#1#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,7 +1,7 @@
 @include('index.woshipm.templates.header')
 @include('index.woshipm.templates.header_nav')
 @include('index.woshipm.templates.search_overlay')
-<div class="contianer u-clearfix" ng-controller="categoryCtrl" ng-init="getDocByCategory();bb();">
+<div class="contianer u-clearfix" ng-controller="categoryCtrl" ng-init="getDocByCategory();getTag();">
     <div class="cate-banner">
         <section class="cover cover--grid4">
             <article class="cover-story">
@@ -117,7 +117,7 @@
             <aside id="" class="widget widget_tags">
                 <h3 class="widget-title">热门标签</h3>
                 <div class="widget-tag-list">
-                    <a href="http://www.woshipm.com/tag/app" target="_blank">app</a>
+                    <a href="/tag/@{{tag.tag}}" target="_blank" ng-repeat="tag in tagData" ng-bind="tag.tag"></a>
 
 
                 </div>
