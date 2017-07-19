@@ -28,7 +28,6 @@ class CreateDocsTable extends Migration
         $table->string('collection');
         $table->string('like');
         $table->string('author');
-        $table->string('tag');
         $table->string('keyword');
         $table->string('abstract');
         $table->string('preview_img');
