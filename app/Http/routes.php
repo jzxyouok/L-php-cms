@@ -195,10 +195,11 @@ Route::group(['namespace' => 'Install'], function () {
  * */
 Route::group(['namespace' => 'Index'], function () {
 
-  //登录
+  //注册登录
   Route::get('/user/login', 'loginController@view')->name('login');
   Route::get('/user/register', 'registerController@view')->name('register');
   Route::post('/user/register', 'registerController@register')->name('register_post');
+  Route::post('/user/send_register_email', 'registerController@sendRegisterEmail')->name('send_register_email');
   Route::post('/user/check_account', 'registerController@checkAccount')->name('check_account');
 
   //首页

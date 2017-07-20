@@ -63,17 +63,17 @@
                     </a>
                 </span>
                         <span class="author" data-id="31217">
-                            <a target="_blank" href="http://www.woshipm.com/u/31217">@{{ x.author }}</a></span>
+                            <a target="_blank" href="http://www.woshipm.com/u/31217" ng-bind="x.author"></a></span>
                         <span class="dot"></span>
-                        <time>@{{ x.published_date }}</time>
+                        <time ng-bind="x.published_date"></time>
                     </div>
-                    <div class="stream-list-snipper">
-                        @{{ x.abstract }}
+                    <div class="stream-list-snipper" ng-bind="x.abstract">
+
                     </div>
                     <footer class="stream-list-footer">
-                        <span class="post-views"><span class="iconfont icon-view"></span>阅读@{{ x.view }}</span>
-                        <span class="post-marks"><span class="iconfont icon-heart"></span>收藏 @{{ x.collection }}</span>
-                        <span class="post-likes"><span class="iconfont icon-zan"></span>被赞@{{ x.like }}</span>
+                        <span class="post-views"><span class="iconfont icon-view"></span>阅读 <span ng-bind="x.view"></span></span>
+                        <span class="post-marks"><span class="iconfont icon-heart"></span>收藏 <span ng-bind="x.collection"></span></span>
+                        <span class="post-likes"><span class="iconfont icon-zan"></span>被赞 <span ng-bind="x.like"></span></span>
                     </footer>
                 </div>
             </article>

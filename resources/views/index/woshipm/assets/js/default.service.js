@@ -65,6 +65,17 @@ app.factory('registerService', ['$http', function ($http) {
                 headers: {'content-type': 'application/x-www-form-urlencoded'}
             });
         },
+        sendRegisterEmail: function (registerStyle,account) {
+            return $http({
+                method: 'POST',
+                url: '/user/send_register_email',
+                data:$.param({
+                    registerStyle:registerStyle,
+                    account:account,
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
 
     };
 }]);

@@ -12,8 +12,9 @@
         "jaeger/querylist": "^3.2",
         "jaeger/querylist-ext-request": "^1.0",
         "jaeger/querylist-ext-multi": "^1.0",
-        "jaeger/querylist-ext-login": "^1.0"
-
+        "jaeger/querylist-ext-login": "^1.0",
+        "guzzlehttp/guzzle": "~5.3|~6.0",
+        "aws/aws-sdk-php": "~3.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

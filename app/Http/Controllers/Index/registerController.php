@@ -10,6 +10,7 @@ use App\Http\Requests;
 use App\Http\Requests\RegisterRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class registerController extends Controller
@@ -18,6 +19,7 @@ class registerController extends Controller
   {
     return view('index.woshipm.templates.register');
   }
+
   public function checkAccount(Request $request)
   {
     $registerStyle = $request->input('registerStyle');
@@ -94,13 +96,14 @@ class registerController extends Controller
 
 
   }
+
   public function register(Request $request)
   {
     $registerStyle = $request->input('registerStyle');
-    $input = Input::all();
+    $input = $request->only(['registerStyle', 'account', 'password']);
     $rules = [];
 
-    if ($registerStyle === 'true') {
+    if ($registerStyle === 'true') {//手机注册
       $rules = [
         'phone' => 'required|regex:/^0?(13[0-9]|15[012356789]|17[013678]|18[0-9]|14[57])[0-9]{8}$/|unique:users,phone',
         'password' => 'required|regex:/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,21}$/|between:6,21',
@@ -123,7 +126,7 @@ class registerController extends Controller
 
       }
 
-    } elseif ($registerStyle === 'false') {
+    } elseif ($registerStyle === 'false') {//邮箱注册
       $rules = [
         'email' => 'required|regex:/^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/|unique:users,email',
         'password' => 'required|regex:/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,21}$/|between:6,21',
@@ -164,8 +167,10 @@ class registerController extends Controller
     $validator = Validator::make($input, $rules, $messages);
 
     if ($validator->passes()) {
-      DB::table('users')->insert($input);
-      return response()->json(['code' => 1, 'msg' => '注册成功']);
+
+//      User::create($input);
+//      return response()->json(['code' => 1, 'msg' => '注册成功']);
+      return response()->json(['code' => 1, 'msg' => '邮箱密码符合注册要求']);
     } else {
       return response()->json(['code' => 0, 'msg' => $validator->errors()->all()]);
     }
@@ -173,6 +178,20 @@ class registerController extends Controller
 
   }
 
+  public function sendRegisterEmail(Request $request)
+  {
+
+    $name = '学院君';
+    $flag = Mail::send('admin.register_email',['name'=>$name],function($message){
+      $to = '3360286168@qq.com';
+      $message ->to($to)->subject('测试邮件');
+    });
+    if($flag){
+      echo '发送邮件成功，请查收！';
+    }else{
+      echo '发送邮件失败，请重试！';
+    }
+  }
 
 
 }
