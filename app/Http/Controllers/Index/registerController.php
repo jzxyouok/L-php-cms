@@ -200,7 +200,7 @@ class registerController extends Controller
   {
     $randNumber = $request->session()->get('randNumber');
     $emailVerifyCode = $request->input('emailVerifyCode');
-
+dd($request->session()->all());
 if($randNumber!=$emailVerifyCode){
   return response()->json(['code'=>0,'msg'=>'验证码错误']);
 }
@@ -274,7 +274,7 @@ if($randNumber!=$emailVerifyCode){
     if ($validator->passes()) {
 
       $res=User::create($input);
-    
+
       if($res){
         $request->session()->forget('randNumber');
         return response()->json(['code' => 1, 'msg' => '注册成功']);
