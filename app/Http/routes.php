@@ -200,6 +200,7 @@ Route::group(['namespace' => 'Index'], function () {
   Route::get('/user/register', 'registerController@view')->name('register');
   Route::post('/user/register', 'registerController@register')->name('register_post');
   Route::post('/user/send_register_email', 'registerController@sendRegisterEmail')->name('send_register_email');
+  Route::post('/user/register_after_send_email', 'registerController@registerAfterSendEmail')->name('register_after_send_email');
   Route::post('/user/check_account', 'registerController@checkAccount')->name('check_account');
 
   //首页

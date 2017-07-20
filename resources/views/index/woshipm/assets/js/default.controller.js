@@ -34,7 +34,7 @@ app.controller('registerCtrl', ['$scope', '$timeout', 'registerService', '$inter
                     $scope.showSendEmail=true;
 
                     //发送邮件
-                    registerService.sendRegisterEmail();
+                    registerService.sendRegisterEmail(account);
 
                     // $scope.registerSuccess = true;
                     // $interval(function () {
@@ -56,6 +56,7 @@ app.controller('registerCtrl', ['$scope', '$timeout', 'registerService', '$inter
 
 
     };
+
     $scope.checkAccount = function () {
         var account = '';
         if ($scope.registerStyle) {
@@ -77,6 +78,14 @@ app.controller('registerCtrl', ['$scope', '$timeout', 'registerService', '$inter
             });
         }
 
+    };
+
+    $scope.registerAfterSendEmail=function () {
+        registerService.registerAfterSendEmail($scope.registerStyle, $scope.email, $scope.emailPassword,$scope.emailVerifyCode).then(function success(res) {
+
+        },function error(res) {
+
+        });
     };
 
 }]);

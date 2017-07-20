@@ -34,7 +34,7 @@
     <div class="lo_main">
         <form action="" name="registerForm">
             <div class="width100">
-                <ul class="login_ul" ng-show="registerStyle && !registerSuccess && !registerFail">
+                <ul class="login_ul" ng-show="registerStyle && !registerSuccess && !registerFail && !showSendEmail">
                     <li class="mar_t15">
                         <span class="lo_left">手机号</span>
                         <input id="" name="phone" type="text" ng-model="phone" class="lo_input hei_font"
@@ -82,7 +82,7 @@
                     </li>
 
                 </ul>
-                <ul class="login_ul ng-hide" ng-show="!registerStyle && !registerSuccess && !registerFail">
+                <ul class="login_ul ng-hide" ng-show="!registerStyle && !registerSuccess && !registerFail && !showSendEmail">
 
 
                     <li class="mar_t15">
@@ -118,12 +118,12 @@
                 </ul>
                 <ul class="login_ul ng-hide" ng-show="showSendEmail">
 
-                   <li  style="    height: 30px;    line-height: 30px;"> <span class="lo_left">&nbsp;</span>为了账号安全，需要验证邮箱有效性</li>
-                    <li style="    height: 30px;    line-height: 30px;"> <span class="lo_left">&nbsp;</span>一封包含有验证码的邮件已经发送至邮箱：</li>
-                    <li style="    height: 30px;    line-height: 30px;    color: #008df3;"> <span class="lo_left">&nbsp;</span>1534029223@qq.com</li>
+                   <li  style="    height: 30px;    line-height: 30px;    text-align: left;"> <span class="lo_left">&nbsp;</span>为了账号安全，需要验证邮箱有效性</li>
+                    <li style="    height: 30px;    line-height: 30px;    text-align: left;"> <span class="lo_left">&nbsp;</span>一封包含有验证码的邮件已经发送至邮箱：</li>
+                    <li style="    height: 30px;    line-height: 30px;    color: #008df3;    text-align: left;"> <span class="lo_left" >&nbsp;</span><span ng-bind="email"></span></li>
                     <li class="mar_t15">
                         <span class="lo_left">&nbsp;</span>
-                        <input id="" name="verifyCode" type="text" ng-model="verifyCode"
+                        <input id="" name="verifyCode" type="text" ng-model="emailVerifyCode"
                                class="lo_input width185 hei_font" placeholder="验证码">
 
                         <span id="" style="display: none;">
@@ -135,7 +135,7 @@
                     </li>
                     <li class="mar_t15 po_rela">
                         <span class="lo_left">&nbsp;</span>
-                        <input id="" type="button" class="lo_button" ng-show="registerBtnStatus" ng-click="register()"
+                        <input id="" type="button" class="lo_button" ng-click="registerAfterSendEmail()"
                                value="确定" style="pointer-events: auto;">
 
 
