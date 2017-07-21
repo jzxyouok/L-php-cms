@@ -239,3 +239,6 @@ Route::group(['namespace' => 'Index'], function () {
   Route::get('/user/find_password', 'findPasswordController@view')->name('find_password');
   Route::get('/{category}/{id}', 'contentController@view')->name('content');
 });
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

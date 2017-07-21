@@ -36,17 +36,7 @@ app.controller('registerCtrl', ['$scope', '$timeout', 'registerService', '$inter
                     //发送邮件
                     registerService.sendRegisterEmail(account);
 
-                    // $scope.registerSuccess = true;
-                    // $interval(function () {
-                    //     console.log($scope.countDown);
-                    //     $scope.countDown--;
-                    //     if ($scope.countDown == 0) {
-                    //         window.location.href = '/me';
-                    //     }
-                    //
-                    // }, 1000);
-                } else {
-                    $scope.registerFail = true;
+
                 }
             }, function error(res) {
 
@@ -82,7 +72,21 @@ app.controller('registerCtrl', ['$scope', '$timeout', 'registerService', '$inter
 
     $scope.registerAfterSendEmail=function () {
         registerService.registerAfterSendEmail($scope.registerStyle, $scope.email, $scope.emailPassword,$scope.emailVerifyCode).then(function success(res) {
+            if (res.data.code === 1) {
+                $scope.showSendEmail=false;
 
+                $scope.registerSuccess = true;
+                $interval(function () {
+
+                    $scope.countDown--;
+                    if ($scope.countDown == 0) {
+                        window.location.href = '/me';
+                    }
+
+                }, 1000);
+            } else {
+                $scope.registerFail = true;
+            }
         },function error(res) {
 
         });
