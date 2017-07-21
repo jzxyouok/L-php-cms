@@ -200,7 +200,7 @@ class registerController extends Controller
   {
     $randNumber = $request->session()->get('randNumber');
     $emailVerifyCode = $request->input('emailVerifyCode');
-dd($request->session()->all());
+
 if($randNumber!=$emailVerifyCode){
   return response()->json(['code'=>0,'msg'=>'验证码错误']);
 }
