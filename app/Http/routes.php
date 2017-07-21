@@ -197,10 +197,10 @@ Route::group(['namespace' => 'Index'], function () {
 
   //注册登录
   Route::get('/user/login', 'loginController@view')->name('login');
-  Route::get('/user/register', 'registerController@view')->name('register');
-  Route::post('/user/register', 'registerController@register')->name('register_post');
-  Route::post('/user/send_register_email', 'registerController@sendRegisterEmail')->name('send_register_email');
-  Route::post('/user/register_after_send_email', 'registerController@registerAfterSendEmail')->name('register_after_send_email');
+// Route::get('/user/register', 'registerController@view')->name('register');
+  Route::post('/register', 'registerController@register')->name('register_post');
+  Route::post('/send_register_email', 'registerController@sendRegisterEmail')->name('send_register_email');
+  //Route::post('/register_after_send_email', 'registerController@registerAfterSendEmail')->name('register_after_send_email');
   Route::post('/user/check_account', 'registerController@checkAccount')->name('check_account');
 
   //首页
@@ -239,6 +239,8 @@ Route::group(['namespace' => 'Index'], function () {
   Route::get('/user/find_password', 'findPasswordController@view')->name('find_password');
   Route::get('/{category}/{id}', 'contentController@view')->name('content');
 });
+
+//用户认证
 Route::auth();
 
 Route::get('/home', 'HomeController@index');

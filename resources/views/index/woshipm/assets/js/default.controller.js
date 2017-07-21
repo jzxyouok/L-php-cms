@@ -71,6 +71,8 @@ app.controller('registerCtrl', ['$scope', '$timeout', 'registerService', '$inter
     };
 
     $scope.registerAfterSendEmail=function () {
+       // var _token=$('input[name="_token"]').eq(0).val();
+
         registerService.registerAfterSendEmail($scope.registerStyle, $scope.email, $scope.emailPassword,$scope.emailVerifyCode).then(function success(res) {
             if (res.data.code === 1) {
                 $scope.showSendEmail=false;

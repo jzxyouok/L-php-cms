@@ -99,6 +99,7 @@ class registerController extends Controller
 
   public function register(Request $request)
   {
+
     $registerStyle = $request->input('registerStyle');
     $input = $request->only(['registerStyle', 'account', 'password']);
     $rules = [];

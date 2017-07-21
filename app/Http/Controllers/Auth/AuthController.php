@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
-use Validator;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -31,6 +31,8 @@ class AuthController extends Controller
   protected $redirectTo = '/me';
   protected $redirectAfterLogout = '/login';
 
+  protected $registerView = 'index.woshipm.templates.register';//自定义注册页面的所用的模版所在的位置
+
   /**
    * Create a new authentication controller instance.
    *
@@ -50,9 +52,9 @@ class AuthController extends Controller
   protected function validator(array $data)
   {
     return Validator::make($data, [
-      'name' => 'required|max:255',
-      'email' => 'required|email|max:255|unique:users',
-      'password' => 'required|min:6|confirmed',
+//      'name' => 'required|max:255',
+      'email' => 'required|regex:/^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/|unique:users,email',
+      'password' => 'required|regex:/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,21}$/|between:6,21',
     ]);
   }
 
@@ -65,7 +67,6 @@ class AuthController extends Controller
   protected function create(array $data)
   {
     return User::create([
-      'name' => $data['name'],
       'email' => $data['email'],
       'password' => bcrypt($data['password']),
     ]);

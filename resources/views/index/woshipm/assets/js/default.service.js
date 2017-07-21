@@ -44,7 +44,7 @@ app.factory('registerService', ['$http', function ($http) {
         register: function (registerStyle,account,password) {
             return $http({
                 method: 'POST',
-                url: '/user/register',
+                url: '/register',
                 data:$.param({
                     registerStyle:registerStyle,
                     account:account,
@@ -68,7 +68,7 @@ app.factory('registerService', ['$http', function ($http) {
         sendRegisterEmail: function (account) {
             return $http({
                 method: 'POST',
-                url: '/user/send_register_email',
+                url: '/send_register_email',
                 data:$.param({
                     email:account,
                 }),
@@ -78,8 +78,9 @@ app.factory('registerService', ['$http', function ($http) {
         registerAfterSendEmail: function (registerStyle,account,password,emailVerifyCode) {
             return $http({
                 method: 'POST',
-                url: '/user/register_after_send_email',
+                 url: '/register_after_send_email',
                 data:$.param({
+                    // _token:_token,
                     registerStyle:registerStyle,
                     account:account,
                     password:password,

@@ -33,6 +33,7 @@
 <div class="login_box" ng-controller="registerCtrl">
     <div class="lo_main">
         <form action="" name="registerForm">
+            {{ csrf_field() }}
             <div class="width100">
                 <ul class="login_ul" ng-show="registerStyle && !registerSuccess && !registerFail && !showSendEmail">
                     <li class="mar_t15">
