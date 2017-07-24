@@ -103,6 +103,13 @@ app.factory('headerService', ['$http', function ($http) {
             });
         },
 
+        logout: function () {
+            return $http({
+                method: 'GET',
+                url: '/logout',
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
 
 
     };

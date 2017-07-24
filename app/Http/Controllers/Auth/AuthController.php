@@ -29,9 +29,10 @@ class AuthController extends Controller
    * @var string
    */
   protected $redirectTo = '/me';
-  protected $redirectAfterLogout = '/login';
+  protected $redirectAfterLogout = '/';
 
   protected $registerView = 'index.woshipm.templates.register';//自定义注册页面的所用的模版所在的位置
+  protected $loginView= 'index.woshipm.templates.login';
 
   /**
    * Create a new authentication controller instance.
@@ -67,8 +68,10 @@ class AuthController extends Controller
   protected function create(array $data)
   {
     return User::create([
+      'nickname' => $data['nickname'],
       'email' => $data['email'],
       'password' => bcrypt($data['password']),
+
     ]);
   }
 }

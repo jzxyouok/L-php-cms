@@ -190,13 +190,17 @@ Route::group(['namespace' => 'Install'], function () {
 
 });
 
+
+
 /*
  * 前台页面
  * */
 Route::group(['namespace' => 'Index'], function () {
 
   //注册登录
-  Route::get('/user/login', 'loginController@view')->name('login');
+
+
+ // Route::get('/user/login', 'loginController@view')->name('login');
 // Route::get('/user/register', 'registerController@view')->name('register');
   Route::post('/register', 'registerController@register')->name('register_post');
   Route::post('/send_register_email', 'registerController@sendRegisterEmail')->name('send_register_email');
@@ -243,7 +247,6 @@ Route::group(['namespace' => 'Index'], function () {
   Route::get('/{category}/{id}', 'contentController@view')->name('content');
 });
 
-//用户认证
 Route::auth();
 
 Route::get('/home', 'HomeController@index');

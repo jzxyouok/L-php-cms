@@ -97,12 +97,12 @@ app.controller('registerCtrl', ['$scope', '$timeout', 'registerService', '$inter
 
 }]);
 
-app.controller('headerCtrl', ['$scope', '$timeout', 'headerService', function ($scope, $timeout, headerService) {
+app.controller('headerCtrl', ['$scope', '$timeout', 'headerService','meService', function ($scope, $timeout, headerService,meService) {
 
     $scope.loginOut = function () {
 
 
-        $('body').prepend('<div class="overlay overlay--dark" id="login_iframe"><button class="overlayclose-btn button--close" id="collection_close">×</button><iframe id="top_login_frame" src="/user/login" width="600" height="400" scrolling="no" class="top_fc_box"></iframe></div>');
+        $('body').prepend('<div class="overlay overlay--dark" id="login_iframe"><button class="overlayclose-btn button--close" id="collection_close">×</button><iframe id="top_login_frame" src="/login" width="600" height="400" scrolling="no" class="top_fc_box"></iframe></div>');
 
 
         $('#collection_close').on('click', function () {
@@ -146,13 +146,36 @@ app.controller('headerCtrl', ['$scope', '$timeout', 'headerService', function ($
 
             $scope.mouseIsOver=false;
         },1000);
-    }
+    };
     $scope.setMouseIsOver2False=function () {
         $timeout(function () {
 
             $scope.mouseIsOver2=false;
         },1000);
-    }
+    };
+
+    $scope.getUserInfo = function () {
+        meService.getUserInfo().then(function success(res) {
+            if (res.data.code === 1) {
+                $scope.user = res.data.user;
+
+            }
+        }, function error(res) {
+
+        });
+    };
+    $scope.logout=function () {
+
+        headerService.logout().then(function success(res) {
+            if (res.data.code === 1) {
+               window.location.href='/';
+
+            }
+        }, function error(res) {
+
+        });
+    };
+
 
 }]);
 
