@@ -8,9 +8,11 @@ use App\Http\Requests;
 
 class userController extends Controller
 {
-  public function view()
+  public function view($userId)
   {
-    return view('index.woshipm.templates.user');
+    return view('index.woshipm.templates.user_index',[
+'$userId'=>$userId
+    ]);
   }
 
 }

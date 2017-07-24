@@ -49,7 +49,7 @@
                     <li class="text_r">
                         <span class="lo_left">&nbsp;</span>
                         <span class="float_l jiu_font">没有账号？
-                            <a href="#" onclick="window.parent.location.href='/user/register'">立即注册</a>
+                            <a href="#" onclick="window.parent.location.href='/register'">立即注册</a>
                         </span>
                         <a href="#" class="jiu_font"
                            onclick="window.parent.location.href='/user/forget_password'">忘记密码?</a>

@@ -94,6 +94,7 @@ app.controller('registerCtrl', ['$scope', '$timeout', 'registerService', '$inter
         });
     };
 
+
 }]);
 
 app.controller('headerCtrl', ['$scope', '$timeout', 'headerService', function ($scope, $timeout, headerService) {
@@ -138,7 +139,20 @@ app.controller('headerCtrl', ['$scope', '$timeout', 'headerService', function ($
             }
         );
     };
+    $scope.mouseIsOver=false;
+    $scope.mouseIsOver2=false;
+    $scope.setMouseIsOverFalse=function () {
+        $timeout(function () {
 
+            $scope.mouseIsOver=false;
+        },1000);
+    }
+    $scope.setMouseIsOver2False=function () {
+        $timeout(function () {
+
+            $scope.mouseIsOver2=false;
+        },1000);
+    }
 
 }]);
 
@@ -281,6 +295,20 @@ app.controller('cateHotDocCtrl', ['$scope', 'cateHotDocService', 'hotDocService'
         hotDocService.getHotDoc().then(function success(res) {
             if (res.data.code === 1) {
                 $scope.hotList = res.data.data;
+
+            }
+        }, function error(res) {
+
+        });
+    }
+
+}]);
+
+app.controller('meCtrl', ['$scope', 'meService',  function ($scope, meService) {
+    $scope.getUserInfo = function () {
+        meService.getUserInfo().then(function success(res) {
+            if (res.data.code === 1) {
+                $scope.user = res.data.user;
 
             }
         }, function error(res) {

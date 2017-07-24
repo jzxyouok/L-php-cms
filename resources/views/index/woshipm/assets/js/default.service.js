@@ -246,6 +246,21 @@ app.factory('cateHotDocService', ['$http', function ($http) {
     };
 }]);
 
+app.factory('meService', ['$http', function ($http) {
+    return {
+
+        getUserInfo: function () {
+            return $http({
+                method: 'GET',
+                url: '/me/get_user_info',
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
+
+    };
+}]);
+
+
 
 
 

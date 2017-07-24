@@ -212,6 +212,7 @@ Route::group(['namespace' => 'Index'], function () {
 
   //前台用户中心
   Route::get('/me', 'meController@mePost')->name('me');
+  Route::get('/me/get_user_info', 'meController@getUserInfo')->name('get_user_info');
   Route::get('/me/post', 'meController@mePost')->name('me_post');
   Route::get('/me/collection', 'meController@meCollection')->name('me_collection');
   Route::get('/me/answer', 'meController@meAnswer')->name('me_answer');
@@ -220,6 +221,8 @@ Route::group(['namespace' => 'Index'], function () {
   Route::get('/me/reward', 'meController@meReward')->name('me_reward');
   Route::get('/me/message', 'meController@meMessage')->name('me_message');
   Route::get('/me/setting', 'meController@meSetting')->name('me_setting');
+  Route::get('/me/setting/password', 'meController@meSettingPassword')->name('me_setting_password');
+  Route::get('/me/setting/avatar', 'meController@meSettingAvatar')->name('me_setting_avatar');
   Route::get('/user/{userId}', 'userController@view')->name('user_center');
 
   //tag页

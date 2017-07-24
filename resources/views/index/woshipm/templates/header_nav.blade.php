@@ -39,11 +39,11 @@
                 </span>
             </a>
             <div class="user-avatar" >
-                <a href="http://www.woshipm.com/u/288457" target="_blank">
-                    <img src="/resources/views/index/woshipm/assets/images/user-avatar.jpg" alt=""
+                <a href="http://www.woshipm.com/u/288457" target="_blank" ng-mouseenter="mouseIsOver=true" ng-mouseleave="setMouseIsOverFalse()">
+                    <img src="{{URL::asset('/resources/views/index/woshipm/assets/images/user-avatar.jpg')}}" alt=""
                          height="30" width="30" class="avatar">
                 </a>
-                <div class="user-top-nav">
+                <div class="user-top-nav" ng-class="{'is-active':mouseIsOver || mouseIsOver2}" ng-mouseenter="mouseIsOver2=true" ng-mouseleave="setMouseIsOver2False()">
                     <h4 class="user-name">不知道取什么昵称</h4>
                     <ul>
                         <li><a href="http://www.woshipm.com/me/posts">我的文章</a></li>
