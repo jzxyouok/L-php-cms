@@ -34,7 +34,7 @@
                     </li>
                     <li class="error_tips">
                         <span class="lo_left">&nbsp;</span>
-                        <span id="errorTips">错误了2</span>
+                        <span id="" ng-bind="loginMsg"></span>
                     </li>
                     <li>
                         <span class="lo_left">&nbsp;</span>

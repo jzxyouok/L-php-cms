@@ -98,8 +98,15 @@ app.controller('registerCtrl', ['$scope', '$timeout', 'registerService', '$inter
 }]);
 
 app.controller('loginCtrl', ['$scope', 'loginService', function ($scope, loginService) {
+    $scope.loginMsg='';
     $scope.login = function () {
-        loginService.login($scope.account,$scope.password).then(function () {
+        loginService.login($scope.account, $scope.password).then(function success(res) {
+            if (res.data.code === 1) {
+                window.parent.location.href = '/';
+            }else {
+                $scope.loginMsg=res.data.msg;
+            }
+        }, function error(res) {
 
         });
     };

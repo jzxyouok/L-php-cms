@@ -35,7 +35,7 @@ class AuthController extends Controller
   protected $redirectAfterLogout = '/';
 
   protected $registerView = 'index.woshipm.templates.register';//自定义注册页面的所用的模版所在的位置
-  protected $loginView= 'index.woshipm.templates.login';
+  protected $loginView = 'index.woshipm.templates.login';
 
   /**
    * Create a new authentication controller instance.
@@ -90,7 +90,7 @@ class AuthController extends Controller
     }
     $registerStyle = $request->input('registerStyle');
 
-    $input = $request->only([ 'email', 'password','nickname']);
+    $input = $request->only(['email', 'password', 'nickname']);
 
 
     $rules = [];
@@ -173,8 +173,7 @@ class AuthController extends Controller
       $randNickName = '新用户' . $key;
       $input['nickname'] = $randNickName;
 
-       // dd($input);
-
+      // dd($input);
 
 
       Auth::guard($this->getGuard())->login($this->create($input));
@@ -202,8 +201,89 @@ class AuthController extends Controller
 //        return redirect($this->redirectPath());
   }
 
-  public function (Request $request)
+
+  public function login(Request $request)
   {
-    
+
+    $account = $request->input('account');
+    $password = $request->input('password');
+    if (preg_match('/^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/', $account)) {
+
+      $input['email'] = $account;
+      $input['password'] = $password;
+     // dd($input);
+      $rules = [
+        'email' => 'required|regex:/^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/',
+        'password' => 'required|regex:/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,21}$/|between:6,21',
+
+      ];
+      $messages = [
+        'phone.required' => '手机号码不能为空',
+        'phone.regex' => '手机号码格式不正确',
+        'phone.unique' => '手机号码是否唯一',
+        'email.required' => '邮箱不能为空',
+        'email.regex' => '邮箱格式不符合要求',
+        'email.unique' => '邮箱已经被注册',
+        'password.required' => '密码不能为空',
+        'password.regex' => '密码格式不正确',
+        'password.between' => '密码长度必须在6-21之间'
+
+      ];
+
+      $validator = Validator::make($input, $rules, $messages);
+
+      if ($validator->passes()) {
+
+      //  Auth::guard($this->getGuard())->attempt($input);
+       if(Auth::guard($this->getGuard())->attempt($input)){
+         return response()->json(['code' => 1, 'msg' => '邮箱登录成功']);
+       }else{
+         return response()->json(['code' => 0, 'msg' => '用户名或密码错误']);
+       }
+
+      } else {
+        return response()->json(['code' => 0, 'msg' => $validator->errors()->all()]);
+      }
+    } else {
+      $input['phone'] = $account;
+      $input['password'] = $password;
+      // dd($input);
+      $rules = [
+        'phone' => array('required', 'regex:/^0?(13[0-9]|15[012356789]|17[013678]|18[0-9]|14[57])[0-9]{8}$/'),
+
+        'password' => 'required|regex:/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,21}$/|between:6,21',
+
+      ];
+      $messages = [
+        'phone.required' => '手机号码不能为空',
+        'phone.regex' => '手机号码格式不正确',
+        'phone.unique' => '手机号码是否唯一',
+        'email.required' => '邮箱不能为空',
+        'email.regex' => '邮箱格式不符合要求',
+        'email.unique' => '邮箱已经被注册',
+        'password.required' => '密码不能为空',
+        'password.regex' => '密码格式不正确',
+        'password.between' => '密码长度必须在6-21之间'
+
+      ];
+
+      $validator = Validator::make($input, $rules, $messages);
+
+      if ($validator->passes()) {
+        if(Auth::guard($this->getGuard())->attempt($input)){
+          return response()->json(['code' => 1, 'msg' => '手机登录成功']);
+        }else{
+          return response()->json(['code' => 0, 'msg' => '用户名或密码错误']);
+        }
+      } else {
+        return response()->json(['code' => 0, 'msg' => $validator->errors()->all()]);
+      }
+
+
+    }
+
+
+
+
   }
 }
