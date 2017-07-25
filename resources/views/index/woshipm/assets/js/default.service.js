@@ -44,7 +44,7 @@ app.factory('registerService', ['$http', function ($http) {
         register: function (registerStyle,account,password) {
             return $http({
                 method: 'POST',
-                url: '/register',
+                url: '/register_before_send_email',
                 data:$.param({
                     registerStyle:registerStyle,
                     account:account,
@@ -78,17 +78,35 @@ app.factory('registerService', ['$http', function ($http) {
         registerAfterSendEmail: function (registerStyle,account,password,emailVerifyCode) {
             return $http({
                 method: 'POST',
-                 url: '/register_after_send_email',
+                 url: '/register',
                 data:$.param({
-                    // _token:_token,
                     registerStyle:registerStyle,
-                    account:account,
+                    email:account,
                     password:password,
-                    emailVerifyCode:emailVerifyCode,
+                   emailVerifyCode:emailVerifyCode,
+
                 }),
                 headers: {'content-type': 'application/x-www-form-urlencoded'}
             });
         },
+
+    };
+}]);
+
+app.factory('loginService', ['$http', function ($http) {
+    return {
+        login: function (account,password) {
+            return $http({
+                method: 'POST',
+                url: '/login',
+                data:$.param({
+                    account:account,
+                    password:password
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
+
 
     };
 }]);
@@ -107,6 +125,14 @@ app.factory('headerService', ['$http', function ($http) {
             return $http({
                 method: 'GET',
                 url: '/logout',
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
+
+        isLogin: function () {
+            return $http({
+                method: 'GET',
+                url: '/is_login',
                 headers: {'content-type': 'application/x-www-form-urlencoded'}
             });
         },

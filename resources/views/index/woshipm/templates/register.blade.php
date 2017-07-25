@@ -73,13 +73,13 @@
                         <input id="" type="button" class="lo_button" ng-click="register()" value="立即注册"
                                style="pointer-events: auto;">
                         <input id="" type="button" class="lo_button" value="正在注册..." style="display: none;">
-                        <div style="text-align: left;">
-                            <a href="javascript:void(0);" class="float_l text_un" ng-click="useEmail()">使用邮箱注册</a>
-                        </div>
-                        <div style="text-align: center;">
-                            <font id="" style="display:block;">错了</font>
-                        </div>
 
+
+                    </li>
+                    <li class="text_r">
+                        <span class="lo_left">&nbsp;</span>
+
+                        <a href="javascript:void(0);" class="jiu_font float_l"  ng-click="useEmail()">使用邮箱注册</a>
                     </li>
 
                 </ul>
@@ -88,18 +88,18 @@
 
                     <li class="mar_t15">
                         <span class="lo_left">邮箱</span>
-                        <input id="" name="email" type="text" class="lo_input hei_font" ng-model="email" placeholder=""
+                        <input id="" name="email" type="text" class="lo_input hei_font" ng-model="email" placeholder="邮箱"
                                ng-pattern="/^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/" required ng-blur="checkAccount()">
                     </li>
                     <li class="mar_t15">
                         <span class="lo_left">密码</span>
                         <input id="email_password" name="emailPassword" type="text" class="lo_input hei_font"
-                               placeholder="" ng-model="emailPassword"
+                               placeholder="密码" ng-model="emailPassword"
                                ng-pattern="/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,21}$/" required>
                     </li>
                     <li class="mar_t15">
                         <span class="lo_left">确认密码</span>
-                        <input id="" name="emailRePassword" type="password" class="lo_input hei_font" placeholder=""
+                        <input id="" name="emailRePassword" type="password" class="lo_input hei_font" placeholder="确认密码"
                                ng-pattern="/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,21}$/" required
                                pw-check="email_password" ng-model="emailRePassword">
                     </li>
@@ -110,10 +110,12 @@
                                value="立即注册" style="pointer-events: auto;">
                         <input id="" type="button" class="lo_button ng-hide" ng-show="!registerBtnStatus"
                                value="正在注册...">
-                        <div style="text-align: left;">
-                            <a href="javascript:void(0);" class="float_l text_un" ng-click="usePhone()">使用手机号注册</a>
-                        </div>
 
+                    </li>
+                    <li class="text_r">
+                        <span class="lo_left">&nbsp;</span>
+
+                        <a href="javascript:void(0);" class="jiu_font float_l"  ng-click="usePhone()">使用手机号注册</a>
                     </li>
 
                 </ul>

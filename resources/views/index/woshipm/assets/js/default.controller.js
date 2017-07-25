@@ -31,7 +31,7 @@ app.controller('registerCtrl', ['$scope', '$timeout', 'registerService', '$inter
 
             registerService.register($scope.registerStyle, account, password).then(function success(res) {
                 if (res.data.code === 1) {
-                    $scope.showSendEmail=true;
+                    $scope.showSendEmail = true;
 
                     //发送邮件
                     registerService.sendRegisterEmail(account);
@@ -70,12 +70,12 @@ app.controller('registerCtrl', ['$scope', '$timeout', 'registerService', '$inter
 
     };
 
-    $scope.registerAfterSendEmail=function () {
-       // var _token=$('input[name="_token"]').eq(0).val();
+    $scope.registerAfterSendEmail = function () {
+        //   var _token=$('input[name="_token"]').eq(0).val();
 
-        registerService.registerAfterSendEmail($scope.registerStyle, $scope.email, $scope.emailPassword,$scope.emailVerifyCode).then(function success(res) {
+        registerService.registerAfterSendEmail($scope.registerStyle, $scope.email, $scope.emailPassword, $scope.emailVerifyCode).then(function success(res) {
             if (res.data.code === 1) {
-                $scope.showSendEmail=false;
+                $scope.showSendEmail = false;
 
                 $scope.registerSuccess = true;
                 $interval(function () {
@@ -89,7 +89,7 @@ app.controller('registerCtrl', ['$scope', '$timeout', 'registerService', '$inter
             } else {
                 $scope.registerFail = true;
             }
-        },function error(res) {
+        }, function error(res) {
 
         });
     };
@@ -97,7 +97,16 @@ app.controller('registerCtrl', ['$scope', '$timeout', 'registerService', '$inter
 
 }]);
 
-app.controller('headerCtrl', ['$scope', '$timeout', 'headerService','meService', function ($scope, $timeout, headerService,meService) {
+app.controller('loginCtrl', ['$scope', 'loginService', function ($scope, loginService) {
+    $scope.login = function () {
+        loginService.login($scope.account,$scope.password).then(function () {
+
+        });
+    };
+
+}]);
+
+app.controller('headerCtrl', ['$scope', '$timeout', 'headerService', 'meService', function ($scope, $timeout, headerService, meService) {
 
     $scope.loginOut = function () {
 
@@ -139,19 +148,19 @@ app.controller('headerCtrl', ['$scope', '$timeout', 'headerService','meService',
             }
         );
     };
-    $scope.mouseIsOver=false;
-    $scope.mouseIsOver2=false;
-    $scope.setMouseIsOverFalse=function () {
+    $scope.mouseIsOver = false;
+    $scope.mouseIsOver2 = false;
+    $scope.setMouseIsOverFalse = function () {
         $timeout(function () {
 
-            $scope.mouseIsOver=false;
-        },1000);
+            $scope.mouseIsOver = false;
+        }, 1000);
     };
-    $scope.setMouseIsOver2False=function () {
+    $scope.setMouseIsOver2False = function () {
         $timeout(function () {
 
-            $scope.mouseIsOver2=false;
-        },1000);
+            $scope.mouseIsOver2 = false;
+        }, 1000);
     };
 
     $scope.getUserInfo = function () {
@@ -164,12 +173,24 @@ app.controller('headerCtrl', ['$scope', '$timeout', 'headerService','meService',
 
         });
     };
-    $scope.logout=function () {
+    $scope.logout = function () {
 
         headerService.logout().then(function success(res) {
             if (res.data.code === 1) {
-               window.location.href='/';
+                window.location.href = '/';
 
+            }
+        }, function error(res) {
+
+        });
+    };
+    $scope.isLogin = function () {
+        headerService.isLogin().then(function success(res) {
+            if (res.data.code === 1) {
+                $scope.logined = true;
+                $scope.getUserInfo();
+            } else {
+                $scope.logined = false;
             }
         }, function error(res) {
 
@@ -327,7 +348,7 @@ app.controller('cateHotDocCtrl', ['$scope', 'cateHotDocService', 'hotDocService'
 
 }]);
 
-app.controller('meCtrl', ['$scope', 'meService',  function ($scope, meService) {
+app.controller('meCtrl', ['$scope', 'meService', function ($scope, meService) {
     $scope.getUserInfo = function () {
         meService.getUserInfo().then(function success(res) {
             if (res.data.code === 1) {

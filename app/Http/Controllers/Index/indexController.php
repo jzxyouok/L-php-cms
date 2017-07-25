@@ -10,6 +10,7 @@ use App\Http\Model\Menu;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 
 class indexController extends Controller
 {
@@ -59,6 +60,16 @@ class indexController extends Controller
     $topMenu = Menu::where(['parent' => '0'])->get()->toArray();
     $menu = Menu::all()->toArray();
     return response()->json(['code' => 1, 'topData' => $topMenu,'data'=>$menu]);
+  }
+
+  public function isLogin(Request $request)
+  {
+
+    if(Auth::check()){
+return response()->json(['code'=>1,'msg'=>'已经登录']);
+    }else{
+      return response()->json(['code'=>0,'msg'=>'未登录']);
+    }
   }
 
 }

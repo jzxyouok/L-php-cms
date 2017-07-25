@@ -202,7 +202,7 @@ Route::group(['namespace' => 'Index'], function () {
 
  // Route::get('/user/login', 'loginController@view')->name('login');
 // Route::get('/user/register', 'registerController@view')->name('register');
-  Route::post('/register', 'registerController@register')->name('register_post');
+  Route::post('/register_before_send_email', 'registerController@register')->name('register_post');
   Route::post('/send_register_email', 'registerController@sendRegisterEmail')->name('send_register_email');
   //Route::post('/register_after_send_email', 'registerController@registerAfterSendEmail')->name('register_after_send_email');
   Route::post('/user/check_account', 'registerController@checkAccount')->name('check_account');
@@ -213,6 +213,7 @@ Route::group(['namespace' => 'Index'], function () {
   Route::get('/index/get_index_list', 'indexController@getIndexList')->name('get_index_list');
   Route::get('/index/get_hot_doc', 'indexController@getHotDoc')->name('get_hot_doc');
   Route::get('/index/get_menu', 'indexController@getMenu')->name('get_menu');
+  Route::get('/is_login', 'indexController@isLogin')->name('is_login');
 
   //前台用户中心
   Route::get('/me', 'meController@mePost')->name('me');

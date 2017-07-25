@@ -1,4 +1,4 @@
-<header id="" class="site-header u-clearfix" ng-controller="headerCtrl" ng-init="getMenu();getUserInfo()">
+<header id="" class="site-header u-clearfix" ng-controller="headerCtrl" ng-init="getMenu();isLogin()">
     <div class="contianer">
         <a href="/">
             <img class="logo" src="/resources/views/index/woshipm/assets/images/logo.png">
@@ -38,7 +38,7 @@
                     </svg>
                 </span>
             </a>
-            <div class="user-avatar" >
+            <div class="user-avatar" ng-if="logined">
                 <a href="http://www.woshipm.com/u/288457" target="_blank" ng-mouseenter="mouseIsOver=true" ng-mouseleave="setMouseIsOverFalse()">
                     <img src="{{URL::asset('/resources/views/index/woshipm/assets/images/user-avatar.jpg')}}" alt=""
                          height="30" width="30" class="avatar">
@@ -46,9 +46,9 @@
                 <div class="user-top-nav" ng-class="{'is-active':mouseIsOver || mouseIsOver2}" ng-mouseenter="mouseIsOver2=true" ng-mouseleave="setMouseIsOver2False()">
                     <h4 class="user-name" ng-bind="user.nickname"></h4>
                     <ul>
-                        <li><a href="{{URL::asset('/me/posts')}}">我的文章</a></li>
-                        <li><a href="{{URL::asset('/me/comments')}}">我的评论</a></li>
-                        <li><a href="{{URL::asset('/me/bookmarks')}}">我的收藏</a></li>
+                        <li><a href="{{URL::asset('/me/post')}}">我的文章</a></li>
+                        <li><a href="{{URL::asset('/me/comment')}}">我的评论</a></li>
+                        <li><a href="{{URL::asset('/me/collection')}}">我的收藏</a></li>
                         <li><a href="{{URL::asset('/me/subscribe')}}">我的订阅</a></li>
                         <li><a href="/user/@{{user.id}}">我的主页</a></li>
                         <li><a href="{{URL::asset('/me/setting')}}">资料修改</a></li>
