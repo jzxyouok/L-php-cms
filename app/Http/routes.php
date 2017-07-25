@@ -1,4 +1,60 @@
 <?php
+
+/*
+ * 前台页面
+ * */
+Route::group(['namespace' => 'Index'], function () {
+
+  //注册登录
+
+
+  // Route::get('/user/login', 'loginController@view')->name('login');
+// Route::get('/user/register', 'registerController@view')->name('register');
+  Route::post('/register_before_send_email', 'registerController@register')->name('register_post');
+  Route::post('/send_register_email', 'registerController@sendRegisterEmail')->name('send_register_email');
+  //Route::post('/register_after_send_email', 'registerController@registerAfterSendEmail')->name('register_after_send_email');
+  Route::post('/user/check_account', 'registerController@checkAccount')->name('check_account');
+
+  //首页
+  Route::get('/', 'indexController@view')->name('index');
+  Route::get('/index/banner_get', 'indexController@indexBannerGet')->name('index_banner_get');
+  Route::get('/index/get_index_list', 'indexController@getIndexList')->name('get_index_list');
+  Route::get('/index/get_hot_doc', 'indexController@getHotDoc')->name('get_hot_doc');
+  Route::get('/index/get_menu', 'indexController@getMenu')->name('get_menu');
+  Route::get('/is_login', 'indexController@isLogin')->name('is_login');
+
+  //前台用户中心
+  Route::get('/me', 'meController@mePost')->name('me');
+  Route::get('/me/get_user_info', 'meController@getUserInfo')->name('get_user_info');
+  Route::get('/me/post', 'meController@mePost')->name('me_post');
+  Route::get('/me/collection', 'meController@meCollection')->name('me_collection');
+  Route::get('/me/answer', 'meController@meAnswer')->name('me_answer');
+  Route::get('/me/comment', 'meController@meComment')->name('me_comment');
+  Route::get('/me/subscribe', 'meController@meSubscribe')->name('me_subscribe');
+  Route::get('/me/reward', 'meController@meReward')->name('me_reward');
+  Route::get('/me/message', 'meController@meMessage')->name('me_message');
+  Route::get('/me/setting', 'meController@meSetting')->name('me_setting');
+  Route::get('/me/setting/password', 'meController@meSettingPassword')->name('me_setting_password');
+  Route::get('/me/setting/avatar', 'meController@meSettingAvatar')->name('me_setting_avatar');
+  Route::get('/user/{userId}', 'userController@view')->name('user_center');
+
+  //tag页
+  Route::post('/tag/get_doc_by_tag', 'tagController@getDocByTag')->name('get_doc_by_tag');
+  Route::get('/tag/{tag}', 'tagController@view')->name('tag');
+
+  //分类页
+  Route::get('/category/get_tag', 'categoryController@getTag')->name('category_get_tag');
+  Route::get('/category/{category}', 'categoryController@view')->name('category');
+  Route::post('/category/get_doc_by_category', 'categoryController@getDocByCategory')->name('get_doc_by_category');
+  Route::get('/category/{category}/page/{id?}', 'categoryController@view')->name('');
+
+
+  //内容页
+  Route::post('/index/get_content', 'contentController@getContent')->name('get_content');
+  Route::get('/content/:title', 'webSettingController@view')->name('web_setting');
+  Route::get('/user/find_password', 'findPasswordController@view')->name('find_password');
+//  Route::get('/{category}/{id}', 'contentController@view')->name('content');
+});
 /*
  * 登录退出
  * */
@@ -192,61 +248,7 @@ Route::group(['namespace' => 'Install'], function () {
 
 
 
-/*
- * 前台页面
- * */
-Route::group(['namespace' => 'Index'], function () {
 
-  //注册登录
-
-
- // Route::get('/user/login', 'loginController@view')->name('login');
-// Route::get('/user/register', 'registerController@view')->name('register');
-  Route::post('/register_before_send_email', 'registerController@register')->name('register_post');
-  Route::post('/send_register_email', 'registerController@sendRegisterEmail')->name('send_register_email');
-  //Route::post('/register_after_send_email', 'registerController@registerAfterSendEmail')->name('register_after_send_email');
-  Route::post('/user/check_account', 'registerController@checkAccount')->name('check_account');
-
-  //首页
-  Route::get('/', 'indexController@view')->name('index');
-  Route::get('/index/banner_get', 'indexController@indexBannerGet')->name('index_banner_get');
-  Route::get('/index/get_index_list', 'indexController@getIndexList')->name('get_index_list');
-  Route::get('/index/get_hot_doc', 'indexController@getHotDoc')->name('get_hot_doc');
-  Route::get('/index/get_menu', 'indexController@getMenu')->name('get_menu');
-  Route::get('/is_login', 'indexController@isLogin')->name('is_login');
-
-  //前台用户中心
-  Route::get('/me', 'meController@mePost')->name('me');
-  Route::get('/me/get_user_info', 'meController@getUserInfo')->name('get_user_info');
-  Route::get('/me/post', 'meController@mePost')->name('me_post');
-  Route::get('/me/collection', 'meController@meCollection')->name('me_collection');
-  Route::get('/me/answer', 'meController@meAnswer')->name('me_answer');
-  Route::get('/me/comment', 'meController@meComment')->name('me_comment');
-  Route::get('/me/subscribe', 'meController@meSubscribe')->name('me_subscribe');
-  Route::get('/me/reward', 'meController@meReward')->name('me_reward');
-  Route::get('/me/message', 'meController@meMessage')->name('me_message');
-  Route::get('/me/setting', 'meController@meSetting')->name('me_setting');
-  Route::get('/me/setting/password', 'meController@meSettingPassword')->name('me_setting_password');
-  Route::get('/me/setting/avatar', 'meController@meSettingAvatar')->name('me_setting_avatar');
-  Route::get('/user/{userId}', 'userController@view')->name('user_center');
-
-  //tag页
-  Route::post('/tag/get_doc_by_tag', 'tagController@getDocByTag')->name('get_doc_by_tag');
-  Route::get('/tag/{tag}', 'tagController@view')->name('tag');
-
-  //分类页
-  Route::get('/category/get_tag', 'categoryController@getTag')->name('category_get_tag');
-  Route::get('/category/{category}', 'categoryController@view')->name('category');
-  Route::post('/category/get_doc_by_category', 'categoryController@getDocByCategory')->name('get_doc_by_category');
-  Route::get('/category/{category}/page/{id?}', 'categoryController@view')->name('');
-
-
-  //内容页
-  Route::post('/index/get_content', 'contentController@getContent')->name('get_content');
-  Route::get('/content/:title', 'webSettingController@view')->name('web_setting');
-  Route::get('/user/find_password', 'findPasswordController@view')->name('find_password');
-  Route::get('/{category}/{id}', 'contentController@view')->name('content');
-});
 
 Route::auth();
 
