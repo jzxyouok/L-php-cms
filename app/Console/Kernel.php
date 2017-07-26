@@ -30,23 +30,7 @@ class Kernel extends ConsoleKernel
     {
       $schedule->call(function () {
 
-//获取所要采集的分类页的网址
-        $siteName=Gather::where('auto','是')->first()->toArray()['.site_name'];
-        $categoryUrl=Gather::where('auto','是')->first()->toArray()['.category_url'];
-        $categoryKeyword=Gather::where('auto','是')->first()->toArray()['.category_keyword'];
 
-
-    Gather::where('auto','是')->first();
-    $rules = array(
-      'title' => array($title, 'text'),
-      'content' => array($content, 'html'),
-    );
-
-    $html = $url;
-
-    $data = QueryList::Query($html, $rules)->data;
-//打印结果
-    return response()->json(['code' => 1, 'msg' => '采集成功', 'gatheredData' => $data[0]]);
 
 
 
