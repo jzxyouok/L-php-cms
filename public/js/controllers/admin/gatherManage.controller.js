@@ -22,4 +22,13 @@ app.controller('gatherManage', ['$scope', '$http', 'gatherManageService', functi
         });
     };
 
+    $scope.autoGather = function () {
+        gatherManageService.autoGather($scope.siteName, $scope.docTitle, $scope.docContent).then(function success(res) {
+
+        }, function error(res) {
+
+
+        });
+    };
+
 }]);

@@ -159,6 +159,7 @@ Route::group(['namespace' => 'Admin'], function () {
   Route::get('/admin/manage/doc_manage/gather_manage', 'gatherManageController@view')->name('gather_manage');
   Route::get('/admin/manage/doc_manage/get_gather', 'gatherManageController@getGather')->name('get_gather');
   Route::post('/admin/manage/doc_manage/add_gather', 'gatherManageController@addGather')->name('add_gather');
+  Route::post('/admin/manage/doc_manage/auto_gather', 'gatherManageController@autoGather')->name('auto_gather');
 
   //标签管理
   Route::get('/admin/manage/doc_manage/tag_manage', 'tagManageController@view')->name('tag_manage');

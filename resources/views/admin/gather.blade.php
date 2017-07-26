@@ -36,18 +36,24 @@
                                 <th>网站名称</th>
                                 <th>标题类名</th>
                                 <th>内容类名</th>
+                                <th>自动采集</th>
+                                <th>列表URL</th>
+                                <th>采集间隔</th>
                                 <th>操作</th>
                             </tr>
                             <tr ng-repeat="x in gatherData">
                                 <td ng-bind="x.site_name"></td>
                                 <td ng-bind="x.doc_title"></td>
                                 <td ng-bind="x.doc_content"></td>
-
+                                <td ng-bind="x.auto"></td>
+                                <td ng-bind="x.doc_content"></td>
+                                <td ng-bind="x.space_time"></td>
                                 <td>
                                     <button type="button" class="btn btn-primary btn-xs btn-flat" data-toggle="modal"
                                             data-target="#category_all_edit_modal" ng-click="edit(x)">编辑</button>
                                     <button type="button" class="btn btn-danger btn-xs btn-flat" data-toggle="modal"
                                             data-target="#category_all_remove_modal" ng-click="remove(x)">删除</button>
+                                    <button type="button" class="btn btn-info btn-xs btn-flat"  ng-click="autoGather(x)">开始自动采集</button>
                                 </td>
                             </tr>
 

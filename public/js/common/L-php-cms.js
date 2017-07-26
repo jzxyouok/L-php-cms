@@ -665,6 +665,19 @@ app.factory('gatherManageService',['$http',function ($http) {
               headers: {'Content-Type': 'application/x-www-form-urlencoded'}
           });
       },
+
+      autoGather:function (siteName,docTitle,docContent) {
+          return $http({
+              method: 'POST',
+              url: '/admin/manage/doc_manage/auto_gather',
+              data:$.param({
+                  siteName:siteName,
+                  docTitle:docTitle,
+                  docContent:docContent,
+              }),
+              headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+          });
+      },
   };
 }]);
 /**
@@ -2786,6 +2799,15 @@ app.controller('gatherManage', ['$scope', '$http', 'gatherManageService', functi
     };
     $scope.addGather = function () {
         gatherManageService.addGather($scope.siteName, $scope.docTitle, $scope.docContent).then(function success(res) {
+
+        }, function error(res) {
+
+
+        });
+    };
+
+    $scope.autoGather = function () {
+        gatherManageService.autoGather($scope.siteName, $scope.docTitle, $scope.docContent).then(function success(res) {
 
         }, function error(res) {
 

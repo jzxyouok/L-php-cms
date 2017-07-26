@@ -23,5 +23,18 @@ app.factory('gatherManageService',['$http',function ($http) {
               headers: {'Content-Type': 'application/x-www-form-urlencoded'}
           });
       },
+
+      autoGather:function (siteName,docTitle,docContent) {
+          return $http({
+              method: 'POST',
+              url: '/admin/manage/doc_manage/auto_gather',
+              data:$.param({
+                  siteName:siteName,
+                  docTitle:docTitle,
+                  docContent:docContent,
+              }),
+              headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+          });
+      },
   };
 }]);

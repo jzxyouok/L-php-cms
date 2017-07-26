@@ -16,6 +16,8 @@ class CreateGatherTable extends Migration
         $table->increments('id');
         $table->string('site_name');
         $table->string('doc_title');
+        $table->string('auto');
+        $table->string('space_time');
         $table->string('doc_content');
         $table->timestamps();
 
