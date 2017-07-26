@@ -39,6 +39,7 @@
                                 <th>自动采集</th>
                                 <th>列表URL</th>
                                 <th>采集间隔</th>
+                                <th>分类关键词</th>
                                 <th>操作</th>
                             </tr>
                             <tr ng-repeat="x in gatherData">
@@ -46,8 +47,9 @@
                                 <td ng-bind="x.doc_title"></td>
                                 <td ng-bind="x.doc_content"></td>
                                 <td ng-bind="x.auto"></td>
-                                <td ng-bind="x.doc_content"></td>
+                                <td ng-bind="x.category_url"></td>
                                 <td ng-bind="x.space_time"></td>
+                                <td ng-bind="x.category_keyword"></td>
                                 <td>
                                     <button type="button" class="btn btn-primary btn-xs btn-flat" data-toggle="modal"
                                             data-target="#category_all_edit_modal" ng-click="edit(x)">编辑</button>

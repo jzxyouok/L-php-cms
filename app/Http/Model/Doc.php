@@ -10,6 +10,8 @@ class Doc extends Model
   protected $primarykey = 'id';
   public $timestamps = true;
 
+  public $guarded=[];
+
   public function adminUser()
   {
     return $this->belongsTo('App\Http\Model\AdminUser', 'publisher_id', 'id');

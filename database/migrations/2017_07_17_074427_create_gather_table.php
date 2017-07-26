@@ -19,6 +19,8 @@ class CreateGatherTable extends Migration
         $table->string('auto');
         $table->string('space_time');
         $table->string('doc_content');
+        $table->string('category_url');
+        $table->string('category_keyword');
         $table->timestamps();
 
       });
