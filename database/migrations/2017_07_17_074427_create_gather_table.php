@@ -21,6 +21,9 @@ class CreateGatherTable extends Migration
         $table->string('doc_content');
         $table->string('category_url');
         $table->string('category_keyword');
+        $table->string('time_selector');
+        $table->string('title_selector');
+        $table->string('content_url_selector');
         $table->timestamps();
 
       });
