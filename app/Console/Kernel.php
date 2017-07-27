@@ -37,6 +37,6 @@ class Kernel extends ConsoleKernel
 //
 //
 //    })->everyThirtyMinutes();
-    $schedule->command('auto:gather')->everyThirtyMinutes();
+   // $schedule->command('auto:gather')->everyThirtyMinutes();
   }
 }

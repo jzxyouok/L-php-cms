@@ -53,7 +53,7 @@ Route::group(['namespace' => 'Index'], function () {
   Route::post('/index/get_content', 'contentController@getContent')->name('get_content');
   Route::get('/content/:title', 'webSettingController@view')->name('web_setting');
   Route::get('/user/find_password', 'findPasswordController@view')->name('find_password');
-//  Route::get('/{category}/{id}', 'contentController@view')->name('content');
+  Route::get('/{category}/{id}', 'contentController@view')->name('content')->where(['category' => '[a-z]+', 'id' => '[0-9]+']);
 });
 /*
  * 登录退出
@@ -125,6 +125,10 @@ Route::group(['namespace' => 'Admin'], function () {
   Route::post('/admin/manage/doc_manage/put_into_recycle', 'publishedController@putIntoRecycle')->name('put_into_recycle');
 
   Route::get('/admin/manage/doc_manage/wait_for_verify', 'waitForVerifyController@view')->name('wait_for_verify');
+  Route::post('/admin/manage/doc_manage/get_wait_for_verify_doc', 'waitForVerifyController@getWaitForVerifyDoc')->name('get_wait_for_verify_doc');
+  Route::get('/admin/manage/doc_manage/verify_doc/{id}', 'verifyDocController@view')->name('verify_doc');
+  Route::post('/admin/manage/doc_manage/verify_doc', 'verifyDocController@verifyDoc')->name('verify_doc');
+
   Route::get('/admin/manage/doc_manage/no_access', 'noAccessController@view')->name('no_access');
   Route::get('/admin/manage/doc_manage/draft', 'draftController@view')->name('draft');
   Route::get('/admin/manage/doc_manage/recycle', 'recycleController@view')->name('recycle');

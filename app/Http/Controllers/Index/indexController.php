@@ -37,7 +37,7 @@ class indexController extends Controller
     },'categorys'=> function ($query) {
       $query->select('slug','name');
 
-    }])->where(['type' => 'post', 'status' => 'published'])->orderBy('published_date', 'desc')->get(['id','publisher_id', 'title', 'published_date', 'category', 'from', 'recommend', 'hot', 'view', 'collection', 'like', 'author',  'keyword', 'abstract', 'preview_img', 'content']);
+    }])->where(['type' => 'post', 'status' => 'published'])->orderBy('published_date', 'desc')->get(['id','publisher_id', 'title', 'published_date', 'category', 'from', 'recommend', 'hot', 'view', 'collection', 'like', 'author',  'keyword', 'abstract', 'preview_img', 'content','created_at']);
 
 
     foreach ($docs as $doc) {

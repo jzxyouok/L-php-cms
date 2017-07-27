@@ -65,7 +65,7 @@
                         <span class="author" data-id="31217">
                             <a target="_blank" href="http://www.woshipm.com/u/31217" ng-bind="x.author"></a></span>
                         <span class="dot"></span>
-                        <time ng-bind="x.published_date"></time>
+                        <time ng-bind="x.created_at"></time>
                     </div>
                     <div class="stream-list-snipper" ng-bind="x.abstract">
 

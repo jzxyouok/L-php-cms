@@ -40,6 +40,7 @@ return [
   'published' => '已发布',
   'edit_doc' => '文档编辑',
   'wait_for_verify' => '待审核',
+  'verify_doc' => '文档审核',
   'no_access' => '未通过',
   'draft' => '草稿箱',
   'recycle' => '回收站',

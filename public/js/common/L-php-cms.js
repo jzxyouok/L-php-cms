@@ -1014,50 +1014,63 @@ app.factory('recycleService',['$http',function ($http) {
 /**
  * Created by v_lljunli on 2017/5/10.
  */
+app.factory('verifyDocService', ['$http', function ($http) {
+    return {
+        getDocById: function (id) {
+            return $http({
+                method: 'POST',
+                url: '/admin/manage/doc_manage/get_doc_by_id',
+                data: $.param({
+                    id: id,
+
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
+
+        verifyDoc: function (id,type, title, previewImg, tag, category, abstract, keyword, view, author, from, content) {
+            return $http({
+                method: 'POST',
+                url: '/admin/manage/doc_manage/verify_doc',
+                data: $.param({
+                    id:id,
+                    type: type,
+                    title: title,
+                    previewImg: previewImg,
+                    tag: tag,
+                    category: category,
+                    abstract: abstract,
+                    keyword: keyword,
+                    view: view,
+                    author: author,
+                    from: from,
+                    content: content
+                }),
+                headers: {'content-type': 'application/x-www-form-urlencoded'}
+            });
+        },
+
+    };
+}]);
+/**
+ * Created by v_lljunli on 2017/5/10.
+ */
 app.factory('waitForVerifyService',['$http',function ($http) {
   return{
 
-    /*
-    * 根据每页显示数、第几页来获取已发布文档数据
-    * */
-    postLimitAndPage:function (limit,page) {
-      return $http({
-        method:'POST',
-        url:'/admin/manage/document_manage/get_wait_for_verify_document',
-        data:$.param({
-          limit:limit,
-          page:page,
-        }),
-        headers:{'content-type':'application/x-www-form-urlencoded'}
-      });
-    },
-    /*
-    * 删除单篇文档
-    * */
-    removeOneDocument:function (doc) {
-      return $http({
-        method:'POST',
-        url:'/admin/manage/document_manage/remove_one_document',
-        data:$.param({
-          data:doc,
-        }),
-        headers:{'content-type':'application/x-www-form-urlencoded'}
-      });
-    },
 
-    /*
-    * 单篇文档放入回收站
-    * */
-    putIntoRecycle:function (doc) {
-      return $http({
-        method:'POST',
-        url:'/admin/manage/document_manage/put_into_recycle',
-        data:$.param({
-          data:doc,
-        }),
-        headers:{'content-type':'application/x-www-form-urlencoded'}
-      });
-    },
+      getWaitForVerifyByLimitAndCurrentPage: function (limit, currentPage) {
+          return $http({
+              method: 'POST',
+              url: '/admin/manage/doc_manage/get_wait_for_verify_doc',
+              data: $.param({
+                  limit: limit,
+                  currentPage: currentPage,
+              }),
+              headers: {'content-type': 'application/x-www-form-urlencoded'}
+          });
+      },
+
 
   };
 }]);
@@ -3397,86 +3410,173 @@ app.controller('recycle', ['$scope', '$http', 'recycleService', function ($scope
 /**
  * Created by v_lljunli on 2017/5/10.
  */
-app.controller('waitForVerify', ['$scope', '$http', 'waitForVerifyService', function ($scope, $http, waitForVerifyService) {
+app.controller('verifyDoc', ['$scope', '$http', 'verifyDocService', 'categoryAllService', function ($scope, $http, verifyDocService, categoryAllService) {
 
-  waitForVerifyService.postLimitAndPage(5, 1).then(function success(res) {
-    $scope.data = res.data.documentWaitForVerifyByLimitAndPage;
-    $scope.allPage = res.data.allPage;
-    $scope.documentCountNum=res.data.documentCountNum;
-  }, function error(res) {
+    $scope.getDocById = function () {
+        var id = $('#doc_id').val();
 
-  });
+        verifyDocService.getDocById(id).then(function success(res) {
+            if (res.data.code === 1) {
+                $scope.type = {
+                    name: String(res.data.data.type)
+                };
+                $scope.title = res.data.data.title;
 
+                $('#edit_doc_preview_img_preview').attr('src', res.data.data.preview_img);
+                $scope.tag = res.data.data.tag;
+                $scope.abstract = res.data.data.abstract;
+                $scope.keyword = res.data.data.keyword;
+                $scope.view = res.data.data.view;
+                $scope.author = res.data.data.author;
+                $scope.from = res.data.data.from;
+                $scope.tag = res.data.data.tag;
+                ue.ready(function () {
+                    ue.setContent(res.data.data.content, false);
+                });
+            }
+        }, function error(res) {
 
-  $scope.limit = '5';
-  $scope.currentPage = 1;
-  /*
-   * 按条件获取文档数据
-   * */
-  $scope.getPage = function (limit, page) {
-    waitForVerifyService.postLimitAndPage(limit, page).then(function success(res) {
-      $scope.data = res.data.documentWaitForVerifyByLimitAndPage;
-      $scope.allPage = res.data.allPage;
-      $scope.documentCountNum=res.data.documentCountNum;
+        });
+    };
+
+    categoryAllService.getCategories().then(function success(res) {
+        var data = res.data;
+        var dataFormat = [];
+
+        for (var j = 0; j < data.length; j++) {
+            if (data[j].parent === '0') {
+                dataFormat.push({
+                    name: data[j].name,
+                    id: data[j].slug,
+                    slug: data[j].slug,
+                    parent: data[j].parent,
+                    remark: data[j].remark,
+                    order: data[j].order,
+                    original_id: data[j].id,
+                });
+            }
+
+        }
+
+        for (var m = 0; m < dataFormat.length; m++) {
+            for (var z = 0; z < data.length; z++) {
+
+                if (dataFormat[m].id === data[z].parent) {
+                    dataFormat.splice(m + 1, 0, {
+                        name: '' + '└' + data[z].name,
+                        id: data[z].slug,
+                        slug: data[z].slug,
+                        parent: data[z].parent,
+                        remark: data[z].remark,
+                        order: data[z].order,
+                        original_id: data[z].id,
+                    });
+
+                }
+
+            }
+        }
+
+        $scope.data = dataFormat;
+
+        var cate = dataFormat.slice(0);
+
+        $scope.cateOptions = cate;
+
+        $scope.category = $scope.cateOptions[0].id;
     }, function error(res) {
 
     });
+
+
+    $scope.verifyDoc = function () {
+
+        ue.ready(function () {
+            $scope.content = ue.getContent();
+        });
+        $scope.previewImg=$('#edit_doc_preview_img_preview').attr('src');
+        var id = $('#doc_id').val();
+        verifyDocService.verifyDoc(
+            id,
+            $scope.type.name,
+            $scope.title,
+            $scope.previewImg,
+            $scope.tag,
+            $scope.category,
+            $scope.abstract,
+            $scope.keyword,
+            $scope.view,
+            $scope.author,
+            $scope.from,
+            $scope.content
+        ).then(function success(res) {
+
+        }, function error(res) {
+
+        });
+    };
+
+}]);
+/**
+ * Created by v_lljunli on 2017/5/10.
+ */
+app.controller('waitForVerify', ['$scope', '$http', 'waitForVerifyService', function ($scope, $http, waitForVerifyService) {
+    $scope.limit = '5';
     $scope.currentPage = 1;
 
-  };
-  /*
-   * 单击跳转页面
-   * */
-  $scope.goToPage = function (limit, page) {
-    waitForVerifyService.postLimitAndPage(limit, page).then(function success(res) {
-      $scope.data = res.data.documentWaitForVerifyByLimitAndPage;
-      $scope.allPage = res.data.allPage;
-      $scope.documentCountNum=res.data.documentCountNum;
-      $scope.currentPage = page;
-    }, function error(res) {
+    $scope.getWaitForVerifyByLimitAndCurrentPage = function (limit, currentPage) {
+        waitForVerifyService.getWaitForVerifyByLimitAndCurrentPage(limit, currentPage).then(function success(res) {
+            $scope.data = res.data.data;
+            $scope.count = res.data.count;
+            $scope.allPage = res.data.allPage;
+            $scope.documentCountNum = res.data.documentCountNum;
+            $scope.currentPage = currentPage;
+        }, function error(res) {
 
-    });
-  };
-  /*
-   * 删除单篇文档
-   * */
-  $scope.removeOneDocument = function (doc) {
-    $scope.oneDocument = doc;
-    $('#remove_one_document_modal').modal({
-      keyboard: true
-    });
-
-  };
-  /*
-   * 删除单篇文档提交
-   * */
-  $scope.removeOneDocumentCommit = function (doc) {
-
-
-    $scope.document_display={
-      name:'1',
+        });
+        $scope.currentPage = 1;
     };
-    if ($scope.document_display.name == 1) {
-      waitForVerifyService.putIntoRecycle(doc).then(function success(res) {
-        if (res.data.code === 1) {
-          $('#remove_one_document_modal').modal('hide');
-          $scope.getPage();
+
+    $scope.removeOneDoc = function (doc) {
+        $scope.oneDoc = doc;
+        $('#remove_one_doc_modal').modal({
+            keyboard: true
+        });
+
+    };
+
+    $scope.removeOneDocCommit = function (doc) {
+
+
+        $scope.status = {
+            name: '1',
+        };
+        if ($scope.status.name == 1) {
+            publishedService.putIntoRecycle(doc).then(function success(res) {
+                if (res.data.code === 1) {
+                    $('#remove_one_doc_modal').modal('hide');
+                    $scope.getPublishedByLimitAndCurrentPage($scope.limit,$scope.currentPage);
+                }
+            }, function error(res) {
+
+            });
+        } else {
+            publishedService.removeOneDoc(doc).then(function success(res) {
+                if (res.data.code === 1) {
+                    $('#remove_one_doc_modal').modal('hide');
+                    $scope.getPage();
+                }
+            }, function error(res) {
+
+            });
         }
-      }, function error(res) {
 
-      });
-    } else {
-      waitForVerifyService.removeOneDocument(doc).then(function success(res) {
-        if (res.data.code === 1) {
-          $('#remove_one_document_modal').modal('hide');
-          $scope.getPage();
-        }
-      }, function error(res) {
+    };
 
-      });
-    }
+    $scope.editDoc = function (doc) {
+        window.location.href = '/admin/manage/doc_manage/verify_doc/'+doc.id;
 
-  };
+    };
 
 
 }]);

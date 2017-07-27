@@ -99,7 +99,7 @@
             <div class="row">
               <div class="col-sm-5">
                 <div class="dataTables_info" id="example1_info" role="status" aria-live="polite">
-                  共@{{count}}条文档
+                  共<span ng-bind="count"></span>条文档
                 </div>
               </div>
               <div class="col-sm-7">
