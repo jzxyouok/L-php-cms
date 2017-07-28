@@ -56,10 +56,14 @@ class Uploader
         $this->config = $config;
         $this->type = $type;
         if ($type == "remote") {
+
             $this->saveRemote();
+
         } else if($type == "base64") {
+
             $this->upBase64();
         } else {
+
             $this->upFile();
         }
 
@@ -72,8 +76,11 @@ class Uploader
      */
     private function upFile()
     {
+//      die('777');
         $file = $this->file = $_FILES[$this->fileField];
+
         if (!$file) {
+
             $this->stateInfo = $this->getStateInfo("ERROR_FILE_NOT_FOUND");
             return;
         }
@@ -89,6 +96,7 @@ class Uploader
         }
 
         $this->oriName = $file['name'];
+
         $this->fileSize = $file['size'];
         $this->fileType = $this->getFileExt();
         $this->fullName = $this->getFullName();
@@ -208,9 +216,13 @@ class Uploader
             return;
         }
         //格式验证(扩展名验证和Content-Type验证)
-      //  $fileType = strtolower(strrchr($imgUrl, '.'));
+        $fileType = strtolower(strrchr($imgUrl, '.'));
 
-      $fileType = substr(strtolower(strrchr($imgUrl, '.')),0, strpos(strtolower(strrchr($imgUrl, '.')),'?'));
+
+
+//if(strpos(strtolower(strrchr($imgUrl, '.')),'?')){
+//  $fileType = substr(strtolower(strrchr($imgUrl, '.')),0, strpos(strtolower(strrchr($imgUrl, '.')),'?'));
+//}
 
         if (!in_array($fileType, $this->config['allowFiles']) || !isset($heads['Content-Type']) || !stristr($heads['Content-Type'], "image")) {
             $this->stateInfo = $this->getStateInfo("ERROR_HTTP_CONTENTTYPE");
@@ -253,6 +265,7 @@ class Uploader
         }
 
         //移动文件
+
         if (!(file_put_contents($this->filePath, $img) && file_exists($this->filePath))) { //移动失败
             $this->stateInfo = $this->getStateInfo("ERROR_WRITE_CONTENT");
         } else { //移动成功
@@ -277,7 +290,13 @@ class Uploader
      */
     private function getFileExt()
     {
+
+    //  if(strpos(strtolower(strrchr($this->oriName, '.')),'?')){
+     //   return  substr(strtolower(strrchr($this->oriName, '.')),0, strpos(strtolower(strrchr//($this->oriName, '.')),'?'));
+   //   }else{
         return strtolower(strrchr($this->oriName, '.'));
+    //  }
+
     }
 
     /**
@@ -311,6 +330,7 @@ class Uploader
         }
 
         $ext = $this->getFileExt();
+
         return $format . $ext;
     }
 
@@ -319,6 +339,7 @@ class Uploader
      * @return string
      */
     private function getFileName () {
+
         return substr($this->filePath, strrpos($this->filePath, '/') + 1);
     }
 
@@ -329,6 +350,7 @@ class Uploader
     private function getFilePath()
     {
         $fullname = $this->fullName;
+
         $rootPath = $_SERVER['DOCUMENT_ROOT'];
 
         if (substr($fullname, 0, 1) != '/') {
@@ -362,11 +384,13 @@ class Uploader
      */
     public function getFileInfo()
     {
+
         return array(
             "state" => $this->stateInfo,
             "url" => $this->fullName,
             "title" => $this->fileName,
             "original" => $this->oriName,
+//        "original" => substr($this->oriName,0, strpos($this->oriName,'?')),
             "type" => $this->fileType,
             "size" => $this->fileSize
         );

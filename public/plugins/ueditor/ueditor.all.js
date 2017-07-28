@@ -23246,7 +23246,9 @@ UE.plugins['catchremoteimage'] = function () {
                         oldSrc = ci.getAttribute("_src") || ci.src || "";
                         for (j = 0; cj = list[j++];) {
                             if (oldSrc == cj.source && cj.state == "SUCCESS") {  //抓取失败时不做替换处理
+
                                 newSrc = catcherUrlPrefix + cj.url;
+
                                 domUtils.setAttributes(ci, {
                                     "src": newSrc,
                                     "_src": newSrc

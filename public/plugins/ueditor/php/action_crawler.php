@@ -34,6 +34,8 @@ foreach ($source as $imgUrl) {
         "title" => htmlspecialchars($info["title"]),
         "original" => htmlspecialchars($info["original"]),
         "source" => htmlspecialchars($imgUrl)
+
+
     ));
 }
 
