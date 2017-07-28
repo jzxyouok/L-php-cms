@@ -24,6 +24,7 @@ class CreateGatherTable extends Migration
         $table->string('time_selector');
         $table->string('title_selector');
         $table->string('content_url_selector');
+        $table->string('preview_img_selector');
         $table->timestamps();
 
       });

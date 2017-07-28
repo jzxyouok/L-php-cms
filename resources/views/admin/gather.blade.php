@@ -34,15 +34,16 @@
                             <tr>
 
                                 <th>网站名称</th>
-                                <th>标题选择器(内容页)</th>
-                                <th>内容选择器(内容页)</th>
+                                <th>标题选择器(内容)</th>
+                                <th>内容选择器(内容)</th>
                                 <th>自动采集</th>
                                 <th>列表URL</th>
                                 <th>采集间隔</th>
                                 <th>分类关键词</th>
-                                <th>时间选择器(列表页)</th>
-                                <th>标题选择器(列表页)</th>
-                                <th>正文URL选择器(列表页)</th>
+                                <th>时间选择器(列表)</th>
+                                <th>标题选择器(列表)</th>
+                                <th>正文URL选择器(列表)</th>
+                                <th>预览图选择器(列表)</th>
                                 <th>操作</th>
                             </tr>
                             <tr ng-repeat="x in gatherData">
@@ -56,6 +57,7 @@
                                 <td ng-bind="x.time_selector"></td>
                                 <td ng-bind="x.title_selector"></td>
                                 <td ng-bind="x.content_url_selector"></td>
+                                <td ng-bind="x.preview_img_selector"></td>
                                 <td>
                                     <button type="button" class="btn btn-primary btn-xs btn-flat" data-toggle="modal"
                                             data-target="#category_all_edit_modal" ng-click="edit(x)">编辑</button>
