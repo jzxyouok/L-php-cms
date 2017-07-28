@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="735742ba-6989-49b0-a7fe-9f9d75cc8c11" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/ueditor/php/Uploader.class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/ueditor/php/action_crawler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/ueditor/php/action_list.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/ueditor/php/action_upload.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/ueditor/php/config.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/ueditor/php/controller.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/plugins/ueditor/nodejs/config.json" afterPath="$PROJECT_DIR$/public/plugins/ueditor/php/config.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Console/Kernel.php" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/gatherManageController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/gatherManageController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/ueditor/ueditor.config.js" afterPath="$PROJECT_DIR$/public/plugins/ueditor/ueditor.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/write.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/write.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/templates/blue_foot.blade.php" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/templates/blue_foot.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/index/woshipm/templates/site_footer.blade.php" afterPath="$PROJECT_DIR$/resources/views/index/woshipm/templates/site_footer.blade.php" />
-    </list>
+    <list default="true" id="735742ba-6989-49b0-a7fe-9f9d75cc8c11" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,53 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-4105">
               <caret line="56" column="3" lean-forward="true" selection-start-line="56" selection-start-column="3" selection-end-line="56" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="writeController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/writeController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="17" />
-              <folding>
-                <element signature="e#646#2515#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="docWrite.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/controllers/admin/docWrite.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1134">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="write.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/write.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="231" column="0" lean-forward="false" selection-start-line="231" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="docWrite.service.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/services/admin/docWrite.service.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -918,12 +861,12 @@
       <workItem from="1500430361436" duration="26085000" />
       <workItem from="1500516522539" duration="19000" />
       <workItem from="1500516659112" duration="52098000" />
-      <workItem from="1500858505227" duration="99338000" />
+      <workItem from="1500858505227" duration="99605000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1623173000" />
+    <option name="totallyTimeSpent" value="1623440000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -936,10 +879,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20042644" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23933902" sideWeight="0.49500713" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23933902" sideWeight="0.49500713" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279003" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32981783" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1407,40 +1350,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4105">
-          <caret line="56" column="3" lean-forward="true" selection-start-line="56" selection-start-column="3" selection-end-line="56" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/writeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="17" />
-          <folding>
-            <element signature="e#646#2515#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controllers/admin/docWrite.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1134">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/services/admin/docWrite.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/else/blog/views/admin/document_write.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-325">
@@ -1465,10 +1374,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controllers/admin/docWrite.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1134">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/services/admin/docWrite.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/write.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="231" column="0" lean-forward="false" selection-start-line="231" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
+        <state relative-caret-position="378">
+          <caret line="227" column="51" lean-forward="true" selection-start-line="227" selection-start-column="51" selection-end-line="227" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/writeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="17" />
+          <folding>
+            <element signature="e#646#2515#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4105">
+          <caret line="56" column="3" lean-forward="true" selection-start-line="56" selection-start-column="3" selection-end-line="56" selection-end-column="3" />
           <folding />
         </state>
       </provider>
