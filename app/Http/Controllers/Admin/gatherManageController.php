@@ -159,7 +159,8 @@ class gatherManageController extends Controller
 
   public function autoGather(Request $request)
   {
-
+    $heads = get_headers('http://cms-bucket.nosdn.127.net/a8531657f74a49e2ab60ec57493ed20e20161123153833.jpeg?imageView&thumbnail=550x0', 1);
+    dd($heads);
 
         //获取所要采集的分类页的网址
         // $siteName = Gather::where('auto', '是')->get()->toArray()['site_name'];
@@ -260,7 +261,7 @@ class gatherManageController extends Controller
 
             }
 
-               dd($finalData);
+             //  dd($finalData);
 
 
             foreach ($finalData as &$fD) {
