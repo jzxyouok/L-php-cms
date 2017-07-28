@@ -260,7 +260,7 @@ class gatherManageController extends Controller
 
             }
 
-             //  dd($finalData);
+               dd($finalData);
 
 
             foreach ($finalData as &$fD) {

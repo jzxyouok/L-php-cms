@@ -219,9 +219,13 @@
                     </form>
                     <script src="{{ URL::asset('public/plugins/ueditor/ueditor.config.js') }}"></script>
                     <script src="{{ URL::asset('public/plugins/ueditor/ueditor.all.min.js') }}"></script>
+                    {{--<script src="{{ URL::asset('public/plugins/ueditor/_examples/editor_api.js') }}"></script>--}}
+                    {{--<script src="{{ URL::asset('public/plugins/ueditor/lang/zh-cn/zh-cn.js') }}"></script>--}}
+                    <script src="{{ URL::asset('public/plugins/ueditor/_examples/addCustomizeButton.js') }}"></script>
                     <script type="text/javascript">
                         var ue = UE.getEditor('container', {
-                            initialFrameWidth: '100%'
+                            initialFrameWidth: '100%',
+                            catchRemoteImageEnable: true
                         });
                     </script>
                     <script>

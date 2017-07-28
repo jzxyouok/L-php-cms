@@ -37,6 +37,10 @@ class Kernel extends ConsoleKernel
 //
 //
 //    })->everyThirtyMinutes();
-    $schedule->command('auto:gather')->hourly();
+    $schedule->command('auto:gather')
+      ->hourly()
+      ->when(function () {
+        return date('H') >= 8 && date('H') <= 17;
+      });
   }
 }
