@@ -196,7 +196,7 @@ class gatherManageController extends Controller
               $rules = array(
                 'title' => array($titleSelector, 'text'),
                 'content_url' => array($contentUrlSelector, 'href'),
-
+                'preview_img' => array($previewImgSelector, 'src'),
               );
             }
 
@@ -244,6 +244,7 @@ class gatherManageController extends Controller
             }
             // dd($dataOnlyTitle);
             $finalData = [];
+          //  dd($data);
             foreach ($data as $k => $v) {
               if ($this->deep_in_array($v['title'], $dataOnlyTitle)) {
                 $t = QueryList::Query($v['content_url'], array(
@@ -259,7 +260,7 @@ class gatherManageController extends Controller
 
             }
 
-              // dd($finalData);
+             //  dd($finalData);
 
 
             foreach ($finalData as &$fD) {

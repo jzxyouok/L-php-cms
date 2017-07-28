@@ -222,12 +222,14 @@
                         </div>
 
                     </form>
-                    <script src="/public/plugins/ueditor/ueditor.config.js"></script>
-                    <script src="/public/plugins/ueditor/ueditor.all.min.js"></script>
+
+                    <script src="{{URL::asset('/public/plugins/ueditor/ueditor.config.js')}}"></script>
+                    <script src="{{URL::asset('/public/plugins/ueditor/ueditor.all.min.js')}}"></script>
                     <script type="text/javascript">
                         var ue = UE.getEditor('container', {
                             initialFrameWidth: '100%'
                         });
+
                     </script>
                     <script>
                         $('#doc_preview_img').uploadify({

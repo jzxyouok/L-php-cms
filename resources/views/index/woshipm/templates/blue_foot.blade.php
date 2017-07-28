@@ -22,17 +22,8 @@
     <h3 class="f-tit-h3 icon2 mar-t5">友情链接</h3>
     <div class="blue-link-box">
       <ul>
-        <li><a href="http://pm265.com/" target="_blank">PM265</a></li>
-        <li><a href="http://www.itfeed.com/" target="_blank">ITFeed</a></li>
-        <li><a href="http://www.qidianla.com/" target="_blank">起点学院</a></li>
-        <li><a href="http://www.nav80.com/" target="_blank">设计师导航</a></li>
-        <li><a href="http://uxc.360.cn/" target="_blank">360UXC</a></li>
-        <li><a href="http://cued.xunlei.com/" target="_blank">迅雷CUED</a></li>
-        <li><a href="http://www.zhaopins.com/" target="_blank">产品经理招聘</a></li>
-        <li><a href="http://www.zcool.com.cn/" target="_blank">站酷</a></li>
-        <li><a href="http://www.yanj.cn/" target="_blank">演界网PPT模板</a></li>
-        <li><a href="http://www.lagou.com/" target="_blank">招聘网</a></li>
-
+        <li><a href="http://http://www.dailyads.cn/" target="_blank">经典广告创意</a></li>
+        <li><a href="http://https://www.html-js.cn/" target="_blank">前端开发俱乐部</a></li>
       </ul>
       <div class="clearfix"></div>
     </div>
