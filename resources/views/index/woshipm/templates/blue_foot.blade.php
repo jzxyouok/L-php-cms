@@ -22,8 +22,8 @@
     <h3 class="f-tit-h3 icon2 mar-t5">友情链接</h3>
     <div class="blue-link-box">
       <ul>
-        <li><a href="http://http://www.dailyads.cn/" target="_blank">经典广告创意</a></li>
-        <li><a href="http://https://www.html-js.cn/" target="_blank">前端开发俱乐部</a></li>
+        <li><a href="http://www.dailyads.cn/" target="_blank">经典广告创意</a></li>
+        <li><a href="https://www.html-js.cn/" target="_blank">前端开发俱乐部</a></li>
       </ul>
       <div class="clearfix"></div>
     </div>

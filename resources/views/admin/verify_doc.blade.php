@@ -242,7 +242,7 @@
                             'width': 66,//显示的高度和宽度，默认 height 30；width 120
                             'height': 30,//显示的高度和宽度，默认 height 30；width 120
                             'fileTypeDesc': 'Image Files',//上传文件的类型  默认为所有文件    'All Files'  ;  '*.*'
-                            'fileTypeExts': '*.gif; *.jpg; *.png',//允许上传的文件后缀
+                            'fileTypeExts': '*.gif; *.jpg; *.png;*.jpeg',//允许上传的文件后缀
                             'fileSizeLimit': '64MB',//上传文件大小限制
                             'auto': true,//选择文件后自动上传
                             'multi': false,//设置为true将允许多文件上传
