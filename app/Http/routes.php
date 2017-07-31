@@ -94,11 +94,16 @@ Route::group(['namespace' => 'Admin'], function () {
   //用户管理
   Route::get('/admin/manage/user_manage', 'userManageController@view')->name('user_manage');
   Route::get('/admin/manage/user_manage/get_user', 'userManageController@getUser')->name('get_user');
+  Route::post('/admin/manage/user_manage/check_phone', 'userManageController@checkPhone')->name('check_phone');
+  Route::post('/admin/manage/user_manage/check_email', 'userManageController@checkEmail')->name('check_email');
+  Route::post('/admin/manage/user_manage/add_user_commit', 'userManageController@addUserCommit')->name('add_user_commit');
+  Route::post('/admin/manage/user_manage/forbidden_status', 'userManageController@forbiddenStatus')->name('user_manage_forbidden_status');
+  Route::post('/admin/manage/user_manage/start_using', 'userManageController@startUsing')->name('user_manage_start_using');
 
 //后台用户组
   Route::get('/admin/manage/user_manage/admin_user_group_all', 'adminUserGroupAllController@view')->name('admin_user_group_all');
-  Route::post('/admin/manage/user_manage/forbidden_status', 'adminUserGroupAllController@forbiddenStatus')->name('admin_user_group_all_forbidden_status');
-  Route::post('/admin/manage/user_manage/start_using', 'adminUserGroupAllController@startUsing')->name('admin_user_group_all_start_using');
+//  Route::post('/admin/manage/user_manage/forbidden_status', 'adminUserGroupAllController@forbiddenStatus')->name('admin_user_group_all_forbidden_status');
+//  Route::post('/admin/manage/user_manage/start_using', 'adminUserGroupAllController@startUsing')->name('admin_user_group_all_start_using');
   Route::post('/admin/manage/user_manage/user_group_edit', 'adminUserGroupAllController@userGroupEdit')->name('admin_user_group_all_user_group_edit');
   Route::post('/admin/manage/user_manage/modify_power', 'adminUserGroupAllController@modifyPower')->name('admin_user_group_all_modify_power');
   Route::get('/admin/manage/user_manage/admin_user_group_get', 'adminUserGroupAllController@get')->name('admin_user_group_get');

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Model\userGroup;
+use App\Http\Model\UserGroup;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -33,7 +33,7 @@ class userGroupManageController extends Controller
     $status = $request->input('status');
     if($name!=''){
 
-      if(userGroup::where('name', $name)->first()){
+      if(UserGroup::where('name', $name)->first()){
         return response()->json(['code'=>false,'msg'=>'用户组已经存在！']);
       }
 
@@ -41,7 +41,7 @@ class userGroupManageController extends Controller
 //      ['name'=>$name,'remark'=>$remark,'pid'=>$pid,'status'=>$status],
 //
 //    ]);
-      $adminUserGroup=new userGroup;
+      $adminUserGroup=new UserGroup;
       $adminUserGroup->name=$name;
       $adminUserGroup->remark=$remark;
       $adminUserGroup->group_id=$group_id;
@@ -69,7 +69,7 @@ class userGroupManageController extends Controller
 
     $name=$request->input('name');
 
-    $adminUserGroup=userGroup::where('name', $name)->first();
+    $adminUserGroup=UserGroup::where('name', $name)->first();
     $adminUserGroup->status=0;
     $adminUserGroup->save();
   }
@@ -78,7 +78,7 @@ class userGroupManageController extends Controller
   {
     $name=$request->input('name');
 
-    $adminUserGroup=userGroup::where('name', $name)->first();
+    $adminUserGroup=UserGroup::where('name', $name)->first();
     $adminUserGroup->status=1;
     $adminUserGroup->save();
   }
@@ -89,7 +89,7 @@ class userGroupManageController extends Controller
     $power=$request->input('power');
 
 
-    $adminUserGroup=userGroup::where('name', $name)->first();
+    $adminUserGroup=UserGroup::where('name', $name)->first();
     $adminUserGroup->power=json_encode($power) ;
 
     $res=$adminUserGroup->save();
@@ -108,7 +108,7 @@ class userGroupManageController extends Controller
     $remark=$request->input('remark');
 
 
-    $adminUserGroup=userGroup::where('id', $id)->first();
+    $adminUserGroup=UserGroup::where('id', $id)->first();
     $adminUserGroup->name=$name;
     $adminUserGroup->pid=$pid;
     $adminUserGroup->remark=$remark;

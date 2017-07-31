@@ -1,5 +1,5 @@
 <!-- 模态框（Modal） -->
-<div class="modal fade" id="admin_user_all_avatar_modal" tabindex="" role="dialog" aria-labelledby="myModalLabel"
+<div class="modal fade" id="user_manage_avatar_modal" tabindex="" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

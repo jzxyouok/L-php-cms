@@ -17,7 +17,8 @@ class CreateUsersTable extends Migration
       $table->string('phone');
       $table->string('nickname');
       $table->string('email');
-      $table->string('company');
+      $table->integer('user_group_id');
+      $table->string('status');
       $table->string('password');
       $table->string('avatar');
       $table->string('is_admin_user');
