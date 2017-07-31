@@ -219,12 +219,15 @@
                 <li class="treeview">
                     <a href="#"><i class="fa fa-users"></i><span>用户管理</span> <i class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
+                        <li><a href="/admin/manage/user_group_manage">用户组管理</a></li>
+                        <li><a href="/admin/manage/user_manage">用户管理</a></li>
                         <li>
                             <a href="#"> 后台用户
                                 <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                 </span>
                             </a>
+
                             <ul class="treeview-menu">
                                 <li><a href="/admin/manage/user_manage/admin_user_group_all"> 所有用户组</a></li>
                                 <li>
@@ -238,6 +241,7 @@
 
                             </ul>
                         </li>
+
                         <li>
                             <a href="#"> 前台用户
                                 <span class="pull-right-container">

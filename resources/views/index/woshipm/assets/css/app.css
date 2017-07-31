@@ -1518,7 +1518,9 @@ input:disabled {
 
 .author-board-left .avatar {
   border-radius: 100%;
-  margin-bottom: 10px
+  margin-bottom: 10px;
+  height: 56px;
+
 }
 
 .author-board-btn {
