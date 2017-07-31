@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>用户登录 | L-blog</title>
+    <title>用户登录 | L-php-cms</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ URL::asset('public/css/font-awesome.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('public/css/ionicons.min.css') }}">
     <link rel="stylesheet" href="https://cdn.bootcss.com/admin-lte/2.3.8/css/AdminLTE.min.css">
@@ -13,8 +13,8 @@
     <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
     <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular-sanitize.min.js"></script>
     <!--[if lt IE 9]>
-    <script src="http://apps.bdimg.com/libs/html5shiv/3.6/html5shiv.min.js"></script>
-    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.6/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
 <body class="hold-transition login-page" ng-app="myApp" ng-controller="adminLogin" ng-init="getCode()">
@@ -42,7 +42,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-8">
-                    <img src="@{{base64}}" alt="" ng-click="updateCode()">
+                    <img ng-src="@{{base64}}" alt="" ng-click="updateCode()">
                 </div>
 
 
@@ -74,7 +74,7 @@
 
 
 <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src="{{ URL::asset('public/plugins/iCheck/icheck.min.js') }}"></script>
 <script src="{{ URL::asset('public/js/common/L-php-cms.js') }}"></script>
 <script>

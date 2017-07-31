@@ -90,7 +90,7 @@
                     <h1></h1>
 
 
-                    <p>用户名: {{ $userInfo->username }} </p>
+                    <p>用户名: {{ $userInfo->email }} </p>
 
                     <p>邮箱: {{ $userInfo->email }}</p>
 

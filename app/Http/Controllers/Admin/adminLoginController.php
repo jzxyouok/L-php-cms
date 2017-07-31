@@ -56,19 +56,19 @@ class adminLoginController extends Controller
       return response()->json(['code' => 0, 'msg' => '验证码错误！']);
 
     } else {
-      $username_data = DB::table('admin_users')->where('username', $username)->value('username');
+      $username_data = DB::table('users')->where('email', $username)->value('email');
 
       if (!$username_data) {
         return response()->json(['code' => 0, 'msg' => '用户名或密码错误！']);
       } else {
-        $password_data = DB::table('admin_users')->where('username', $username)->value('password');
+        $password_data = DB::table('users')->where('email', $username)->value('password');
 
         if ($password !== Crypt::decrypt($password_data)) {
           return response()->json(['code' => 0, 'msg' => '用户名或密码错误！']);
 
         } else {
-          $request->session()->put('username', $username);
-          $userInfo = DB::table('admin_users')->where('username', $request->session()->get('username'))->first();
+          $request->session()->put('email', $username);
+          $userInfo = DB::table('users')->where('email', $request->session()->get('email'))->first();
           $request->session()->put('userInfo', $userInfo);
           return response()->json(['code' => 1, 'msg' => '登录成功！']);
         }
