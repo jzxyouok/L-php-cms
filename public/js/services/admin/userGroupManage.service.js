@@ -4,7 +4,7 @@ app.factory('userGroupManageService', ['$http', function ($http) {
 
           return $http({
               method:'POST',
-              url:'/admin/manage/add_user_group',
+              url:'/admin/manage/user_group_manage/add_user_group',
               data:$.param({
                   group_id:id,
                   name:name,
@@ -19,7 +19,7 @@ app.factory('userGroupManageService', ['$http', function ($http) {
       getUserGroup: function () {
           return $http({
               method: 'GET',
-              url: 'get_user_group',
+              url: '/admin/manage/user_group_manage/get_user_group',
               headers: {'Content-Type': 'application/x-www-form-urlencoded'}
           });
       },
@@ -61,9 +61,9 @@ app.factory('userGroupManageService', ['$http', function ($http) {
       editCommit:function (id,name,pid,remark) {
           return $http({
               method:'POST',
-              url:'/admin/manage/user_manage/user_group_edit',
+              url:'/admin/manage/user_group_manage/edit_user_group',
               data:$.param({
-                  group_id:id,
+                  id:id,
                   name:name,
                   pid:pid,
                   remark:remark
@@ -71,6 +71,8 @@ app.factory('userGroupManageService', ['$http', function ($http) {
               headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
           });
       },
+
+
 
 
 

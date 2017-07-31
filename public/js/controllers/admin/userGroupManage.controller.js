@@ -78,7 +78,7 @@ app.controller('userGroupManageCtrl', ['$scope', '$http', 'userGroupManageServic
             if (res.data.code === 1) {
                 $scope.getUserGroup();
                 // $scope.setPower($scope.userGroup,$scope.group);
-                $('#admin_user_group_all_power_modal').modal('hide');
+                $('#user_group_manage_power_modal').modal('hide');
 
             } else {
 
@@ -343,30 +343,29 @@ app.controller('userGroupManageCtrl', ['$scope', '$http', 'userGroupManageServic
      * 编辑提交
      * */
     $scope.editCommit = function (user) {
+        console.log(user);
         var name = user.name;
         var pid = user.pid;
         var remark = user.remark;
-        var group_id = '超级管理员';
-        switch (name) {
-            case '超级管理员':
-                group_id = 1;
-                break;
-            case '网站管理员':
-                group_id = 2;
-                break;
-            case '内容管理员':
-                group_id = 3;
-                break;
-            default:
-                group_id = 4;
-
-
-        }
-        userGroupManageService.editCommit(group_id, name, pid, remark).then(function (res) {
+        var id = user.id;
+        // switch (name) {
+        //     case '超级管理员':
+        //         group_id = 1;
+        //         break;
+        //     case '网站管理员':
+        //         group_id = 2;
+        //         break;
+        //     case '内容管理员':
+        //         group_id = 3;
+        //         break;
+        //     default:
+        //         group_id = 4;
+        //
+        //
+        // }
+        userGroupManageService.editCommit(id, name, pid, remark).then(function (res) {
             if (res.data.code === 1) {
-                $('#myModal').modal({
-                    keyboard: true
-                });
+                $('#user_group_manage_edit_modal').modal('hide');
             }
         }, function (res) {
 

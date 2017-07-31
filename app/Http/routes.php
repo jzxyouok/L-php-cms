@@ -81,12 +81,19 @@ Route::group(['namespace' => 'Admin'], function () {
  * */
 Route::group(['namespace' => 'Admin'], function () {
 
+  //用户组管理
   Route::get('/admin/manage/user_group_manage', 'userGroupManageController@view')->name('user_group_manage');
-  Route::post('/admin/manage/add_user_group', 'userGroupManageController@addUserGroup')->name('add_user_group');
-  Route::get('/admin/manage/get_user_group', 'userGroupManageController@getUserGroup')->name('get_user_group');
+  Route::post('/admin/manage/user_group_manage/add_user_group', 'userGroupManageController@addUserGroup')->name('add_user_group');
+  Route::get('/admin/manage/user_group_manage/get_user_group', 'userGroupManageController@getUserGroup')->name('get_user_group');
   Route::post('/admin/manage/user_group_manage/forbidden_status', 'userGroupManageController@forbiddenStatus')->name('user_group_manage_forbidden_status');
   Route::post('/admin/manage/user_group_manage/start_using', 'userGroupManageController@startUsing')->name('user_group_manage_start_using');
   Route::post('/admin/manage/user_group_manage/modify_power', 'userGroupManageController@modifyPower')->name('user_group_manage_modify_power');
+  Route::post('/admin/manage/user_group_manage/edit_user_group', 'userGroupManageController@editUserGroup')->name('user_group_manage_edit_user_group');
+
+
+  //用户管理
+  Route::get('/admin/manage/user_manage', 'userManageController@view')->name('user_manage');
+  Route::get('/admin/manage/user_manage/get_user', 'userManageController@getUser')->name('get_user');
 
 //后台用户组
   Route::get('/admin/manage/user_manage/admin_user_group_all', 'adminUserGroupAllController@view')->name('admin_user_group_all');

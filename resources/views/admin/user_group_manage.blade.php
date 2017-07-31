@@ -1,8 +1,7 @@
 @include('admin.header')
 <div class="content-wrapper" ng-controller="userGroupManageCtrl" ng-init="getUserGroup()">
     @include('admin.modal.user_group_manage_power_modal')
-    @include('admin.modal.admin_user_group_all_edit_modal')
-    @include('admin.modal.admin_user_group_all_contribute_modal')
+    @include('admin.modal.user_group_manage_edit_modal')
     @include('admin.modal.user_group_manage_add_modal')
     <section class="content-header">
         <h1>
@@ -54,15 +53,13 @@
                                             ng-click="forbidden(x.name)" ng-show="x.status=='1' ? true :false">禁用
                                     </button>
                                     <button type="button" class="btn btn-primary btn-xs btn-flat" data-toggle="modal"
-                                            data-target="#admin_user_group_all_edit_modal" ng-click="edit(x)">编辑
+                                            data-target="#user_group_manage_edit_modal" ng-click="edit(x)">编辑
                                     </button>
                                     <button type="button" class="btn btn-warning btn-xs btn-flat" data-toggle="modal"
-                                            data-target="#admin_user_group_all_power_modal" ng-click="setPower(x.name,x)">
+                                            data-target="#user_group_manage_power_modal" ng-click="setPower(x.name,x)">
                                         权限分配
                                     </button>
-                                    <button type="button" class="btn btn-info btn-xs btn-flat" data-toggle="modal"
-                                            data-target="#admin_user_group_all_contribute_modal">投稿分类
-                                    </button>
+
                                 </td>
 
                             </tr>

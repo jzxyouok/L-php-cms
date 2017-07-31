@@ -1017,7 +1017,7 @@ app.factory('userGroupManageService', ['$http', function ($http) {
 
           return $http({
               method:'POST',
-              url:'/admin/manage/add_user_group',
+              url:'/admin/manage/user_group_manage/add_user_group',
               data:$.param({
                   group_id:id,
                   name:name,
@@ -1032,7 +1032,7 @@ app.factory('userGroupManageService', ['$http', function ($http) {
       getUserGroup: function () {
           return $http({
               method: 'GET',
-              url: 'get_user_group',
+              url: '/admin/manage/user_group_manage/get_user_group',
               headers: {'Content-Type': 'application/x-www-form-urlencoded'}
           });
       },
@@ -1074,9 +1074,9 @@ app.factory('userGroupManageService', ['$http', function ($http) {
       editCommit:function (id,name,pid,remark) {
           return $http({
               method:'POST',
-              url:'/admin/manage/user_manage/user_group_edit',
+              url:'/admin/manage/user_group_manage/edit_user_group',
               data:$.param({
-                  group_id:id,
+                  id:id,
                   name:name,
                   pid:pid,
                   remark:remark
@@ -1088,7 +1088,20 @@ app.factory('userGroupManageService', ['$http', function ($http) {
 
 
 
+
+
   };
+}]);
+app.factory('userManageService', ['$http', function ($http) {
+    return {
+        getUser: function () {
+            return $http({
+                method: 'GET',
+                url: '/admin/manage/user_manage/get_user',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+            });
+        },
+    };
 }]);
 /**
  * Created by v_lljunli on 2017/5/10.
@@ -3566,7 +3579,7 @@ app.controller('userGroupManageCtrl', ['$scope', '$http', 'userGroupManageServic
             if (res.data.code === 1) {
                 $scope.getUserGroup();
                 // $scope.setPower($scope.userGroup,$scope.group);
-                $('#admin_user_group_all_power_modal').modal('hide');
+                $('#user_group_manage_power_modal').modal('hide');
 
             } else {
 
@@ -3831,30 +3844,29 @@ app.controller('userGroupManageCtrl', ['$scope', '$http', 'userGroupManageServic
      * 编辑提交
      * */
     $scope.editCommit = function (user) {
+        console.log(user);
         var name = user.name;
         var pid = user.pid;
         var remark = user.remark;
-        var group_id = '超级管理员';
-        switch (name) {
-            case '超级管理员':
-                group_id = 1;
-                break;
-            case '网站管理员':
-                group_id = 2;
-                break;
-            case '内容管理员':
-                group_id = 3;
-                break;
-            default:
-                group_id = 4;
-
-
-        }
-        userGroupManageService.editCommit(group_id, name, pid, remark).then(function (res) {
+        var id = user.id;
+        // switch (name) {
+        //     case '超级管理员':
+        //         group_id = 1;
+        //         break;
+        //     case '网站管理员':
+        //         group_id = 2;
+        //         break;
+        //     case '内容管理员':
+        //         group_id = 3;
+        //         break;
+        //     default:
+        //         group_id = 4;
+        //
+        //
+        // }
+        userGroupManageService.editCommit(id, name, pid, remark).then(function (res) {
             if (res.data.code === 1) {
-                $('#myModal').modal({
-                    keyboard: true
-                });
+                $('#user_group_manage_edit_modal').modal('hide');
             }
         }, function (res) {
 
@@ -3864,6 +3876,16 @@ app.controller('userGroupManageCtrl', ['$scope', '$http', 'userGroupManageServic
 }]);
 
 
+app.controller('userManageCtrl', ['$scope', '$http', 'userManageService', function ($scope, $http, userManageService) {
+    $scope.getUser = function () {
+        userManageService.getUser().then(function success(res) {
+            $scope.data = res.data;
+
+        }, function error(res) {
+
+        });
+    };
+}]);
 /**
  * Created by v_lljunli on 2017/5/10.
  */

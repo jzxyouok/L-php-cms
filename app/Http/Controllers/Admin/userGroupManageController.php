@@ -100,6 +100,26 @@ class userGroupManageController extends Controller
     }
   }
 
+  public function editUserGroup(Request $request)
+  {
+    $id=$request->input('id');
+    $name=$request->input('name');
+    $pid=$request->input('pid');
+    $remark=$request->input('remark');
+
+
+    $adminUserGroup=userGroup::where('id', $id)->first();
+    $adminUserGroup->name=$name;
+    $adminUserGroup->pid=$pid;
+    $adminUserGroup->remark=$remark;
+    $res=$adminUserGroup->save();
+    if($res){
+      return response()->json(['code'=>1,'msg'=>'编辑成功']);
+    }else{
+      return response()->json(['code'=>0,'msg'=>'编辑失败']);
+    }
+  }
+
 
 
 

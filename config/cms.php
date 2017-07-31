@@ -29,8 +29,9 @@ return [
   'modify_password' => '修改密码',
 
   'admin_user_manage' => '用户管理',
-  'user_manage' => '用户管理',
+
   'user_group_manage' => '用户组管理',
+  'user_manage' => '用户管理',
   'admin_user_groups_all' => '所有用户组',
   'admin_user_groups_add' => '添加用户组',
   'admin_user_all' => '所有用户',
