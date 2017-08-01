@@ -26,7 +26,7 @@
 <div class="wrapper">
 
     <!--头部-->
-    <header class="main-header">
+    <header class="main-header" ng-controller="headerCtrl" ng-init="">
         <a href="/" class="logo" target="_blank">
             L-php-cms管理系统
         </a>
@@ -166,7 +166,7 @@
                                     <a href="#" class="btn btn-default btn-flat">简介</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="javascript:void(0);" class="btn btn-default btn-flat" ng-click="logout()">退出</a>
+                                    <a href="javascript:void(0);" class="btn btn-default btn-flat" ng-click="adminLogout()">退出</a>
                                 </div>
                             </li>
                         </ul>

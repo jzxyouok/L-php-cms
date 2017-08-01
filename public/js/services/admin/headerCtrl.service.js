@@ -4,11 +4,11 @@
 
 app.factory('headerCtrlService', ['$http', function ($http) {
   return {
-    logout: function () {
+      adminLogout: function () {
 
       return $http({
         method:'GET',
-        url:'/admin/manage/logout',
+        url:'/admin/manage/admin_logout',
         headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
       });
     },

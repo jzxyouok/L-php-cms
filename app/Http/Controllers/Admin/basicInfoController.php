@@ -12,8 +12,8 @@ class basicInfoController extends Controller
 {
     public function view(Request $request){
 
-
-    //  dd(Auth::guard('adminLogin')->user()->toArray()['email']);
+//      dd($request->session()->all());
+//      dd(Auth::guard('adminLogin')->user()->toArray()['email']);
 
       return view('admin.basic_info', [
         'cms'=>config('cms.cms'),

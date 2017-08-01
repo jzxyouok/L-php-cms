@@ -12,7 +12,7 @@ class IsLogin
     {
 
 
-      if (Auth::check()) {
+      if (Auth::guard('adminLogin')->check()) {
         return redirect()->guest('/admin/manage/panel/basic_info');
       }
 

@@ -253,4 +253,12 @@ class AuthController extends Controller
 
 
   }
+
+  public function logout()
+  {
+    Auth::guard($this->getGuard())->logout();
+
+    return response()->json(['code'=>1,'msg'=>'退出成功']);
+    // return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
+  }
 }

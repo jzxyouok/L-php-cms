@@ -683,11 +683,11 @@ app.factory('gatherManageService',['$http',function ($http) {
 
 app.factory('headerCtrlService', ['$http', function ($http) {
   return {
-    logout: function () {
+      adminLogout: function () {
 
       return $http({
         method:'GET',
-        url:'/admin/manage/logout',
+        url:'/admin/manage/admin_logout',
         headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
       });
     },
@@ -2989,9 +2989,9 @@ app.controller('gatherManage', ['$scope', '$http', 'gatherManageService', functi
  */
 
 app.controller('headerCtrl',['$scope','$http','headerCtrlService',function ($scope,$http,headerCtrlService) {
-  $scope.logout=function () {
+  $scope.adminLogout=function () {
 
-    headerCtrlService.logout().then(function success(res) {
+    headerCtrlService.adminLogout().then(function success(res) {
       if(res.data.code===1){
         window.location.href='/admin';
       }

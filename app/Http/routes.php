@@ -62,6 +62,10 @@ Route::group(['namespace' => 'Auth','middleware' => 'isLogin'], function () {
   Route::post('/admin/admin_login', 'adminLoginController@login')->name('admin_login_post');
   Route::post('/admin/admin_login_get_code', 'adminLoginController@getCode')->name('admin_login_post_get_code');
   Route::post('/admin/admin_login_update_code', 'adminLoginController@updateCode')->name('admin_login_post_update_code');
+
+});
+Route::group(['namespace' => 'Auth'], function () {
+  Route::get('/admin/manage/admin_logout', 'adminLoginController@adminLogout')->name('admin_logout');
 });
 /*
  * 登录退出

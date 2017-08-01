@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Input;
 
 class adminLoginController extends Controller
 {
-  protected $redirectTo = '/me';
-  protected $redirectAfterLogout = '/';
+
+
 
   function __construct()
   {
@@ -137,7 +137,15 @@ $input=Input::only(['email','password']);
     return response()->json(['code' => 1, 'base64' => $base64]);
   }
 
+  public function adminLogout(Request $request)
+  {
 
+   // dd(Auth::guard('adminLogin')->logout());
+    Auth::guard('adminLogin')->logout();
+
+    return response()->json(['code'=>1,'msg'=>'退出成功']);
+
+}
 
 
 

@@ -3,9 +3,9 @@
  */
 
 app.controller('headerCtrl',['$scope','$http','headerCtrlService',function ($scope,$http,headerCtrlService) {
-  $scope.logout=function () {
+  $scope.adminLogout=function () {
 
-    headerCtrlService.logout().then(function success(res) {
+    headerCtrlService.adminLogout().then(function success(res) {
       if(res.data.code===1){
         window.location.href='/admin';
       }
