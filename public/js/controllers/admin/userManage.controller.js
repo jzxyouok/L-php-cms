@@ -121,7 +121,7 @@ app.controller('userManageCtrl', ['$scope', '$http', 'userManageService', 'userG
                 });
             }
             $scope.userGroupForEditOptions = arr;
-console.log(user.user_group_id);
+
             $scope.userGroupForEdit = $scope.userGroupForEditOptions[Number(user.user_group_id)-1].id;//设置默认值
 
         }, function error(res) {

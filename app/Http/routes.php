@@ -55,10 +55,8 @@ Route::group(['namespace' => 'Index'], function () {
   Route::get('/user/find_password', 'findPasswordController@view')->name('find_password');
   Route::get('/{category}/{id}', 'contentController@view')->name('content')->where(['category' => '[a-z]+', 'id' => '[0-9]+']);
 });
-/*
- * 登录退出
- * */
-Route::group(['namespace' => 'Admin'], function () {
+
+Route::group(['namespace' => 'Auth','middleware' => 'isLogin'], function () {
   Route::get('/admin', 'adminLoginController@gotoLogin')->name('admin');
   Route::get('/admin/admin_login', 'adminLoginController@view')->name('admin_login');
   Route::post('/admin/admin_login', 'adminLoginController@login')->name('admin_login_post');
@@ -66,9 +64,19 @@ Route::group(['namespace' => 'Admin'], function () {
   Route::post('/admin/admin_login_update_code', 'adminLoginController@updateCode')->name('admin_login_post_update_code');
 });
 /*
+ * 登录退出
+ * */
+//Route::group(['namespace' => 'Admin'], function () {
+//  Route::get('/admin', 'adminLoginController@gotoLogin')->name('admin');
+//  Route::get('/admin/admin_login', 'adminLoginController@view')->name('admin_login');
+//  Route::post('/admin/admin_login', 'adminLoginController@login')->name('admin_login_post');
+//  Route::post('/admin/admin_login_get_code', 'adminLoginController@getCode')->name('admin_login_post_get_code');
+//  Route::post('/admin/admin_login_update_code', 'adminLoginController@updateCode')->name('admin_login_post_update_code');
+//});
+/*
  * 仪表盘
  * */
-Route::group(['namespace' => 'Admin'], function () {
+Route::group(['namespace' => 'Admin','middleware' => 'auth'], function () {
 
   Route::get('/admin/manage/panel/basic_info', 'basicInfoController@view')->name('basic_info');
   Route::get('/admin/manage/panel/modify_password', 'modifyPasswordController@view')->name('modify_password');
@@ -272,10 +280,6 @@ Route::group(['namespace' => 'Install'], function () {
 
 });
 
-
-
-
-
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+

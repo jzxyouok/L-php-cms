@@ -27,6 +27,7 @@
         <p class="login-box-msg">用户登录</p>
 
         <form action="admin_login" name="myForm" method="post" onsubmit="return false;">
+            {{ csrf_field() }}
             <div class="form-group has-feedback">
                 <input type="text" class="form-control" name="username" placeholder="请输入用户名" ng-model="username">
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>

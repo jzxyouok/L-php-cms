@@ -13,7 +13,7 @@ app.factory('adminLoginService', ['$http', function ($http) {
                 method: 'POST',
                 url: '/admin/admin_login',
                 data: $.param({
-                    username: username,
+                    email: username,
                     password: password,
                     code: code
                 }),
@@ -1288,9 +1288,6 @@ app.filter('urlCutNoNumber', function () { //可以注入依赖
     }
 });
 //$sce是angularJS自带的安全处理模块，$sce.trustAsHtml(input)方法便是将数据内容以html的形式进行解析并返 回  。
-/*
- * 用户登录
- * */
 app.controller('adminLogin', ['$scope', '$http', 'adminLoginService', function ($scope, $http, adminLoginService) {
 
     $scope.login = function () {
@@ -4065,7 +4062,7 @@ app.controller('userManageCtrl', ['$scope', '$http', 'userManageService', 'userG
                 });
             }
             $scope.userGroupForEditOptions = arr;
-console.log(user.user_group_id);
+
             $scope.userGroupForEdit = $scope.userGroupForEditOptions[Number(user.user_group_id)-1].id;//设置默认值
 
         }, function error(res) {

@@ -13,47 +13,21 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-  /*
-  |--------------------------------------------------------------------------
-  | Registration & Login Controller
-  |--------------------------------------------------------------------------
-  |
-  | This controller handles the registration of new users, as well as the
-  | authentication of existing users. By default, this controller uses
-  | a simple trait to add these behaviors. Why don't you explore it?
-  |
-  */
 
   use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
-  /**
-   * Where to redirect users after login / registration.
-   *
-   * @var string
-   */
   protected $redirectTo = '/me';
   protected $redirectAfterLogout = '/';
 
   protected $registerView = 'index.woshipm.templates.register';//自定义注册页面的所用的模版所在的位置
   protected $loginView = 'index.woshipm.templates.login';
 
-  /**
-   * Create a new authentication controller instance.
-   *
-   * @return void
-   */
   public function __construct()
   {
     $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
 
   }
 
-  /**
-   * Get a validator for an incoming registration request.
-   *
-   * @param  array $data
-   * @return \Illuminate\Contracts\Validation\Validator
-   */
   protected function validator(array $data)
   {
     return Validator::make($data, [
@@ -63,12 +37,6 @@ class AuthController extends Controller
     ]);
   }
 
-  /**
-   * Create a new user instance after a valid registration.
-   *
-   * @param  array $data
-   * @return User
-   */
   protected function create(array $data)
   {
 
@@ -200,7 +168,6 @@ class AuthController extends Controller
 //
 //        return redirect($this->redirectPath());
   }
-
 
   public function login(Request $request)
   {

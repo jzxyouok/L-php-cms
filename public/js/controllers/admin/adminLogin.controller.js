@@ -1,6 +1,3 @@
-/*
- * 用户登录
- * */
 app.controller('adminLogin', ['$scope', '$http', 'adminLoginService', function ($scope, $http, adminLoginService) {
 
     $scope.login = function () {

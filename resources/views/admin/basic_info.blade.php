@@ -81,7 +81,7 @@
 
                 <div class="col-md-3">
 
-                    <img style="width: 100%" src="{{ $userInfo->avatar }}" alt="">
+                    <img style="width: 100%" src="{{ $userInfo['avatar'] }}" alt="">
                 </div>
 
 
@@ -90,11 +90,11 @@
                     <h1></h1>
 
 
-                    <p>用户名: {{ $userInfo->email }} </p>
+                    <p>用户名: {{ $userInfo['email'] }} </p>
 
-                    <p>邮箱: {{ $userInfo->email }}</p>
+                    <p>邮箱: {{ $userInfo['email'] }}</p>
 
-                    <p>注册时间: {{ $userInfo->created_at }}</p>
+                    <p>注册时间: {{ $userInfo['created_at'] }}</p>
 
 
                 </div>
