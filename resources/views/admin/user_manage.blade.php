@@ -54,7 +54,7 @@
                                 <td ng-bind="x.email"> </td>
 
                                 <td ng-bind="x.nickname"></td>
-                                <td ng-bind="x.user_group"></td>
+                                <td ng-bind="x.user_group_id"></td>
                                 <td ng-bind="x.status"></td>
                                 <td ng-bind="x.is_admin_user=='1' ? '后台' : '前台'"></td>
 

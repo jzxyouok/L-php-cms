@@ -73,8 +73,8 @@
 
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="" name="nickname"
-                                       ng-model="nickname" placeholder="昵称" ng-pattern="/[\u4e00-\u9fa5\w]/"
-                                       ng-minlength="2" ng-maxlength="12" required>
+                                       ng-model="nickname" placeholder="昵称" ng-pattern="/[\u4e00-\u9fa5\w]{2,20}/"
+                                       ng-minlength="2" ng-maxlength="20" required>
                                 <span class="help-block ng-hide"
                                       ng-show="myForm.nickname.$invalid && !myForm.nickname.$pristine"><span
                                             class="glyphicon glyphicon-remove"></span>对不起，昵称必须为2~12个中文或字母或数字！</span>
@@ -133,7 +133,7 @@
                             <label class="col-sm-2 control-label">备注</label>
                             <div class="col-sm-10">
             <textarea class="form-control" rows="3" placeholder="备注信息" name="remark"
-                      ng-model="remark" required ng-minlength="5" ng-maxlength="30"></textarea>
+                      ng-model="remark" required ng-minlength="2" ng-maxlength="30"></textarea>
                                 <span class="help-block ng-hide"
                                       ng-show="myForm.remark.$invalid && !myForm.remark.$pristine"> <span
                                             class="glyphicon glyphicon-remove"></span>请输入5~30个字符！</span>

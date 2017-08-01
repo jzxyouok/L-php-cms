@@ -1156,6 +1156,21 @@ app.factory('userManageService', ['$http', function ($http) {
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             });
         },
+        editUserCommit: function (id,userGroup,phone,email,nickname,remark) {
+            return $http({
+                method: 'POST',
+                url: '/admin/manage/user_manage/edit_user_commit',
+                data: $.param({
+                    id:id,
+                    user_group_id:userGroup,
+                    phone:phone,
+                    email: email,
+                    nickname:nickname,
+                    remark:remark
+                }),
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+            });
+        },
     };
 }]);
 /**
@@ -4040,13 +4055,44 @@ app.controller('userManageCtrl', ['$scope', '$http', 'userManageService', 'userG
     };
 
     $scope.editUser=function (user) {
-        $scope.phone=user.phone;
-        $scope.email=user.phone;
-        $scope.nickname=user.phone;
-        $scope.phone=user.phone;
-        $scope.phone=user.phone;
-        $scope.phone=user.phone;
-        $scope.phone=user.phone;
+        userGroupManageService.getUserGroup().then(function success(res) {
+
+            var arr = [];
+            for (var i = 0; i < res.data.length; i++) {
+                arr.push({
+                    name: res.data[i].name,
+                    id: Number(res.data[i].id)
+                });
+            }
+            $scope.userGroupForEditOptions = arr;
+console.log(user.user_group_id);
+            $scope.userGroupForEdit = $scope.userGroupForEditOptions[Number(user.user_group_id)-1].id;//设置默认值
+
+        }, function error(res) {
+
+        });
+        $scope.idForEdit=user.id;
+        $scope.userGroupForEdit=user.user_group_id;
+        $scope.phoneForEdit=user.phone;
+        $scope.emailForEdit=user.email;
+        $scope.nicknameForEdit=user.nickname;
+        $scope.remarkForEdit=user.remark;
+
+    };
+
+    $scope.editUserCommit=function () {
+
+        if($scope.myFormForEdit.$valid){
+            userManageService.editUserCommit($scope.idForEdit,$scope.userGroupForEdit,$scope.phoneForEdit,$scope.emailForEdit,$scope.nicknameForEdit,$scope.remarkForEdit).then(function (res) {
+                if (res.data.code == 1) {
+                    $scope.getUser();
+                    $('#user_manage_edit_modal').modal('hide');
+                }
+            }, function (res) {
+
+            });
+        }
+
     };
 
 }]);

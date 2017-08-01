@@ -65,5 +65,20 @@ app.factory('userManageService', ['$http', function ($http) {
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             });
         },
+        editUserCommit: function (id,userGroup,phone,email,nickname,remark) {
+            return $http({
+                method: 'POST',
+                url: '/admin/manage/user_manage/edit_user_commit',
+                data: $.param({
+                    id:id,
+                    user_group_id:userGroup,
+                    phone:phone,
+                    email: email,
+                    nickname:nickname,
+                    remark:remark
+                }),
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+            });
+        },
     };
 }]);

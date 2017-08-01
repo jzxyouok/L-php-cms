@@ -99,6 +99,7 @@ Route::group(['namespace' => 'Admin'], function () {
   Route::post('/admin/manage/user_manage/add_user_commit', 'userManageController@addUserCommit')->name('add_user_commit');
   Route::post('/admin/manage/user_manage/forbidden_status', 'userManageController@forbiddenStatus')->name('user_manage_forbidden_status');
   Route::post('/admin/manage/user_manage/start_using', 'userManageController@startUsing')->name('user_manage_start_using');
+  Route::post('/admin/manage/user_manage/edit_user_commit', 'userManageController@editUserCommit')->name('edit_user_commit');
 
 //后台用户组
   Route::get('/admin/manage/user_manage/admin_user_group_all', 'adminUserGroupAllController@view')->name('admin_user_group_all');

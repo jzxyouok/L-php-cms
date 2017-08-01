@@ -14,9 +14,10 @@ class Controller extends BaseController
 {
   use AuthorizesRequests, AuthorizesResources, DispatchesJobs, ValidatesRequests;
 
-  public function getPower(Request $request)
+  public function getPower($request)
   {
-    $groupId = $request->session()->get('userInfo')['group_id'];
-    $power = UserGroup::where('id', $groupId)->get(['power']);
+
+    $groupId = $request->session()->get('userInfo')->user_group_id;
+    return $power = UserGroup::where('id', $groupId)->first(['power'])->toArray();
   }
 }
