@@ -221,39 +221,39 @@
                     <ul class="treeview-menu">
                         <li><a href="/admin/manage/user_group_manage">用户组管理</a></li>
                         <li><a href="/admin/manage/user_manage">用户管理</a></li>
-                        <li>
-                            <a href="#"> 后台用户
-                                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-                            </a>
+                        {{--<li>--}}
+                            {{--<a href="#"> 后台用户--}}
+                                {{--<span class="pull-right-container">--}}
+                  {{--<i class="fa fa-angle-left pull-right"></i>--}}
+                {{--</span>--}}
+                            {{--</a>--}}
 
-                            <ul class="treeview-menu">
-                                <li><a href="/admin/manage/user_manage/admin_user_group_all"> 所有用户组</a></li>
-                                <li>
-                                    <a href="/admin/manage/user_manage/admin_user_group_add"> 添加用户组
+                            {{--<ul class="treeview-menu">--}}
+                                {{--<li><a href="/admin/manage/user_manage/admin_user_group_all"> 所有用户组</a></li>--}}
+                                {{--<li>--}}
+                                    {{--<a href="/admin/manage/user_manage/admin_user_group_add"> 添加用户组--}}
 
-                                    </a>
+                                    {{--</a>--}}
 
-                                </li>
-                                <li><a href="/admin/manage/user_manage/admin_user_all"> 所有用户</a></li>
-                                <li><a href="/admin/manage/user_manage/admin_user_add"> 添加用户</a></li>
+                                {{--</li>--}}
+                                {{--<li><a href="/admin/manage/user_manage/admin_user_all"> 所有用户</a></li>--}}
+                                {{--<li><a href="/admin/manage/user_manage/admin_user_add"> 添加用户</a></li>--}}
 
-                            </ul>
-                        </li>
+                            {{--</ul>--}}
+                        {{--</li>--}}
 
-                        <li>
-                            <a href="#"> 前台用户
-                                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="/admin/manage/user_manage/user_all"> 所有用户</a></li>
-                                <li><a href="/admin/manage/user_manage/user_add"> 添加用户</a></li>
+                        {{--<li>--}}
+                            {{--<a href="#"> 前台用户--}}
+                                {{--<span class="pull-right-container">--}}
+                  {{--<i class="fa fa-angle-left pull-right"></i>--}}
+                {{--</span>--}}
+                            {{--</a>--}}
+                            {{--<ul class="treeview-menu">--}}
+                                {{--<li><a href="/admin/manage/user_manage/user_all"> 所有用户</a></li>--}}
+                                {{--<li><a href="/admin/manage/user_manage/user_add"> 添加用户</a></li>--}}
 
-                            </ul>
-                        </li>
+                            {{--</ul>--}}
+                        {{--</li>--}}
 
 
                     </ul>

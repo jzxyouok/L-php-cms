@@ -80,5 +80,29 @@ app.factory('userManageService', ['$http', function ($http) {
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             });
         },
+        removeUserCommit: function (id) {
+            return $http({
+                method: 'POST',
+                url: '/admin/manage/user_manage/remove_user_commit',
+                data: $.param({
+                    id:id,
+                }),
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+            });
+        },
+
+        uploadAvatarCommit: function (id,avatar) {
+            return $http({
+                method: 'POST',
+                url: '/admin/manage/user_manage/upload_avatar_commit',
+                data:$.param({
+                    id:id,
+                    avatar:avatar
+                }),
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+            });
+        },
+
+
     };
 }]);

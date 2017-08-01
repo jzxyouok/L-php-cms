@@ -7,17 +7,19 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class publishedController extends Controller
 {
   public function view(Request $request)
   {
+
     return view('admin.published', [
       'cms' => config('cms.cms'),
       'cms_name' => config('cms.cms_name'),
       'category' => config('cms.doc_manage'),
       'item' => config('cms.published'),
-      'userInfo' => $request->session()->get('userInfo'),
+      'userInfo' => Auth::guard('adminLogin')->user()->toArray(),
     ]);
   }
 
@@ -27,8 +29,8 @@ class publishedController extends Controller
     $currentPage = $request->input('currentPage');
     $offset = ($currentPage - 1) * $limit;
 
-    $docs = Doc::where(['publisher_id' => $request->session()->get('userInfo')->id, 'status' => 'published'])->orderBy('published_date', 'desc')->offset($offset)->limit($limit)->get()->toArray();
-    $docsCount = Doc::where(['publisher_id' => $request->session()->get('userInfo')->id, 'status' => 'published'])->count();
+    $docs = Doc::where(['publisher_id' => Auth::guard('adminLogin')->user()->toArray()['id'], 'status' => 'published'])->orderBy('published_date', 'desc')->offset($offset)->limit($limit)->get()->toArray();
+    $docsCount = Doc::where(['publisher_id' => Auth::guard('adminLogin')->user()->toArray()['id'], 'status' => 'published'])->count();
 
     return response()->json(['code' => 1, 'msg' => '获取成功', 'data' => $docs, 'count' => $docsCount, 'allPage' => ceil($docsCount / $limit)]);
 

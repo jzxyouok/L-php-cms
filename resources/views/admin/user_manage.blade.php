@@ -63,9 +63,9 @@
                                     <button type="button" class="btn btn-success btn-xs btn-flat ng-hide" ng-click="startUsing(x.id)" ng-show="x.status=='1' ? false :true ">启用</button>
                                     <button type="button" class="btn btn-danger btn-xs btn-flat" ng-click="forbidden(x.id)" ng-show="x.status=='1' ? true : false">禁用</button>
                                     <button type="button" class="btn btn-primary btn-xs btn-flat"  data-toggle="modal" data-target="#user_manage_edit_modal" ng-click="editUser(x)">编辑</button>
-                                    <button type="button" class="btn btn-danger btn-xs btn-flat" data-toggle="modal" data-target="#admin_user_all_remove_modal">删除</button>
+                                    <button type="button" class="btn btn-danger btn-xs btn-flat" data-toggle="modal" data-target="#user_manage_remove_modal" ng-click="removeUser(x)">删除</button>
 
-                                    <button type="button" class="btn btn-info btn-xs btn-flat" data-toggle="modal" data-target="#admin_user_all_avatar_modal" ng-click="uploadAvatar(x)">上传头像</button>
+                                    <button type="button" class="btn btn-info btn-xs btn-flat" data-toggle="modal" data-target="#user_manage_avatar_modal" ng-click="uploadAvatar(x)">上传头像</button>
                                 </td>
                             </tr>
                         </table>
@@ -85,7 +85,7 @@
         </div>
     </section>
     <script>
-        $('#admin_user_all_avatar_upload').uploadify({
+        $('#user_manage_avatar_upload').uploadify({
             'swf': '/public/plugins/uploadify/uploadify.swf',//指定swf文件
             'uploader': '/admin/manage/user_manage/upload_avatar',//后台处理的页面
             'method': 'post',
@@ -103,8 +103,8 @@
             'multi': false,//设置为true将允许多文件上传
 
             'onUploadSuccess': function (file, data, response) {//上传成功的回调
-                $("#admin_user_all_avatar_upload_preview").attr("src", JSON.parse(data).url);
-                var appElement = document.querySelector('[ng-controller=adminUserAll]');
+                $("#user_manage_avatar_upload_preview").attr("src", JSON.parse(data).url);
+                var appElement = document.querySelector('[ng-controller=userManageCtrl]');
                 //获取$scope变量
                 var $scope = angular.element(appElement).scope();
                 //调用msg变量，并改变msg的值
@@ -113,7 +113,7 @@
                 //$scope.$apply();
                 //调用控制器中的getData()方法
 
-               $scope.uploadAvatarForAdminUser(JSON.parse(data).url);
+               $scope.uploadAvatarCommit(JSON.parse(data).url);
 
             },
             //

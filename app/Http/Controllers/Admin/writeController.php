@@ -7,6 +7,7 @@ use App\Http\Model\Gather;
 use App\Http\Model\Tag;
 use App\Http\Model\Upload;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use QL\QueryList;
 use App\Http\Controllers\Controller;
@@ -16,12 +17,13 @@ class writeController extends Controller
 {
   public function view(Request $request)
   {
+
     return view('admin.write', [
       'cms' => config('cms.cms'),
       'cms_name' => config('cms.cms_name'),
       'category' => config('cms.doc_manage'),
       'item' => config('cms.write'),
-      'userInfo' => $request->session()->get('userInfo'),
+      'userInfo' => Auth::guard('adminLogin')->user()->toArray(),
     ]);
   }
 

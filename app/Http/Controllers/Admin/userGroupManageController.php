@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Model\UserGroup;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 
@@ -14,12 +15,13 @@ class userGroupManageController extends Controller
 
   public function view(Request $request)
   {
+
     return view('admin.user_group_manage', [
       'cms' => config('cms.cms'),
       'cms_name' => config('cms.cms_name'),
       'category' => config('cms.user_manage'),
       'item' => config('cms.user_group_manage'),
-      'userInfo'=>$request->session()->get('userInfo'),
+      'userInfo'=>Auth::guard('adminLogin')->user()->toArray(),
     ]);
   }
 

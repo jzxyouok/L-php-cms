@@ -112,6 +112,11 @@ Route::group(['namespace' => 'Admin'], function () {
   Route::post('/admin/manage/user_manage/forbidden_status', 'userManageController@forbiddenStatus')->name('user_manage_forbidden_status');
   Route::post('/admin/manage/user_manage/start_using', 'userManageController@startUsing')->name('user_manage_start_using');
   Route::post('/admin/manage/user_manage/edit_user_commit', 'userManageController@editUserCommit')->name('edit_user_commit');
+  Route::post('/admin/manage/user_manage/remove_user_commit', 'userManageController@removeUserCommit')->name('remove_user_commit');
+  Route::post('/admin/manage/user_manage/upload_avatar', 'userManageController@uploadAvatar')->name('upload_avatar');
+  Route::post('/admin/manage/user_manage/upload_avatar_commit', 'userManageController@uploadAvatarCommit')->name('upload_avatar_commit');
+
+
 
 //后台用户组
   Route::get('/admin/manage/user_manage/admin_user_group_all', 'adminUserGroupAllController@view')->name('admin_user_group_all');
@@ -127,7 +132,7 @@ Route::group(['namespace' => 'Admin'], function () {
   //后台用户
   Route::get('/admin/manage/user_manage/admin_user_all', 'adminUserAllController@view')->name('admin_user_all');
   Route::get('/admin/manage/user_manage/admin_user_get', 'adminUserAllController@get')->name('admin_user_get');
-  Route::post('/admin/manage/user_manage/upload_avatar', 'adminUserAllController@uploadAvatar')->name('upload_avatar');
+//  Route::post('/admin/manage/user_manage/upload_avatar', 'adminUserAllController@uploadAvatar')->name('upload_avatar');
   Route::post('/admin/manage/user_manage/upload_avatar_for_admin_user', 'adminUserAllController@uploadAvatarForAdminUser')->name('upload_avatar_for_admin_user');
 
   Route::get('/admin/manage/user_manage/admin_user_add', 'adminUserAddController@view')->name('admin_user_add');

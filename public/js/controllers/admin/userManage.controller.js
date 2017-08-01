@@ -150,5 +150,40 @@ app.controller('userManageCtrl', ['$scope', '$http', 'userManageService', 'userG
         }
 
     };
+    
+    $scope.removeUser=function (user) {
+        $scope.userWaitForRemove=user.id;
+    };
+    $scope.removeUserCommit=function () {
+
+
+            userManageService.removeUserCommit($scope.userWaitForRemove).then(function (res) {
+                if (res.data.code == 1) {
+                    $scope.getUser();
+                    $('#user_manage_remove_modal').modal('hide');
+                }
+            }, function (res) {
+
+            });
+
+
+    };
+    $scope.uploadAvatar=function (user) {
+        $scope.defaultAvatar='/public/upload/image/author-avatar.jpg';
+        $scope.avatarWaitForUpload=user;
+    };
+
+    $scope.uploadAvatarCommit=function (avatar) {
+        userManageService.uploadAvatarCommit($scope.avatarWaitForUpload.id,avatar).then(function success(res) {
+
+            if(res.data.code===1){
+                $('#user_manage_avatar_modal').modal('hide');
+            }
+        }, function error(res) {
+
+        });
+    };
+
+
 
 }]);

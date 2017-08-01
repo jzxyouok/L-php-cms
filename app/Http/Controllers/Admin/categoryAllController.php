@@ -6,6 +6,7 @@ use App\Http\Model\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class categoryAllController extends Controller
@@ -18,7 +19,7 @@ class categoryAllController extends Controller
       'cms_name' => config('cms.cms_name'),
       'category' => config('cms.doc_manage'),
       'item' => config('cms.category_all'),
-      'userInfo' => $request->session()->get('userInfo'),
+      'userInfo' => Auth::guard('adminLogin')->user()->toArray(),
     ]);
   }
 

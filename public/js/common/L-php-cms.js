@@ -1171,6 +1171,30 @@ app.factory('userManageService', ['$http', function ($http) {
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             });
         },
+        removeUserCommit: function (id) {
+            return $http({
+                method: 'POST',
+                url: '/admin/manage/user_manage/remove_user_commit',
+                data: $.param({
+                    id:id,
+                }),
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+            });
+        },
+
+        uploadAvatarCommit: function (id,avatar) {
+            return $http({
+                method: 'POST',
+                url: '/admin/manage/user_manage/upload_avatar_commit',
+                data:$.param({
+                    id:id,
+                    avatar:avatar
+                }),
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+            });
+        },
+
+
     };
 }]);
 /**
@@ -4091,6 +4115,41 @@ app.controller('userManageCtrl', ['$scope', '$http', 'userManageService', 'userG
         }
 
     };
+    
+    $scope.removeUser=function (user) {
+        $scope.userWaitForRemove=user.id;
+    };
+    $scope.removeUserCommit=function () {
+
+
+            userManageService.removeUserCommit($scope.userWaitForRemove).then(function (res) {
+                if (res.data.code == 1) {
+                    $scope.getUser();
+                    $('#user_manage_remove_modal').modal('hide');
+                }
+            }, function (res) {
+
+            });
+
+
+    };
+    $scope.uploadAvatar=function (user) {
+        $scope.defaultAvatar='/public/upload/image/author-avatar.jpg';
+        $scope.avatarWaitForUpload=user;
+    };
+
+    $scope.uploadAvatarCommit=function (avatar) {
+        userManageService.uploadAvatarCommit($scope.avatarWaitForUpload.id,avatar).then(function success(res) {
+
+            if(res.data.code===1){
+                $('#user_manage_avatar_modal').modal('hide');
+            }
+        }, function error(res) {
+
+        });
+    };
+
+
 
 }]);
 /**
