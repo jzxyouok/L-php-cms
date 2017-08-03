@@ -17,7 +17,7 @@
     <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular-sanitize.min.js"></script>
     <script src="{{ URL::asset('public/plugins/uploadify/jquery.uploadify.min.js') }}"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script src="{{ URL::asset('public/js/common/app.js') }}"></script>
+    <script src="https://cdn.bootcss.com/admin-lte/2.3.8/js/app.min.js"></script>
 
 
 </head>
@@ -60,7 +60,7 @@
                                     <li><!-- start message -->
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="{{ URL::asset('public/images/user2-160x160.jpg') }}"
+                                                <img src="{{ $userInfo['avatar'] }}"
                                                      class="img-circle"
                                                      alt="User Image">
                                             </div>
@@ -136,13 +136,13 @@
 
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="{{ URL::asset('public/images/user2-160x160.jpg') }}" class="user-image" alt="User Image">
+                            <img src="{{ $userInfo['avatar'] }}" class="user-image" alt="User Image">
                             <span class="hidden-xs"> {{ $userInfo['email'] }} </span>
                         </a>
                         <ul class="dropdown-menu">
 
                             <li class="user-header">
-                                <img src="{{ URL::asset('public/images/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+                                <img src="{{ $userInfo['avatar'] }}" class="img-circle" alt="User Image">
                                 <p>
                                     Kevin - Web Developer
                                     <small>WEB前端工程师，全栈开发尝试者</small>
@@ -184,7 +184,7 @@
 
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="{{ URL::asset('public/images/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+                    <img src="{{ $userInfo['avatar'] }}" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
                     <p> {{ $userInfo['email'] }} </p>
