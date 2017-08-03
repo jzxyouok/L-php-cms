@@ -3,7 +3,7 @@
 ![image](https://github.com/lovelife10000/L-php-cms/raw/master/public/upload/image/preview.jpg)
      
 # L-php-cms
-## L-php-cms是基于php+laravel+angular编写的一套内容管理系统，Laravel是一套简洁、优雅的PHP Web开发框架(PHP Web Framework)。它可以让你从面条一样杂乱的代码中解脱出来；它可以帮你构建一个完美的网络APP，而且每行代码都可以简洁、富于表达力。L-php-cms易于拓展，特别适合前端开发工程师做二次开发。
+## L-php-cms是基于php+laravel+angular编写的一套内容管理系统，Laravel是一套简洁、优雅的PHP Web开发框架(PHP Web Framework)。它可以让你从面条一样杂乱的代码中解脱出来；它可以帮你构建一个完美的网络APP，而且每行代码都可以简洁、富于表达力。如果你是前端工程师，如果你还不会一门后端语言，那么php一定是你最好的选择，那么laravel一定也是你最好的选择，那么L-php-cms一定也是你最应该学习的一款cms。
 
 ### 代码演示1.[基于L-php-cms 定制的CMS系统](http://www.viralnova.wang) 管理地址：http://www.viralnova.wang/admin  （账号:test,密码：L-php-cms）
 
