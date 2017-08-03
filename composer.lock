@@ -4,20 +4,142 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1fdced5773d1a78c747ab8be2b855275",
+    "content-hash": "85050162e84204423078e32fc5d597ec",
     "packages": [
         {
-            "name": "aws/aws-sdk-php",
-            "version": "3.31.7",
+            "name": "arcanedev/log-viewer",
+            "version": "4.3.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "74b1cc16d44dc4a90b5ff93fd33e97cf38a5331a"
+                "url": "https://github.com/ARCANEDEV/LogViewer.git",
+                "reference": "7cad75841bd9304bccd90cd670dca0fc23c56a28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/74b1cc16d44dc4a90b5ff93fd33e97cf38a5331a",
-                "reference": "74b1cc16d44dc4a90b5ff93fd33e97cf38a5331a",
+                "url": "https://api.github.com/repos/ARCANEDEV/LogViewer/zipball/7cad75841bd9304bccd90cd670dca0fc23c56a28",
+                "reference": "7cad75841bd9304bccd90cd670dca0fc23c56a28",
+                "shasum": ""
+            },
+            "require": {
+                "arcanedev/support": "~3.20",
+                "php": ">=5.6",
+                "psr/log": "~1.0"
+            },
+            "require-dev": {
+                "phpunit/phpcov": "~3.0",
+                "phpunit/phpunit": "~5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Arcanedev\\LogViewer\\": "src/"
+                },
+                "files": [
+                    "constants.php",
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ARCANEDEV",
+                    "email": "arcanedev.maroc@gmail.com",
+                    "homepage": "https://github.com/arcanedev-maroc",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Provides a Log Viewer for Laravel 5",
+            "homepage": "https://github.com/ARCANEDEV/LogViewer",
+            "keywords": [
+                "arcanedev",
+                "arcanesoft",
+                "laravel",
+                "log",
+                "log viewer",
+                "log-viewer",
+                "logviewer"
+            ],
+            "time": "2017-01-31T12:03:39+00:00"
+        },
+        {
+            "name": "arcanedev/support",
+            "version": "3.21.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ARCANEDEV/Support.git",
+                "reference": "a4913355a537c71b22899ee9b932dbeb5ed229a9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ARCANEDEV/Support/zipball/a4913355a537c71b22899ee9b932dbeb5ed229a9",
+                "reference": "a4913355a537c71b22899ee9b932dbeb5ed229a9",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/filesystem": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.6.4"
+            },
+            "require-dev": {
+                "phpunit/phpcov": "~3.0",
+                "phpunit/phpunit": "~5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Arcanedev\\Support\\": "src/"
+                },
+                "files": [
+                    "constants.php",
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ARCANEDEV",
+                    "email": "arcanedev.maroc@gmail.com",
+                    "homepage": "https://github.com/arcanedev-maroc"
+                }
+            ],
+            "description": "ARCANEDEV Support Helpers",
+            "homepage": "https://github.com/ARCANEDEV/Support",
+            "keywords": [
+                "arcanedev",
+                "arcanesoft",
+                "laravel",
+                "support"
+            ],
+            "time": "2017-03-21T16:12:55+00:00"
+        },
+        {
+            "name": "aws/aws-sdk-php",
+            "version": "3.31.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aws/aws-sdk-php.git",
+                "reference": "9829a8183016df800110148b467179d67c434f90"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/9829a8183016df800110148b467179d67c434f90",
+                "reference": "9829a8183016df800110148b467179d67c434f90",
                 "shasum": ""
             },
             "require": {
@@ -84,7 +206,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-07-19T18:07:19+00:00"
+            "time": "2017-07-20T22:22:05+00:00"
         },
         {
             "name": "classpreloader/classpreloader",

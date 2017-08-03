@@ -1,194 +1,80 @@
 @include('admin.header')
-
-<div class="content-wrapper" ng-controller="basicInfo" >
-
+<div class="content-wrapper" ng-controller="basicInfo">
     <section class="content-header">
         <h1>
             {{$cms}}
-<small> {{$item}} </small>
-</h1>
-<ol class="breadcrumb">
-<li><a href="#"><i class="fa fa-dashboard"></i>主页</a></li>
-<li><a href="#">{{$category }}</a></li>
-<li class="active"> {{$item}}</li>
-</ol>
-</section>
-
-
-<section class="content ">
-<div class="row">
-
-<div class="col-md-6">
-
-    <div class="box box-primary">
-        <div class="box-header with-border">
-            <h3 class="box-title">系统通知</h3>
-        </div>
-
-
-        <div class="box-body">
-            <div class="well"><h4>版本信息</h4>
-                当前版本: L-php-cms&nbsp;v1.0.0 发布时间: 201707012 <a href="">检查更新</a></div>
-            <div class="well">
-
-                <h4>QQ讨论</h4>
-                群号：1358180015
-
-                <h4>信息反馈</h4>
-                Email：1358180015@qq.com
-
-            </div>
-
-        </div>
-        <!-- /.box-body -->
-
-        <div class="box-footer"></div>
-
-    </div>
-    <div class="box box-primary">
-        <div class="box-header with-border">
-            <h3 class="box-title">关于作者</h3>
-        </div>
-        <div class="box-body">
-            <div class="well">
-                <h4>开发作者</h4>
-                Kevin/web developer
-                <h4>github</h4>
-                <a href=https://github.com/lovelife10000" target="_blank">https://github.com/lovelife10000</a>
-
-
-            </div>
-        </div>
-        <!-- /.box-body -->
-    </div>
-
-
-</div>
-
-<div class="col-md-6">
-    <div class="box box-primary">
-        <div class="box-header with-border">
-            <h3 class="box-title">用户系统信息</h3>
-        </div>
-        <!-- /.box-header -->
-        <!-- form start -->
-
-        <div class="box-body">
-
-
-            <div class="row ">
-
-
-                <div class="col-md-3">
-
-                    <img style="width: 100%" src="{{ $userInfo['avatar'] }}" alt="">
-                </div>
-
-
-                <div class="col-md-6  ">
-
-                    <h1></h1>
-
-
-                    <p>用户名: {{ $userInfo['email'] }} </p>
-
-                    <p>邮箱: {{ $userInfo['email'] }}</p>
-
-                    <p>注册时间: {{ $userInfo['created_at'] }}</p>
-
-
-                </div>
-
-            </div>
-
-            <div class="row ">
-
-                <br>
-
-            </div>
-
-
-            <div class="row">
-
-                <div class=" col-xs-6">
-                    <!-- small box -->
-                    <div class="small-box bg-green">
-                        <div class="inner">
-                            <h3>
-                                1篇
-                            </h3>
-
-                            <p>
-                                文章
-                            </p>
+            <small> {{$item}} </small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>主页</a></li>
+            <li><a href="#">{{$category }}</a></li>
+            <li class="active"> {{$item}}</li>
+        </ol>
+    </section>
+    <section class="content ">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">系统信息</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="well"><h4>版本信息</h4>
+                            欢迎使用L-php-cms内容管理系统，您当前的使用版本为：v1.0.0，发布时间：20170802。<br>
+                            <a href="">检查更新</a>
+                            <h4>项目地址</h4>
+                            Github:<a href="https://github.com/lovelife10000/L-php-cms" target="_blank">https://github.com/lovelife10000/L-php-cms</a>
                         </div>
-                        <div class="icon">
-                            <span class="glyphicon glyphicon-stats"></span>
-                        </div>
-                        <a href="/a/index.php?m=admin&amp;c=posts&amp;a=index" class="small-box-footer">
-                            所有文章 <i class="fa fa-arrow-circle-right"></i>
-                        </a>
                     </div>
                 </div>
-                <!-- ./col -->
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">关于作者</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="well">
 
-                <div class=" col-xs-6">
-                    <!-- small box -->
-                    <div class="small-box bg-yellow">
-                        <div class="inner">
-                            <h3>
-                                1名
-                            </h3>
-
-                            <p>
-                                注册用户
-                            </p>
+                            Kevin，全栈开发工程师，github：<a href="https://github.com/lovelife10000"
+                                                    target="_blank">https://github.com/lovelife10000</a>
                         </div>
-                        <div class="icon">
-                            <span class="glyphicon glyphicon-user"></span>
-                        </div>
-                        <a href="/a/index.php?m=admin&amp;c=access&amp;a=index" class="small-box-footer">
-                            用户管理 <i class="fa fa-arrow-circle-right"></i>
-                        </a>
                     </div>
                 </div>
-                <!-- ./col -->
-
             </div>
+            <div class="col-md-6">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">用户信息</h3>
+                    </div>
 
+                    <div class="box-body">
+                        <div class="well">
+                            <div class="row ">
+                                <div class="col-md-3">
+                                    <img style="width: 100%" src="{{ $userInfo['avatar'] }}" alt="">
+                                </div>
+                                <div class="col-md-6  ">
+                                    <h1></h1>
+                                    <p>手机: {{ $userInfo['phone'] }} </p>
+                                    <p>邮箱: {{ $userInfo['email'] }}</p>
+                                    <p>注册时间: {{ $userInfo['created_at'] }}</p>
+                                </div>
+                            </div>
+                        </div>
 
-        </div>
-        <!-- /.box-body -->
-        <div class="box-footer">
-
-        </div>
-        <!-- /.box-footer -->
-
-    </div>
-    <div class="box box-primary">
-        <div class="box-header with-border">
-            <h3 class="box-title">其他信息</h3>
-        </div>
-        <!-- /.box-header -->
-        <div class="box-body">
-            <div class="well">
-                <h4>提示</h4>
-                未完全开发完
+                    </div>
+                </div>
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">交流方式</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="well">
+                            QQ群512934882，作者QQ1358180015
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="well">
-                <h4>获取最新源码</h4>
-                Github:<a href="https://github.com/lovelife10000/L-php-cms" target="_blank">https://github.com/lovelife10000/L-php-cms</a>
-            </div>
         </div>
-        <!-- /.box-body -->
-    </div>
-
+    </section>
 </div>
-
-</div>
-
-</section>
-
-</div>
-
 @include('admin.footer')

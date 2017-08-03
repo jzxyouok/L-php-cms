@@ -213,7 +213,7 @@
 
                         <li><a href="/admin/manage/panel/basic_info"> 基本信息</a></li>
 
-                        <li><a href="/admin/manage/panel/modify_password"> 修改密码</a></li>
+                        {{--<li><a href="/admin/manage/panel/modify_password"> 修改密码</a></li>--}}
                     </ul>
                 </li>
                 <li class="treeview">
@@ -278,19 +278,20 @@
 
                             </ul>
                         </li>
-                        <li>
-                            <a href="#"> 分类管理
-                                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="/admin/manage/doc_manage/category_all"> 所有分类</a></li>
-                                <li><a href="/admin/manage/doc_manage/category_add">添加分类</a></li>
+                        <li><a href="/admin/manage/doc_manage/category_manage">分类管理</a></li>
+                        {{--<li>--}}
+                            {{--<a href="#"> 分类管理--}}
+                                {{--<span class="pull-right-container">--}}
+                  {{--<i class="fa fa-angle-left pull-right"></i>--}}
+                {{--</span>--}}
+                            {{--</a>--}}
+                            {{--<ul class="treeview-menu">--}}
+                                {{--<li><a href="/admin/manage/doc_manage/category_all"> 所有分类</a></li>--}}
+                                {{--<li><a href="/admin/manage/doc_manage/category_add">添加分类</a></li>--}}
 
 
-                            </ul>
-                        </li>
+                            {{--</ul>--}}
+                        {{--</li>--}}
 
 
                                 <li><a href="/admin/manage/doc_manage/menu_manage">菜单管理</a></li>
@@ -314,6 +315,7 @@
                     <a href="#"><i class="fa fa-file-photo-o"></i><span>文件管理</span> <i
                                 class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
+                        <li><a href="/admin/manage/file_manage/media_manage"> 媒体管理</a></li>
                         <li>
                             <a href="#"> 媒体管理
                                 <span class="pull-right-container">
@@ -327,8 +329,7 @@
                             </ul>
                         </li>
 
-                        <li><a href="/admin/manage/file_manage/file_backup"> 文件备份</a></li>
-                        <li><a href="/admin/manage/file_manage/file_recover"> 文件恢复</a></li>
+                        <li><a href="/admin/manage/file_manage/file_manage"> 文件管理</a></li>
 
                     </ul>
                 </li>
@@ -345,8 +346,7 @@
                             <ul class="treeview-menu">
                                 <li><a href="/admin/manage/data_manage/database_backup">数据库备份</a></li>
                                 <li><a href="/admin/manage/data_manage/database_import">数据库导入</a></li>
-                                <li><a href="/admin/manage/data_manage/database_compress">数据库压缩</a></li>
-                                <li><a href="/admin/manage/data_manage/database_optimize">数据库优化</a></li>
+
                             </ul>
                         </li>
                         <li>
@@ -361,18 +361,7 @@
 
                             </ul>
                         </li>
-                        <li>
-                            <a href="#"> 统计管理
-                                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="/admin/manage/data_manage/count_statistics">数据统计</a></li>
 
-
-                            </ul>
-                        </li>
 
                     </ul>
                 </li>
@@ -400,14 +389,7 @@
                     <ul class="treeview-menu">
                         <li><a href="/admin/manage/system_setting/system_log"> 系统日志</a></li>
                         <li><a href="/admin/manage/system_setting/website_setting"> 站点设置</a></li>
-                        <li><a href="/admin/manage/system_setting/read_setting"> 阅读设置</a></li>
-                        <li><a href="/admin/manage/system_setting/attachment_setting"> 附件设置</a></li>
 
-
-                        <li><a href="/admin/manage/system_setting/social_login_setting"> 社交登录设置</a></li>
-                        <li><a href="/admin/manage/system_setting/update_online"> 在线更新</a></li>
-                        <li><a href="/admin/manage/system_setting/system_info"> 系统信息</a></li>
-                        <li><a href="/admin/manage/system_setting/bug_feedback"> BUG反馈</a></li>
                     </ul>
                 </li>
 

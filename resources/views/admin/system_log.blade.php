@@ -1,94 +1,58 @@
-<%- include('header') %>
-<style>
-  .example-modal .modal {
-    position: relative;
-    top: auto;
-    bottom: auto;
-    right: auto;
-    left: auto;
-    display: block;
-    z-index: 1;
-  }
-
-  .example-modal .modal {
-    background: transparent !important;
-  }
-</style>
-<div class="content-wrapper">
-  <!-- Content Header (Page header) -->
+@include('admin.header')
+<div class="content-wrapper" ng-controller="systemLogCtrl" ng-init="getSystemLog()">
   <section class="content-header">
     <h1>
-      <%= blogName %>
-      <small><%= item %></small>
+      {{$cms}}
+      <small>{{$item}}</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i>主页</a></li>
-      <li><a href="#"><%= category %></a></li>
-      <li class="active"><%= item %></li>
+      <li><a href="#">{{$category }}</a></li>
+      <li class="active">{{$item}}</li>
     </ol>
   </section>
-
-  <!-- Main content -->
-  <section class="content"  ng-controller="usersGroupAdd">
+  <section class="content"  >
     <div class="row">
       <div class="col-md-12">
-        <div class="box box-info">
+        <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">添加用户组</h3>
+            <h3 class="box-title">{{$item}}</h3>
           </div>
-          <!-- /.box-header -->
-          <!-- form start -->
-          <form class="form-horizontal"  onsubmit="return false;">
-            <div class="box-body">
-              <div class="form-group">
-                <label for="name" class="col-sm-2 control-label">组名称</label>
+          <div class="box-body table-responsive no-padding">
+            <table class="table table-hover  table-bordered table-striped">
+              <tr>
+                <th style="width: 46px">序号</th>
+                <th>时间</th>
+                <th>操作</th>
+                <th>ip</th>
+                <th>日志类型</th>
+                <th>方式</th>
+                <th>操作</th>
+              </tr>
 
-                <div class="col-sm-10">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="请输入组名称" ng-model="name">
-                </div>
-              </div>
-              <div class="form-group">
-                <label  class="col-sm-2 control-label">父级组</label>
-                <div class="col-sm-10">
-                  <select class="form-control" name="pid" ng-model="pid" ng-options="x.id as x.name for x in pidOptions" >
-                    <option value="">-- 请选择 --</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <label  class="col-sm-2 control-label">状态</label>
-                <div class="col-sm-10">
-                  <select class="form-control" name="status" ng-model="status" ng-options="x.id as x.name for x in statusOptions" >
-                    <option value="">-- 请选择 --</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <label  class="col-sm-2 control-label">描述</label>
-                <div class="col-sm-10">
-                  <textarea name="remark" class="form-control" rows="3" placeholder="请输入描述信息" ng-model="remark"></textarea>
-                </div>
-              </div>
-            </div>
-            <!-- /.box-body -->
-            <div class="box-footer">
-              <button type="submit" class="btn btn-info pull-right" ng-click="addAdminUserGroup()">添加</button>
-            </div>
-            <!-- /.box-footer -->
-          </form>
+              <tr ng-repeat="x in data">
+                <td ng-bind="x.id"></td>
+                <td ng-bind="x.phone"> </td>
+                <td ng-bind="x.email"> </td>
+
+                <td ng-bind="x.nickname"></td>
+                <td ng-bind="x.user_group_id"></td>
+                <td ng-bind="x.status"></td>
+
+                <td>
+                  <button type="button" class="btn btn-success btn-xs btn-flat ng-hide" ng-click="startUsing(x.id)" ng-show="x.status=='1' ? false :true ">启用</button>
+                  <button type="button" class="btn btn-danger btn-xs btn-flat" ng-click="forbidden(x.id)" ng-show="x.status=='1' ? true : false">禁用</button>
+                  <button type="button" class="btn btn-primary btn-xs btn-flat"  data-toggle="modal" data-target="#user_manage_edit_modal" ng-click="editUser(x)">编辑</button>
+                  <button type="button" class="btn btn-danger btn-xs btn-flat" data-toggle="modal" data-target="#user_manage_remove_modal" ng-click="removeUser(x)">删除</button>
+
+                  <button type="button" class="btn btn-info btn-xs btn-flat" data-toggle="modal" data-target="#user_manage_avatar_modal" ng-click="uploadAvatar(x)">上传头像</button>
+                </td>
+              </tr>
+            </table>
+          </div>
         </div>
       </div>
-      <!--/.col (right) -->
     </div>
-    <!-- /.row -->
   </section>
-  <!-- /.content -->
 </div>
-
-
-
-
-
-
-
-<%- include('footer') %>
+@include('admin.footer')

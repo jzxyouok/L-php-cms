@@ -12,7 +12,7 @@ class basicInfoController extends Controller
 {
     public function view(Request $request){
 
-//      dd($request->session()->all());
+    //  dd($request->session()->all());
 //      dd(Auth::guard('adminLogin')->user()->toArray()['email']);
 
       return view('admin.basic_info', [

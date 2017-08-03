@@ -59,7 +59,7 @@ Route::group(['namespace' => 'Index'], function () {
 Route::group(['namespace' => 'Auth','middleware' => 'isLogin'], function () {
   Route::get('/admin', 'adminLoginController@gotoLogin')->name('admin');
   Route::get('/admin/admin_login', 'adminLoginController@view')->name('admin_login');
-  Route::post('/admin/admin_login', 'adminLoginController@login')->name('admin_login_post');
+  Route::post('/admin/admin_login', 'adminLoginController@adminLogin')->name('admin_login_post');
   Route::post('/admin/admin_login_get_code', 'adminLoginController@getCode')->name('admin_login_post_get_code');
   Route::post('/admin/admin_login_update_code', 'adminLoginController@updateCode')->name('admin_login_post_update_code');
 
@@ -91,7 +91,7 @@ Route::group(['namespace' => 'Admin','middleware' => 'auth'], function () {
 /*
  * 用户管理
  * */
-Route::group(['namespace' => 'Admin'], function () {
+Route::group(['namespace' => 'Admin','middleware' => 'auth'], function () {
 
   //用户组管理
   Route::get('/admin/manage/user_group_manage', 'userGroupManageController@view')->name('user_group_manage');
@@ -146,7 +146,7 @@ Route::group(['namespace' => 'Admin'], function () {
 /*
  * 文档管理
  * */
-Route::group(['namespace' => 'Admin'], function () {
+Route::group(['namespace' => 'Admin','middleware' => 'auth'], function () {
   //我的文档
   Route::get('/admin/manage/doc_manage/write', 'writeController@view')->name('write');
   Route::post('/admin/manage/doc_manage/write', 'writeController@write')->name('write_post');
@@ -172,6 +172,7 @@ Route::group(['namespace' => 'Admin'], function () {
   Route::get('/admin/manage/doc_manage/recycle', 'recycleController@view')->name('recycle');
 
   //分类管理
+  Route::get('/admin/manage/doc_manage/category_manage', 'categoryManageController@view')->name('category_manage');
   Route::get('/admin/manage/doc_manage/category_all', 'categoryAllController@view')->name('category_all');
   Route::get('/admin/manage/doc_manage/category_get', 'categoryAllController@categoryGet')->name('category_get');
   Route::post('/admin/manage/doc_manage/category_edit_commit', 'categoryAllController@editCommit')->name('category_edit_commit');
@@ -214,7 +215,7 @@ Route::group(['namespace' => 'Admin'], function () {
 /*
  * 文件管理
  * */
-Route::group(['namespace' => 'Admin'], function () {
+Route::group(['namespace' => 'Admin','middleware' => 'auth'], function () {
 
   Route::get('/admin/manage/file_manage/media_manage_all', 'mediaManageAllController@view')->name('media_manage_all');
   Route::GET('/admin/manage/file_manage/media_manage_get', 'mediaManageAllController@getAllMedia')->name('media_manage_get');
@@ -223,8 +224,8 @@ Route::group(['namespace' => 'Admin'], function () {
   Route::get('/admin/manage/file_manage/media_manage_upload', 'mediaManageUploadController@view')->name('media_manage_upload');
   Route::post('/admin/manage/file_manage/media_manage_upload', 'mediaManageUploadController@mediaManageUpload')->name('media_manage_upload_post');
 
-  Route::get('/admin/manage/file_manage/file_backup', 'file_backupController@showProfile')->name('file_backup');
-  Route::get('/admin/manage/file_manage/file_recover', 'file_recoverController@showProfile')->name('file_recover');
+  Route::get('/admin/manage/file_manage/file_backup', 'file_backupController@view')->name('file_backup');
+  Route::get('/admin/manage/file_manage/file_recover', 'file_recoverController@view')->name('file_recover');
 });
 
 /*
@@ -232,13 +233,13 @@ Route::group(['namespace' => 'Admin'], function () {
  * */
 Route::group(['middleware' => 'auth', 'namespace' => 'Admin'], function () {
 
-  Route::get('/admin/manage/data_manage/database_backup', 'databaseBackupController@showProfile')->name('database_backup');
-  Route::get('/admin/manage/data_manage/database_import', 'databaseImportController@showProfile')->name('database_import');
-  Route::get('/admin/manage/data_manage/database_compress', 'databaseCompressController@showProfile')->name('database_compress');
-  Route::get('/admin/manage/data_manage/database_optimize', 'databaseOptimizeController@showProfile')->name('database_optimize');
-  Route::get('/admin/manage/data_manage/clear_cache', 'clearCacheController@showProfile')->name('clear_cache');
-  Route::get('/admin/manage/data_manage/setting_cache', 'settingCacheController@showProfile')->name('setting_cache');
-  Route::get('/admin/manage/data_manage/count_statistics', 'countStatisticsController@showProfile')->name('count_statistics');
+  Route::get('/admin/manage/data_manage/database_backup', 'databaseBackupController@view')->name('database_backup');
+  Route::get('/admin/manage/data_manage/database_import', 'databaseImportController@view')->name('database_import');
+  Route::get('/admin/manage/data_manage/database_compress', 'databaseCompressController@view')->name('database_compress');
+  Route::get('/admin/manage/data_manage/database_optimize', 'databaseOptimizeController@view')->name('database_optimize');
+  Route::get('/admin/manage/data_manage/clear_cache', 'clearCacheController@view')->name('clear_cache');
+  Route::get('/admin/manage/data_manage/setting_cache', 'settingCacheController@view')->name('setting_cache');
+  Route::get('/admin/manage/data_manage/count_statistics', 'countStatisticsController@view')->name('count_statistics');
 
 
 });
@@ -249,12 +250,12 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Admin'], function () {
  * */
 Route::group(['middleware' => 'auth', 'namespace' => 'Admin'], function () {
 
-  Route::get('/admin/manage/customization_center/install_theme', 'installThemeController@showProfile')->name('install_theme');
-  Route::get('/admin/manage/customization_center/local_theme', 'localThemeController@showProfile')->name('local_theme');
-  Route::get('/admin/manage/customization_center/edit_template', 'editTemplateController@showProfile')->name('edit_template');
-  Route::get('/admin/manage/customization_center/plugin_manage', 'pluginManageController@showProfile')->name('plugin_manage');
-  Route::get('/admin/manage/customization_center/hook_manage', 'hookManageController@showProfile')->name('hook_manage');
-  Route::get('/admin/manage/customization_center/ad_manage', 'adManageController@showProfile')->name('ad_manage');
+  Route::get('/admin/manage/customization_center/install_theme', 'installThemeController@view')->name('install_theme');
+  Route::get('/admin/manage/customization_center/local_theme', 'localThemeController@view')->name('local_theme');
+  Route::get('/admin/manage/customization_center/edit_template', 'editTemplateController@view')->name('edit_template');
+  Route::get('/admin/manage/customization_center/plugin_manage', 'pluginManageController@view')->name('plugin_manage');
+  Route::get('/admin/manage/customization_center/hook_manage', 'hookManageController@view')->name('hook_manage');
+  Route::get('/admin/manage/customization_center/ad_manage', 'adManageController@view')->name('ad_manage');
 
 });
 
@@ -264,14 +265,10 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Admin'], function () {
  * */
 Route::group(['middleware' => 'auth', 'namespace' => 'Admin'], function () {
 
-  Route::get('/admin/manage/system_setting/system_log', 'systemLogController@showProfile')->name('system_log');
-  Route::get('/admin/manage/system_setting/website_setting', 'websiteSettingController@showProfile')->name('website_setting');
-  Route::get('/admin/manage/system_setting/read_setting', 'readSettingController@showProfile')->name('read_setting');
-  Route::get('/admin/manage/system_setting/attachment_setting', 'attachmentSettingController@showProfile')->name('attachment_setting');
-  Route::get('/admin/manage/system_setting/social_login_setting', 'socialLoginSettingController@showProfile')->name('social_login_setting');
-  Route::get('/admin/manage/system_setting/update_online', 'updateOnlineController@showProfile')->name('update_online');
-  Route::get('/admin/manage/system_setting/system_info', 'systemInfoController@showProfile')->name('system_info');
-  Route::get('/admin/manage/system_setting/bug_feedback', 'bugFeedbackController@showProfile')->name('bug_feedback');
+  Route::get('/admin/manage/system_setting/system_log', 'systemLogController@view')->name('system_log');
+  Route::get('/admin/manage/system_setting/get_system_log', 'systemLogController@getSystemLog')->name('get_system_log');
+  Route::get('/admin/manage/system_setting/website_setting', 'websiteSettingController@view')->name('website_setting');
+
 
 });
 

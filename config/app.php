@@ -109,6 +109,8 @@ return [
     */
 
     'log' => env('APP_LOG', 'single'),
+    'log_max_files' => 30,
+//    'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
     /*
     |--------------------------------------------------------------------------
@@ -201,6 +203,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'LogViewer' => Arcanedev\LogViewer\LogViewerServiceProvider::class,
 
     ],
 

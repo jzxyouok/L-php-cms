@@ -178,7 +178,7 @@ class autoGather extends Command
           $rules = array(
             'title' => array($titleSelector, 'text'),
             'content_url' => array($contentUrlSelector, 'href'),
-
+            'preview_img' => array($previewImgSelector, 'src'),
           );
         }
 

@@ -10,18 +10,16 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Model\AdminUser;
 use Gregwar\Captcha\CaptchaBuilder;
 use Gregwar\Captcha\PhraseBuilder;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
 
 class adminLoginController extends Controller
 {
 
 
 
-  function __construct()
-  {
-
-
-  }
 
   public function view(Request $request)
   {
@@ -41,17 +39,15 @@ class adminLoginController extends Controller
     return redirect()->route('admin_login');
   }
 
-  public function login(Request $request)
+  public function adminLogin(Request $request)
   {
 
     $email = $request->input('email');
     $password = $request->input('password');
     $code = $request->input('code');
 $input=Input::only(['email','password']);
-//dd(Crypt::encrypt(''));
-    /*
-     * 从session中获取code
-     * */
+
+
     $code_session = $request->session()->get('code');
 
 
@@ -68,37 +64,25 @@ $input=Input::only(['email','password']);
         return response()->json(['code' => 0, 'msg' => '用户名或密码错误！']);
       } else {
 
-        $password_data = DB::table('users')->where('email', $email)->value('password');
-        //$password !== Crypt::decrypt($password_data)
-        if (false) {
-          return response()->json(['code' => 0, 'msg' => '用户名或密码错误！']);
-
-        } else {
-
-
-
-
-
 
 
           if (Auth::guard('adminLogin')->attempt($input)) {
+
+            Log::info('系统登录成功',['user_id' => $input['email']]);
+
+
             return response()->json(['code' => 1, 'msg' => '登录成功！']);
+          }else{
+            return response()->json(['code' => 0, 'msg' => '用户名或密码错误！']);
           }
 
-//          $request->session()->put('email', $username);
-//          $userInfo = DB::table('users')->where('email', $request->session()->get('email'))->first();
-//          $request->session()->put('userInfo', $userInfo);
-//          return response()->json(['code' => 1, 'msg' => '登录成功！']);
-        }
+
+
+
       }
 
     }
 
-    //DB::table('admin_users')
-//        $user=AdminUser::first();
-//        if($user->username===){
-//
-//        }
   }
 
 
