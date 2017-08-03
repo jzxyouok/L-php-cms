@@ -7,7 +7,6 @@
 - 5、后台数据初始化的方式已变更，不用那么麻烦了，具体参考[DoraCMSV1.0.7升级指南](http://www.html-js.cn/details/VymuSlpGg.html)
 ### -------------------------------------------------------------------------------
        
-![DoraCMS](http://git.oschina.net/uploads/images/2015/0930/174726_d78c4a23_352304.jpeg "DoraCMS")
 
 ![image](https://github.com/lovelife10000/L-php-cms/raw/master/public/upload/image/preview.jpg)
      
