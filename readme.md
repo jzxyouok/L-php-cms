@@ -8,9 +8,11 @@
 ### -------------------------------------------------------------------------------
        
 ![DoraCMS](http://git.oschina.net/uploads/images/2015/0930/174726_d78c4a23_352304.jpeg "DoraCMS")
+
+![image](https://github.com/lovelife10000/L-php-cms/raw/master/public/upload/image/preview.jpg)
      
-# DoraCMS
-## DoraCMS是基于Nodejs+express+mongodb编写的一套内容管理系统，结构简单，较目前一些开源的cms，doracms易于拓展，特别适合前端开发工程师做二次开发。
+# L-php-cms
+## L-php-cms是基于php+laravel+angular编写的一套内容管理系统，Laravel是一套简洁、优雅的PHP Web开发框架(PHP Web Framework)。它可以让你从面条一样杂乱的代码中解脱出来；它可以帮你构建一个完美的网络APP，而且每行代码都可以简洁、富于表达力。L-php-cms易于拓展，特别适合前端开发工程师做二次开发。
 
 ### 代码演示1.[基于DoraCMS 定制的博客系统](http://www.html-js.cn) 管理地址：http://www.html-js.cn/admin  （账号:testuser,密码：doracms）
 ### 代码演示2.[基于 DoraCMS 定制的视频分享站点](http://www.dailyads.cn)
