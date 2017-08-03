@@ -13,55 +13,31 @@
 # L-php-cms
 ## L-php-cms是基于php+laravel+angular编写的一套内容管理系统，Laravel是一套简洁、优雅的PHP Web开发框架(PHP Web Framework)。它可以让你从面条一样杂乱的代码中解脱出来；它可以帮你构建一个完美的网络APP，而且每行代码都可以简洁、富于表达力。L-php-cms易于拓展，特别适合前端开发工程师做二次开发。
 
-### 代码演示1.[基于DoraCMS 定制的博客系统](http://www.html-js.cn) 管理地址：http://www.html-js.cn/admin  （账号:testuser,密码：doracms）
-### 代码演示2.[基于 DoraCMS 定制的视频分享站点](http://www.dailyads.cn)
+### 代码演示1.[基于L-php-cms 定制的CMS系统](http://www.viralnova.wang) 管理地址：http://www.viralnova.wang/admin  （账号:test,密码：L-php-cms）
 
 ## 操作文档链接：
-## http://www.html-js.cn/details/Ey20NbBi.html
-## http://www.html-js.cn/details/VkldQTPs.html
+## http://www.viralnova.wang
 ## 开发文档链接：
-## http://www.html-js.cn/details/VJpfeMYj.html(不断更新)
-
-## 注意：开源后陆续发现了一些问题，我都提交了，今后也会持续补充，开发文档或遇到问题请直接参考我博客的文章(http://www.html-js.cn/details/VJpfeMYj.html),
-## 或者在该版块下留言，这里会不断更新，因为精力有限并不保证word版开发指南会保持最新，
-
-### 版本更新 2016年3月20日21:45:40
-### 版本号v1.1.0
-### 更新内容：
-
-- 1、提取了管理员信息查询的静态方法
-- 2、重新优化了广告模块，图片广告管理更方便了
-- 3、修复了一个文档查询的bug（过滤掉隐藏的content），感谢@jier945的建议
-- 4、修复了文件管理和模板编辑的bug（文件读取用相对路径更安全）
-- 5、提取了关联对象删除的公共方法
-- 6、添加文档页面添加了一个新增tag的入口
-- 7、去掉了admin路由中的io（暂时用不上）
-- 8、优化了后台路由，添加了adminCtrl过滤器从入口处先过滤一次非法请求，提高安全性
-- 9、提取了一些中文信息提示为静态变量
-
-
+## http://www.viralnova.wang
 
 
 ### -------------------------------------------------------------------------------
 
-# DoraCMS开发指南
-- 一、 DoraCMS 安装	2
-- 1.1 安装nodejs	2
-- 1.2 安装Mongodb。	2
-- 1.3 运行DoraCMS	3
-- 1.3.1启动mongodb	3
-- 1.3.2 插入初始数据	4
-- 1.3.3运行DoraCMS	5
-- 1.3.4 访问地址	6
-- 二、 DorCMS 开发	7
-- 2.1 配置文件	7
-- 2.2 关于路由	11
-- 2.3 关于模板	11
-- 2.4 实体类	13
-- 2.5 用到的插件	15
-- 2.6 关于编码	16
-- 三、总结	16
-- 四、FAQ	17
+# L-php-cms开发指南
+- 一、 L-php-cms安装
+- 1.1 运行环境安装（LNMP或者LAMP）
+- 1.2 安装Laravel
+- 1.3 安装L-php-cms
+- 1.3.4 访问地址
+- 二、 L-php-cms开发
+- 2.1 配置文件
+- 2.2 关于路由	
+- 2.3 关于模板	
+- 2.4 实体类	
+- 2.5 用到的插件	
+- 2.6 关于编码	
+- 三、总结
+- 四、FAQ	
 
 
 ## 一、DoraCMS 安装
