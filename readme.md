@@ -87,8 +87,11 @@ composer install
 然后就会自动下载包软件了。下载的包软件都自动存放在vender文件夹里，laravel框架核心源码也存放在vender文件夹里。
 
 ### 1.6 访问地址
-L-php-cms的后台地址是http://localhost/admin，这里的localhost如果你是本地就是这个，如果你部署在服务器上，就是你的ip或者你绑定的域名。后台模版我采用的是国际上比较流行的adminlte。
-访问前台页面的话就是，http://localhost，L-php-cms系统自带了一款模版，是采用的我是产品经理的模版，采用了它的html和css。前端我用的是angular和jquery。
+- L-php-cms的后台地址是http://localhost/admin，
+- 这里的localhost如果你是本地就是这个，如果你部署在服务器上，就是你的ip或者你绑定的域名。后台模版我采用的是国际上比较流行的adminlte。
+
+- 访问前台页面的话就是，http://localhost
+- L-php-cms系统自带了一款模版，是采用的我是产品经理的模版，采用了它的html和css。前端我用的是angular和jquery。
 相信到这里你应该就可以访问到啦，哈哈。
 
 ## 一、L-php-cms开发
