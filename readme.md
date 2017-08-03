@@ -20,13 +20,14 @@
 - 1.1 运行环境安装（LNMP或者LAMP）
 - 1.2 安装Laravel
 - 1.3 安装composer
-- 1.4 安装L-php-cms
-- 1.5 访问地址
+- 1.4 生成迁移
+- 1.5 安装L-php-cms
+- 1.6 访问地址
 - 二、 L-php-cms开发
-- 2.1 配置文件
+- 2.1 目录说明
 - 2.2 关于路由	
 - 2.3 关于模板	
-- 2.4 实体类	
+- 2.4 中间件	
 - 2.5 用到的插件	
 - 2.6 关于编码	
 - 三、总结
@@ -54,7 +55,13 @@ laravel社区比较活跃，中文资料很全面，不过文档里的东西还�
 ##composer中文网
 ##http://docs.phpcomposer.com
 
-### 1.4 安装L-php-cms
+### 1.4 生成迁移
+- laravel提供了一个快捷创建表和字段的功能，可以快速创建我们想要的表。
+```sh
+php artisan migrate
+```
+
+### 1.5 安装L-php-cms
 - 接下来就是安装L-php-cms啦。到github项目里直接下载L-php-cms。下载到你配置好的web服务器的根目录，如果是wampserver的话，就是在www目录下。
 然后解压，把L-php-cms-master目录里的内容全部拷贝到www目录里。
 - 接下来就是安装一些包软件了。我已经把必要的都放在composer.json里了。
@@ -78,3 +85,31 @@ laravel社区比较活跃，中文资料很全面，不过文档里的东西还�
 composer install
 ```
 然后就会自动下载包软件了。下载的包软件都自动存放在vender文件夹里，laravel框架核心源码也存放在vender文件夹里。
+
+### 1.6 访问地址
+L-php-cms的后台地址是http://localhost/admin，这里的localhost如果你是本地就是这个，如果你部署在服务器上，就是你的ip或者你绑定的域名。后台模版我采用的是国际上比较流行的adminlte。
+访问前台页面的话就是，http://localhost，L-php-cms系统自带了一款模版，是采用的我是产品经理的模版，采用了它的html和css。前端我用的是angular和jquery。
+相信到这里你应该就可以访问到啦，哈哈。
+
+## 一、L-php-cms开发
+### 1.2 目录说明
+```js
+app //这里主要是我们编写后端程序的目录，包含控制器，命令，模型等内容。
+app/Http/Controllers //存放控制器目录，下面已经分好模块，分别是后台，前台，认证，和安装
+app/Http/Model //这里存放的是数据库模型
+bootstrap //是一些系统连接文件
+config //是配置目录，配置都集中在这个目录
+database //主要是存放迁移的文件
+public //存放的是一些静态资源文件
+public/plugins //一些系统用的的插件
+public/upload　//上传目录
+public/js //下面有四个目录，分别是common、controllers、directives、filters、services
+resources //主要存放了一些视图文件
+resources/views //下面是视图文件，也相应的分成了模块
+storage //系统的存储目录，一些缓存啥的
+test
+vender //包软件目录
+.env //你的自定义配置文件
+...
+```
+
