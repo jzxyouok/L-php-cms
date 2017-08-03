@@ -34,7 +34,7 @@
                     <div class="box-body">
                         <div class="well">
 
-                            Kevin，全栈开发工程师，github：<a href="https://github.com/lovelife10000"
+                            lovelife10000，全栈开发工程师，github：<a href="https://github.com/lovelife10000"
                                                     target="_blank">https://github.com/lovelife10000</a>
                         </div>
                     </div>
